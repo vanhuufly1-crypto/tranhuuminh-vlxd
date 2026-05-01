@@ -197,10 +197,19 @@ const PRICES = [
   // --- NANO HOUSE ---
   { brand:'Nano House', product:'Nano Interior - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
   { brand:'Nano House', product:'ProGuard - Sơn chống thấm', spec:'Thùng 18L', price:'Liên hệ' },
-  // --- SIKA ---
-  { brand:'Sika', product:'Sikalastic 1K', spec:'Thùng 20kg', price:'Liên hệ' },
-  { brand:'Sika', product:'Sika Top 107', spec:'Bao 25kg', price:'Liên hệ' },
-  // --- JOTUN ---
-  { brand:'Jotun', product:'Jotashield - Ngoại thất', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Jotun', product:'Majestic - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
+  // --- SIKA (giá thị trường tham khảo) ---
+  { brand:'Sika', product:'Sikalastic 1K - Chống thấm PU', spec:'Thùng 20kg', price:'~2.700.000đ' },
+  { brand:'Sika', product:'SikaTop 107 Seal - Chống thấm bảo vệ', spec:'Bộ 25kg', price:'~810.000đ' },
+  { brand:'Sika', product:'Sika Latex - Phụ gia chống thấm', spec:'Can 5L', price:'~465.000đ' },
+  { brand:'Sika', product:'Sika Latex - Phụ gia chống thấm', spec:'Can 25L', price:'~2.275.000đ' },
+  { brand:'Sika', product:'Sikagrout 214-11 - Vữa rót không co ngót', spec:'Bao 25kg', price:'~280.000đ' },
+  { brand:'Sika', product:'Sikaflex 11FC - Keo trám khe', spec:'Ống 600ml', price:'Liên hệ' },
+  // --- JOTUN (giá niêm yết tham khảo) ---
+  { brand:'Jotun', product:'Jotashield Bền Màu Toàn Diện - Ngoại thất', spec:'15L', price:'~9.545.000đ' },
+  { brand:'Jotun', product:'Jotashield Bền Màu Toàn Diện - Ngoại thất', spec:'5L', price:'~3.315.000đ' },
+  { brand:'Jotun', product:'Jotashield Sạch Vượt Trội - Ngoại thất', spec:'15L', price:'~7.355.000đ' },
+  { brand:'Jotun', product:'Jotashield Chống Phai Màu - Ngoại thất', spec:'15L', price:'~7.145.000đ' },
+  { brand:'Jotun', product:'Majestic Đẹp Nguyên Bản - Nội thất', spec:'Thùng 18L', price:'Liên hệ' },
+  { brand:'Jotun', product:'Jotun Water Guard - Chống thấm', spec:'20kg', price:'~4.170.000đ' },
+  { brand:'Jotun', product:'Tough Shield Max - Ngoại thất kinh tế', spec:'17L', price:'~4.950.000đ' },
 ];
