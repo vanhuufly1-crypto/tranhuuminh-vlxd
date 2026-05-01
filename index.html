@@ -8,15 +8,23 @@
 </head>
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <span>🏪 CÔNG TY TNHH XD & TM TRẦN HỮU MINH - MST: 0201961941</span>
+    <span class="hotline">📞 Hotline: <strong>0378.679.633</strong></span>
+  </div>
+</div>
+
 <!-- HEADER -->
 <header class="header">
   <div class="container">
     <div class="logo">
-      <h1>🏗️ TRẦN HỮU MINH</h1>
-      <p>Sơn bả - Chống thấm - Thiết bị điện nước - Gạch ốp - Nội thất</p>
+      <h1>🏗️ <span>TRẦN HỮU</span> MINH</h1>
+      <div class="slogan">Sơn bả - Chống thấm - Thiết bị điện nước - Gạch ốp - Nội thất - Cửa cổng</div>
     </div>
-    <div class="hotline">
-      <span>📞 Hotline: <strong>0378.679.633</strong></span>
+    <div class="header-search">
+      <input type="text" id="searchInput" placeholder="🔍 Tìm sản phẩm..." onkeyup="searchProd(this.value)">
     </div>
   </div>
 </header>
@@ -24,187 +32,184 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="container">
-    <ul>
-      <li><a href="#home" class="active">🏠 Trang chủ</a></li>
-      <li class="dropdown">
-        <a href="#san-pham">📦 Sản phẩm ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#munich" class="brand-link" data-brand="munich">⭐ Munich (Phân phối chính)</a></li>
-          <li><a href="#nano" class="brand-link" data-brand="nano">🏡 Nano House (Phân phối chính)</a></li>
-          <li><a href="#sika" class="brand-link" data-brand="sika">🧪 Sika</a></li>
-          <li><a href="#dulux" class="brand-link" data-brand="dulux">🎨 Dulux</a></li>
-          <li><a href="#jotun" class="brand-link" data-brand="jotun">🖌️ Jotun</a></li>
-          <li><a href="#kova" class="brand-link" data-brand="kova">🏺 Kova</a></li>
-          <li><a href="#nippon" class="brand-link" data-brand="nippon">🇯🇵 Nippon</a></li>
-        </ul>
+    <ul class="nav-list">
+      <li><a href="#home">🏠 Trang chủ</a></li>
+      <li>
+        <a href="#products">📦 Sản phẩm ▾</a>
+        <div class="mega">
+          <div class="mega-group">
+            <h4>⭐ Munich (Phân phối chính)</h4>
+            <a href="#" data-brand="munich">Chống thấm xi măng-polymer</a>
+            <a href="#" data-brand="munich">Chống thấm Acrylic & PU</a>
+            <a href="#" data-brand="munich">Sơn Epoxy công nghiệp</a>
+            <a href="#" data-brand="munich">Sơn nước nội ngoại thất</a>
+            <a href="#" data-brand="munich">Phụ gia & Vật liệu xây dựng</a>
+          </div>
+          <div class="mega-group">
+            <h4>🏡 Nano House (Phân phối chính)</h4>
+            <a href="#" data-brand="nano">Sơn nội thất</a>
+            <a href="#" data-brand="nano">Sơn ngoại thất</a>
+          </div>
+          <div class="mega-group">
+            <h4>🧪 Các hãng khác</h4>
+            <a href="#" data-brand="sika">🧪 Sika</a>
+            <a href="#" data-brand="dulux">🎨 Dulux</a>
+            <a href="#" data-brand="jotun">🖌️ Jotun</a>
+            <a href="#" data-brand="kova">🏺 Kova</a>
+            <a href="#" data-brand="nippon">🇯🇵 Nippon</a>
+          </div>
+        </div>
       </li>
-      <li><a href="#bang-gia">💰 Bảng giá</a></li>
-      <li><a href="#dich-vu">🔧 Dịch vụ</a></li>
-      <li><a href="#lien-he">📞 Liên hệ</a></li>
+      <li><a href="#price">💰 Bảng giá</a></li>
+      <li><a href="#services">🔧 Dịch vụ</a></li>
+      <li><a href="#contact">📞 Liên hệ</a></li>
     </ul>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Tìm sản phẩm..." onkeyup="searchProduct(this.value)">
-    </div>
   </div>
 </nav>
 
-<!-- MAIN CONTENT -->
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h2>Thách thức <span>mọi nguồn nước!</span></h2>
+      <p>Nhà phân phối chính thức các thương hiệu sơn và chống thấm hàng đầu: Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon</p>
+      <a href="#contact" class="btn">📞 Liên hệ tư vấn miễn phí</a>
+    </div>
+    <div class="brand-strip">
+      <span class="brand-tag bt-munich">MUNICH</span>
+      <span class="brand-tag bt-nano">NANO HOUSE</span>
+      <span class="brand-tag bt-sika">SIKA</span>
+      <span class="brand-tag bt-dulux">DULUX</span>
+      <span class="brand-tag bt-jotun">JOTUN</span>
+      <span class="brand-tag bt-kova">KOVA</span>
+      <span class="brand-tag bt-nippon">NIPPON</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
 <main class="container">
 
   <!-- HOME -->
   <section id="home" class="section active-section">
-    <div class="hero">
-      <h2>Thách thức mọi nguồn nước!</h2>
-      <p>Nhà phân phối chính thức các thương hiệu sơn & chống thấm hàng đầu</p>
-      <div class="brand-strip">
-        <span class="brand-badge munich-badge">MUNICH</span>
-        <span class="brand-badge nano-badge">NANO HOUSE</span>
-        <span class="brand-badge sika-badge">SIKA</span>
-        <span class="brand-badge dulux-badge">DULUX</span>
-        <span class="brand-badge jotun-badge">JOTUN</span>
-        <span class="brand-badge kova-badge">KOVA</span>
-        <span class="brand-badge nippon-badge">NIPPON</span>
-      </div>
-    </div>
-
     <div class="features">
-      <div class="feature-card">
-        <div class="icon">🏪</div>
-        <h3>2 Chi nhánh</h3>
-        <p>CS1: 1434 Phạm Văn Đồng, Nam Đồ Sơn<br>CS2: Thôn Hà Hương, Vĩnh Hòa</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🚚</div>
-        <h3>Giao hàng toàn quốc</h3>
-        <p>Miễn phí giao nội thành Hải Phòng</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">💯</div>
-        <h3>Cam kết chính hãng</h3>
-        <p>100% sản phẩm chính hãng, có bảo hành</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">📋</div>
-        <h3>Báo giá miễn phí</h3>
-        <p>Gửi báo giá nhanh nhất trong 30 phút</p>
-      </div>
+      <div class="feat-card"><div class="icon">🏪</div><h3>Hai chi nhánh</h3><p>CS1: 1434 Phạm Văn Đồng, Nam Đồ Sơn<br>CS2: Thôn Hà Hương, Vĩnh Hòa, Hải Phòng</p></div>
+      <div class="feat-card"><div class="icon">🚚</div><h3>Giao hàng toàn quốc</h3><p>Miễn phí giao hàng nội thành Hải Phòng</p></div>
+      <div class="feat-card"><div class="icon">💯</div><h3>Cam kết chính hãng</h3><p>100% sản phẩm chính hãng, có bảo hành</p></div>
+      <div class="feat-card"><div class="icon">📋</div><h3>Báo giá miễn phí</h3><p>Nhận báo giá nhanh nhất chỉ trong 30 phút</p></div>
     </div>
 
-    <!-- Priority Brands Overview -->
-    <h2 class="section-title">🏆 Hãng phân phối chính</h2>
-    <div class="brand-overview" id="brandOverview"></div>
+    <h2 class="section-title">🏆 Thương hiệu phân phối</h2>
+    <div id="brandGrid" class="brand-grid"></div>
   </section>
 
-  <!-- PRODUCT SECTION (dynamic) -->
-  <section id="product-section" class="section">
-    <h2 id="productTitle">Sản phẩm</h2>
-    <div id="productGrid" class="product-grid"></div>
+  <!-- SEARCH RESULT -->
+  <section id="search-section" class="section">
+    <h2 id="searchTitle" class="section-title">🔍 Kết quả tìm kiếm</h2>
+    <div id="searchGrid" class="cat-products active"></div>
   </section>
 
   <!-- BRAND SECTIONS -->
-  <section id="munich-section" class="section brand-section">
-    <div class="brand-header munich">
-      <h2>⭐ Munich - Chống thấm cao cấp</h2>
-      <p>Phân phối chính thức</p>
-    </div>
-    <div id="munich-products" class="product-grid"></div>
+  <section id="munich-section" class="section">
+    <div class="brand-head bh-munich"><h2>⭐ Munich - Chống thấm & Sơn công nghiệp</h2><p>Phân phối chính thức - Công ty Cổ phần Vật liệu Chống thấm Công nghệ Cao Munich</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="nano-section" class="section brand-section">
-    <div class="brand-header nano">
-      <h2>🏡 Nano House</h2>
-      <p>Phân phối chính thức</p>
-    </div>
-    <div id="nano-products" class="product-grid"></div>
+  <section id="nano-section" class="section">
+    <div class="brand-head bh-nano"><h2>🏡 Nano House</h2><p>Phân phối chính thức - Sơn & Chống thấm công nghệ Nano từ Na Uy</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="sika-section" class="section brand-section">
-    <div class="brand-header sika">
-      <h2>🧪 Sika</h2>
-    </div>
-    <div id="sika-products" class="product-grid"></div>
+  <section id="sika-section" class="section">
+    <div class="brand-head bh-sika"><h2>🧪 Sika</h2><p>Vữa kỹ thuật, chống thấm, keo trám khe</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="dulux-section" class="section brand-section">
-    <div class="brand-header dulux">
-      <h2>🎨 Dulux</h2>
-    </div>
-    <div id="dulux-products" class="product-grid"></div>
+  <section id="dulux-section" class="section">
+    <div class="brand-head bh-dulux"><h2>🎨 Dulux</h2><p>Sơn nội thất & ngoại thất cao cấp</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="jotun-section" class="section brand-section">
-    <div class="brand-header jotun">
-      <h2>🖌️ Jotun</h2>
-    </div>
-    <div id="jotun-products" class="product-grid"></div>
+  <section id="jotun-section" class="section">
+    <div class="brand-head bh-jotun"><h2>🖌️ Jotun</h2><p>Sơn nội thất & ngoại thất - Thương hiệu Na Uy</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="kova-section" class="section brand-section">
-    <div class="brand-header kova">
-      <h2>🏺 Kova</h2>
-    </div>
-    <div id="kova-products" class="product-grid"></div>
+  <section id="kova-section" class="section">
+    <div class="brand-head bh-kova"><h2>🏺 Kova</h2><p>Chống thấm & Sơn nước chất lượng cao</p></div>
+    <div class="brand-content"></div>
   </section>
 
-  <section id="nippon-section" class="section brand-section">
-    <div class="brand-header nippon">
-      <h2>🇯🇵 Nippon</h2>
-    </div>
-    <div id="nippon-products" class="product-grid"></div>
+  <section id="nippon-section" class="section">
+    <div class="brand-head bh-nippon"><h2>🇯🇵 Nippon Paint</h2><p>Sơn nội thất & ngoại thất - Thương hiệu Nhật Bản</p></div>
+    <div class="brand-content"></div>
   </section>
 
   <!-- PRICE -->
-  <section id="bang-gia" class="section">
-    <h2>💰 Bảng giá tham khảo</h2>
-    <p class="note">*Giá có thể thay đổi theo thị trường. Liên hệ để có giá tốt nhất.</p>
-    <div id="priceTable"></div>
+  <section id="price" class="section">
+    <h2 class="section-title">💰 Bảng giá tham khảo</h2>
+    <p class="note">* Giá có thể thay đổi theo thị trường. Vui lòng liên hệ để có giá tốt nhất.</p>
+    <div class="tbl-wrap" id="priceTable"></div>
   </section>
 
   <!-- SERVICES -->
-  <section id="dich-vu" class="section">
-    <h2>🔧 Dịch vụ của chúng tôi</h2>
-    <div class="services-grid">
-      <div class="service-card"><h3>🏗️ Cải tạo nhà cũ</h3><p>Chống thấm triệt để, ốp lát, sơn sửa trọn gói</p></div>
-      <div class="service-card"><h3>🛠️ Xây dựng trọn gói</h3><p>Nhà ở, công trình dân dụng & công nghiệp</p></div>
-      <div class="service-card"><h3>🚪 Cửa & Cổng</h3><p>Thiết kế, thi công cửa nhôm kính, cửa sắt, cổng</p></div>
-      <div class="service-card"><h3>🧱 Gạch ốp lát</h3><p>Ốp tường, lát nền, gạch trang trí cao cấp</p></div>
-      <div class="service-card"><h3>🛋️ Nội thất</h3><p>Thiết kế, thi công nội thất gia đình & văn phòng</p></div>
-      <div class="service-card"><h3>🔌 Thiết bị điện nước</h3><p>Lắp đặt hệ thống điện, nước, thiết bị vệ sinh</p></div>
+  <section id="services" class="section">
+    <h2 class="section-title">🔧 Dịch vụ của chúng tôi</h2>
+    <div class="svc-grid">
+      <div class="svc-card"><h3>🏗️ Cải tạo nhà cũ</h3><p>Chống thấm triệt để, ốp lát, sơn sửa trọn gói</p></div>
+      <div class="svc-card"><h3>🔨 Xây dựng trọn gói</h3><p>Nhà ở dân dụng và công trình công nghiệp</p></div>
+      <div class="svc-card"><h3>🚪 Cửa & Cổng</h3><p>Thiết kế, thi công cửa nhôm kính, cửa sắt, cổng sắt</p></div>
+      <div class="svc-card"><h3>🧱 Gạch ốp lát</h3><p>Ốp tường, lát nền, gạch trang trí cao cấp</p></div>
+      <div class="svc-card"><h3>🛋️ Nội thất</h3><p>Thiết kế và thi công nội thất gia đình & văn phòng</p></div>
+      <div class="svc-card"><h3>🔌 Thiết bị điện nước</h3><p>Lắp đặt hệ thống điện, nước, thiết bị vệ sinh</p></div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="lien-he" class="section">
-    <h2>📞 Liên hệ</h2>
+  <section id="contact" class="section">
+    <h2 class="section-title">📞 Liên hệ</h2>
     <div class="contact-grid">
-      <div class="contact-card">
-        <h3>📍 Trụ sở chính</h3>
-        <p>TDP Quyết Tiến, P. Nam Đồ Sơn, TP. Hải Phòng</p>
-      </div>
-      <div class="contact-card">
-        <h3>🏪 Chi nhánh 1</h3>
-        <p>1434 Phạm Văn Đồng, P. Nam Đồ Sơn, TP. Hải Phòng</p>
-      </div>
-      <div class="contact-card">
-        <h3>🏪 Chi nhánh 2</h3>
-        <p>Thôn Hà Hương, Xã Vĩnh Hòa, TP. Hải Phòng</p>
-      </div>
-      <div class="contact-card big">
-        <div class="contact-row"><span>📞 Điện thoại:</span> <strong>0378.679.633</strong></div>
-        <div class="contact-row"><span>📧 Email:</span> <strong>vanhuufly@gmail.com</strong></div>
-        <div class="contact-row"><span>🌐 Website:</span> <strong>sonchongthamxaydung.com</strong></div>
-        <div class="contact-row"><span>🏢 Công ty:</span> CÔNG TY TNHH XD & TM TRẦN HỮU MINH</div>
-        <div class="contact-row"><span>📋 MST:</span> 0201961941</div>
+      <div class="contact-card"><h3>📍 Trụ sở chính</h3><p>TDP Quyết Tiến, P. Nam Đồ Sơn, TP. Hải Phòng</p></div>
+      <div class="contact-card"><h3>🏪 Chi nhánh 1</h3><p>1434 Phạm Văn Đồng, P. Nam Đồ Sơn, TP. Hải Phòng</p></div>
+      <div class="contact-card"><h3>🏪 Chi nhánh 2</h3><p>Thôn Hà Hương, Xã Vĩnh Hòa, TP. Hải Phòng</p></div>
+      <div class="contact-card wide">
+        <div class="crow"><span class="lb">📞 Điện thoại:</span> <strong>0378.679.633</strong></div>
+        <div class="crow"><span class="lb">📧 Email:</span> <strong>vanhuufly@gmail.com</strong></div>
+        <div class="crow"><span class="lb">🌐 Website:</span> <strong>sonchongthamxaydung.com</strong></div>
+        <div class="crow"><span class="lb">🏢 Công ty:</span> CÔNG TY TNHH XD & TM TRẦN HỮU MINH</div>
+        <div class="crow"><span class="lb">📋 Mã số thuế:</span> 0201961941</div>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 CÔNG TY TNHH XD & TM TRẦN HỮU MINH — <strong>Thách thức mọi nguồn nước!</strong></p>
-    <p class="slogan">Sơn bả, chống thấm, thiết bị điện nước, gạch ốp, đồng trang trí, nội thất, cửa cổng</p>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>🏗️ Trần Hữu Minh</h4>
+        <p>Thách thức mọi nguồn nước!</p>
+        <p>Sơn bả - Chống thấm - Thiết bị điện nước</p>
+        <p>Gạch ốp - Nội thất - Cửa cổng</p>
+      </div>
+      <div class="footer-col">
+        <h4>📍 Địa chỉ</h4>
+        <p>Trụ sở: TDP Quyết Tiến, P. Nam Đồ Sơn, TP. Hải Phòng</p>
+        <p>CS1: 1434 Phạm Văn Đồng, P. Nam Đồ Sơn</p>
+        <p>CS2: Thôn Hà Hương, Xã Vĩnh Hòa, TP. Hải Phòng</p>
+      </div>
+      <div class="footer-col">
+        <h4>📞 Liên hệ</h4>
+        <p>☎️ <strong>0378.679.633</strong></p>
+        <p>📧 vanhuufly@gmail.com</p>
+        <p>🌐 sonchongthamxaydung.com</p>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 CÔNG TY TNHH XD & TM TRẦN HỮU MINH. <strong>Thách thức mọi nguồn nước!</strong></p>
+    </div>
   </div>
 </footer>
 
