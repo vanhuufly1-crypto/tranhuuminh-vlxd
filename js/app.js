@@ -30,16 +30,22 @@ const PROD_IMAGES = [
   'munich_g20n',
 ];
 
-// Assign images to brands (round-robin / grouped)
+// Assign images to brands (OCR-identified)
 function getBrandImages(brandId) {
   const map = {
-    munich: [0,1,2,3, 19,20,21,22,23,24],
-    nano: [4,5,6,7],
-    sika: [8,9],
-    dulux: [10,11],
-    jotun: [12,13],
-    kova: [14,15],
-    nippon: [16,17,18],
+    munich:  [0,1,9, 19,20,21,22,23,24],   // G20, G20C, PU S700, Luxury + ảnh Munich từ web
+    nano:    [4],                            // Sơn nội thất
+    sika:    [3,10],                         // Ảnh chống thấm + PERFECT PROTECTION
+    dulux:   [11],                           // Dulux let's colour
+    jotun:   [12],                           // JOTUN
+    kova:    [3,8],                          // Sơn & Chống thấm + BUILDING TRUST
+    nippon:  [8,10],                         // Sơn
+    // Non-paint categories
+    gach:    [5],                            // Cotto, Caesar, Inax
+    thietbi: [13],                           // Panasonic
+    giaDung: [6],                            // Sunhouse
+    dieuHoa: [14],                           // Điều hòa 2 chiều
+    dungCu:  [7],                            // Dụng cụ thi công
   };
   return (map[brandId] || []).map(i => PROD_IMAGES[i]);
 }
