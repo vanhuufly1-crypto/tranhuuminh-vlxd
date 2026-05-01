@@ -2,6 +2,7 @@
 
 // Product images list (from raw folder)
 const PROD_IMAGES = [
+  // Local product images (20) - from Telegram download
   '004065fd-3a92-43f1-be1b-ce9ad35e8cb0-330x330',
   '1-330x330',
   '2-330x330',
@@ -20,12 +21,19 @@ const PROD_IMAGES = [
   'z6670723840868_53b895036d3852716ab2d86114705376',
   'z6670723842307_6d614766caad7dcacda8f953a42b6319-330x330',
   'z6670738880364_50d036ad1c3094e9fac16755db91eebf-330x330',
+  // Munich product images from manufacturer website
+  'munich_munich-g20',
+  'munich_munich-g20c',
+  'munich_munich-pu-s700-1',
+  'munich_son-bong-noi-that-munich-luxury',
+  'munich_g20',
+  'munich_g20n',
 ];
 
 // Assign images to brands (round-robin / grouped)
 function getBrandImages(brandId) {
   const map = {
-    munich: [0,1,2,3],
+    munich: [0,1,2,3, 19,20,21,22,23,24],
     nano: [4,5,6,7],
     sika: [8,9],
     dulux: [10,11],
