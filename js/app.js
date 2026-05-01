@@ -1,4 +1,41 @@
 /* APP - TRẦN HỮU MINH WEBSITE */
+
+// Product images list (from raw folder)
+const PROD_IMAGES = [
+  '004065fd-3a92-43f1-be1b-ce9ad35e8cb0-330x330',
+  '1-330x330',
+  '2-330x330',
+  '20c918a9-b075-40c6-9101-b756cb15590c',
+  '92f2ba39-5c98-4e84-b6c4-ddae4b62af01-330x330',
+  'a1','a2',
+  'a7e1af5b-decc-4271-8358-49b17d76eb6c-330x329',
+  'c0c5f24e-a373-4d9c-92b8-871911cf3137-330x330',
+  'd6f132a1-629a-4aaa-b437-90f6e1fe09dd-330x200',
+  'f1558a2d-8931-4c18-9f7e-e39a3d0b9368',
+  'z6669805729346_420fc41fbc0cea2cbb521e3002f5eabb',
+  'z6669805730688_c375ad9ba90c3d57d166aa6f66640b7b',
+  'z6669805735502_f29cf55851d62b8728fdd1683d311afb',
+  'z6669805737655_e0331211320f6d0f2f99d9f6cf995495',
+  'z6670079584865_f3d561825c58619858db0111407a4416-330x330',
+  'z6670723840868_53b895036d3852716ab2d86114705376',
+  'z6670723842307_6d614766caad7dcacda8f953a42b6319-330x330',
+  'z6670738880364_50d036ad1c3094e9fac16755db91eebf-330x330',
+];
+
+// Assign images to brands (round-robin / grouped)
+function getBrandImages(brandId) {
+  const map = {
+    munich: [0,1,2,3],
+    nano: [4,5,6,7],
+    sika: [8,9],
+    dulux: [10,11],
+    jotun: [12,13],
+    kova: [14,15],
+    nippon: [16,17,18],
+  };
+  return (map[brandId] || []).map(i => PROD_IMAGES[i]);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Render brand overview on home
   const grid = document.getElementById('brandGrid');
@@ -50,6 +87,18 @@ function renderBrand(id) {
   
   let html = '';
   
+  // Add product gallery
+  const imgList = getBrandImages(id);
+  if (imgList.length > 0) {
+    html += '<div class="brand-gallery">';
+    imgList.forEach(img => {
+      html += `<div class="gallery-item">
+        <img src="images/${img}.webp" alt="${id}" loading="lazy" onclick="openLightbox(this.src)">
+      </div>`;
+    });
+    html += '</div>';
+  }
+  
   if (Array.isArray(data)) {
     // Simple list
     html += '<div class="cat-products active">';
@@ -71,6 +120,27 @@ function renderBrand(id) {
   }
   
   container.innerHTML = html;
+}
+
+// Lightbox
+function openLightbox(src) {
+  let lb = document.getElementById('lightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'lightbox';
+    lb.className = 'lightbox';
+    lb.innerHTML = '<span class="lb-close" onclick="closeLightbox()">&times;</span><img id="lbImg">';
+    lb.addEventListener('click', closeLightbox);
+    document.body.appendChild(lb);
+  }
+  document.getElementById('lbImg').src = src;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (lb) lb.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 function card(p, brand) {
