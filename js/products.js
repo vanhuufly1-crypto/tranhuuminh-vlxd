@@ -178,15 +178,29 @@ const PRICES = [
   { brand:'Kova', product:'CT-14 GOLD - Chống thấm giãn', spec:'20kg', price:'4.210.000đ' },
   { brand:'Kova', product:'MTN GOLD - Matit ngoại thất', spec:'25kg', price:'855.000đ' },
   { brand:'Kova', product:'CT08 GOLD - Sơn sân tennis', spec:'20kg', price:'6.760.000đ' },
-  // --- CÁC HÃNG KHÁC (Liên hệ để có giá) ---
+  // --- DULUX (giá tham khảo thị trường 2025) ---
+  { brand:'Dulux', product:'Weathershield Colour Protect - Ngoại thất', spec:'15L', price:'~3.280.000đ' },
+  { brand:'Dulux', product:'Weathershield Colour Protect - Ngoại thất', spec:'5L', price:'~1.150.000đ' },
+  { brand:'Dulux', product:'Inspire - Sơn nội thất', spec:'18L', price:'~2.930.000đ' },
+  { brand:'Dulux', product:'Inspire - Sơn ngoại thất', spec:'5L', price:'~810.000đ' },
+  { brand:'Dulux', product:'5in1 Ambiance - Nội thất cao cấp', spec:'5L', price:'~1.200.000đ' },
+  { brand:'Dulux', product:'A1000 Professional - Nội thất', spec:'18L', price:'~2.110.000đ' },
+  { brand:'Dulux', product:'Aquatech - Chống thấm', spec:'6kg', price:'~710.000đ' },
+  { brand:'Dulux', product:'Bột trét tường', spec:'40kg', price:'~397.000đ' },
+  // --- NIPPON (giá tham khảo thị trường 2025) ---
+  { brand:'Nippon', product:'Matex - Sơn nội thất', spec:'18L', price:'~1.130.000đ' },
+  { brand:'Nippon', product:'Weatherbond - Sơn ngoại thất', spec:'18L', price:'~1.290.000đ' },
+  { brand:'Nippon', product:'Weathergard Siêu bóng - Ngoại thất', spec:'5L', price:'~1.400.000đ' },
+  { brand:'Nippon', product:'Super Matex - Sơn ngoại thất kinh tế', spec:'18L', price:'~1.290.000đ' },
+  { brand:'Nippon', product:'Odour-Less Spot-Less - Nội thất CC', spec:'18L', price:'~4.050.000đ' },
+  { brand:'Nippon', product:'WP200 - Chống thấm', spec:'20kg', price:'~2.009.000đ' },
+  // --- NANO HOUSE ---
   { brand:'Nano House', product:'Nano Interior - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
   { brand:'Nano House', product:'ProGuard - Sơn chống thấm', spec:'Thùng 18L', price:'Liên hệ' },
+  // --- SIKA ---
   { brand:'Sika', product:'Sikalastic 1K', spec:'Thùng 20kg', price:'Liên hệ' },
   { brand:'Sika', product:'Sika Top 107', spec:'Bao 25kg', price:'Liên hệ' },
-  { brand:'Dulux', product:'WeatherShield', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Dulux', product:'5in1 - Sơn nội thất đa năng', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Jotun', product:'Jotashield', spec:'Thùng 18L', price:'Liên hệ' },
+  // --- JOTUN ---
+  { brand:'Jotun', product:'Jotashield - Ngoại thất', spec:'Thùng 18L', price:'Liên hệ' },
   { brand:'Jotun', product:'Majestic - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Nippon', product:'Weatherbond', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Nippon', product:'Matex - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
 ];
