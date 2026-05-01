@@ -109,6 +109,45 @@ input, textarea, select, button { font-family:inherit; }
   letter-spacing:1px; transition:.3s; cursor:default;
 }
 .brand-tag:hover { transform:scale(1.05); }
+
+/* ===== FLOATING CONTACT BUTTONS ===== */
+.float-contact {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: all .25s;
+  text-decoration: none;
+  animation: float-pulse 2s ease-in-out infinite;
+}
+.float-btn span { font-size: 26px; }
+.float-phone { background: #e94560; color: #fff; }
+.float-zalo { background: #0068ff; color: #fff; animation-delay: .3s; }
+.float-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+}
+@keyframes float-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@media(max-width:768px) {
+  .float-btn { width: 48px; height: 48px; }
+  .float-btn span { font-size: 22px; }
+}
 .bt-munich { background:rgba(233,69,96,0.2); color:#ff6b81; border:1px solid rgba(233,69,96,0.3); }
 .bt-nano { background:rgba(15,185,177,0.2); color:#55efc4; border:1px solid rgba(15,185,177,0.3); }
 .bt-sika { background:rgba(108,92,231,0.2); color:#a29bfe; border:1px solid rgba(108,92,231,0.3); }
