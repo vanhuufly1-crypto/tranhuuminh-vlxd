@@ -28,6 +28,11 @@ const PROD_IMAGES = [
   'munich_son-bong-noi-that-munich-luxury',
   'munich_g20',
   'munich_g20n',
+  // Jotun product images from manufacturer website
+  'brand_majestic-dep-hoan-hao-mo',
+  'brand_son_chongtham-jotun_waterguard-lon-6kg',
+  'brand_son_jotun_essence-che-phu-toi-da-bong',
+  'brand_anh-ngang-gan-logo',
 ];
 
 // Assign images to brands (OCR-identified)
@@ -37,7 +42,7 @@ function getBrandImages(brandId) {
     nano:    [4],                            // Sơn nội thất
     sika:    [3,10],                         // Ảnh chống thấm + PERFECT PROTECTION
     dulux:   [11],                           // Dulux let's colour
-    jotun:   [12],                           // JOTUN
+    jotun:   [12, 25, 26, 27, 28],            // JOTUN + ảnh từ jotunpaint.vn
     kova:    [3,8],                          // Sơn & Chống thấm + BUILDING TRUST
     nippon:  [8,10],                         // Sơn
     // Non-paint categories
