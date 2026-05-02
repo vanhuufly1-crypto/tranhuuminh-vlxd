@@ -577,6 +577,16 @@ main { padding:40px 0; }
 .pa-call:hover { background:#c0392b; }
 .pa-zalo { background:#0068ff; color:#fff; }
 .pa-zalo:hover { background:#0052cc; }
+.pa-quote { background:#f39c12; color:#fff; }
+.pa-quote:hover { background:#d68910; }
+
+.social-row { display:flex; gap:8px; flex-wrap:wrap; padding:8px 0 !important; }
+.social-btn {
+  display:inline-flex; align-items:center; gap:4px; padding:8px 14px;
+  border-radius:6px; color:#fff; font-weight:700; font-size:13px;
+  text-decoration:none; transition:.2s;
+}
+.social-btn:hover { transform:translateY(-2px); filter:brightness(1.15); }
 
 /* ===== PDF BUTTON ===== */
 .pdf-wrap { text-align:center; margin:20px 0; }
