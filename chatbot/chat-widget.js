@@ -1,5 +1,6 @@
 /* ==========================================================
-   CHAT WIDGET VLXD TRẦN HỮU MINH — JS Engine
+   CHAT WIDGET VLXD TRẦN HỮU MINH — Engine "Người Thật"
+   Version 2.0 — Human-like Chat Engine
    Trợ lý ảo: Mây ☁️
    ========================================================== */
 
@@ -12,14 +13,22 @@
     zalo: '0378.679.633',
     storeName: 'VLXD Trần Hữu Minh',
     agentName: 'Mây',
-    typingMin: 2000,
-    typingMax: 4000,
-    typingSteps: 3,
+    // Typing delays — thông minh tỉ lệ với độ dài câu
+    typingMsPerChar: 40,
+    typingMinMs: 2000,
+    typingMaxMs: 8000,
+    // Chunk delay giữa các tin nhắn nhỏ
+    chunkDelayMin: 1500,
+    chunkDelayMax: 3000,
+    // Typo chance (5-10% mỗi câu)
+    typoChance: 0.08,
     scrollSmooth: true,
     launcherDelay: 3000,
     welcomeDelay: 1500,
-    apiEndpoint: '/api/chatbot', // optional backend
-    scriptUrl: '/chatbot/chatbot-script.json'
+    apiEndpoint: '/api/chatbot',
+    scriptUrl: '/chatbot/chatbot-script.json',
+    // Timeout cho mỗi lần "đang nhập"
+    maxTypingPerMessage: 8000
   };
 
   // =============== STATE ===============
@@ -27,19 +36,44 @@
     currentNode: 'root',
     history: [],
     isProcessing: false,
-    user: { name: '', phone: '', address: '' },
-    sessionId: 'thm_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6)
+    waitingForInput: null,
+    // Thông tin khách hàng
+    user: {
+      name: '',
+      phone: '',
+      address: '',
+      location: '',
+      gender: 'unknown',
+      ageGroup: 'unknown',
+      lastMentionedLocation: ''
+    },
+    // Đã hiện disclaimer chưa?
+    disclaimerShown: false,
+    // Session
+    sessionId: 'thm_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
+    // Typo tracking
+    lastTypoFixPending: null,
+    // Conversation context
+    lastTopic: '',
+    lastUserMessage: '',
+    userMessageCount: 0,
+    // Cảm xúc gần nhất
+    lastDetectedEmotion: ''
   };
 
   // =============== DOM REFS ===============
   let DOM = {};
-  let Script = null; // loaded decision tree
+  let Script = null;
 
   // =============== UTILITIES ===============
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
 
-  function randomDelay(min, max) {
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function randomFloat(min, max) {
     return min + Math.random() * (max - min);
   }
 
@@ -56,44 +90,191 @@
     return div.innerHTML;
   }
 
-  function debounce(fn, ms) {
-    let timer;
-    return function () {
-      clearTimeout(timer);
-      timer = setTimeout(() => fn.apply(this, arguments), ms);
-    };
+  function pickRandom(arr) {
+    if (!arr || arr.length === 0) return null;
+    return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  // =============== MARKDOWN RENDERER (lightweight) ===============
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  // =============== HẢI PHÒNG DIALECT ENGINE ===============
+  const DIALECT_MAP = {
+    'nhé': 'nha',
+    'nhé?': 'nghen?',
+    'rất': '',
+    'thật': 'thiệt',
+    'vậy à': 'vậy hả',
+    'vậy ạ': 'vậy ạ',
+    'lắm': 'quá trời',
+    'nhiều': 'quá chừng',
+    'gửi': 'gưi',
+    'có': 'cóa',
+    'được': 'đực',
+    'thôi': 'thoy',
+    'thế': 'thía',
+    'nhỉ': 'nhỉ',
+    'kìa': 'kia'
+  };
+
+  function applyDialect(text) {
+    // Nhẹ nhàng, chỉ áp dụng 1-2 từ ngẫu nhiên
+    let result = text;
+    const keys = Object.keys(DIALECT_MAP);
+    // Chọn 1-2 từ để thay đổi
+    const changeCount = randomInt(1, 2);
+    const selectedKeys = [];
+    for (const key of keys) {
+      if (result.includes(key) && !selectedKeys.includes(key)) {
+        selectedKeys.push(key);
+      }
+    }
+    // Xáo trộn và chọn
+    const shuffled = selectedKeys.sort(() => Math.random() - 0.5);
+    const toChange = shuffled.slice(0, changeCount);
+    for (const key of toChange) {
+      result = result.replace(new RegExp(key, 'g'), DIALECT_MAP[key]);
+    }
+    return result;
+  }
+
+  function addFillerWord(text) {
+    const fillers = ['à', 'thì', 'nói chung', 'ý em là', 'ừ để em check lại'];
+    // 20% chance thêm filler vào đầu câu
+    if (Math.random() < 0.2 && text.length > 20) {
+      const filler = pickRandom(fillers);
+      // Lowercase first char if it's uppercase
+      return filler + ' ' + text.charAt(0).toLowerCase() + text.slice(1);
+    }
+    return text;
+  }
+
+  // =============== TYPO ENGINE ===============
+  const TYPO_MAP = {
+    'gửi': 'gưi',
+    'Gửi': 'Gưi',
+    'có': 'cóa',
+    'Có': 'Cóa',
+    'được': 'đực',
+    'Được': 'Đực',
+    'thôi': 'thoy',
+    'Thôi': 'Thoy',
+    'nhé': 'nhe',
+    'Nhé': 'Nhe',
+    'giá': 'gia',
+    'báo giá': 'bao gia',
+    'chống thấm': 'chong tham',
+    'thi công': 'thi cong',
+    'sản phẩm': 'san pham',
+    'bảng giá': 'bang gia',
+    'gạch': 'gach'
+  };
+
+  function maybeAddTypo(text) {
+    // 8% chance có lỗi chính tả
+    if (Math.random() > CONFIG.typoChance) return null;
+
+    // Chọn ngẫu nhiên một từ trong TYPO_MAP
+    const keys = Object.keys(TYPO_MAP);
+    const key = pickRandom(keys);
+    if (text.includes(key)) {
+      const typoVersion = text.replace(key, TYPO_MAP[key]);
+      // Giới hạn: chỉ typo tối đa 1 lỗi trong câu
+      if (typoVersion !== text) {
+        return {
+          typoText: typoVersion,
+          original: key,
+          typo: TYPO_MAP[key]
+        };
+      }
+    }
+    return null;
+  }
+
+  function createTypoFixMessage(typoInfo) {
+    // Câu sửa lỗi tự nhiên
+    const fixTemplates = [
+      'à ' + typoInfo.typo + ' — ý em là ' + typoInfo.original + ' á 😅',
+      'em nhầm tí, ' + typoInfo.original + ' chứ hông phải ' + typoInfo.typo + ' 😅',
+      'à em gõ nhầm, ' + typoInfo.original + ' nha!'
+    ];
+    return pickRandom(fixTemplates);
+  }
+
+  // =============== LOCATION & NAME DETECTION ===============
+  const HP_LOCATIONS = [
+    'hồng bàng', 'lê chân', 'ngô quyền', 'kiến an', 'hải an',
+    'dương kinh', 'đồ sơn', 'vĩnh niệm', 'vĩnh bảo', 'tiên lãng',
+    'cát hải', 'bạch long vĩ', 'thủy nguyên', 'an dương', 'an lão',
+    'kiến thụy', 'đồ sơn', 'dương kinh', 'thành phố hải phòng',
+    'tràng cát', 'đằng giang', 'đông hải', 'nam hải', 'bàng la'
+  ];
+
+  function detectLocation(text) {
+    const lower = text.toLowerCase();
+    for (const loc of HP_LOCATIONS) {
+      if (lower.includes(loc)) {
+        return loc.charAt(0).toUpperCase() + loc.slice(1);
+      }
+    }
+    // Detect Hải Phòng variation
+    if (lower.includes('hải phòng') || lower.includes('hai phong') || lower.includes('hp')) {
+      return 'Hải Phòng';
+    }
+    return null;
+  }
+
+  function detectName(text) {
+    // Pattern: "em là X", "tôi là X", "tên em là X", "tên tôi là X", "X đây"
+    const patterns = [
+      /(?:em là|tôi là|mình là|tên em là|tên tôi là|tên mình là|gọi em là|gọi tôi là)\s+([A-ZÀÁẠÃẢĂẮẶẰẴÂẤẬẦẨĐÈÉẸẼẺÊẾỆỀỂÌÍỊĨỈÒÓỌÕỎÔỐỘỒỔƠỚỢỜỠÙÚỤŨỦƯỨỰỪỬỲÝỴỸỶ][a-zàáạãảăắặằẵâấậầẩđèéẹẽẻêếệềểìíịĩỉòóọõỏôốộồổơớợờỡùúụũủưứựừửỳýỵỹỷ]+)/i,
+      /(?:chị|anh|em|cô|chú|bác|thầy|bạn)\s+([A-ZÀÁẠÃẢĂẮẶẰẴÂẤẬẦẨĐÈÉẸẼẺÊẾỆỀỂÌÍỊĨỈÒÓỌÕỎÔỐỘỒỔƠỚỢỜỠÙÚỤŨỦƯỨỰỪỬỲÝỴỸỶ][a-zàáạãảăắặằẵâấậầẩđèéẹẽẻêếệềểìíịĩỉòóọõỏôốộồổơớợờỡùúụũủưứựừửỳýỵỹỷ]+)/i
+    ];
+    for (const pattern of patterns) {
+      const match = text.match(pattern);
+      if (match && match[1]) {
+        return match[1].trim();
+      }
+    }
+    return null;
+  }
+
+  function detectEmotion(text) {
+    const lower = text.toLowerCase();
+    if (lower.includes('dột') || lower.includes('thấm') || lower.includes('ướt')) return 'dot';
+    if (lower.includes('mệt') || lower.includes('mệt mỏi') || lower.includes('chán')) return 'met';
+    if (lower.includes('tốn') || lower.includes('mắc') || lower.includes('đắt') || lower.includes('tốn kém')) return 'tonkem';
+    if (lower.includes('gấp') || lower.includes('nhanh') || lower.includes('khẩn') || lower.includes('sớm')) return 'gap';
+    if (lower.includes('khó chịu') || lower.includes('bực') || lower.includes('tức')) return 'negative';
+    return '';
+  }
+
+  function detectGender(text) {
+    const lower = text.toLowerCase();
+    if (lower.includes('anh') || lower.includes('chú') || lower.includes('bác')) return 'male';
+    if (lower.includes('chị') || lower.includes('cô') || lower.includes('dì')) return 'female';
+    return 'unknown';
+  }
+
+  // =============== MARKDOWN RENDERER ===============
   function renderMarkdown(text) {
     if (!text) return '';
-
-    // Escape HTML first
     let html = escapeHtml(text);
-
-    // Bold
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-    // Italic
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-    // Inline code
     html = html.replace(/`(.*?)`/g, '<code>$1</code>');
 
-    // Line breaks → paragraphs
     const blocks = html.split('\n\n').filter(b => b.trim());
     if (blocks.length === 0) return html;
 
     const processed = blocks.map(block => {
-      // Check if it's a list
       if (/^[•\-\*]\s/.test(block.trim()) || /^\d+[\.\)]\s/.test(block.trim())) {
         return processListBlock(block);
       }
-      // Single line
       if (!block.includes('\n')) {
         return '<p>' + block.trim() + '</p>';
       }
-      // Multi-line: wrap in <p> with <br>
       return '<p>' + block.split('\n').join('<br>') + '</p>';
     });
 
@@ -106,10 +287,9 @@
     const tag = isOrdered ? 'ol' : 'ul';
     let html = '<' + tag + '>\n';
     lines.forEach(line => {
-      // Remove bullet or number prefix
-      let content = line.replace(/^[•\-\*]\s+/, '');
-      content = content.replace(/^\d+[\.\)]\s+/, '');
-      html += '<li>' + content + '</li>\n';
+      let c = line.replace(/^[•\-\*]\s+/, '');
+      c = c.replace(/^\d+[\.\)]\s+/, '');
+      html += '<li>' + c + '</li>\n';
     });
     html += '</' + tag + '>';
     return html;
@@ -118,21 +298,19 @@
   // =============== SCRIPT LOADER ===============
   async function loadScript() {
     try {
-      // Try loading from external URL
       const resp = await fetch(CONFIG.scriptUrl);
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       Script = await resp.json();
-      console.log('[Mây] Chatbot script loaded');
+      console.log('[Mây v2] Chatbot script loaded');
       return true;
     } catch (e) {
-      console.warn('[Mây] Could not load external script:', e.message);
-      // Try inline script as fallback
+      console.warn('[Mây v2] Could not load external script:', e.message);
       if (window.__THM_CHATBOT_SCRIPT) {
         Script = window.__THM_CHATBOT_SCRIPT;
-        console.log('[Mây] Using inline script');
+        console.log('[Mây v2] Using inline script');
         return true;
       }
-      console.error('[Mây] No chatbot script available');
+      console.error('[Mây v2] No chatbot script available');
       return false;
     }
   }
@@ -145,9 +323,42 @@
     return node || null;
   }
 
-  function getRandomFrom(arr) {
-    if (!arr || arr.length === 0) return '';
-    return arr[Math.floor(Math.random() * arr.length)];
+  function getVariantText(node, field) {
+    // Ưu tiên dùng responseVariants nếu có
+    const variants = node.responseVariants;
+    if (variants && variants.length > 0) {
+      // 50% dùng variant, 50% dùng text gốc
+      if (Math.random() < 0.7) {
+        return pickRandom(variants);
+      }
+    }
+    return node[field] || '';
+  }
+
+  function getChunks(node) {
+    return node.chunks || null;
+  }
+
+  // =============== TYPING INDICATOR ===============
+  function showTyping() {
+    DOM.typingIndicator.classList.add('thm-active');
+    scrollToBottom();
+  }
+
+  function hideTyping() {
+    DOM.typingIndicator.classList.remove('thm-active');
+  }
+
+  // =============== SMART TYPING DELAY ===============
+  function calculateTypingDelay(text) {
+    const charCount = text.length;
+    // Tỉ lệ thuận với độ dài
+    let delay = charCount * CONFIG.typingMsPerChar;
+    // Giới hạn
+    delay = Math.max(CONFIG.typingMinMs, Math.min(delay, CONFIG.typingMaxMs));
+    // Thêm độ ngẫu nhiên ±20%
+    delay = delay * randomFloat(0.8, 1.2);
+    return Math.round(delay);
   }
 
   // =============== MESSAGE RENDERER ===============
@@ -156,17 +367,14 @@
     msgDiv.className = 'thm-message thm-bot';
     msgDiv.dataset.ts = Date.now();
 
-    // Avatar
     const avatar = document.createElement('div');
     avatar.className = 'thm-msg-avatar';
     avatar.textContent = '☁️';
 
-    // Content
     const content = document.createElement('div');
     content.className = 'thm-msg-content';
     content.innerHTML = renderMarkdown(text);
 
-    // Timestamp
     const time = document.createElement('div');
     time.className = 'thm-msg-time';
     time.textContent = formatTime();
@@ -177,14 +385,12 @@
 
     DOM.messages.appendChild(msgDiv);
 
-    // Quick replies
     if (options && options.length > 0) {
       addQuickReplies(options);
     }
 
     scrollToBottom();
 
-    // Log
     State.history.push({ role: 'bot', text: text, ts: Date.now() });
   }
 
@@ -211,8 +417,51 @@
     State.history.push({ role: 'user', text: text, ts: Date.now() });
   }
 
+  // =============== CHUNKED RESPONSES ===============
+  async function sendChunkedResponse(chunks, chunkOptions) {
+    if (!chunks || chunks.length === 0) return;
+
+    // Gửi từng chunk với delay
+    for (let i = 0; i < chunks.length; i++) {
+      const chunk = chunks[i];
+      // Tính delay cho chunk này
+      const delay = calculateTypingDelay(chunk);
+
+      showTyping();
+      await sleep(delay);
+      hideTyping();
+
+      // Có thể có typo ở 1 chunk
+      if (i < chunks.length - 1 && Math.random() < CONFIG.typoChance) {
+        const typoInfo = maybeAddTypo(chunk);
+        if (typoInfo) {
+          // Gửi typo version
+          addBotMessage(typoInfo.typoText);
+          // Delay rồi gửi sửa
+          await sleep(randomInt(2000, 3500));
+          const fixMsg = createTypoFixMessage(typoInfo);
+          if (fixMsg) {
+            showTyping();
+            await sleep(randomInt(1500, 2500));
+            hideTyping();
+            addBotMessage(fixMsg);
+          }
+          continue;
+        }
+      }
+
+      // Gửi chunk bình thường
+      // Chunk cuối cùng thì kèm options
+      if (i === chunks.length - 1) {
+        addBotMessage(chunk, chunkOptions || null);
+      } else {
+        addBotMessage(chunk);
+      }
+    }
+  }
+
+  // =============== QUICK REPLIES ===============
   function addQuickReplies(options) {
-    // Remove old quick replies
     const oldReplies = DOM.messages.querySelector('.thm-quick-replies');
     if (oldReplies) oldReplies.remove();
 
@@ -227,6 +476,7 @@
       btn.textContent = opt.text;
       btn.dataset.next = opt.next;
       btn.addEventListener('click', function () {
+        if (State.isProcessing) return;
         handleQuickReply(this.dataset.next, opt.text);
       });
       container.appendChild(btn);
@@ -243,42 +493,107 @@
     });
   }
 
-  // =============== TYPING INDICATOR ===============
-  function showTyping() {
-    DOM.typingIndicator.classList.add('thm-active');
-    scrollToBottom();
+  // =============== PROCESS USER INFO ===============
+  function processUserMessage(text) {
+    // Detect tên
+    const name = detectName(text);
+    if (name && !State.user.name) {
+      State.user.name = name;
+    }
+    // Detect location
+    const location = detectLocation(text);
+    if (location) {
+      State.user.location = location;
+      State.user.lastMentionedLocation = location;
+    }
+    // Detect gender từ xưng hô
+    if (State.user.gender === 'unknown') {
+      State.user.gender = detectGender(text);
+    }
+    // Detect cảm xúc
+    const emotion = detectEmotion(text);
+    if (emotion) {
+      State.lastDetectedEmotion = emotion;
+    }
+
+    State.lastUserMessage = text;
+    State.userMessageCount++;
   }
 
-  function hideTyping() {
-    DOM.typingIndicator.classList.remove('thm-active');
+  // =============== GET GREETING TERM ===============
+  function getGreetingTerm() {
+    if (State.user.gender === 'male') return 'anh';
+    if (State.user.gender === 'female') return 'chị';
+    return 'anh/chị';
   }
 
-  // =============== DELAYED REPLY ===============
-  function delayedReply(text, options, callback) {
-    const delay = randomDelay(CONFIG.typingMin, CONFIG.typingMax);
-    showTyping();
+  function personalizeBotMessage(text) {
+    let result = text;
+    // Replace [name] if user gave name
+    if (State.user.name) {
+      result = result.replace('[name]', State.user.name);
+      result = result.replace('anh/chị', 'anh ' + State.user.name);
+    }
+    // Replace [location]
+    if (State.user.lastMentionedLocation) {
+      result = result.replace('[location]', State.user.lastMentionedLocation);
+    }
+    return result;
+  }
 
-    setTimeout(() => {
-      hideTyping();
-      addBotMessage(text, options);
-      if (callback) callback();
-    }, delay);
+  // =============== EMPATHETIC RESPONSE ===============
+  function getEmpatheticResponse(emotion) {
+    if (!Script || !Script.empatheticResponses) return null;
+    const responses = Script.empatheticResponses[emotion];
+    if (!responses || responses.length === 0) return null;
+    return pickRandom(responses);
+  }
+
+  // =============== TRY STORYTELLING ===============
+  function getStoryForNode(nodeId) {
+    if (!Script || !Script.storyBank) return null;
+    const stories = Script.storyBank[nodeId];
+    if (!stories || stories.length === 0) return null;
+    // 30% chance kể chuyện
+    if (Math.random() < 0.3) {
+      return pickRandom(stories).story;
+    }
+    return null;
+  }
+
+  // =============== PRE-SUASION / SCARCITY ===============
+  function maybeAddPresuasion() {
+    if (!Script || !Script.presuasionTemplates) return null;
+    // 15% chance
+    if (Math.random() < 0.15) {
+      return pickRandom(Script.presuasionTemplates);
+    }
+    return null;
+  }
+
+  function maybeAddScarcity() {
+    if (!Script || !Script.scarcityLines) return null;
+    // 10% chance
+    if (Math.random() < 0.10) {
+      return pickRandom(Script.scarcityLines);
+    }
+    return null;
   }
 
   // =============== NODE PROCESSOR ===============
-  function processNode(nodeId) {
+  async function processNode(nodeId) {
     if (State.isProcessing) return;
     State.isProcessing = true;
 
     const node = getNode(nodeId);
     if (!node) {
-      // Fallback
       const fallback = Script ? Script.fallback : null;
       if (fallback) {
-        processNode('fallback');
-      } else {
-        addBotMessage('☁️ Có lỗi xảy ra, anh/chị vui lòng thử lại sau ạ!');
+        State.isProcessing = false;
+        await processNode('fallback');
+        return;
       }
+      addBotMessage('☁️ Có lỗi xảy ra, anh/chị vui lòng thử lại sau ạ!');
       State.isProcessing = false;
       return;
     }
@@ -286,47 +601,177 @@
     State.currentNode = node.id;
 
     switch (node.type) {
-      case 'question':
-        delayedReply(node.question, node.options, () => {
-          State.isProcessing = false;
-        });
-        break;
+      case 'question': {
+        const text = getVariantText(node, 'question');
+        const personalized = personalizeBotMessage(text);
+        const delay = calculateTypingDelay(personalized);
 
-      case 'answer':
-        delayedReply(node.answer, node.nextOptions, () => {
-          State.isProcessing = false;
-        });
-        break;
+        // Check emotion trước
+        if (State.lastDetectedEmotion) {
+          const empResponse = getEmpatheticResponse(State.lastDetectedEmotion);
+          if (empResponse) {
+            await sendWithDelay(empResponse);
+            State.lastDetectedEmotion = ''; // reset sau khi đã cảm thông
+          }
+        }
 
-      case 'input':
-        // Show question without options (user must type)
-        delayedReply(node.question, null, () => {
-          State.isProcessing = false;
-          State.waitingForInput = nodeId;
-        });
-        break;
+        // Có thể thêm story hoặc presuasion
+        const story = getStoryForNode(nodeId);
+        if (story) {
+          await sendWithDelay(story);
+        }
 
-      case 'info':
-        addBotMessage(node.message, node.nextOptions);
+        showTyping();
+        await sleep(delay);
+        hideTyping();
+
+        // Cơ chế typo cho câu hỏi
+        const typoInfo = maybeAddTypo(personalized);
+        if (typoInfo) {
+          addBotMessage(typoInfo.typoText);
+          await sleep(randomInt(2000, 3500));
+          const fix = createTypoFixMessage(typoInfo);
+          showTyping();
+          await sleep(randomInt(1200, 2000));
+          hideTyping();
+          addBotMessage(fix);
+          // Gửi lại câu hỏi đúng chính tả
+          addBotMessage('Để em hỏi lại nha ' + personalized, node.options);
+        } else {
+          addBotMessage(personalized, node.options);
+        }
+
         State.isProcessing = false;
         break;
+      }
 
-      default:
-        addBotMessage(node.answer || node.question, node.nextOptions || node.options);
+      case 'answer': {
+        const text = getVariantText(node, 'answer');
+        const personalized = personalizeBotMessage(text);
+        const chunks = getChunks(node);
+
+        // Check emotion trước
+        if (State.lastDetectedEmotion) {
+          const empResponse = getEmpatheticResponse(State.lastDetectedEmotion);
+          if (empResponse) {
+            await sendWithDelay(empResponse);
+          }
+        }
+
+        // Có thể thêm presuasion
+        const presuasion = maybeAddPresuasion();
+        const scarcity = maybeAddScarcity();
+
+        if (chunks && chunks.length > 0) {
+          // Gửi theo chunk
+          let processedChunks = chunks.map(c => personalizeBotMessage(c));
+          // Thêm presuasion và scarcity vào chunks nếu có
+          if (presuasion) {
+            processedChunks.push(presuasion);
+          }
+          if (scarcity) {
+            processedChunks.push(scarcity);
+          }
+          await sendChunkedResponse(processedChunks, node.chunkOptions || node.nextOptions);
+        } else {
+          // Gửi 1 block
+          let finalText = personalized;
+          if (presuasion) {
+            await sendWithDelay(presuasion);
+          }
+          if (scarcity) {
+            await sendWithDelay(scarcity);
+          }
+
+          const delay = calculateTypingDelay(finalText);
+
+          // Typo cho answer
+          const typoInfo = maybeAddTypo(finalText);
+          if (typoInfo) {
+            showTyping();
+            await sleep(delay);
+            hideTyping();
+            addBotMessage(typoInfo.typoText);
+            await sleep(randomInt(2000, 3500));
+            const fix = createTypoFixMessage(typoInfo);
+            showTyping();
+            await sleep(randomInt(1200, 2000));
+            hideTyping();
+            addBotMessage(fix);
+          }
+
+          // Send main answer
+          showTyping();
+          await sleep(calculateTypingDelay(finalText));
+          hideTyping();
+          addBotMessage(finalText, node.nextOptions);
+        }
+
         State.isProcessing = false;
+        break;
+      }
+
+      case 'input': {
+        const text = getVariantText(node, 'question');
+        const personalized = personalizeBotMessage(text);
+        const delay = calculateTypingDelay(personalized);
+
+        showTyping();
+        await sleep(delay);
+        hideTyping();
+
+        addBotMessage(personalized, null);
+        State.waitingForInput = nodeId;
+        State.isProcessing = false;
+        break;
+      }
+
+      case 'info': {
+        const text = getVariantText(node, 'message') || node.message;
+        const personalized = personalizeBotMessage(text);
+        const delay = calculateTypingDelay(personalized);
+
+        showTyping();
+        await sleep(delay);
+        hideTyping();
+
+        addBotMessage(personalized, node.nextOptions);
+        State.isProcessing = false;
+        break;
+      }
+
+      default: {
+        addBotMessage(
+          personalizeBotMessage(node.answer || node.question),
+          node.nextOptions || node.options
+        );
+        State.isProcessing = false;
+      }
     }
   }
 
-  // =============== QUICK REPLY / USER INPUT HANDLER ===============
-  function handleQuickReply(nextNodeId, buttonText) {
+  // =============== ONE-OFF DELAYED SEND ===============
+  async function sendWithDelay(text) {
+    const delay = calculateTypingDelay(text);
+    showTyping();
+    await sleep(delay);
+    hideTyping();
+    addBotMessage(text);
+    // Delay ngắn trước khi gửi tiếp
+    await sleep(randomInt(800, 1500));
+  }
+
+  // =============== QUICK REPLY HANDLER ===============
+  async function handleQuickReply(nextNodeId, buttonText) {
     if (State.isProcessing) return;
 
-    // Add user's button click as a message
+    // Log user action
     addUserMessage(buttonText);
+    processUserMessage(buttonText);
 
     State.waitingForInput = null;
 
-    // Check special nodes
+    // Special nodes
     if (nextNodeId === 'call') {
       handleCallAction();
       return;
@@ -336,39 +781,127 @@
       return;
     }
 
-    processNode(nextNodeId);
+    // Có thể thêm location echo nếu user vừa nói địa danh
+    if (State.user.lastMentionedLocation && Math.random() < 0.3) {
+      const echoTemplates = Script && Script.scriptTemplates && Script.scriptTemplates.locationEcho
+        ? Script.scriptTemplates.locationEcho
+        : null;
+      if (echoTemplates) {
+        const echoText = pickRandom(echoTemplates).replace('[location]', State.user.lastMentionedLocation);
+        await sendWithDelay(echoText);
+        await sleep(randomInt(800, 1500));
+      }
+    }
+
+    await processNode(nextNodeId);
   }
 
-  function handleTextInput(text) {
+  // =============== TEXT INPUT HANDLER ===============
+  async function handleTextInput(text) {
     if (!text.trim() || State.isProcessing) return;
+
+    addUserMessage(text);
+    processUserMessage(text);
+
     if (State.waitingForInput) {
-      // User is providing info (e.g., area size, phone number)
-      addUserMessage(text);
-      const waitingNode = State.waitingForInput;
+      const waitingNodeId = State.waitingForInput;
       State.waitingForInput = null;
-      // After input, go back to appropriate next
-      // Use the node's nextOptions or go to root
-      const node = getNode(waitingNode);
+
+      const node = getNode(waitingNodeId);
       if (node && node.nextOptions) {
-        // Check keyword matching for smart routing
-        const matchedOption = matchKeyword(text, node.nextOptions);
-        if (matchedOption) {
-          delayedReply('Cảm ơn anh/chị! Mây đã ghi nhận thông tin. Em sẽ chuyển đến bước tiếp theo ạ ☁️', node.nextOptions, () => {
-            if (matchedOption.next) processNode(matchedOption.next);
-          });
-        } else {
-          // Show next options after input
-          addBotMessage('Cảm ơn anh/chị! Em đã nhận được thông tin. Anh/chị muốn làm gì tiếp theo ạ?', node.nextOptions);
-          State.isProcessing = false;
-        }
+        // Cảm ơn và chuyển hướng
+        const thankYou = [
+          'Cảm ơn anh/chị! Em đã ghi nhận nha ☁️',
+          'Dạ em nhận được thông tin rồi ạ!',
+          'Okee, em có thông tin của mình rồi nha ☁️'
+        ];
+        const thanks = pickRandom(thankYou);
+
+        const delay = calculateTypingDelay(thanks);
+        showTyping();
+        await sleep(delay);
+        hideTyping();
+        addBotMessage(thanks, node.nextOptions);
       } else {
-        addBotMessage('Cảm ơn anh/chị! Mây sẽ hỗ trợ ngay  ☁️', [{ text: '🏠 Về menu chính', next: 'root' }]);
+        const msg = 'Cảm ơn anh/chị! Mây sẽ hỗ trợ ngay ☁️';
+        showTyping();
+        await sleep(calculateTypingDelay(msg));
+        hideTyping();
+        addBotMessage(msg, [{ text: '🏠 Về menu chính', next: 'root' }]);
+      }
+      State.isProcessing = false;
+      return;
+    }
+
+    // Normal text routing — try keyword matching
+    await routeTextInput(text);
+  }
+
+  async function routeTextInput(text) {
+    // Xử lý cảm xúc trước
+    if (State.lastDetectedEmotion) {
+      const emp = getEmpatheticResponse(State.lastDetectedEmotion);
+      if (emp) {
+        await sendWithDelay(emp);
+      }
+    }
+
+    // Location echo
+    if (State.user.lastMentionedLocation && State.userMessageCount <= 2 && Math.random() < 0.4) {
+      const echoTemplates = Script && Script.scriptTemplates && Script.scriptTemplates.locationEcho
+        ? Script.scriptTemplates.locationEcho
+        : null;
+      if (echoTemplates) {
+        const echoText = pickRandom(echoTemplates).replace('[location]', State.user.lastMentionedLocation);
+        await sendWithDelay(echoText);
+        await sleep(randomInt(800, 1200));
+      }
+    }
+
+    // Name acknowledgment
+    if (State.user.name && State.userMessageCount <= 2 && Math.random() < 0.3) {
+      const nameTemplates = Script && Script.scriptTemplates && Script.scriptTemplates.nameAcknowledge
+        ? Script.scriptTemplates.nameAcknowledge
+        : null;
+      if (nameTemplates) {
+        const nameText = pickRandom(nameTemplates).replace('[name]', State.user.name);
+        await sendWithDelay(nameText);
+        await sleep(randomInt(800, 1200));
+      }
+    }
+
+    // Try keyword matching từ root
+    const rootNode = getNode('root');
+    if (!rootNode || !rootNode.options) {
+      await sendWithDelay('☁️ Dạ em chưa hiểu lắm, anh/chị gọi em qua **0378.679.633** để được hỗ trợ nhanh hơn ạ!');
+      State.isProcessing = false;
+      return;
+    }
+
+    const matched = matchKeyword(text, rootNode.options);
+    if (matched && matched.next) {
+      // Cũng thử matching với các sub-menu
+      // Có thể thím là user nói trực tiếp tên sản phẩm
+      await processNode(matched.next);
+    } else {
+      // Deep search trong tất cả options con
+      const deepMatch = deepKeywordSearch(text, Script.nodes);
+      if (deepMatch) {
+        await processNode(deepMatch);
+      } else {
+        // Fallback
+        const fallbackNode = getNode('fallback');
+        if (fallbackNode) {
+          const fbText = getVariantText(fallbackNode, 'answer') || fallbackNode.answer;
+          showTyping();
+          await sleep(calculateTypingDelay(fbText));
+          hideTyping();
+          addBotMessage(fbText, fallbackNode.nextOptions);
+        } else {
+          showDefaultFallback();
+        }
         State.isProcessing = false;
       }
-    } else {
-      // Normal text — try keyword matching from root
-      addUserMessage(text);
-      tryRouteKeyword(text);
     }
   }
 
@@ -386,7 +919,6 @@
       }
     }
 
-    // Check if text matches option text partially
     for (const opt of options) {
       if (opt.text && lower.includes(opt.text.toLowerCase().substring(0, 10))) {
         return opt;
@@ -396,27 +928,26 @@
     return null;
   }
 
-  function tryRouteKeyword(text) {
-    const rootNode = getNode('root');
-    if (!rootNode || !rootNode.options) {
-      showDefaultFallback();
-      return;
-    }
+  function deepKeywordSearch(text, nodes) {
+    if (!nodes) return null;
+    const lower = text.toLowerCase();
 
-    const matched = matchKeyword(text, rootNode.options);
-    if (matched && matched.next) {
-      processNode(matched.next);
-    } else {
-      // Try fallback
-      const fallback = getNode('fallback');
-      if (fallback) {
-        delayedReply(fallback.answer, fallback.nextOptions, () => {
-          State.isProcessing = false;
-        });
-      } else {
-        showDefaultFallback();
+    // Duyệt tất cả node, tìm kiếm keywords
+    for (const [id, node] of Object.entries(nodes)) {
+      if (id === 'fallback' || id === 'root') continue;
+      if (node.options) {
+        for (const opt of node.options) {
+          if (opt.keywords) {
+            for (const kw of opt.keywords) {
+              if (lower.includes(kw.toLowerCase())) {
+                return opt.next;
+              }
+            }
+          }
+        }
       }
     }
+    return null;
   }
 
   function showDefaultFallback() {
@@ -455,22 +986,53 @@
     State.isProcessing = false;
   }
 
+  // =============== DISCLAIMER ===============
+  function showDisclaimer() {
+    if (State.disclaimerShown) return;
+    State.disclaimerShown = true;
+
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'thm-message thm-bot thm-disclaimer';
+
+    const avatar = document.createElement('div');
+    avatar.className = 'thm-msg-avatar';
+    avatar.textContent = 'ℹ️';
+
+    const content = document.createElement('div');
+    content.className = 'thm-msg-content';
+    content.innerHTML = '<p style="font-size:12px; opacity:0.8;">☁️ Mây là trợ lý ảo của Trần Hữu Minh — em sẽ tư vấn nhiệt tình cho anh/chị ạ!</p>';
+
+    const time = document.createElement('div');
+    time.className = 'thm-msg-time';
+    time.textContent = formatTime();
+
+    content.appendChild(time);
+    msgDiv.appendChild(avatar);
+    msgDiv.appendChild(content);
+
+    DOM.messages.appendChild(msgDiv);
+  }
+
   // =============== WELCOME FLOW ===============
-  function startChat() {
-    // Clear messages
+  async function startChat() {
     DOM.messages.innerHTML = '';
+
+    // Show disclaimer trước
+    showDisclaimer();
 
     // Welcome message
     const welcomeTexts = Script && Script.scriptTemplates && Script.scriptTemplates.welcome
       ? Script.scriptTemplates.welcome
       : ['☁️ Chào anh/chị! Em là Mây — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?'];
 
-    const welcome = welcomeTexts[Math.floor(Math.random() * welcomeTexts.length)];
+    // Chọn welcome ngẫu nhiên
+    const welcome = pickRandom(welcomeTexts);
 
-    // Start with the root node
-    setTimeout(() => {
-      processNode('root');
-    }, CONFIG.welcomeDelay);
+    // Delay nhẹ rồi bắt đầu
+    await sleep(CONFIG.welcomeDelay);
+
+    // Bắt đầu bằng cách "echo" nhẹ
+    await processNode('root');
   }
 
   // =============== TOGGLE WIDGET ===============
@@ -495,17 +1057,13 @@
 
   // =============== BUILD DOM ===============
   function buildWidget() {
-    // Check if widget already exists
-    if (document.querySelector('.thm-chat-widget')) {
-      return;
-    }
+    if (document.querySelector('.thm-chat-widget')) return;
 
-    // Create overlay container
     const container = document.createElement('div');
     container.className = 'thm-chat-widget';
     container.id = 'thmChatWidget';
 
-    // === Header ===
+    // Header
     const header = document.createElement('div');
     header.className = 'thm-chat-header';
     header.innerHTML = `
@@ -514,17 +1072,17 @@
         <div class="thm-header-name">${CONFIG.agentName} - ${CONFIG.storeName}</div>
         <div class="thm-header-status">
           <span class="thm-status-dot"></span>
-          Online
+          Online • Thường trả lời trong 1 phút
         </div>
       </div>
       <button class="thm-header-close" aria-label="Đóng chat">✕</button>
     `;
 
-    // === Messages ===
+    // Messages
     const messages = document.createElement('div');
     messages.className = 'thm-chat-messages';
 
-    // Typing indicator
+    // Typing indicator (cải tiến — 3 dấu chấm nhấp nháy)
     const typing = document.createElement('div');
     typing.className = 'thm-typing-indicator';
     typing.innerHTML = `
@@ -536,7 +1094,7 @@
 
     messages.appendChild(typing);
 
-    // === Action Bar ===
+    // Action Bar
     const actionBar = document.createElement('div');
     actionBar.className = 'thm-action-bar';
     actionBar.innerHTML = `
@@ -550,7 +1108,7 @@
       </a>
     `;
 
-    // === Input ===
+    // Input
     const inputArea = document.createElement('div');
     inputArea.className = 'thm-chat-input';
     inputArea.innerHTML = `
@@ -560,7 +1118,6 @@
       </button>
     `;
 
-    // === Assemble ===
     container.appendChild(header);
     container.appendChild(messages);
     container.appendChild(actionBar);
@@ -568,10 +1125,10 @@
 
     document.body.appendChild(container);
 
-    // === Launcher ===
+    // Launcher
     const launcher = document.createElement('button');
     launcher.className = 'thm-chat-launcher';
-    launcher.setAttribute('aria-label', 'Mở chat');
+    launcher.setAttribute('aria-label', 'Mở chat với Mây');
     launcher.innerHTML = `
       <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
       <span class="thm-launcher-badge" style="display:none;">1</span>
@@ -579,7 +1136,7 @@
 
     document.body.appendChild(launcher);
 
-    // === Store refs ===
+    // Store refs
     DOM.widget = container;
     DOM.header = header;
     DOM.messages = messages;
@@ -595,23 +1152,19 @@
 
   // =============== EVENT BINDING ===============
   function bindEvents() {
-    // Launcher click
     DOM.launcher.addEventListener('click', function () {
       toggleWidget(true);
     });
 
-    // Close button
     DOM.closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       toggleWidget(false);
     });
 
-    // Send button
     DOM.sendBtn.addEventListener('click', function () {
       sendMessage();
     });
 
-    // Enter key
     DOM.input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
@@ -619,18 +1172,6 @@
       }
     });
 
-    // Header click to close (optional)
-    DOM.header.addEventListener('click', function (e) {
-      if (e.target.closest('.thm-header-close')) return;
-      if (e.target.closest('.thm-avatar') || e.target.closest('.thm-header-info')) return;
-    });
-
-    // Auto-resize input on mobile
-    DOM.input.addEventListener('input', function () {
-      // nothing needed for now
-    });
-
-    // Click outside to close
     document.addEventListener('click', function (e) {
       if (DOM.widget.classList.contains('thm-open')) {
         const isClickInside = DOM.widget.contains(e.target) || DOM.launcher.contains(e.target);
@@ -639,25 +1180,28 @@
         }
       }
     });
+
+    // Touch events for mobile
+    DOM.input.addEventListener('focus', function () {
+      // Scroll xuống khi bàn phím hiện
+      setTimeout(scrollToBottom, 300);
+    });
   }
 
   function sendMessage() {
     const text = DOM.input.value.trim();
     if (!text) return;
-
     DOM.input.value = '';
     handleTextInput(text);
   }
 
   // =============== INIT ===============
   async function init() {
-    // Build DOM
     buildWidget();
 
-    // Load script
     const loaded = await loadScript();
     if (!loaded) {
-      // Create a minimal fallback tree
+      // Minimal fallback tree
       Script = {
         nodes: {
           root: {
@@ -665,28 +1209,42 @@
             type: 'question',
             question: '☁️ Chào anh/chị! Em là Mây — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?',
             options: [
-              { text: '🛡️ Chống thấm', next: 'ct' },
-              { text: '🎨 Sơn nước', next: 'sn' },
-              { text: '📄 Báo giá', next: 'bg' }
+              { text: '🛡️ Chống thấm', next: 'ct', keywords: ['chống thấm'] },
+              { text: '🎨 Sơn nước', next: 'sn', keywords: ['sơn nước'] },
+              { text: '📄 Báo giá', next: 'bg', keywords: ['báo giá'] }
             ]
           },
-          ct: { id: 'ct', type: 'answer', answer: 'Bên em có Munich G20, Sika, Kova CT. Anh/ chị chống thấm cho khu vực nào?', nextOptions: [{ text: '🏠 Về menu', next: 'root' }] },
-          sn: { id: 'sn', type: 'answer', answer: 'Sơn nước có Munich, Dulux, Jotun — nội thất & ngoại thất. Anh/chị cần dòng nào?', nextOptions: [{ text: '🏠 Về menu', next: 'root' }] },
-          bg: { id: 'bg', type: 'answer', answer: 'Gọi 0378.679.633 hoặc để lại SĐT em báo giá.', nextOptions: [{ text: '🏠 Về menu', next: 'root' }] }
+          ct: {
+            id: 'ct', type: 'answer',
+            answer: 'Bên em có Munich G20, Sika, Kova CT. Anh/chị chống thấm cho khu vực nào?',
+            nextOptions: [{ text: '🏠 Về menu', next: 'root' }]
+          },
+          sn: {
+            id: 'sn', type: 'answer',
+            answer: 'Sơn nước có Munich, Dulux, Jotun — nội thất & ngoại thất. Anh/chị cần dòng nào?',
+            nextOptions: [{ text: '🏠 Về menu', next: 'root' }]
+          },
+          bg: {
+            id: 'bg', type: 'answer',
+            answer: 'Gọi 0378.679.633 hoặc để lại SĐT em báo giá.',
+            nextOptions: [{ text: '🏠 Về menu', next: 'root' }]
+          }
         },
-        fallback: { id: 'fallback', type: 'answer', answer: 'Mây chưa hiểu, anh/chị chọn giúp em nhé!', nextOptions: [{ text: '🏠 Về menu', next: 'root' }] }
+        fallback: {
+          id: 'fallback', type: 'answer',
+          answer: 'Mây chưa hiểu, anh/chị chọn giúp em nhé!',
+          nextOptions: [{ text: '🏠 Về menu', next: 'root' }]
+        }
       };
     }
 
-    // Bind events
     bindEvents();
 
-    // Auto-show launcher after delay
     setTimeout(() => {
       DOM.launcher.style.display = 'flex';
     }, CONFIG.launcherDelay);
 
-    console.log('[Mây] Chatbot ready ☁️');
+    console.log('[Mây v2] Chatbot "người thật" ready ☁️');
   }
 
   // =============== AUTO INIT ===============
@@ -719,10 +1277,18 @@
       State.currentNode = 'root';
       State.history = [];
       State.isProcessing = false;
+      State.user = { name: '', phone: '', address: '', location: '', gender: 'unknown', ageGroup: 'unknown' };
       DOM.messages.innerHTML = '';
       DOM.messages.appendChild(DOM.typingIndicator);
+      State.disclaimerShown = false;
       startChat();
-    }
+    },
+    setUser: function (info) {
+      if (info.name) State.user.name = info.name;
+      if (info.phone) State.user.phone = info.phone;
+      if (info.location) State.user.location = info.location;
+    },
+    version: '2.0.0-human-like'
   };
 
 })();

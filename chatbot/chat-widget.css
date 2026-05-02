@@ -1,5 +1,6 @@
 /* ==========================================================
    CHAT WIDGET VLXD TRẦN HỮU MINH — CSS
+   Version 2.0 — Human-like Chat
    Trợ lý ảo: Mây ☁️
    ========================================================== */
 
@@ -24,6 +25,8 @@
   --thm-bubble-user-text: #ffffff;
   --thm-width: 380px;
   --thm-height: 600px;
+  --thm-disclaimer-bg: #fff8e1;
+  --thm-typo-correction: #f5f5f5;
 }
 
 /* --- Reset --- */
@@ -48,7 +51,7 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(26, 115, 232, 0.4);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -58,6 +61,10 @@
 .thm-chat-launcher:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 24px rgba(26, 115, 232, 0.5);
+}
+
+.thm-chat-launcher:active {
+  transform: scale(0.95);
 }
 
 .thm-chat-launcher svg {
@@ -289,7 +296,31 @@
   border-bottom-right-radius: 4px;
 }
 
-/* Markdown in bot messages */
+/* --- Disclaimer Message (special styling on first load) --- */
+.thm-message.thm-disclaimer .thm-msg-content {
+  background: var(--thm-disclaimer-bg);
+  border: 1px solid #ffe082;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  opacity: 0.9;
+}
+
+.thm-message.thm-disclaimer .thm-msg-avatar {
+  background: #ffa000;
+  font-size: 12px;
+}
+
+/* --- Typo correction styling --- */
+.thm-message.thm-typo-fix .thm-msg-content {
+  background: var(--thm-typo-correction);
+  border-left: 3px solid var(--thm-primary);
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* --- Markdown in bot messages --- */
 .thm-msg-content p {
   margin-bottom: 6px;
 }
@@ -332,13 +363,23 @@
   text-align: left;
 }
 
+/* --- Connect messages visually --- */
+/* Bot messages trong cùng một chunk — không có khoảng cách lớn */
+.thm-message.thm-bot + .thm-message.thm-bot {
+  margin-top: -2px;
+}
+
+.thm-message.thm-bot + .thm-message.thm-bot .thm-msg-avatar {
+  visibility: hidden; /* Ẩn avatar cho các tin nhắn bot liên tiếp */
+}
+
 /* --- Quick Replies --- */
 .thm-quick-replies {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   padding: 8px 0;
-  animation: thm-fadeIn 0.3s ease;
+  animation: thm-fadeIn 0.35s ease;
 }
 
 .thm-quick-reply-btn {
@@ -368,7 +409,7 @@
   transform: translateY(0);
 }
 
-/* --- Typing Indicator --- */
+/* --- Typing Indicator — 3 dấu chấm nhấp nháy --- */
 .thm-typing-indicator {
   display: none;
   align-items: center;
@@ -381,31 +422,56 @@
   display: flex;
 }
 
+.thm-typing-indicator .thm-msg-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--thm-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .thm-typing-dots {
   display: flex;
-  gap: 4px;
-  padding: 10px 16px;
+  gap: 5px;
+  padding: 12px 18px;
   background: var(--thm-bubble-bot);
   border-radius: 18px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.07);
   border-bottom-left-radius: 4px;
+  align-items: center;
 }
 
 .thm-typing-dots span {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background: #b0b3b8;
-  animation: thm-bounce 1.4s infinite ease-in-out;
+  animation: thm-typewriter 1.4s infinite ease-in-out;
+  display: inline-block;
 }
 
 .thm-typing-dots span:nth-child(1) { animation-delay: 0s; }
 .thm-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
 .thm-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes thm-bounce {
-  0%, 80%, 100% { transform: scale(0.6); background: #b0b3b8; }
-  40% { transform: scale(1); background: var(--thm-primary); }
+/* Cải tiến: nhấp nháy mềm mại hơn */
+@keyframes thm-typewriter {
+  0%, 60%, 100% {
+    transform: translateY(0) scale(0.7);
+    background: #b0b3b8;
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-4px) scale(1);
+    background: var(--thm-primary);
+    opacity: 1;
+  }
 }
 
 /* --- Input Area --- */
@@ -426,13 +492,14 @@
   padding: 10px 16px;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   background: var(--thm-bg);
 }
 
 .thm-chat-input input:focus {
   border-color: var(--thm-primary);
   background: #fff;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
 }
 
 .thm-chat-input input::placeholder {
@@ -540,5 +607,23 @@
     right: 16px;
     width: 56px;
     height: 56px;
+  }
+
+  .thm-msg-content {
+    max-width: 85%;
+    font-size: 15px;
+  }
+
+  .thm-quick-reply-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+}
+
+/* --- Tablet --- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .thm-chat-widget {
+    width: 360px;
+    height: 520px;
   }
 }
