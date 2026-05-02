@@ -42,6 +42,10 @@ const PROD_IMAGES = [
   'sika_sikalastic1k',
   'sika_sikalatex',
   'sika_top107',
+  // New product images added May 2026
+  'nippon_matex',
+  'nippon_weathergard',
+  'nippon_supertech',
 ];
 
 // Assign images to brands (OCR-identified)
@@ -53,7 +57,7 @@ function getBrandImages(brandId) {
     dulux:   [11],                           // Dulux let's colour
     jotun:   [12, 25, 26, 27, 28],            // JOTUN + ảnh từ jotunpaint.vn
     kova:    [3,8, 29,30],                   // Sơn & Chống thấm + kova CT11A, K871
-    nippon:  [8,10, 31],                     // Sơn + Nippon Weatherbond
+    nippon:  [8,10, 31, 37, 38, 39],          // Sơn + Nippon Weatherbond, Matex, Weathergard, SuperTech
   };
   return (map[brandId] || []).map(i => PROD_IMAGES[i]);
 }
