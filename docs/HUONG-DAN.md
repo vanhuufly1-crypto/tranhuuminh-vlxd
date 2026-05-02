@@ -22,8 +22,28 @@
 - [x] Dự án + Tin tức
 - [x] Form báo giá + PDF tải về
 
+## 📂 Catalogue & Bảng giá
+Tất cả catalogue và bảng giá của các hãng:
+- 📁 /home/huu-minh/.openclaw/workspace/tranhuuminh-vlxd/docs/catalogue/
+
+### Danh sách sản phẩm
+| Hãng | Số SP | Trạng thái giá |
+|------|:-----:|:---:|
+| Munich | 40+ | ✅ Có giá niêm yết |
+| Nano House | 7 | 🟡 Liên hệ |
+| Sika | 5 | ✅ Có giá tham khảo |
+| Dulux | 8 | ✅ Có giá tham khảo |
+| Jotun | 7 | ✅ Có giá tham khảo |
+| Kova | 21 | ✅ Có giá niêm yết |
+| Nippon | 6 | ✅ Có giá tham khảo |
+
+### File bảng giá đầy đủ
+- `js/products.js` — toàn bộ dữ liệu sản phẩm + giá
+- Web có nút tải PDF ở mục Bảng giá
+
 ## 📌 Cần anh
 - [ ] Link Facebook thật
 - [ ] Link TikTok thật
 - [ ] Ảnh công trình thực tế
 - [ ] Verify Google Search Console
+- [ ] Catalogue gốc từ các hãng (nếu có)
