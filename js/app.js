@@ -46,18 +46,30 @@ const PROD_IMAGES = [
   'nippon_matex',
   'nippon_weathergard',
   'nippon_supertech',
+  // Dulux images from competitor websites
+  'dulux_weathershield',
+  'dulux_inspire',
+  'dulux_5in1',
+  'dulux_ambiance',
+  // Jotun additional images
+  'jotun_jotashield',
+  'jotun_majestic',
+  'jotun_waterguard',
+  // Kova additional images
+  'kova_ct04t',
+  'kova_ct14',
 ];
 
-// Assign images to brands (OCR-identified)
+// Assign images to brands
 function getBrandImages(brandId) {
   const map = {
-    munich:  [0,1,9, 19,20,21,22,23,24],   // G20, G20C, PU S700, Luxury + ảnh Munich từ web
-    nano:    [4],                            // Sơn nội thất
-    sika:    [3,10, 32,33,34,35,36],          // Ảnh cũ + Sika Top107, Sikaflex, SikaGrout, Sikalastic, Sika Latex
-    dulux:   [11],                           // Dulux let's colour
-    jotun:   [12, 25, 26, 27, 28],            // JOTUN + ảnh từ jotunpaint.vn
-    kova:    [3,8, 29,30],                   // Sơn & Chống thấm + kova CT11A, K871
-    nippon:  [8,10, 31, 37, 38, 39],          // Sơn + Nippon Weatherbond, Matex, Weathergard, SuperTech
+    munich:  [0,1,9, 19,20,21,22,23,24],
+    nano:    [4],
+    sika:    [3,10, 32,33,34,35,36],
+    dulux:   [11, 40,41,42,43],           // let's colour + Weathershield, Inspire, 5in1, Ambiance
+    jotun:   [12, 25,26,27,28, 44,45,46], // Jotun + Jotashield, Majestic, Waterguard
+    kova:    [3,8, 29,30, 47,48],         // Kova + CT11A, K871, CT04T, CT14
+    nippon:  [8,10, 31, 37,38,39],        // Nippon + Weatherbond, Matex, Weathergard, SuperTech
   };
   return (map[brandId] || []).map(i => PROD_IMAGES[i]);
 }
