@@ -342,6 +342,28 @@
     </div>
   </section>
 
+  <!-- QUOTE FORM -->
+  <section id="quote" class="section">
+    <h2 class="section-title">📋 Yêu cầu báo giá nhanh</h2>
+    <p class="note">Điền thông tin, chúng tôi sẽ gửi báo giá trong 30 phút!</p>
+    <div class="quote-section">
+      <form id="quoteForm" class="quote-form" action="#" method="POST" onsubmit="alert('Cảm ơn anh/chị! Chúng tôi sẽ liên hệ trong 30 phút.')">
+        <div class="qf-row">
+          <input type="text" name="name" placeholder="Họ tên *" required>
+          <input type="tel" name="phone" placeholder="Số điện thoại *" required>
+        </div>
+        <div class="qf-row">
+          <input type="text" name="product" placeholder="Sản phẩm cần báo giá">
+          <input type="text" name="quantity" placeholder="Số lượng / Diện tích">
+        </div>
+        <div class="qf-row">
+          <textarea name="note" rows="3" placeholder="Ghi chú thêm (địa chỉ công trình, yêu cầu...)" style="width:100%"></textarea>
+        </div>
+        <button type="submit" class="btn" style="width:100%">📩 Gửi yêu cầu báo giá</button>
+      </form>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="section">
     <h2 class="section-title">📞 Liên hệ</h2>
@@ -402,5 +424,8 @@
   </a>
 </div>
 
+<!-- Chatbot Mây - VLXD Trần Hữu Minh -->
+<link rel="stylesheet" href="chatbot/chat-widget.css">
+<script src="chatbot/chat-widget.js"></script>
 </body>
 </html>

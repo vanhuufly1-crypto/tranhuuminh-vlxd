@@ -536,6 +536,17 @@ main { padding:40px 0; }
 .alert-text { font-size:14px; line-height:1.7; }
 .alert-text strong { font-size:16px; }
 
+/* ===== QUOTE FORM ===== */
+.quote-section { max-width:600px; margin:0 auto 40px; }
+.quote-form { background:var(--card-bg); padding:24px; border-radius:var(--radius); border:1px solid var(--border); }
+.qf-row { display:flex; gap:12px; margin-bottom:12px; }
+.qf-row input, .qf-row textarea {
+  flex:1; padding:10px 14px; border:1px solid var(--border); border-radius:6px;
+  font-size:14px; outline:none; transition:.2s;
+}
+.qf-row input:focus, .qf-row textarea:focus { border-color:var(--accent); }
+@media(max-width:500px) { .qf-row { flex-direction:column; } }
+
 /* ===== TAG STYLES ===== */
 .tag {
   display:inline-block; padding:3px 10px; border-radius:4px;
