@@ -236,6 +236,65 @@ function match(p, q) {
 }
 
 // Download price as TXT file
+/* ===== SCROLL-TO-TOP BUTTON ===== */
+(function initScrollTop() {
+  const btn = document.createElement('button');
+  btn.className = 'scroll-top';
+  btn.innerHTML = '↑';
+  btn.setAttribute('aria-label', 'Lên đầu trang');
+  btn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.body.appendChild(btn);
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        btn.classList.toggle('show', window.scrollY > 300);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* ===== FADE-IN ON SCROLL (IntersectionObserver) ===== */
+(function initFadeIn() {
+  // Add fade-in classes to sections and cards dynamically
+  const sectionEls = document.querySelectorAll('.section, .features, .brand-grid, .project-grid, .news-grid, .svc-grid, .contact-grid');
+  sectionEls.forEach(el => {
+    el.classList.add('fade-in');
+    // Also add staggered animation to direct children
+    Array.from(el.children).forEach((child, i) => {
+      if (child.classList.contains('section-title') || child.classList.contains('note') || child.tagName === 'P') return;
+      if (!child.classList.contains('fade-in') && !child.classList.contains('fade-in-left') && !child.classList.contains('fade-in-right') && !child.classList.contains('fade-in-scale')) {
+        child.style.transitionDelay = `${Math.min(i * 0.08, 0.5)}s`;
+        child.classList.add('fade-in');
+      }
+    });
+  });
+
+  // Also add to specific elements
+  document.querySelectorAll('.feat-card, .brand-card, .prod-card, .svc-card, .contact-card, .project-card, .news-card, .gallery-item').forEach(el => {
+    el.classList.add('fade-in');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .fade-in-scale').forEach(el => {
+    observer.observe(el);
+  });
+})();
+
 function downloadPricePDF() {
   const lines = [];
   lines.push('=== BẢNG GIÁ THAM KHẢO - TRẦN HỮU MINH ===');
