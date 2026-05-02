@@ -163,6 +163,16 @@ function closeLightbox() {
 }
 
 function card(p, brand) {
+  const pr = getPrice(brand, p.code);
+  const priceHTML = pr && pr.price !== 'Liên hệ'
+    ? `<div class="prod-price"><span class="price-val">${pr.price}</span> / ${pr.spec}</div>`
+    : `<div class="prod-price"><span class="price-contact">📞 Liên hệ: 0378.679.633</span></div>`;
+  
+  const contactBtns = `<div class="prod-actions">
+    <a href="tel:0378679633" class="pa-btn pa-call" title="Gọi ngay">📞 Gọi</a>
+    <a href="https://zalo.me/0378679633" target="_blank" class="pa-btn pa-zalo" title="Chat Zalo">💬 Zalo</a>
+  </div>`;
+
   return `<div class="prod-card">
     <div class="prod-body">
       <span class="tag tag-${brand}">${p.code}</span>
@@ -170,6 +180,8 @@ function card(p, brand) {
       <div class="code">📦 ${p.spec}</div>
       <div class="desc">${p.desc}</div>
       <div class="meta">📐 Định mức: ${p.dm}</div>
+      ${priceHTML}
+      ${contactBtns}
     </div>
   </div>`;
 }
@@ -221,4 +233,54 @@ function searchProd(q) {
 
 function match(p, q) {
   return p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+}
+
+// Download price as TXT file
+function downloadPricePDF() {
+  const lines = [];
+  lines.push('=== BẢNG GIÁ THAM KHẢO - TRẦN HỮU MINH ===');
+  lines.push('CÔNG TY TNHH XD & TM TRẦN HỮU MINH');
+  lines.push('Điện thoại: 0378.679.633 - Zalo: 0378.679.633');
+  lines.push('Địa chỉ: 1434 Phạm Văn Đồng, Nam Đồ Sơn, Hải Phòng');
+  lines.push('');
+  lines.push('Giá cập nhật tháng 05/2026');
+  lines.push('* Giá có thể thay đổi theo thị trường. Liên hệ để có giá tốt nhất.');
+  lines.push('');
+  lines.push('='.repeat(60));
+  lines.push('');
+  
+  // Group by brand
+  const byBrand = {};
+  PRICES.forEach(p => {
+    if (!byBrand[p.brand]) byBrand[p.brand] = [];
+    byBrand[p.brand].push(p);
+  });
+  
+  Object.keys(byBrand).forEach(brand => {
+    lines.push(`── ${brand.toUpperCase()} ──`);
+    lines.push('');
+    byBrand[brand].forEach(p => {
+      lines.push(`  ${p.product}`);
+      lines.push(`    Quy cách: ${p.spec}`);
+      lines.push(`    Giá: ${p.price}`);
+      lines.push('');
+    });
+    lines.push('');
+  });
+  
+  lines.push('='.repeat(60));
+  lines.push('Liên hệ: 0378.679.633 - Zalo: 0378.679.633');
+  lines.push('Email: vanhuufly@gmail.com');
+  lines.push('Website: https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/');
+  
+  const content = lines.join('\r\n');
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'bang-gia-tran-huu-minh-05-2026.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }

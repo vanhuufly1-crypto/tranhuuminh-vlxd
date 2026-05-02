@@ -136,6 +136,51 @@ const PRODUCTS = {
   ],
 };
 
+// Price map: brand_id -> { code: { price, spec } }
+const PRICE_MAP = {
+  munich: {
+    'G20':   { price:'980.000đ - 1.200.000đ', spec:'Bộ 25-26kg' },
+    'G20S':  { price:'980.000đ', spec:'Bộ 25kg' },
+    'G20C':  { price:'650.000đ', spec:'Bộ 20kg' },
+    'PU S700':   { price:'2.083.000đ', spec:'Thùng 20kg' },
+    'PU S400':   { price:'1.500.000đ', spec:'Thùng 18kg' },
+    'Pu Glass':  { price:'2.500.000đ', spec:'Thùng 20kg' },
+    'CT0':       { price:'408.000đ', spec:'Lon 5kg' },
+    'G10':     { price:'780.000đ', spec:'Thùng 18kg' },
+    'Latex S': { price:'271.000đ', spec:'Can 5L' },
+    'Walling': { price:'667.000đ', spec:'Can 5L' },
+    'Grout G650': { price:'146.000đ', spec:'Bao 25kg' },
+    'Repair G50': { price:'271.000đ', spec:'Bao 25kg' },
+  },
+  sika: {
+    'Sika Top 107': { price:'~810.000đ', spec:'Bao 25kg' },
+    'Sikalastic 1K': { price:'~2.700.000đ', spec:'Thùng 20kg' },
+    'Sika Latex':  { price:'~465.000đ', spec:'Can 5L' },
+    'SikaGrout 214': { price:'~280.000đ', spec:'Bao 25kg' },
+  },
+  kova: {
+    'K871 GOLD': { price:'5.020.000đ', spec:'20kg' },
+    'K5500 GOLD': { price:'3.888.000đ', spec:'20kg' },
+    'K260 GOLD': { price:'1.720.000đ', spec:'20kg' },
+    'K360 GOLD': { price:'6.656.000đ', spec:'20kg' },
+    'CT04T GOLD': { price:'4.755.000đ', spec:'20kg' },
+    'CT-11A GOLD': { price:'4.445.000đ', spec:'20kg' },
+    'CT-14 GOLD': { price:'4.210.000đ', spec:'20kg' },
+    'MTN GOLD': { price:'855.000đ', spec:'25kg' },
+    'CT08 GOLD': { price:'6.760.000đ', spec:'20kg' },
+  },
+  nippon: {
+    'Matex':  { price:'~1.130.000đ', spec:'Thùng 18L' },
+    'Weatherbond': { price:'~1.290.000đ', spec:'Thùng 18L' },
+  },
+};
+
+function getPrice(bid, code) {
+  const pm = PRICE_MAP[bid];
+  if (!pm) return null;
+  return pm[code] || null;
+}
+
 // Count products
 for (const b of BRANDS) {
   const data = PRODUCTS[b.id];
@@ -144,14 +189,6 @@ for (const b of BRANDS) {
 }
 
 const PRICES = [
-  { brand:'Munich', product:'G20 - Màng chống thấm đàn hồi 200%', spec:'Bộ 26kg', price:'Liên hệ' },
-  { brand:'Munich', product:'G20C - Siêu cứng hiệu ứng lá sen', spec:'Bộ 20kg', price:'Liên hệ' },
-  { brand:'Munich', product:'PU S700 - Chống thấm PU đàn hồi 700%', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Munich', product:'AC02 - Chống thấm Acrylic', spec:'Thùng 18kg', price:'Liên hệ' },
-  { brand:'Munich', product:'Latex S - Phụ gia kết nối', spec:'Can 5kg', price:'Liên hệ' },
-  { brand:'Munich', product:'Luxury - Sơn siêu bóng nội thất', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Munich', product:'UV20 - Sơn chống nóng', spec:'Thùng 18L', price:'Liên hệ' },
-  { brand:'Nano House', product:'Nano Interior - Sơn nội thất', spec:'Thùng 18L', price:'Liên hệ' },
   // --- MUNICH ---
   { brand:'Munich', product:'G20 - Màng chống thấm đàn hồi 200%', spec:'Bộ 25kg', price:'980.000đ' },
   { brand:'Munich', product:'G20 - Màng chống thấm đàn hồi 200%', spec:'Lon 5kg', price:'270.000đ' },
@@ -163,7 +200,6 @@ const PRICES = [
   { brand:'Munich', product:'CT0 - Chống thấm pha xi măng', spec:'Lon 5kg', price:'408.000đ' },
   { brand:'Munich', product:'G10 - Chống thấm gốc Bitum', spec:'Thùng 18kg', price:'780.000đ' },
   { brand:'Munich', product:'PU Glass - Chống thấm PU trong suốt', spec:'Thùng 20kg', price:'2.500.000đ' },
-  { brand:'Munich', product:'PU Glass - Chống thấm PU trong suốt', spec:'Lon 4kg', price:'658.000đ' },
   { brand:'Munich', product:'Latex S - Phụ gia kết nối', spec:'Can 5L', price:'271.000đ' },
   { brand:'Munich', product:'Walling - Chống thấm tinh thể', spec:'Can 5L', price:'667.000đ' },
   { brand:'Munich', product:'Grout G650 - Vữa rót không co ngót', spec:'Bao 25kg', price:'146.000đ' },
@@ -178,20 +214,17 @@ const PRICES = [
   { brand:'Kova', product:'CT-14 GOLD - Chống thấm giãn', spec:'20kg', price:'4.210.000đ' },
   { brand:'Kova', product:'MTN GOLD - Matit ngoại thất', spec:'25kg', price:'855.000đ' },
   { brand:'Kova', product:'CT08 GOLD - Sơn sân tennis', spec:'20kg', price:'6.760.000đ' },
-  // --- DULUX (giá tham khảo thị trường 2025) ---
+  // --- DULUX (giá tham khảo thị trường) ---
   { brand:'Dulux', product:'Weathershield Colour Protect - Ngoại thất', spec:'15L', price:'~3.280.000đ' },
-  { brand:'Dulux', product:'Weathershield Colour Protect - Ngoại thất', spec:'5L', price:'~1.150.000đ' },
   { brand:'Dulux', product:'Inspire - Sơn nội thất', spec:'18L', price:'~2.930.000đ' },
-  { brand:'Dulux', product:'Inspire - Sơn ngoại thất', spec:'5L', price:'~810.000đ' },
   { brand:'Dulux', product:'5in1 Ambiance - Nội thất cao cấp', spec:'5L', price:'~1.200.000đ' },
   { brand:'Dulux', product:'A1000 Professional - Nội thất', spec:'18L', price:'~2.110.000đ' },
   { brand:'Dulux', product:'Aquatech - Chống thấm', spec:'6kg', price:'~710.000đ' },
   { brand:'Dulux', product:'Bột trét tường', spec:'40kg', price:'~397.000đ' },
-  // --- NIPPON (giá tham khảo thị trường 2025) ---
+  // --- NIPPON (giá tham khảo thị trường) ---
   { brand:'Nippon', product:'Matex - Sơn nội thất', spec:'18L', price:'~1.130.000đ' },
   { brand:'Nippon', product:'Weatherbond - Sơn ngoại thất', spec:'18L', price:'~1.290.000đ' },
   { brand:'Nippon', product:'Weathergard Siêu bóng - Ngoại thất', spec:'5L', price:'~1.400.000đ' },
-  { brand:'Nippon', product:'Super Matex - Sơn ngoại thất kinh tế', spec:'18L', price:'~1.290.000đ' },
   { brand:'Nippon', product:'Odour-Less Spot-Less - Nội thất CC', spec:'18L', price:'~4.050.000đ' },
   { brand:'Nippon', product:'WP200 - Chống thấm', spec:'20kg', price:'~2.009.000đ' },
   // --- NANO HOUSE ---
@@ -201,15 +234,12 @@ const PRICES = [
   { brand:'Sika', product:'Sikalastic 1K - Chống thấm PU', spec:'Thùng 20kg', price:'~2.700.000đ' },
   { brand:'Sika', product:'SikaTop 107 Seal - Chống thấm bảo vệ', spec:'Bộ 25kg', price:'~810.000đ' },
   { brand:'Sika', product:'Sika Latex - Phụ gia chống thấm', spec:'Can 5L', price:'~465.000đ' },
-  { brand:'Sika', product:'Sika Latex - Phụ gia chống thấm', spec:'Can 25L', price:'~2.275.000đ' },
   { brand:'Sika', product:'Sikagrout 214-11 - Vữa rót không co ngót', spec:'Bao 25kg', price:'~280.000đ' },
   { brand:'Sika', product:'Sikaflex 11FC - Keo trám khe', spec:'Ống 600ml', price:'Liên hệ' },
   // --- JOTUN (giá niêm yết tham khảo) ---
   { brand:'Jotun', product:'Jotashield Bền Màu Toàn Diện - Ngoại thất', spec:'15L', price:'~9.545.000đ' },
-  { brand:'Jotun', product:'Jotashield Bền Màu Toàn Diện - Ngoại thất', spec:'5L', price:'~3.315.000đ' },
   { brand:'Jotun', product:'Jotashield Sạch Vượt Trội - Ngoại thất', spec:'15L', price:'~7.355.000đ' },
   { brand:'Jotun', product:'Jotashield Chống Phai Màu - Ngoại thất', spec:'15L', price:'~7.145.000đ' },
-  { brand:'Jotun', product:'Majestic Đẹp Nguyên Bản - Nội thất', spec:'Thùng 18L', price:'Liên hệ' },
   { brand:'Jotun', product:'Jotun Water Guard - Chống thấm', spec:'20kg', price:'~4.170.000đ' },
   { brand:'Jotun', product:'Tough Shield Max - Ngoại thất kinh tế', spec:'17L', price:'~4.950.000đ' },
 ];
