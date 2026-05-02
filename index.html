@@ -259,7 +259,9 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="pc-img">🏢</div>
+        <div class="pc-img">
+          <img src="images/project_16.webp" alt="Sơn nội ngoại thất nhà phố Vĩnh Niệm" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        </div>
         <div class="pc-body">
           <h3>Sơn nội ngoại thất nhà phố Vĩnh Niệm</h3>
           <p>Thi công sơn Dulux Weathershield ngoại thất + Dulux Inspire nội thất cho nhà phố 4 tầng. Kết hợp chống thấm Sika Latex cho tường ngoài và khu vệ sinh. Diện tích sơn: 320m². Hoàn thiện trong 12 ngày.</p>
@@ -267,7 +269,9 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="pc-img">🏘️</div>
+        <div class="pc-img">
+          <img src="images/project_12.webp" alt="Cải tạo chống thấm nhà cấp 4 Vĩnh Hòa" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        </div>
         <div class="pc-body">
           <h3>Cải tạo chống thấm nhà cấp 4 Vĩnh Hòa</h3>
           <p>Cải tạo toàn diện nhà cấp 4 — chống thấm mái tôn bằng Munich UV20 chống nóng, chống thấm sàn nhà vệ sinh bằng Sika Top 107, ốp lát gạch mới, sơn lại toàn bộ nội thất. Giải quyết triệt để tình trạng thấm dột kéo dài nhiều năm.</p>
@@ -275,7 +279,9 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="pc-img">🏪</div>
+        <div class="pc-img">
+          <img src="images/project_124.webp" alt="Sơn Epoxy sàn nhà xưởng Nam Đồ Sơn" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        </div>
         <div class="pc-body">
           <h3>Sơn Epoxy sàn nhà xưởng Nam Đồ Sơn</h3>
           <p>Thi công sơn Epoxy Munich EP11 cho sàn nhà xưởng sản xuất 250m² tại khu công nghiệp Nam Đồ Sơn. Xử lý bề mặt bê tông, sơn lót epoxy, sơn phủ 2 lớp chịu lực, chịu hóa chất. Đội thợ thi công trong 5 ngày, bàn giao đúng tiến độ.</p>
@@ -283,7 +289,9 @@
         </div>
       </div>
       <div class="project-card">
-        <div class="pc-img">🛁</div>
+        <div class="pc-img">
+          <img src="images/project_128.webp" alt="Chống thấm bể nước + nhà vệ sinh chung cư" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        </div>
         <div class="pc-body">
           <h3>Chống thấm bể nước + nhà vệ sinh chung cư</h3>
           <p>Thi công chống thấm bể nước ngầm 15m³ và 2 nhà vệ sinh tại căn hộ chung cư Vinhomes Imperia. Sử dụng Munich PU S700 an toàn cho nước sinh hoạt + Sika Grout 214 cho các vị trí chân ống. Kiểm tra áp lực nước trước và sau thi công, đảm bảo không rò rỉ.</p>
@@ -291,7 +299,39 @@
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- GALLERY ẢNH THỰC TẾ -->
+    <div style="margin-top:40px">
+      <h3 style="text-align:center;color:#1A237E;margin-bottom:20px">📸 Thư viện công trình VLHT</h3>
+      <div class="gallery-grid" id="projectGallery">
+        <script>
+        // Tự động load ảnh công trình vào gallery
+        (function(){
+          var gallery = document.getElementById('projectGallery');
+          var images = [
+            'project_10.webp','project_12.webp','project_16.webp','project_17.webp','project_18.webp',
+            'project_20.webp','project_21.webp','project_22.webp','project_23.webp','project_24.webp',
+            'project_25.webp','project_26.webp','project_27.webp','project_28.webp','project_29.webp',
+            'project_30.webp','project_31.webp','project_32.webp','project_33.webp','project_34.webp',
+            'project_58.webp','project_59.webp','project_60.webp','project_61.webp','project_62.webp',
+            'project_67.webp','project_68.webp','project_69.webp','project_70.webp','project_71.webp',
+            'project_72.webp','project_73.webp','project_74.webp','project_76.webp','project_79.webp',
+            'project_80.webp','project_81.webp','project_82.webp','project_83.webp','project_84.webp',
+            'project_101.webp','project_107.webp','project_118.webp','project_124.webp','project_128.webp',
+            'project_136.webp','project_137.webp','project_138.webp','project_141.webp','project_142.webp',
+            'project_144.webp'
+          ];
+          var html = '';
+          for(var i=0;i<images.length;i++){
+            html += '<div class="gallery-item">';
+            html += '<img src="images/' + images[i] + '" alt="Công trình VLHT" loading="lazy" ';
+            html += 'onclick="window.open(this.src,\'_blank\')" style="cursor:pointer;width:100%;height:100%;object-fit:cover;border-radius:8px;transition:transform 0.3s"';
+            html += 'onmouseover="this.style.transform=\'scale(1.05)\'" onmouseout="this.style.transform=\'scale(1)\'"';
+            html += '></div>';
+          }
+          gallery.innerHTML = html;
+        })();
+        </script>
 
   <!-- NEWS -->
   <section id="news" class="section">
