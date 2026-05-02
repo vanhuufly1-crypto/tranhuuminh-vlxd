@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "name": "Mây - Trợ lý tư vấn VLXD Trần Hữu Minh",
+    "version": "1.0.0",
+    "lastUpdated": "2026-05-02",
+    "store": {
+      "name": "VLXD Trần Hữu Minh",
+      "address": "Hải Phòng",
+      "phone": "0378.679.633",
+      "zalo": "0378.679.633",
+      "brands": ["Munich", "Nano House", "Sika", "Dulux", "Jotun", "Kova", "Nippon"],
+      "tags": ["sơn chống thấm", "sơn nước", "epoxy", "phụ gia xây dựng", "bột bả", "keo dán gạch"]
+    },
+    "agent": {
+      "name": "Mây",
+      "personality": "Ấm áp, chuyên nghiệp, kiên nhẫn, không spam",
+      "replyDelay": { "min": 2000, "max": 5000 },
+      "typingIndicator": true
+    }
+  },
+
+  "nodes": {
+    "root": {
+      "id": "root",
+      "type": "question",
+      "question": "☁️ Chào anh/chị! Em là Mây — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
+      "options": [
+        {
+          "text": "🛡️ Sơn chống thấm",
+          "next": "chong-tham-menu",
+          "keywords": ["chống thấm", "thấm", "chống dột", "dột", "thấm nước", "chống nước"]
+        },
+        {
+          "text": "🎨 Sơn nước (nội/ngoại thất)",
+          "next": "son-nuoc-menu",
+          "keywords": ["sơn nước", "sơn tường", "nội thất", "ngoại thất", "lăn tường", "sơn nhà"]
+        },
+        {
+          "text": "🏭 Sơn Epoxy / sàn công nghiệp",
+          "next": "epoxy-menu",
+          "keywords": ["epoxy", "sàn công nghiệp", "sơn sàn", "nhà xưởng", "bãi xe"]
+        },
+        {
+          "text": "🧪 Phụ gia & hoá chất xây dựng",
+          "next": "phu-gia-menu",
+          "keywords": ["phụ gia", "hoá chất", "latex", "chống thấm tinh thể", "sika"]
+        },
+        {
+          "text": "🧱 Bột bả / Keo dán gạch",
+          "next": "bot-ba-menu",
+          "keywords": ["bột bả", "bột trét", "keo dán gạch", "keo ốp lát", "trét tường"]
+        },
+        {
+          "text": "🔧 Dịch vụ thi công",
+          "next": "thicong-menu",
+          "keywords": ["thi công", "thợ sơn", "cải tạo", "xây mới", "ốp lát"]
+        },
+        {
+          "text": "📄 Báo giá / Bảng giá",
+          "next": "bao-gia",
+          "keywords": ["báo giá", "bảng giá", "giá", "bao nhiêu tiền", "giá bao nhiêu"]
+        },
+        {
+          "text": "🏪 Mua sỉ / Đại lý",
+          "next": "mua-si",
+          "keywords": ["mua sỉ", "buôn", "đại lý", "chiết khấu", "giá sỉ", "số lượng lớn"]
+        }
+      ]
+    },
+
+    "chong-tham-menu": {
+      "id": "chong-tham-menu",
+      "type": "question",
+      "question": "🛡️ Anh/chị cần chống thấm cho khu vực nào ạ? Mây tư vấn dòng phù hợp nhất cho từng hạng mục!",
+      "options": [
+        {
+          "text": "☀️ Chống thấm mái (tôn/bê tông)",
+          "next": "chong-tham-mai",
+          "keywords": ["mái", "mái tôn", "mái bê tông", "chống nóng", "mái nhà"]
+        },
+        {
+          "text": "🧱 Chống thấm tường ngoài",
+          "next": "chong-tham-tuong",
+          "keywords": ["tường ngoài", "tường rào", "mặt tiền", "thấm tường"]
+        },
+        {
+          "text": "💧 Chống thấm bể nước / hồ bơi",
+          "next": "chong-tham-be",
+          "keywords": ["bể nước", "hồ bơi", "bể chứa", "bể ngầm"]
+        },
+        {
+          "text": "🚿 Chống thấm nhà vệ sinh / sàn ướt",
+          "next": "chong-tham-wc",
+          "keywords": ["nhà vệ sinh", "wc", "sàn ướt", "phòng tắm", "chống thấm sàn"]
+        },
+        {
+          "text": "🏗️ Chống thấm tầng hầm / móng",
+          "next": "chong-tham-ham",
+          "keywords": ["tầng hầm", "móng", "hầm", "chân tường"]
+        },
+        {
+          "text": "↩️ Quay lại menu chính",
+          "next": "root",
+          "keywords": ["quay lại", "menu", "về"]
+        }
+      ]
+    },
+
+    "chong-tham-mai": {
+      "id": "chong-tham-mai",
+      "type": "answer",
+      "answer": "☀️ **Chống thấm mái — chống dột + chống nóng**\n\nBên em có các giải pháp:\n\n**🏠 Mái tôn:**\n• **Munich UV20** — sơn chống nóng chuyên dụng, giảm 5-28°C so với mái tôn thường. Định mức: 8-10m²/lít. Bảo hành 5 năm.\n• Sika Flexproof — chống thấm đàn hồi cho mái tôn, bảo hành 7 năm.\n\n**🏗️ Mái bê tông / sân thượng:**\n• **Munich G20** — chống thấm gốc xi măng polymer, phủ trực tiếp lên bê tông. Định mức: 1.5kg/m² cho 2 lớp. Bảo hành 5 năm.\n• **Kova CT-11A / CT-11B** — chống thấm thẩm thấu cho bê tông, chịu được áp lực nước.\n\n💡 *Mẹo: Nếu kết hợp UV20 chống nóng + G20 chống thấm = hiệu quả tối ưu cho mái bằng.*\n\nAnh/chị cho em xin diện tích mái để Mây tính toán chi tiết hơn ạ!",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "📞 Gọi tư vấn trực tiếp", "next": "call" },
+        { "text": "🔄 Tư vấn mục khác", "next": "chong-tham-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "chong-tham-tuong": {
+      "id": "chong-tham-tuong",
+      "type": "answer",
+      "answer": "🧱 **Chống thấm tường ngoài — ngăn thấm ngược, bong tróc sơn**\n\nBên em tư vấn quy trình chuẩn:\n\n**1️⃣ Xử lý nền:** Vệ sinh sạch, trám vết nứt bằng **SikaLatex** + xi măng.\n\n**2️⃣ Chống thấm lần 1:**\n• **Munich G20** — quét 2 lớp, mỗi lớp cách nhau 4-6 tiếng. Định mức: 1.2-1.5kg/m².\n• **Sika Topseal 107** — chống thấm gốc xi măng, chịu kiềm tốt, phù hợp với tường ngoài biển (mặn).\n\n**3️⃣ Sơn phủ hoàn thiện:**\n• **Munich Weather Shield** — sơn ngoại thất chống kiềm, chống rêu mốc. Định mức: 10-12m²/lít/lớp.\n• **Jotun Jotaplast** (nếu anh/chị muốn dòng cao cấp hơn).\n\n⚠️ *Quan trọng: Nếu tường đã bị thấm lâu ngày, cần đục bỏ lớp vữa cũ trước khi xử lý. Nếu cần, bên em có dịch vụ thi công trọn gói ạ!*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔧 Cần dịch vụ thi công", "next": "thicong-menu" },
+        { "text": "🔄 Tư vấn mục khác", "next": "chong-tham-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "chong-tham-be": {
+      "id": "chong-tham-be",
+      "type": "answer",
+      "answer": "💧 **Chống thấm bể nước / hồ bơi — an toàn cho sức khoẻ**\n\nBên em có các dòng chuyên dụng:\n\n**🏊 Cho bể nước sinh hoạt & hồ bơi:**\n• **Munich G40** — chống thấm gốc xi măng polymer, phù hợp với bể nước sạch. An toàn, không độc hại. Định mức: 1.5-2kg/m²/2 lớp.\n• **Kova CT-11A + CT-11B** — hệ chống thấm thẩm thấu tinh thể, chịu áp lực nước cao. Phù hợp với bể ngầm, hồ bơi công cộng.\n• **Sika Igolflex** — màng chống thấm gốc nhũ tương, đàn hồi cao, phù hợp hồ bơi có kiến trúc phức tạp.\n\n**📋 Quy trình thi công:**\n1. Vệ sinh bề mặt, làm ẩm\n2. Sơn lót nếu cần\n3. Thi công 2-3 lớp chống thấm (cách nhau 6 tiếng)\n4. Dưỡng ẩm 3-5 ngày trước khi đưa vào sử dụng\n\n💡 *Giá tham khảo bắt đầu từ 180.000đ/kg cho dòng Munich G40. Báo giá chi tiết tuỳ diện tích.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "chong-tham-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "chong-tham-wc": {
+      "id": "chong-tham-wc",
+      "type": "answer",
+      "answer": "🚿 **Chống thấm nhà vệ sinh / sàn ướt — ngăn thấm xuống tầng dưới**\n\nBên em khuyên dùng giải pháp chuẩn:\n\n**🛠️ Dòng khuyên dùng:**\n• **Munich G20** — chống thấm polymer-xi măng 2 thành phần, kết dính tốt với gạch men, dễ thi công. Định mức: 1.5-2kg/m²/2-3 lớp. Bảo hành 5 năm.\n• **Sika Ceram 115** — phụ gia chống thấm trộn với vữa ốp lát, bảo vệ từ bên trong.\n• **Kova CT-11A** — chống thấm thẩm thấu, phù hợp xử lý nền trước khi ốp lát.\n\n**📋 Quy trình thi công:**\n1. Vệ sinh sàn, trám khe, góc bằng keo silicone\n2. Quét lớp chống thấm thứ nhất → chờ 4-6h\n3. Quét lớp thứ hai → chờ khô 24h\n4. Trát vữa lót + ốp gạch\n5. Đặc biệt chú ý: góc tường & chân ống thoát nước — quét thêm 1 lớp gia cố\n\n💡 *Mẹo: Kết hợp G20 chống thấm + SikaLatex phụ gia vữa = tăng độ kết dính gạch, giảm nứt nền tối đa.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "chong-tham-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "chong-tham-ham": {
+      "id": "chong-tham-ham",
+      "type": "answer",
+      "answer": "🏗️ **Chống thấm tầng hầm / móng — chịu áp lực nước cao**\n\nĐây là hạng mục quan trọng — Mây xin tư vấn kỹ:\n\n**💪 Giải pháp chuyên nghiệp:**\n\n**Hệ thống 2 lớp:**\n• **Lớp 1 — Thẩm thấu tinh thể:**\n  - **Kova CT-11B** — thẩm thấu sâu vào bê tông, tự hàn kín vết nứt nhỏ. Chịu được áp lực nước 10 bar.\n  - **Sika Igolflex** — màng chống thấm gốc bitum, đàn hồi tốt cho nền có biến động.\n  \n• **Lớp 2 — Bảo vệ cơ học:**\n  - **Munich G40** — lớp chống thấm polymer dày, chịu mài mòn.\n  - Vải địa kỹ thuật (nếu cần) hoặc lưới thủy tinh gia cường.\n\n⚠️ *Lưu ý: Anh/chị nên có kỹ sư giám sát thi công. Nếu cần, bên em giới thiệu đội thi công chuyên nghiệp làm tầng hầm.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔧 Cần dịch vụ thi công", "next": "thicong-menu" },
+        { "text": "🔄 Tư vấn mục khác", "next": "chong-tham-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "son-nuoc-menu": {
+      "id": "son-nuoc-menu",
+      "type": "question",
+      "question": "🎨 Mây giúp anh/chị chọn sơn nước phù hợp! Anh/chị cần sơn cho khu vực nào ạ?",
+      "options": [
+        {
+          "text": "🛋️ Sơn nội thất",
+          "next": "son-noi-that",
+          "keywords": ["nội thất", "trong nhà", "phòng ngủ", "phòng khách", "trần"]
+        },
+        {
+          "text": "🌤️ Sơn ngoại thất",
+          "next": "son-ngoai-that",
+          "keywords": ["ngoại thất", "ngoài nhà", "mặt tiền", "tường ngoài", "chống nắng"]
+        },
+        {
+          "text": "↩️ Quay lại menu chính",
+          "next": "root",
+          "keywords": ["quay lại", "menu", "về"]
+        }
+      ]
+    },
+
+    "son-noi-that": {
+      "id": "son-noi-that",
+      "type": "question",
+      "question": "🛋️ Sơn nội thất — Anh/chị muốn dòng nào ạ?\n\n• **🏆 Cao cấp:** Munich Sensation, Dulux Ambiance — lau chùi được, siêu bền\n• **👍 Tầm trung:** Munich Luxury, Jotun Majestic — chất lượng tốt, giá hợp lý\n• **💰 Kinh tế:** Munich Comfort, Nippon Vatex — vẫn đẹp, tiết kiệm",
+      "options": [
+        {
+          "text": "🏆 Sơn nội thất cao cấp",
+          "next": "son-noi-cao-cap",
+          "keywords": ["cao cấp", "sensation", "ambiance", "lauvà chùi", "siêu bền"]
+        },
+        {
+          "text": "👍 Sơn nội thất tầm trung",
+          "next": "son-noi-trung-cap",
+          "keywords": ["tầm trung", "luxury", "majestic", "trung bình"]
+        },
+        {
+          "text": "💰 Sơn nội thất kinh tế",
+          "next": "son-noi-kinh-te",
+          "keywords": ["kinh tế", "rẻ", "tiết kiệm", "comfort", "vatex"]
+        },
+        {
+          "text": "🔢 Tính toán số lượng sơn",
+          "next": "tinh-toan-son",
+          "keywords": ["tính", "số lượng", "định mức", "thùng", "diện tích", "bao nhiêu thùng"]
+        },
+        {
+          "text": "↩️ Quay lại",
+          "next": "son-nuoc-menu",
+          "keywords": ["quay lại", "về"]
+        }
+      ]
+    },
+
+    "son-noi-cao-cap": {
+      "id": "son-noi-cao-cap",
+      "type": "answer",
+      "answer": "🏆 **Sơn nội thất cao cấp — Đẳng cấp & Bền đẹp**\n\n**Munich Sensation:**\n• Siêu bền, lau chùi được, kháng khuẩn, không mùi\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Phòng khách, phòng ngủ chính, biệt thự\n• Bảo hành: 7 năm\n\n**Dulux Ambiance 5in1:**\n• Chống kiềm, kháng khuẩn, khử mùi, lau chùi dễ\n• Định mức: 10-14m²/lít/lớp\n• Phù hợp: Phòng ngủ trẻ em, người nhạy cảm mùi\n• Bảo hành: 5 năm\n\n💡 *Giá tham khảo: ~650.000-850.000đ/thùng 18L, tuỳ dòng.*\n\n👉 **Bước tiếp theo:** Anh/chị cho em biết diện tích tường cần sơn (dài x rộng x cao) để Mây tính số thùng cần mua & báo giá chi tiết ạ!",
+      "nextOptions": [
+        { "text": "🔢 Tính diện tích & báo giá", "next": "tinh-toan-son" },
+        { "text": "📄 Em muốn bảng giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn dòng khác", "next": "son-noi-that" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "son-noi-trung-cap": {
+      "id": "son-noi-trung-cap",
+      "type": "answer",
+      "answer": "👍 **Sơn nội thất tầm trung — Chất lượng tốt, giá hợp lý**\n\n**Munich Luxury:**\n• Mịn, bền màu, ít bám bụi, dễ lau\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Nhà phố, chung cư\n• Bảo hành: 5 năm\n• Giá tham khảo: ~450.000-550.000đ/thùng 18L\n\n**Jotun Majestic:**\n• Phủ tốt, chống kiềm, ít mùi\n• Định mức: 10-13m²/lít/lớp\n• Phù hợp: Cải tạo nhà cũ, nhà mới\n• Bảo hành: 5 năm\n\n💡 *Mẹo: Nếu sơn cho nhà mới xây (tường có độ kiềm cao), nên dùng thêm 1 lớp sơn lót chống kiềm trước khi sơn phủ.*",
+      "nextOptions": [
+        { "text": "🔢 Tính diện tích & báo giá", "next": "tinh-toan-son" },
+        { "text": "📄 Em muốn bảng giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn dòng khác", "next": "son-noi-that" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "son-noi-kinh-te": {
+      "id": "son-noi-kinh-te",
+      "type": "answer",
+      "answer": "💰 **Sơn nội thất kinh tế — Vẫn đẹp, tiết kiệm tối đa**\n\n**Munich Comfort:**\n• Mịn, phủ tốt, bền màu cơ bản\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Nhà cho thuê, cải tạo ngân sách thấp, nhà xưởng\n• Bảo hành: 3 năm\n• Giá tham khảo: ~320.000-380.000đ/thùng 18L\n\n**Nippon Vatex:**\n• Thương hiệu Nhật, phủ kín, giá phải chăng\n• Định mức: 10-12m²/lít/lớp\n• Bảo hành: 3 năm\n\n💡 *Dù là dòng kinh tế, Mây vẫn khuyên anh/chị nên dùng 1 lớp sơn lót để tăng độ bám dính và bền màu. Bên em sẵn sơn lót giá chỉ từ 250.000đ/thùng 18L.*",
+      "nextOptions": [
+        { "text": "🔢 Tính diện tích & báo giá", "next": "tinh-toan-son" },
+        { "text": "📄 Em muốn bảng giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn dòng khác", "next": "son-noi-that" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "tinh-toan-son": {
+      "id": "tinh-toan-son",
+      "type": "input",
+      "question": "🔢 **Tính số lượng sơn cần mua**\n\nCông thức nhanh:\n**Diện tích tường = (Chu vi phòng × Chiều cao) − Diện tích cửa + Trần (nếu sơn)**\n\nHoặc tính nhanh: **Diện tích sàn × 3 ~ Diện tích tường cần sơn**\n\nVí dụ: Phòng 20m² sàn × 3 = 60m² tường\n→ Cần: 1 thùng 18L sơn lót + 2 thùng 18L sơn phủ (quét 2 lớp)\n\nAnh/chị cho Mây xin **diện tích tường (m²)** hoặc **kích thước phòng (dài × rộng × cao)** để Mây tính chính xác giúp ạ! 🙏",
+      "nextOptions": [
+        { "text": "📄 Em muốn bảng giá trước", "next": "bao-gia" },
+        { "text": "📞 Gọi em tư vấn nhanh", "next": "call" },
+        { "text": "🔄 Tư vấn mục khác", "next": "son-nuoc-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "son-ngoai-that": {
+      "id": "son-ngoai-that",
+      "type": "answer",
+      "answer": "🌤️ **Sơn ngoại thất — Chống chọi với thời tiết khắc nghiệt**\n\n**🎯 Dòng khuyên dùng cho Hải Phòng (khí hậu biển, mưa nhiều, nắng gắt):**\n\n**Munich Weather Shield:**\n• Chống kiềm, chống rêu mốc, chống phấn hoá, bền màu với UV\n• Định mức: 8-10m²/lít/lớp (tường ngoài thường xù xì hơn)\n• Bảo hành: 7 năm\n• Giá tham khảo: ~550.000-650.000đ/thùng 18L\n\n**Jotun Jotaplast:**\n• Đàn hồi tốt, che vết nứt nhỏ, chịu được thời tiết biển\n• Định mức: 8-10m²/lít/lớp\n• Bảo hành: 7 năm\n\n**Dulux Weathershield:**\n• Công nghệ giữ màu lâu, chống kiềm, chống rêu\n• Định mức: 8-12m²/lít/lớp\n• Bảo hành: 5 năm\n\n⚠️ **Lưu ý cho tường ngoài:**\n• Nên sơn 2 lớp + 1 lớp lót chống kiềm = tổng 3 lớp\n• Mặt tiền hướng Tây nên chọn màu sáng để giảm hấp thụ nhiệt\n• Kiểm tra tường trước khi sơn — nếu có vết nứt >1mm cần xử lý trước",
+      "nextOptions": [
+        { "text": "🔢 Tính diện tích & báo giá", "next": "tinh-toan-son" },
+        { "text": "📄 Em muốn bảng giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "son-nuoc-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "epoxy-menu": {
+      "id": "epoxy-menu",
+      "type": "question",
+      "question": "🏭 **Sơn Epoxy — bền, đẹp, chịu lực tốt cho sàn công nghiệp**\n\nAnh/chị cần cho khu vực nào ạ?",
+      "options": [
+        {
+          "text": "🏭 Sàn nhà xưởng / kho bãi",
+          "next": "epoxy-nha-xuong",
+          "keywords": ["nhà xưởng", "kho", "nhà máy", "sàn chịu lực"]
+        },
+        {
+          "text": "🚗 Bãi xe / Showroom",
+          "next": "epoxy-bai-xe",
+          "keywords": ["bãi xe", "showroom", "sàn để xe", "garage"]
+        },
+        {
+          "text": "↩️ Quay lại menu chính",
+          "next": "root",
+          "keywords": ["quay lại", "menu", "về"]
+        }
+      ]
+    },
+
+    "epoxy-nha-xuong": {
+      "id": "epoxy-nha-xuong",
+      "type": "answer",
+      "answer": "🏭 **Sơn Epoxy cho nhà xưởng — chịu lực, chịu hoá chất**\n\n**🎯 Giải pháp cho nhà xưởng / kho bãi:**\n\n**Hệ Epoxy 2K (2 thành phần):**\n• **Munich E510** — Epoxy lăn, bóng đẹp, chịu mài mòn tốt. Định mức: 0.2-0.3kg/m²/lớp.\n• **Munich E520** — Epoxy tự san phẳng (self-leveling), bề mặt siêu phẳng, chịu tải nặng. Định mức: 0.8-1.5kg/m² (tuỳ độ dày).\n\n**🏗️ Cấu tạo hệ thống sơn Epoxy chuẩn:**\n1. **Lớp 1:** Sơn lót Epoxy — thẩm thấu, tăng bám dính\n2. **Lớp 2 (nếu cần chịu tải):** Sơn Epoxy + cát thạch anh — tạo độ dày\n3. **Lớp 3:** Epoxy hoàn thiện — màu sắc, bảo vệ bề mặt\n\n**💪 Ưu điểm:**\n• Chịu được xe nâng, pallet\n• Không bám bụi, dễ vệ sinh\n• Chống hoá chất nhẹ (dầu, nhớt)\n• Bảo hành: 3-5 năm\n\n💡 *Giá tham khảo: 120.000-250.000đ/m² tuỳ loại & độ dày. Bên em có đội thi công chuyên nghiệp sàn Epoxy.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔧 Cần dịch vụ thi công", "next": "thicong-menu" },
+        { "text": "🔄 Tư vấn mục khác", "next": "epoxy-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "epoxy-bai-xe": {
+      "id": "epoxy-bai-xe",
+      "type": "answer",
+      "answer": "🚗 **Sơn Epoxy cho bãi xe & Showroom**\n\n**🎯 Giải pháp:**\n\n**Bãi xe ô tô / xe máy:**\n• **Munich E510** (Epoxy lăn) — bền, dễ vệ sinh, giá hợp lý\n• Định mức: 0.2-0.3kg/m²/lớp, thi công 2-3 lớp\n• Chịu được dầu nhớt, lốp xe\n\n**Showroom (yêu cầu thẩm mỹ cao):**\n• **Munich E520** (tự san phẳng) — bề mặt gương, sang trọng\n• Có nhiều màu: xám, xanh, đỏ, xám đen, trắng ngà\n• Có thể thêm chip màu trang trí\n\n**📋 Quy trình thi công:**\n1. Mài sàn bê tông (cần thiết)\n2. Quét lót Epoxy\n3. Thi công Epoxy hoàn thiện\n4. Chờ khô 24-48h mới đi lại, 7 ngày mới chịu tải nặng\n\n💡 *Giá: từ 100.000đ/m² cho bãi xe cơ bản đến 250.000đ/m² cho showroom.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔧 Cần dịch vụ thi công", "next": "thicong-menu" },
+        { "text": "🔄 Tư vấn mục khác", "next": "epoxy-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "phu-gia-menu": {
+      "id": "phu-gia-menu",
+      "type": "question",
+      "question": "🧪 **Phụ gia & Hoá chất xây dựng**\n\nBên em phân phối các dòng phụ gia chính hãng. Anh/chị cần loại nào ạ?",
+      "options": [
+        {
+          "text": "🥛 Latex (SikaLatex / Munich Latex)",
+          "next": "phu-gia-latex",
+          "keywords": ["latex", "sikalatex", "phụ gia vữa", "tăng kết dính"]
+        },
+        {
+          "text": "💎 Chống thấm tinh thể (Kova CT)",
+          "next": "phu-gia-tinh-the",
+          "keywords": ["tinh thể", "kova ct", "thẩm thấu", "kova"]
+        },
+        {
+          "text": "🧪 Các loại phụ gia Sika khác",
+          "next": "phu-gia-sika",
+          "keywords": ["sika", "phụ gia bê tông", "sika grout", "sikaflex"]
+        },
+        {
+          "text": "↩️ Quay lại menu chính",
+          "next": "root",
+          "keywords": ["quay lại", "menu", "về"]
+        }
+      ]
+    },
+
+    "phu-gia-latex": {
+      "id": "phu-gia-latex",
+      "type": "answer",
+      "answer": "🥛 **Latex — Phụ gia tăng kết dính & chống thấm cho vữa**\n\n**SikaLatex:**\n• Trộn với xi măng + cát → tăng cường kết dính, chống thấm\n• Tỷ lệ: 1 phần SikaLatex : 3 phần nước sạch\n• Dùng cho: trát tường, ốp lát, vá vết nứt, sửa chữa bê tông\n• Định mức: 0.5-1kg/m²\n• Bảo quản: nơi khô ráo, tránh đông đá\n\n**Munich Latex:**\n• Tương tự SikaLatex, giá cạnh tranh hơn\n• Định mức & cách dùng tương đương\n\n💡 *Mẹo: Khi trát vữa lên tường cũ hoặc tường có độ hút nước cao, pha SikaLatex vào nước trộn vữa sẽ giúp vữa bám chắc hơn, không bị rỗ, nứt.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "phu-gia-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "phu-gia-tinh-the": {
+      "id": "phu-gia-tinh-the",
+      "type": "answer",
+      "answer": "💎 **Chống thấm tinh thể Kova CT — thẩm thấu, tự hàn kín vết nứt**\n\n**Kova CT-11A + CT-11B (Hệ 2 thành phần):**\n• Cơ chế: Thẩm thấu vào mao dẫn bê tông, tạo tinh thể không tan trong nước → bịt kín lỗ rỗng\n• **Tự hàn kín** các vết nứt nhỏ (đến 0.4mm)\n• Chịu được áp lực nước cao (đến 10 bar)\n• Phù hợp: Bể nước, hồ bơi, tầng hầm, móng, sàn mái\n• Định mức: 0.8-1.2kg/m² cho 2 lớp\n\n**Kova CT-11C (Bột khô):**\n• Dùng cho vữa sửa chữa, trám vết nứt\n• Trộn với nước → quét lên bề mặt\n\n💡 *Đây là dòng cao cấp nhất của Kova, được các nhà thầu lớn tin dùng cho công trình bể ngầm và tầng hầm.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "phu-gia-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "phu-gia-sika": {
+      "id": "phu-gia-sika",
+      "type": "answer",
+      "answer": "🧪 **Các dòng phụ gia Sika phổ biến tại Trần Hữu Minh:**\n\n**SikaGrout 214:**\n• Vữa rót không co ngót cho máy móc, cột thép\n• Dùng: chèn chân đế máy, neo bulông\n• Đóng gói: 25kg/bao\n\n**SikaFlex 118:**\n• Keo silicon trám khe, chống thấm\n• Dùng: bịt khe ống thoát, góc tường, khe cửa\n• Màu: trắng, xám, đen\n\n**Sika Latex:**\n• Phụ gia vữa — đã tư vấn ở mục trên\n\n**Sika Topseal 107:**\n• Chống thấm gốc xi măng, phù hợp tường ngoài\n\n💡 *Mẹo: Nếu cần tư vấn kỹ thuật cụ thể cho hạng mục nào, anh/chị cho Mây biết thêm chi tiết ạ!*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "phu-gia-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "bot-ba-menu": {
+      "id": "bot-ba-menu",
+      "type": "question",
+      "question": "🧱 **Bột bả & Keo dán gạch**\n\nAnh/chị cần loại nào ạ?",
+      "options": [
+        {
+          "text": "🪣 Bột bả / Bột trét tường",
+          "next": "bot-ba-tret",
+          "keywords": ["bột bả", "bột trét", "trét tường", "bả tường", "matit"]
+        },
+        {
+          "text": "🧱 Keo dán gạch ốp lát",
+          "next": "keo-dan-gach",
+          "keywords": ["keo dán gạch", "keo ốp lát", "keo dán đá", "keo dán nền"]
+        },
+        {
+          "text": "↩️ Quay lại menu chính",
+          "next": "root",
+          "keywords": ["quay lại", "menu", "về"]
+        }
+      ]
+    },
+
+    "bot-ba-tret": {
+      "id": "bot-ba-tret",
+      "type": "answer",
+      "answer": "🪣 **Bột bả / Bột trét tường — nền hoàn hảo cho lớp sơn**\n\n**🎯 Các dòng phổ biến:**\n\n**Munich Putty (bột trét trong nhà):**\n• Mịn, dễ đánh, độ bám dính cao\n• Định mức: 1-1.5kg/m² cho 2 lớp\n• Đóng gói: bao 40kg (trộn sẵn)\n• Phù hợp: tường thạch cao, tường xi măng\n\n**Sika WallPutty (cao cấp):**\n• Siêu mịn, chống thấm, chống kiềm\n• Định mức: 1-1.2kg/m² cho 2 lớp\n• Phù hợp: tường ngoại thất, yêu cầu cao\n\n**📋 Cách dùng:**\n1. Vệ sinh tường, thấm nước\n2. Trét lớp 1 (dày 1mm) → chờ khô 4-6h\n3. Trét lớp 2 (dày 1mm)  → chờ khô hoàn toàn\n4. Đánh giấy ráp → sẵn sàng sơn\n\n💡 *Kinh nghiệm: Nếu tường mới, nên đợi ít nhất 2-4 tuần cho tường khô hẳn rồi mới trét bả. Nếu không, sau này sơn dễ bị phồng rộp.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "bot-ba-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "keo-dan-gach": {
+      "id": "keo-dan-gach",
+      "type": "answer",
+      "answer": "🧱 **Keo dán gạch — ốp lát chắc chắn, không bong tróc**\n\n**🎯 Các dòng tại Trần Hữu Minh:**\n\n**Keo dán gạch Munich:**\n• **Munich Tilefix S1** — keo dán gạch tiêu chuẩn, phù hợp gạch men, gạch ceramic (kích thước ≤ 30x60cm). Bao 25kg.\n• **Munich Tilefix S2** — keo dán gạch biến dạng (deformable), phù hợp gạch porcelain, gạch lớn (≥ 60x60cm), sàn có sưởi. Bao 25kg.\n• **Munich Tilefix White** — keo dán gạch màu trắng, dùng cho gạch marble, gạch kính, mosaic.\n\n**Sika Ceram 115:**\n• Phụ gia chống thấm trộn với keo dán gạch → tăng chống thấm cho khu vực ướt\n\n**📋 Cách pha & sử dụng:**\n• Pha với nước sạch theo tỷ lệ: ~6-7 lít nước / 25kg bột khô\n• Trộn đều, để yên 5 phút, trộn lại → dùng trong 2 giờ\n• Định mức: 3-5kg/m² (tuỳ kích thước gạch & độ dày)\n\n💡 *Nếu ốp gạch kích thước lớn (≥ 60x60cm), nên chọn keo dán S2 để có độ biến dạng tốt hơn, tránh nứt gạch do co ngót.*",
+      "nextOptions": [
+        { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
+        { "text": "🔄 Tư vấn mục khác", "next": "bot-ba-menu" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "thicong-menu": {
+      "id": "thicong-menu",
+      "type": "answer",
+      "answer": "🔧 **Dịch vụ thi công — đội thợ chuyên nghiệp, bảo hành dài hạn**\n\nBên em có đội thợ thi công các hạng mục:\n\n**🏠 Dịch vụ thi công:**\n✅ Sơn nhà (nội thất + ngoại thất) — trọn gói hoặc nhân công\n✅ Chống thấm — mái, tường, WC, tầng hầm\n✅ Thi công sơn Epoxy sàn công nghiệp\n✅ Ốp lát gạch, trét bả\n\n**✨ Cam kết:**\n• Thợ có tay nghề 5+ năm kinh nghiệm\n• Vệ sinh sạch sẽ sau thi công\n• Bảo hành thi công 12 tháng\n• Báo giá minh bạch — không phát sinh\n\n💡 *Quy trình: Khảo sát miễn phí → Báo giá → Thi công → Nghiệm thu.*\n\n👉 Anh/chị để lại **số điện thoại & địa chỉ**, bên em cho thợ qua khảo sát miễn phí trong ngày ạ!",
+      "nextOptions": [
+        { "text": "📞 Gọi tư vấn thi công", "next": "call" },
+        { "text": "📄 Em muốn báo giá trước", "next": "bao-gia" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "bao-gia": {
+      "id": "bao-gia",
+      "type": "answer",
+      "answer": "📄 **Báo giá & Bảng giá sản phẩm**\n\nCảm ơn anh/chị đã quan tâm! Bên em hỗ trợ báo giá theo các cách sau:\n\n**📲 Cách 1: Nhận bảng giá qua Zalo**\nAnh/chị kết bạn Zalo **0378.679.633** → Em gửi ngay bảng giá chi tiết tất cả sản phẩm + chương trình khuyến mãi mới nhất.\n\n**📞 Cách 2: Gọi điện trực tiếp**\nGọi **0378.679.633** — em tư vấn & báo giá nhanh trong 2 phút.\n\n**📝 Cách 3: Để lại thông tin — em gọi lại**\nAnh/chị cho Mây xin:\n• Họ tên & SĐT\n• Sản phẩm quan tâm\n• Số lượng / diện tích\n→ Em gọi lại báo giá tốt nhất trong vòng 30 phút!\n\n💡 *Hoặc anh/chị nhắn trực tiếp ở đây, Mây tư vấn & báo giá luôn ạ!*",
+      "nextOptions": [
+        { "text": "📞 Gọi 0378.679.633", "next": "call" },
+        { "text": "💬 Chat Zalo", "next": "zalo" },
+        { "text": "🛒 Em muốn đặt hàng", "next": "dat-hang" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "mua-si": {
+      "id": "mua-si",
+      "type": "answer",
+      "answer": "🏪 **Mua sỉ / Hợp tác đại lý**\n\nChào anh/chị! Trần Hữu Minh có chính sách bán sỉ và hợp tác đại lý hấp dẫn:\n\n**📦 Chính sách đại lý:**\n• Chiết khấu theo doanh số: 5% – 15%\n• Hỗ trợ vận chuyển nội thành Hải Phòng\n• Hàng luôn có sẵn, giao nhanh trong 2-4h\n• Thanh toán linh hoạt (chuyển khoản / tiền mặt)\n• Hỗ trợ trưng bày, POSM cho đại lý\n\n**📋 Điều kiện hợp tác:**\n• Đặt tối thiểu: 10 triệu/lần (hoặc thoả thuận)\n• Có cửa hàng / điểm bán tại Hải Phòng\n• Cam kết doanh số tối thiểu theo quý\n\n**🎯 Đặc quyền:**\n• Ưu tiên hàng độc quyền Munich\n• Hỗ trợ kỹ thuật, tư vấn cho khách của đại lý\n• Bảng giá đại lý cập nhật hàng tháng\n\n👉 Anh/chị cho Mây xin **SĐT + tên cửa hàng**, em chuyển bảng giá sỉ & liên hệ tư vấn hợp tác chi tiết ạ!",
+      "nextOptions": [
+        { "text": "📞 Gọi tư vấn đại lý", "next": "call" },
+        { "text": "💬 Chat Zalo", "next": "zalo" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "call": {
+      "id": "call",
+      "type": "info",
+      "message": "📞 **Gọi ngay để được tư vấn trực tiếp!**\n\n☎️ **Hotline: 0378.679.633**\n⏰ Giờ làm việc: 7:00 – 19:00 (T2-CN)\n📍 Địa chỉ: Hải Phòng\n\nHoặc anh/chị để lại **SĐT**, em gọi lại ngay ạ!\n\n*Mây luôn sẵn sàng hỗ trợ anh/chị 24/7 qua tin nhắn ạ!* ☁️",
+      "nextOptions": [
+        { "text": "💬 Chat trên Zalo", "next": "zalo" },
+        { "text": "🛒 Đặt hàng online", "next": "dat-hang" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "zalo": {
+      "id": "zalo",
+      "type": "info",
+      "message": "💬 **Chat Zalo với Trần Hữu Minh**\n\n👉 **Zalo OA:** 0378.679.633\nHoặc quét mã QR tại website: **https://tranhuuminh.vn**\n\nAnh/chị kết bạn Zalo → em gửi ngay:\n✅ Bảng giá chi tiết\n✅ Hình ảnh sản phẩm\n✅ Tư vấn trực tiếp\n\n*Mây vẫn ở đây nếu anh/chị cần hỗ trợ thêm qua chat web ạ!* ☁️",
+      "nextOptions": [
+        { "text": "📞 Gọi điện", "next": "call" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    },
+
+    "dat-hang": {
+      "id": "dat-hang",
+      "type": "input",
+      "question": "🛒 **Đặt hàng online**\n\nTuyệt vời! Anh/chị cho Mây xin thông tin đặt hàng ạ:\n\n**1️⃣ Sản phẩm & số lượng:**\n**2️⃣ Họ tên:**\n**3️⃣ SĐT:**\n**4️⃣ Địa chỉ giao hàng (trong Hải Phòng):**\n**5️⃣ Ghi chú (nếu có):**\n\n👉 Em sẽ kiểm hàng & báo giá chính xác + phí ship (nội thành miễn phí) ngay khi nhận được thông tin ạ! 💨",
+      "nextOptions": [
+        { "text": "📞 Gọi đặt hàng nhanh", "next": "call" },
+        { "text": "💬 Chat Zalo", "next": "zalo" },
+        { "text": "🏠 Về menu chính", "next": "root" }
+      ]
+    }
+  },
+
+  "fallback": {
+    "id": "fallback",
+    "type": "answer",
+    "answer": "☁️ **Mây chưa hiểu rõ ý anh/chị lắm** 🤔\n\nAnh/chị có thể nói rõ hơn một chút không ạ? Mây giúp được nhiều việc lắm nè:\n\n• 🛡️ Tư vấn **chống thấm** — mái, tường, nhà vệ sinh\n• 🎨 **Sơn nước** — nội thất, ngoại thất\n• 🏭 **Sơn Epoxy** — nhà xưởng, bãi xe\n• 🧪 **Phụ gia, hoá chất** xây dựng\n• 🧱 **Bột bả, keo dán gạch**\n• 🔧 **Dịch vụ thi công**\n• 📄 **Báo giá, bảng giá**\n• 🏪 **Mua sỉ, đại lý**\n\nHoặc anh/chị gọi trực tiếp **0378.679.633** để em tư vấn nhanh hơn ạ!",
+    "nextOptions": [
+      { "text": "🛡️ Chống thấm", "next": "chong-tham-menu" },
+      { "text": "🎨 Sơn nước", "next": "son-nuoc-menu" },
+      { "text": "📄 Báo giá", "next": "bao-gia" },
+      { "text": "📞 Gọi 0378.679.633", "next": "call" },
+      { "text": "🏠 Về menu chính", "next": "root" }
+    ]
+  },
+
+  "scriptTemplates": {
+    "welcome": [
+      "☁️ Chào anh/chị! Em là Mây — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
+      "☁️ Xin chào! Mây đây — trợ lý tư vấn của cửa hàng VLXD Trần Hữu Minh. Em có thể giúp gì cho anh/chị ạ?",
+      "☁️ Chào anh/chị! Em là Mây, trợ lý ảo của Trần Hữu Minh. Anh/chị cần tư vấn về sơn hay vật liệu xây dựng ạ?"
+    ],
+    "reassurance": [
+      "Dạ anh/chị yên tâm, bên em là nhà phân phối chính thức của các hãng Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Cam kết 100% hàng chính hãng có bảo hành đầy đủ ạ.",
+      "Hàng của em có tem chống giả, xuất hóa đơn đầy đủ. Nếu phát hiện hàng giả em đền 10 lần giá trị ạ.",
+      "Bên em đã kinh doanh VLXD tại Hải Phòng nhiều năm, là đối tác tin cậy của nhiều nhà thầu lớn. Anh/chị cứ yên tâm ạ."
+    ],
+    "priceObjection": [
+      "Dạ, giá niêm yết là vậy. Nhưng bên em có chiết khấu riêng cho công trình, anh để lại SĐT em báo giá tốt nhất ạ.",
+      "Em hiểu ạ. Giá này là giá niêm yết từ hãng. Tuy nhiên nếu anh lấy số lượng công trình, em xin chiết khấu riêng cho anh. Anh cho em xin SĐT em báo giá tốt ạ!"
+    ],
+    "defer": [
+      "Dạ vâng, anh cứ suy nghĩ. Em gửi anh bảng giá tham khảo qua Zalo nhé, khi nào cần anh nhắn em ạ.",
+      "Dạ không sao ạ. Anh/chị cứ tham khảo trước, khi nào quyết định thì nhắn Mây bất cứ lúc nào cũng được. Mây luôn ở đây ạ ☁️"
+    ],
+    "competitorBuy": [
+      "Dạ không sao ạ. Bên em có nhiều dòng sản phẩm độc quyền như Munich, giá cạnh tranh lắm. Hôm sau anh cần gì cứ gọi em nhé ạ.",
+      "Vâng ạ chúc mừng anh/chị! Hôm sau cần thêm VLXD gì cứ ghé Trần Hữu Minh, em luôn sẵn sàng hỗ trợ với giá ưu đãi nhất ạ."
+    ],
+    "closing": [
+      "Anh dùng thử 1 thùng trước xem sao, em ship nội thành Hải Phòng 2 tiếng có hàng ạ.",
+      "Để em chốt đơn cho anh nha. Anh cho em xin địa chỉ + SĐT em ship luôn. Hàng về trong 2 tiếng ạ! 🚚",
+      "Em chốt giúp anh đơn này nhé. Thanh toán khi nhận hàng cũng được ạ, bên em tin tưởng khách hàng mà."
+    ],
+    "followUp": [
+      "Chào anh, em Mây đây ạ ☁️ Hôm trước anh hỏi về sơn chống thấm, giờ anh đã quyết định chưa ạ?",
+      "Em vừa có bảng giá mới của Munich tháng này, anh xem thử nhé. Có nhiều sản phẩm khuyến mãi lắm ạ!",
+      "Chào anh chị, em Mây đây ạ. Bên em đang có chương trình khuyến mãi tháng này. Anh chị có nhu cầu gì em báo giá ưu đãi ạ."
+    ]
+  }
+}

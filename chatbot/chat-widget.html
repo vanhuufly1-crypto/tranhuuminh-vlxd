@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mây ☁️ - Trợ lý tư vấn VLXD Trần Hữu Minh</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="chat-widget.css">
+
+  <style>
+    /* Demo page styling — không cần cho tích hợp thực tế */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f0f2f5 0%, #e8eaf0 100%);
+    }
+
+    .demo-content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .demo-content h1 {
+      font-size: 28px;
+      color: #1c1e21;
+      margin-bottom: 12px;
+    }
+
+    .demo-content p {
+      font-size: 16px;
+      color: #65676b;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .demo-content .brands {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .demo-content .brand-tag {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a73e8;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .demo-content .btn-demo {
+      display: inline-block;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: all 0.2s;
+    }
+
+    .demo-content .btn-demo:hover {
+      background: #1557b0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+    }
+
+    .demo-footer {
+      margin-top: 48px;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      text-align: left;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .demo-footer h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      color: #1c1e21;
+    }
+
+    .demo-footer code {
+      display: block;
+      background: #f5f6f7;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #333;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    @media (max-width: 480px) {
+      .demo-content {
+        padding: 40px 16px;
+      }
+      .demo-content h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Page Content -->
+  <div class="demo-content">
+    <h1>🏪 VLXD Trần Hữu Minh</h1>
+    <p>Phân phối sơn & vật liệu xây dựng chính hãng tại <strong>Hải Phòng</strong></p>
+
+    <div class="brands">
+      <span class="brand-tag">Munich</span>
+      <span class="brand-tag">Nano House</span>
+      <span class="brand-tag">Sika</span>
+      <span class="brand-tag">Dulux</span>
+      <span class="brand-tag">Jotun</span>
+      <span class="brand-tag">Kova</span>
+      <span class="brand-tag">Nippon</span>
+    </div>
+
+    <p>☎️ Hotline: <strong>0378.679.633</strong></p>
+
+    <button class="btn-demo" onclick="window.THM_Chat && THM_Chat.open()">
+      💬 Mở chat với Mây
+    </button>
+
+    <!-- Integration Instructions (visible only on demo page) -->
+    <div class="demo-footer">
+      <h3>📦 Tích hợp vào website của bạn</h3>
+      <p>Thêm 3 dòng sau vào <code>&lt;/body&gt;</code> của trang web:</p>
+      <code>&lt;link rel="stylesheet" href="/chatbot/chat-widget.css"&gt;
+&lt;script src="/chatbot/chatbot-script.json" id="thm-script-data"&gt;&lt;/script&gt;
+&lt;script src="/chatbot/chat-widget.js"&gt;&lt;/script&gt;</code>
+      <p style="margin-top: 12px; font-size: 13px;">Xem hướng dẫn chi tiết: <strong>INTEGRATION.md</strong></p>
+    </div>
+  </div>
+
+  <!-- ===== CHAT WIDGET ===== -->
+  <!-- Load CSS -->
+  <link rel="stylesheet" href="chat-widget.css">
+
+  <!-- Load decision tree script as inline data -->
+  <script>
+    // This will be loaded from chatbot-script.json at runtime,
+    // but we define it inline as a fallback for the demo:
+    window.__THM_CHATBOT_SCRIPT = {"meta":{"name":"Mây - Trợ lý tư vấn VLXD Trần Hữu Minh","version":"1.0.0"},"nodes":{"root":{"id":"root","type":"question","question":"☁️ Chào anh/chị! Em là Mây — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?","options":[{"text":"🛡️ Sơn chống thấm","next":"chong-tham-menu","keywords":["chống thấm","thấm","chống dột"]},{"text":"🎨 Sơn nước (nội/ngoại thất)","next":"son-nuoc-menu","keywords":["sơn nước","sơn tường","nội thất"]},{"text":"📄 Báo giá","next":"bao-gia","keywords":["báo giá","bảng giá","giá"]},{"text":"🏪 Mua sỉ","next":"mua-si","keywords":["mua sỉ","buôn","đại lý"]}]},"chong-tham-menu":{"id":"chong-tham-menu","type":"question","question":"🛡️ Anh/chị cần chống thấm cho khu vực nào ạ?","options":[{"text":"☀️ Mái nhà","next":"chong-tham-mai","keywords":["mái"]},{"text":"🧱 Tường ngoài","next":"chong-tham-tuong","keywords":["tường ngoài"]},{"text":"💧 Bể nước","next":"chong-tham-be","keywords":["bể nước"]},{"text":"🚿 Nhà vệ sinh","next":"chong-tham-wc","keywords":["nhà vệ sinh"]},{"text":"↩️ Quay lại","next":"root"}]},"chong-tham-mai":{"id":"chong-tham-mai","type":"answer","answer":"☀️ **Chống thấm mái — chống dột + chống nóng**\n\n**Mái tôn:** Munich UV20 — giảm 5-28°C, bảo hành 5 năm.\n**Mái bê tông:** Munich G20, Kova CT-11 — bảo hành 5 năm.\n\n👉 Anh/chị cho em xin diện tích mái để báo giá chi tiết ạ!","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"chong-tham-tuong":{"id":"chong-tham-tuong","type":"answer","answer":"🧱 **Chống thấm tường ngoài:**\n\nDùng Munich G20 (2 lớp) + sơn phủ ngoại thất Munich Weather Shield.\n\n⚠️ Nếu tường thấm lâu ngày, cần xử lý triệt để trước khi chống thấm.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"chong-tham-be":{"id":"chong-tham-be","type":"answer","answer":"💧 **Chống thấm bể nước/hồ bơi:**\n\nMunich G40 — an toàn cho nước sinh hoạt, không độc hại.\nKova CT-11A + CT-11B — thẩm thấu tinh thể, chịu áp lực nước cao.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"chong-tham-wc":{"id":"chong-tham-wc","type":"answer","answer":"🚿 **Chống thấm nhà vệ sinh:**\n\nMunich G20 — 2-3 lớp, bảo hành 5 năm.\nKết hợp SikaLatex phụ gia vữa tăng kết dính.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"son-nuoc-menu":{"id":"son-nuoc-menu","type":"question","question":"🎨 Anh/chị cần sơn nội thất hay ngoại thất ạ?","options":[{"text":"🛋️ Nội thất","next":"son-noi-that"},{"text":"🌤️ Ngoại thất","next":"son-ngoai-that"},{"text":"↩️ Quay lại","next":"root"}]},"son-noi-that":{"id":"son-noi-that","type":"question","question":"🛋️ **Sơn nội thất:**\n🏆 Cao cấp: Munich Sensation, Dulux Ambiance\n👍 Tầm trung: Munich Luxury, Jotun Majestic\n💰 Kinh tế: Munich Comfort, Nippon Vatex\n\nAnh/chị muốn dòng nào?","options":[{"text":"🏆 Cao cấp","next":"son-noi-cao-cap"},{"text":"👍 Tầm trung","next":"son-noi-trung-cap"},{"text":"💰 Kinh tế","next":"son-noi-kinh-te"},{"text":"↩️ Quay lại","next":"son-nuoc-menu"}]},"son-noi-cao-cap":{"id":"son-noi-cao-cap","type":"answer","answer":"🏆 **Munich Sensation** — lau chùi được, không mùi, bảo hành 7 năm.\n**Dulux Ambiance 5in1** — kháng khuẩn, khử mùi, bảo hành 5 năm.\n\n👉 Giá tham khảo: ~650.000-850.000đ/thùng 18L.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"son-noi-trung-cap":{"id":"son-noi-trung-cap","type":"answer","answer":"👍 **Munich Luxury** — bền màu, ít bám bụi, bảo hành 5 năm.\n**Jotun Majestic** — phủ tốt, chống kiềm.\n\n👉 Giá tham khảo: ~450.000-550.000đ/thùng 18L.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"son-noi-kinh-te":{"id":"son-noi-kinh-te","type":"answer","answer":"💰 **Munich Comfort** — vẫn đẹp, tiết kiệm, bảo hành 3 năm.\n**Nippon Vatex** — thương hiệu Nhật, giá phải chăng.\n\n👉 Giá tham khảo: ~320.000-380.000đ/thùng 18L.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"son-ngoai-that":{"id":"son-ngoai-that","type":"answer","answer":"🌤️ **Sơn ngoại thất cho Hải Phòng (khí hậu biển):**\n\n• **Munich Weather Shield** — chống kiềm, chống rêu mốc, bảo hành 7 năm\n• **Jotun Jotaplast** — đàn hồi, che vết nứt, chịu thời tiết biển\n• **Dulux Weathershield** — giữ màu lâu, bảo hành 5 năm\n\n👉 Sơn 2 lớp phủ + 1 lớp lót = tổng 3 lớp.","nextOptions":[{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]},"bao-gia":{"id":"bao-gia","type":"answer","answer":"📄 **Nhận báo giá nhanh:**\n\n📲 Kết bạn Zalo **0378.679.633** → gửi bảng giá\n📞 Gọi **0378.679.633** — tư vấn & báo giá 2 phút\n💬 Nhắn tin ở đây — Mây báo giá luôn!\n\nAnh/chị để lại SĐT & sản phẩm cần báo giá nhé ạ!","nextOptions":[{"text":"📞 Gọi 0378.679.633","next":"call"},{"text":"🏠 Về menu","next":"root"}]},"mua-si":{"id":"mua-si","type":"answer","answer":"🏪 **Chính sách đại lý:**\n• Chiết khấu 5%–15% theo doanh số\n• Giao hàng nội thành 2-4h\n• Hỗ trợ POSM, trưng bày\n• Thanh toán linh hoạt\n\n👉 Để lại SĐT + tên cửa hàng → em gửi bảng giá sỉ.","nextOptions":[{"text":"📞 Gọi tư vấn","next":"call"},{"text":"🏠 Về menu","next":"root"}]},"call":{"id":"call","type":"info","message":"📞 **Hotline: 0378.679.633**\n⏰ 7:00-19:00 (T2-CN)\n📍 Hải Phòng","nextOptions":[{"text":"🏠 Về menu","next":"root"}]}},"fallback":{"id":"fallback","type":"answer","answer":"☁️ Mây chưa hiểu ý anh/chị lắm 🤔\n\nAnh/chị chọn giúp em nhé!","nextOptions":[{"text":"🛡️ Chống thấm","next":"chong-tham-menu"},{"text":"🎨 Sơn nước","next":"son-nuoc-menu"},{"text":"📄 Báo giá","next":"bao-gia"},{"text":"🏠 Về menu","next":"root"}]}};
+  </script>
+
+  <!-- Load JS -->
+  <script src="chat-widget.js"></script>
+
+</body>
+</html>

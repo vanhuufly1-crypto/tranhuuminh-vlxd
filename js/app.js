@@ -33,6 +33,15 @@ const PROD_IMAGES = [
   'brand_son_chongtham-jotun_waterguard-lon-6kg',
   'brand_son_jotun_essence-che-phu-toi-da-bong',
   'brand_anh-ngang-gan-logo',
+  // New product images from brand websites
+  'kova_ct11a',
+  'kova_k871gold',
+  'nippon_weatherbond',
+  'sika_sikaflex11fc',
+  'sika_sikagrout214',
+  'sika_sikalastic1k',
+  'sika_sikalatex',
+  'sika_top107',
 ];
 
 // Assign images to brands (OCR-identified)
@@ -40,17 +49,11 @@ function getBrandImages(brandId) {
   const map = {
     munich:  [0,1,9, 19,20,21,22,23,24],   // G20, G20C, PU S700, Luxury + ảnh Munich từ web
     nano:    [4],                            // Sơn nội thất
-    sika:    [3,10],                         // Ảnh chống thấm + PERFECT PROTECTION
+    sika:    [3,10, 32,33,34,35,36],          // Ảnh cũ + Sika Top107, Sikaflex, SikaGrout, Sikalastic, Sika Latex
     dulux:   [11],                           // Dulux let's colour
     jotun:   [12, 25, 26, 27, 28],            // JOTUN + ảnh từ jotunpaint.vn
-    kova:    [3,8],                          // Sơn & Chống thấm + BUILDING TRUST
-    nippon:  [8,10],                         // Sơn
-    // Non-paint categories
-    gach:    [5],                            // Cotto, Caesar, Inax
-    thietbi: [13],                           // Panasonic
-    giaDung: [6],                            // Sunhouse
-    dieuHoa: [14],                           // Điều hòa 2 chiều
-    dungCu:  [7],                            // Dụng cụ thi công
+    kova:    [3,8, 29,30],                   // Sơn & Chống thấm + kova CT11A, K871
+    nippon:  [8,10, 31],                     // Sơn + Nippon Weatherbond
   };
   return (map[brandId] || []).map(i => PROD_IMAGES[i]);
 }
