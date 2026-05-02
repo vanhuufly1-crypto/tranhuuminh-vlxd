@@ -1,0 +1,5 @@
+# Raw source images — not for the web repo
+anh-goc/
+
+# Python fetch script
+fetch_product_images.py
