@@ -7,3 +7,9 @@ fetch_product_images.py
 # Utility scripts (not for web)
 doc_ban_ve.py
 phan_loai_anh.py
+
+# Local USB mount symlink
+usb_vlht
+
+# Cache system (local only)
+docs/mau/cache/

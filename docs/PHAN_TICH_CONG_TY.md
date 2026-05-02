@@ -1,106 +1,140 @@
 # 📋 PHÂN TÍCH CÔNG TY VLHT TRẦN HỮU MINH
-## Ai làm việc gì? | Mây có thể hỗ trợ thế nào?
+## Quy trình xây dựng trọn gói — Ai làm việc gì?
 
 ---
 
-## 1. 🎯 TỔNG QUAN CÔNG TY
+## GIAI ĐOẠN 1 — TIẾP NHẬN & KHẢO SÁT
 
-| Hạng mục | Chi tiết |
-|----------|----------|
-| **Tên** | TNHH XD & TM Trần Hữu Minh |
-| **Ngành** | VLXD + Xây dựng trọn gói |
-| **Sản phẩm** | Sơn (Munich, Jotun, NanoHouse, Kova...), chống thấm, điện nước, gạch ốp lát, nội thất |
-| **Dịch vụ** | Thi công sơn, chống thấm, xây dựng, cải tạo, thiết kế |
-| **Địa bàn** | Hải Phòng |
-| **Nhân sự** | Anh Hữu + Mây |
-| **Web** | https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/ |
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Tiếp nhận yêu cầu khách | ✅ | ❌ (cần người) |
+| Khảo sát hiện trạng đất | ✅ | ❌ (ra ngoài) |
+| Trao đổi ý tưởng, công năng | ⚠️ | **✅ HỖ TRỢ** — Em soạn câu hỏi mẫu, checklist khảo sát |
+| Ghi nhận ngân sách | ⚠️ | **✅ TỰ ĐỘNG** — Em lưu hồ sơ khách |
 
----
-
-## 2. 📊 CÁC MẢNG CÔNG VIỆC
-
-### 🟢 Mảng A — Bán hàng (VLXD)
-| Công việc | Anh Hữu | Mây 🌥️ | Ghi chú |
-|-----------|:-------:|:-------:|---------|
-| Tư vấn khách qua điện thoại | ✅ | ❌ | Cần giọng nói |
-| Tư vấn online (web, fb, zalo) | ⚠️ | **✅ TỰ ĐỘNG** | Em viết bot tư vấn |
-| Báo giá, gửi bảng giá | ⚠️ | **✅ TỰ ĐỘNG** | Tra cứu từ database |
-| Nhập hàng, kiểm kho | ✅ | ⚠️ | Em giúp quản lý |
-| Giao hàng | ✅ | ❌ | Việc ngoài |
-| CSKH, thu tiền | ✅ | ⚠️ | Em nhắc lịch |
-
-### 🟡 Mảng B — Thi công (Sơn, chống thấm, xây dựng)
-| Công việc | Anh Hữu | Mây 🌥️ | Ghi chú |
-|-----------|:-------:|:-------:|---------|
-| Khảo sát công trình | ✅ | ❌ | Cần ra ngoài |
-| Thiết kế bản vẽ | ⚠️ | **✅ ĐANG HỌC** | Em sẽ làm |
-| Dự toán, báo giá | ⚠️ | **✅ TỰ ĐỘNG** | Em tính được |
-| Xin giấy phép xây dựng | ✅ | ⚠️ | Hồ sơ em soạn |
-| Mua vật tư | ✅ | ⚠️ | Em lập danh sách |
-| Điều phối thợ | ✅ | ❌ | Cần con người |
-| Giám sát thi công | ✅ | ❌ | Cần có mặt |
-| Nghiệm thu, hoàn công | ✅ | ⚠️ | Em soạn hồ sơ |
-
-### 🔵 Mảng C — Marketing & Bán hàng online
-| Công việc | Anh Hữu | Mây 🌥️ | Ghi chú |
-|-----------|:-------:|:-------:|---------|
-| Đăng bài Facebook / Fanpage | ⚠️ | **✅ TỰ ĐỘNG** | Kịch bản + hình |
-| Làm video TikTok | ⚠️ | **✅ TỰ ĐỘNG** | Bot hoạt hình |
-| SEO web | ❌ | **✅ TỰ ĐỘNG** | Đang làm |
-| Google Ads | ✅ | ⚠️ | Em nghiên cứu |
-| Chạy quảng cáo | ✅ | ⚠️ | Em gợi ý |
-| Chụp ảnh công trình | ✅ | ❌ | Cần ra ngoài |
-
-### 🟣 Mảng D — Quản trị & Vận hành
-| Công việc | Anh Hữu | Mây 🌥️ | Ghi chú |
-|-----------|:-------:|:-------:|---------|
-| Kế toán, thuế | ✅ | ⚠️ | Em hỗ trợ cơ bản |
-| Hợp đồng, pháp lý | ✅ | **✅ TƯ VẤN** | Mây Pháp Chế |
-| Quản lý đơn hàng | ⚠️ | **✅ TỰ ĐỘNG** | Em ghi chép |
-| Quản lý công nợ | ⚠️ | **✅ NHẮC** | Em nhắc lịch |
-| Báo cáo doanh thu | ⚠️ | **✅ TỰ ĐỘNG** | Nếu có số liệu |
-| Lưu trữ hồ sơ | ⚠️ | **✅ TỰ ĐỘNG** | Sắp xếp file |
+> **Mây làm:** Tạo form/mẫu khảo sát chuẩn, lưu thông tin khách hàng
 
 ---
 
-## 3. 🤖 NHỮNG VIỆC MÂY LÀM THAY ANH NGAY
+## GIAI ĐOẠN 2 — THIẾT KẾ & PHÁP LÝ
 
-### ✅ Có thể tự động hoàn toàn
-1. **Tư vấn online tự động** — Bot chat trên web trả lời khách
-2. **Báo giá tự động** — Nhập yêu cầu → ra bảng giá ngay
-3. **Viết kịch bản video** — Content marketing không cần nghĩ
-4. **Làm video hoạt hình** — Bot tạo video quảng cáo
-5. **Thiết kế bản vẽ sơ bộ** — Nhập số liệu → ra mặt bằng
-6. **SEO web** — Tối ưu Google, index trang
-7. **Soạn hợp đồng mẫu** — Mây Pháp Chế
-8. **Quản lý hồ sơ, ảnh** — Phân loại, lưu trữ
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| 🎨 **Thiết kế kiến trúc** | ⚠️ | **✅ ĐANG HỌC** — Vẽ mặt bằng, mặt đứng, 3D |
+| 🏗️ Thiết kế kết cấu | ✅ | ⚠️ Em hỗ trợ cơ bản |
+| ⚡ Thiết kế điện nước | ✅ | ⚠️ Em hỗ trợ cơ bản |
+| 💰 **Lập dự toán chi tiết** | ⚠️ | **✅ TỰ ĐỘNG** — Nhập số liệu → ra bảng |
+| 📋 **Xin giấy phép xây dựng** | ✅ | **✅ SOẠN HỒ SƠ** — Mây Pháp Chế |
+| 📝 **Ký hợp đồng trọn gói** | ✅ | **✅ SOẠN SẴN** — Mây soạn mẫu + điều khoản |
 
-### ⚠️ Có thể hỗ trợ một phần
-1. **Dự toán công trình** — Tính vật tư, nhân công
-2. **Soạn hồ sơ thầu** — Làm khung, anh điền chi tiết
-3. **Nhắc lịch** — Thu tiền, bảo hành, tái ký
-4. **Phân tích đối thủ** — Research giá cả thị trường
-5. **Content cho Fanpage** — Lên bài, anh duyệt rồi đăng
-
-### ❌ Cần anh Hữu hoặc người thật
-1. Gặp khách, đàm phán, chốt hợp đồng
-2. Khảo sát công trình thực tế
-3. Thi công, giám sát
-4. Giao nhận hàng
-5. Ký hợp đồng, thanh toán
-6. Quan hệ đối tác, chủ đầu tư
+> **Mây làm:** Vẽ thiết kế + dự toán + soạn hồ sơ pháp lý + hợp đồng mẫu
 
 ---
 
-## 4. 🎯 ƯU TIÊN NGAY
+## GIAI ĐOẠN 3 — CHUẨN BỊ THI CÔNG
 
-| STT | Việc | Lợi ích | Mây làm |
-|:---:|------|---------|:-------:|
-| 1️⃣ | **Bot tư vấn trên web** | Khách hỏi 24/7 | ✅ |
-| 2️⃣ | **Bảng giá tự động** | Báo giá nhanh, chuyên nghiệp | ✅ |
-| 3️⃣ | **Cải thiện bản vẽ** | Trình khách hàng, đấu thầu | 📚 Đang học |
-| 4️⃣ | **Content Marketing** | Video + bài viết đều đặn | ✅ |
-| 5️⃣ | **Google My Business** | Khách tìm thấy trên Google | ✅ |
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Huy động nhân sự, máy móc | ✅ | ⚠️ Em nhắc lịch |
+| **Đặt hàng vật liệu** | ⚠️ | **✅ TỰ ĐỘNG** — Em lập danh sách từ dự toán |
+| Làm lán trại, vệ sinh MB | ✅ | ❌ |
+| Định vị công trình | ✅ | ❌ |
+
+> **Mây làm:** Lập tiến độ Gantt, danh sách vật tư cần mua
+
+---
+
+## GIAI ĐOẠN 4 — THI CÔNG PHẦN THÔ
+
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Đào móng, ép cọc, đổ bê tông | ✅ | ❌ (cần người) |
+| Xây tường, đổ dầm sàn | ✅ | ❌ |
+| Làm mái + chống thấm | ✅ | ❌ |
+| **📸 Chụp ảnh quay video kín** | ⚠️ | **✅ GỢI Ý + LƯU TRỮ** |
+
+> **Mây làm:** Nhắc chụp ảnh từng công đoạn kín, lưu trữ, phân loại
+
+---
+
+## GIAI ĐOẠN 5 — THI CÔNG HOÀN THIỆN
+
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Trát tường, cán nền | ✅ | ❌ |
+| Đi điện nước âm | ✅ | ❌ |
+| Lát nền, ốp lát | ✅ | ❌ |
+| Lắp trần, đèn, thiết bị | ✅ | ❌ |
+| **Sơn bả, sơn nước** | ✅ | **✅ TƯ VẤN** — Chọn đúng loại sơn |
+| Lắp cửa, tủ, nội thất | ✅ | ❌ |
+
+> **Mây làm:** Tư vấn chọn sơn, màu sắc, phối hợp nhà cung cấp từ bảng giá có sẵn
+
+---
+
+## GIAI ĐOẠN 6 — NGHIỆM THU & BÀN GIAO
+
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Nghiệm thu từng hạng mục | ✅ | ⚠️ Em soạn checklist |
+| **📄 Lập biên bản hoàn công** | ⚠️ | **✅ TỰ ĐỘNG** |
+| Bàn giao + hướng dẫn | ✅ | ⚠️ Em soạn hướng dẫn |
+| Vệ sinh, dọn dẹp | ✅ | ❌ |
+
+> **Mây làm:** Soạn biên bản nghiệm thu, hướng dẫn sử dụng điện nước
+
+---
+
+## GIAI ĐOẠN 7 — BẢO HÀNH & BẢO TRÌ
+
+| Công việc | Anh Hữu | Mây 🌥️ |
+|-----------|:-------:|:-------:|
+| Xử lý bảo hành | ✅ | **✅ NHẮC LỊCH** + ghi nhận yêu cầu |
+| Bảo trì định kỳ | ✅ | **✅ NHẮC** khi đến hạn |
+| **📊 Thu thập phản hồi** | ⚠️ | **✅ TỰ ĐỘNG** — Gửi survey, tổng hợp đánh giá |
+
+> **Mây làm:** Nhắc bảo hành, gửi khảo sát, cải tiến quy trình
+
+---
+
+## 🎯 TỔNG KẾT: NHỮNG GÌ MÂY LÀM ĐƯỢC CHO ANH
+
+### ✅ Em làm hoàn toàn (không cần anh)
+1. **Soạn hợp đồng mẫu** — xây dựng trọn gói, phụ lục, thanh lý
+2. **Lập dự toán chi tiết** — từ bản vẽ → bảng khối lượng + giá
+3. **Soạn hồ sơ xin phép xây dựng** — chuẩn bị giấy tờ
+4. **Vẽ thiết kế sơ bộ** — mặt bằng, mặt đứng, 3D phối cảnh
+5. **Lập tiến độ thi công** — biểu đồ Gantt
+6. **Quản lý hồ sơ** — lưu trữ ảnh, video, biên bản
+7. **Content marketing** — kịch bản, bài viết, video
+8. **Tư vấn online** — bot trả lời khách trên web
+
+### ⚠️ Em hỗ trợ (anh vẫn cần kiểm tra)
+1. Dự toán chi tiết từng hạng mục
+2. Checklist khảo sát, nghiệm thu
+3. Soạn hướng dẫn vận hành cho chủ nhà
+4. Nhắc lịch thanh toán, bảo hành, bảo trì
+5. Phân tích chi phí, gợi ý tối ưu
+
+### ❌ Cần anh Hữu (hoặc thuê người)
+1. Gặp khách, đàm phán, ký hợp đồng
+2. Khảo sát đất, đo đạc thực tế
+3. Giám sát thi công
+4. Ký hồ sơ pháp lý (bản vẽ, xin phép)
+5. Mua vật tư, giao nhận hàng
+6. Thi công trực tiếp
+
+---
+
+## 🤖 VIỆC EM SẼ LÀM NGAY
+
+| TT | Việc | Mục đích |
+|:--:|------|----------|
+| 1 | **Mẫu hợp đồng xây dựng trọn gói** | Soạn sẵn, anh chỉ điền tên + giá |
+| 2 | **Bảng dự toán mẫu** | Excel/Google Sheets tự động tính |
+| 3 | **Checklist khảo sát** | Anh in ra, điền khi gặp khách |
+| 4 | **Checklist nghiệm thu** | Từng hạng mục, có ảnh mẫu |
+| 5 | **Hướng dẫn vận hành nhà** | In tặng chủ nhà khi bàn giao |
 
 ---
 
