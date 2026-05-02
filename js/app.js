@@ -188,8 +188,7 @@ function card(p, brand) {
     : `<div class="prod-price"><span class="price-contact">📞 Liên hệ: 0378.679.633</span></div>`;
   
   const contactBtns = `<div class="prod-actions">
-    <a href="#" onclick="if(window.THM_Chat){THM_Chat.navigate('bao-gia');THM_Chat.open();}else{window.open('https://zalo.me/0378679633');}return false;" class="pa-btn pa-quote" title="Báo giá">📋 Yêu cầu báo giá</a>
-    <a href="https://zalo.me/0378679633" target="_blank" class="pa-btn pa-zalo" title="Chat Zalo">💬 Chat Zalo (Anh Hữu)</a>
+    <a href="tel:0378679633" class="pa-btn pa-call" title="Gọi báo giá">📞 Gọi báo giá</a>
   </div>`;
 
   return `<div class="prod-card">
