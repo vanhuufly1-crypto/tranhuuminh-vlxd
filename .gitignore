@@ -3,3 +3,7 @@ anh-goc/
 
 # Python fetch script
 fetch_product_images.py
+
+# Utility scripts (not for web)
+doc_ban_ve.py
+phan_loai_anh.py
