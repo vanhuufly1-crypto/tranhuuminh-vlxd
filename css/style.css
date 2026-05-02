@@ -509,6 +509,18 @@ main { padding:40px 0; }
 }
 .brand-btn:hover { transform:translateY(-2px); filter:brightness(1.1); }
 
+/* ===== ALERT SERVICE ===== */
+.alert-service {
+  display:flex; align-items:center; gap:16px;
+  background:linear-gradient(135deg,#e94560,#c0392b);
+  color:#fff; border-radius:var(--radius); padding:18px 24px; margin-bottom:20px;
+  box-shadow:0 4px 20px rgba(233,69,96,0.3); animation:alertPulse 2s ease-in-out infinite;
+}
+@keyframes alertPulse { 0%,100%{box-shadow:0 4px 20px rgba(233,69,96,0.3)} 50%{box-shadow:0 6px 30px rgba(233,69,96,0.5)} }
+.alert-icon { font-size:40px; flex-shrink:0; }
+.alert-text { font-size:14px; line-height:1.7; }
+.alert-text strong { font-size:16px; }
+
 /* ===== TAG STYLES ===== */
 .tag {
   display:inline-block; padding:3px 10px; border-radius:4px;
