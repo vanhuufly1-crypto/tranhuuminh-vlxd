@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Render all brands
   BRANDS.forEach(b => renderBrand(b.id));
-  renderPrices();
+  // Price table hidden — chỉ dùng nút tải PDF
 
   // Navigation
   document.querySelectorAll('a[href^="#"]').forEach(a => {
