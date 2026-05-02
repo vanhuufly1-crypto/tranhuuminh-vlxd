@@ -176,6 +176,21 @@ main { padding:40px 0; }
   text-align:center; border:1px solid var(--border); transition:.3s;
 }
 .feat-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+
+/* ===== STATS ROW ===== */
+.stats-row {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+  margin-bottom:30px; text-align:center;
+}
+.stat-item {
+  background:linear-gradient(135deg,var(--primary),var(--primary-light));
+  border-radius:var(--radius); padding:24px 12px; color:var(--white);
+  border:2px solid rgba(233,69,96,0.3);
+}
+.stat-num { display:block; font-size:36px; font-weight:800; line-height:1; }
+.stat-unit { display:inline-block; font-size:18px; font-weight:700; color:var(--gold); margin-left:2px; }
+.stat-label { display:block; font-size:13px; color:rgba(255,255,255,0.7); margin-top:4px; font-weight:600; letter-spacing:.5px; }
+@media(max-width:600px) { .stats-row { grid-template-columns:repeat(2,1fr); } }
 .feat-card .icon { font-size:36px; margin-bottom:12px; }
 .feat-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--primary); }
 .feat-card p { font-size:13px; color:var(--text-light); line-height:1.6; }
