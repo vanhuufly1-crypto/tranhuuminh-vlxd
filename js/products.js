@@ -95,66 +95,76 @@ const PRODUCTS = {
       { code:'B2', name:'LEVEN COAT - Bột bả chống thấm cao cấp', spec:'40kg', desc:'Bột bả chống thấm cao cấp.', dm:'Theo hướng dẫn nhà sản xuất' },
     ],
   },
-  sika: [
-    { code:'Sika Top 107', name:'Vữa sửa chữa bê tông', spec:'Bao 25kg', desc:'Vữa gốc xi măng polymer. Sửa chữa bê tông hư hỏng, trám vá.', dm:'~2 kg/m²' },
-    { code:'Sikalastic 1K', name:'Màng chống thấm lỏng PU một thành phần', spec:'Thùng 20kg', desc:'Màng chống thấm gốc PU, đàn hồi cao, chịu UV.', dm:'1 kg/m²/lớp' },
-    { code:'Sika Latex', name:'Phụ gia chống thấm', spec:'Can 5L/25L', desc:'Phụ gia trộn vữa chống thấm, tăng kết dính, chống thấm.', dm:'0,5L/bao xi măng' },
-    { code:'Sikaflex 11FC', name:'Keo trám khe đa năng', spec:'Ống 600ml', desc:'Keo PU trám khe co giãn, chịu thời tiết khắc nghiệt.', dm:'Theo khe hở' },
-    { code:'SikaGrout 214', name:'Vữa rót tự chảy không co ngót', spec:'Bao 25kg', desc:'Rót móng máy, neo bulon. Cường độ cao, không co ngót.', dm:'~1 m²/25kg' },
-  ],
-  dulux: [
-    { code:'WeatherShield', name:'Sơn ngoại thất chống thấm cao cấp', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời. Công nghệ bảo vệ vượt trội.', dm:'12-14 m²/lớp' },
-    { code:'Inspire', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng, lau sạch vết bẩn dễ dàng.', dm:'14-16 m²/lớp' },
-    { code:'5in1', name:'Sơn nội thất đa năng', spec:'Thùng 18L', desc:'5 tác dụng: chống kiềm, chống bám bụi, dễ lau chùi, bền màu, phủ tốt.', dm:'14-16 m²/lớp' },
-    { code:'Ambiance', name:'Sơn nội thất cao cấp nhất', spec:'Thùng 18L', desc:'Không mùi, chống khuẩn, siêu bền. Dòng sơn cao cấp nhất của Dulux.', dm:'12-14 m²/lớp' },
-  ],
-  jotun: [
-    { code:'Majestic', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng với bảng màu rộng. Độ phủ cao.', dm:'12-14 m²/lớp' },
-    { code:'Jotashield', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, chống bám bụi cho tường ngoài.', dm:'10-12 m²/lớp' },
-    { code:'Gardex', name:'Sơn ngoại thất chất lượng', spec:'Thùng 18L', desc:'Sơn ngoại thất chống thấm giá phải chăng, chất lượng tốt.', dm:'12-14 m²/lớp' },
-    { code:'Fenomastic', name:'Sơn nội thất giá cạnh tranh', spec:'Thùng 18L', desc:'Sơn nội thất chất lượng, giá thành hợp lý.', dm:'14-16 m²/lớp' },
-  ],
+  sika: {
+    "🧪 Chống thấm & Vữa": [
+      { code:'Sika Top 107', name:'Vữa sửa chữa bê tông', spec:'Bao 25kg', desc:'Vữa gốc xi măng polymer. Sửa chữa bê tông hư hỏng, trám vá.', dm:'~2 kg/m²' },
+      { code:'Sikalastic 1K', name:'Màng chống thấm lỏng PU một thành phần', spec:'Thùng 20kg', desc:'Màng chống thấm gốc PU, đàn hồi cao, chịu UV.', dm:'1 kg/m²/lớp' },
+      { code:'Sika Latex', name:'Phụ gia chống thấm', spec:'Can 5L/25L', desc:'Phụ gia trộn vữa chống thấm, tăng kết dính, chống thấm.', dm:'0,5L/bao xi măng' },
+      { code:'SikaGrout 214', name:'Vữa rót tự chảy không co ngót', spec:'Bao 25kg', desc:'Rót móng máy, neo bulon. Cường độ cao, không co ngót.', dm:'~1 m²/25kg' },
+    ],
+    "🔧 Keo & Phụ kiện": [
+      { code:'Sikaflex 11FC', name:'Keo trám khe đa năng', spec:'Ống 600ml', desc:'Keo PU trám khe co giãn, chịu thời tiết khắc nghiệt.', dm:'Theo khe hở' },
+    ],
+  },
+  dulux: {
+    "🎨 Sơn nội thất": [
+      { code:'Inspire', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng, lau sạch vết bẩn dễ dàng.', dm:'14-16 m²/lớp' },
+      { code:'5in1', name:'Sơn nội thất đa năng', spec:'Thùng 18L', desc:'5 tác dụng: chống kiềm, chống bám bụi, dễ lau chùi, bền màu, phủ tốt.', dm:'14-16 m²/lớp' },
+      { code:'Ambiance', name:'Sơn nội thất cao cấp nhất', spec:'Thùng 18L', desc:'Không mùi, chống khuẩn, siêu bền. Dòng sơn cao cấp nhất của Dulux.', dm:'12-14 m²/lớp' },
+    ],
+    "🛡️ Sơn ngoại thất": [
+      { code:'WeatherShield', name:'Sơn ngoại thất chống thấm cao cấp', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời. Công nghệ bảo vệ vượt trội.', dm:'12-14 m²/lớp' },
+    ],
+  },
+  jotun: {
+    "🎨 Sơn nội thất": [
+      { code:'Majestic', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng với bảng màu rộng. Độ phủ cao.', dm:'12-14 m²/lớp' },
+      { code:'Fenomastic', name:'Sơn nội thất giá cạnh tranh', spec:'Thùng 18L', desc:'Sơn nội thất chất lượng, giá thành hợp lý.', dm:'14-16 m²/lớp' },
+    ],
+    "🛡️ Sơn ngoại thất": [
+      { code:'Jotashield', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, chống bám bụi cho tường ngoài.', dm:'10-12 m²/lớp' },
+      { code:'Gardex', name:'Sơn ngoại thất chất lượng', spec:'Thùng 18L', desc:'Sơn ngoại thất chống thấm giá phải chăng, chất lượng tốt.', dm:'12-14 m²/lớp' },
+    ],
+  },
   kova: {
-    "Sơn bóng nội thất": [
-      { code:'K871 GOLD', name:'Sơn bóng nội thất cao cấp', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn bóng GOLD trong nhà, độ phủ cao, bền màu. 👉 XEM THÊM SẢN PHẨM BÊN DƯỚI', dm:'120-140 m²/20kg' },
+    "🎨 Sơn nội thất": [
+      { code:'K871 GOLD', name:'Sơn bóng nội thất cao cấp', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn bóng GOLD trong nhà, độ phủ cao, bền màu.', dm:'120-140 m²/20kg' },
       { code:'K5500 GOLD', name:'Sơn bóng nội thất', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn bóng trong nhà cao cấp.', dm:'90-100 m²/20kg' },
       { code:'K260 GOLD', name:'Sơn không bóng trong nhà', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn mịn không bóng nội thất chất lượng cao.', dm:'60-70 m²/20kg' },
       { code:'K771 GOLD', name:'Sơn trang trí nội thất', spec:'Thùng 25kg', desc:'Sơn trang trí nội thất độ bám dính cao.', dm:'75-88 m²/25kg' },
-    ],
-    "Sơn nội thất khác": [
       { code:'K10 GOLD', name:'Sơn trần trang trí', spec:'Thùng 25kg', desc:'Sơn trần nhà, tường trang trí cao cấp.', dm:'125-150 m²/25kg' },
       { code:'K109 GOLD', name:'Sơn lót kháng kiềm nội thất', spec:'Thùng 25kg', desc:'Sơn lót kháng kiềm cao cấp trong nhà.', dm:'120-140 m²/25kg' },
     ],
-    "Sơn ngoại thất": [
+    "🛡️ Sơn ngoại thất & Chống thấm": [
       { code:'K360 GOLD', name:'Sơn bóng ngoại thất cao cấp', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn bóng cao cấp ngoại thất, chịu thời tiết khắc nghiệt.', dm:'120-140 m²/20kg' },
       { code:'CT04T GOLD', name:'Sơn trang trí chống thấm ngoại thất', spec:'Thùng 20kg', desc:'Sơn trang trí, chống thấm cao cấp ngoài trời.', dm:'100-110 m²/20kg' },
       { code:'K5800 GOLD', name:'Sơn bóng ngoại thất', spec:'Thùng 20kg', desc:'Sơn bóng ngoại thất bền màu, chịu thời tiết.', dm:'Theo hướng dẫn' },
-    ],
-    "Chống thấm": [
       { code:'CT-11A GOLD', name:'Chống thấm xi măng, bê tông', spec:'Thùng 20kg / Lon 4kg', desc:'Chống thấm sàn mái, tường, toilet, bể nước bằng xi măng polymer.', dm:'Tùy bề mặt' },
       { code:'CT-11B GOLD', name:'Phụ gia chống thấm xi măng', spec:'Thùng 19kg / Lon 3.8kg', desc:'Phụ gia trộn vữa xi măng, bê tông chống thấm.', dm:'Tùy bề mặt' },
       { code:'CT-14 GOLD', name:'Chống thấm co giãn chống áp lực ngược', spec:'Thùng 20kg / Lon 4kg', desc:'Chất chống thấm co giãn, chống áp lực ngược cho xi măng, bê tông.', dm:'Tùy bề mặt' },
     ],
-    "Bột bả - Matit": [
+    "🧱 Bột bả & Sàn": [
       { code:'MTN GOLD', name:'Matit ngoại thất', spec:'Bao 25kg', desc:'Bột bả ngoại thất chống thấm, chống nứt.', dm:'1,2-1,4 kg/m²' },
       { code:'KOVA-BT', name:'Bột bả cao cấp trong nhà', spec:'Bao 40kg', desc:'Bột bả trong nhà cao cấp, độ bám dính cao.', dm:'0,9-1,0 kg/m²' },
       { code:'KOVA-BN', name:'Bột bả cao cấp ngoại thất', spec:'Bao 40kg', desc:'Bột bả ngoại thất cao cấp, chống thấm.', dm:'0,9-1,0 kg/m²' },
       { code:'MB-T', name:'Bột bả trong nhà', spec:'Bao 25kg', desc:'Bột bả trong nhà, chất lượng kinh tế.', dm:'0,8-1,0 kg/m²' },
       { code:'MB-N', name:'Bột bả ngoại thất', spec:'Bao 25kg', desc:'Bột bả ngoại thất, giá hợp lý.', dm:'0,8-1,0 kg/m²' },
-    ],
-    "Sơn sàn & Thể thao": [
       { code:'CT08 GOLD', name:'Sơn sân tennis, sân thể thao', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn sân thể thao đa năng, chịu mài mòn, nhiều màu sắc.', dm:'Tùy bề mặt' },
       { code:'KL55T GOLD', name:'Sơn men bóng phủ sàn trong nhà', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn phủ sàn trong nhà, chịu mài mòn.', dm:'Theo hướng dẫn' },
       { code:'KLST GOLD', name:'Sơn men bóng phủ sàn chịu mài mòn', spec:'Thùng 20kg / Lon 4kg', desc:'Sơn phủ sàn chịu mài mòn cao, hai thành phần.', dm:'2,0-2,5 kg/m²' },
       { code:'TNA GOLD', name:'Chất phủ đệm sàn thể thao', spec:'Bao 25kg', desc:'Chất phủ đệm cho sân tennis, sân thể thao đa năng.', dm:'Tùy bề mặt' },
     ],
   },
-  nippon: [
-    { code:'Matex', name:'Sơn nội thất', spec:'Thùng 18L', desc:'Sơn nước nội thất chất lượng tốt, giá thành hợp lý, phủ cao.', dm:'14-16 m²/lớp' },
-    { code:'Weatherbond', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời.', dm:'12-14 m²/lớp' },
-    { code:'SuperTech', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Không mùi, lau chùi dễ dàng, siêu bền.', dm:'12-14 m²/lớp' },
-    { code:'Gold', name:'Sơn ngoại thất cao cấp', spec:'Thùng 18L', desc:'Bảo vệ tường vượt trội, 15 năm bền màu.', dm:'10-12 m²/lớp' },
-  ],
+  nippon: {
+    "🎨 Sơn nội thất": [
+      { code:'Matex', name:'Sơn nội thất', spec:'Thùng 18L', desc:'Sơn nước nội thất chất lượng tốt, giá thành hợp lý, phủ cao.', dm:'14-16 m²/lớp' },
+      { code:'SuperTech', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Không mùi, lau chùi dễ dàng, siêu bền.', dm:'12-14 m²/lớp' },
+    ],
+    "🛡️ Sơn ngoại thất": [
+      { code:'Weatherbond', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời.', dm:'12-14 m²/lớp' },
+      { code:'Gold', name:'Sơn ngoại thất cao cấp', spec:'Thùng 18L', desc:'Bảo vệ tường vượt trội, 15 năm bền màu.', dm:'10-12 m²/lớp' },
+    ],
+  },
 };
 
 // Price map: brand_id -> { code: { price, spec } }
