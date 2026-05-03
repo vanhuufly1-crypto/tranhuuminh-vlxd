@@ -127,13 +127,77 @@ const PRODUCTS = {
     ],
   },
   dulux: {
-    "🎨 Sơn nội thất": [
-      { code:'Inspire', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng, lau sạch vết bẩn dễ dàng.', dm:'14-16 m²/lớp' },
-      { code:'5in1', name:'Sơn nội thất đa năng', spec:'Thùng 18L', desc:'5 tác dụng: chống kiềm, chống bám bụi, dễ lau chùi, bền màu, phủ tốt.', dm:'14-16 m²/lớp' },
-      { code:'Ambiance', name:'Sơn nội thất cao cấp nhất', spec:'Thùng 18L', desc:'Không mùi, chống khuẩn, siêu bền. Dòng sơn cao cấp nhất của Dulux.', dm:'12-14 m²/lớp' },
+    "🛡️ Ngoại thất siêu cao cấp": {
+      "Weathershield Royal Shine": [
+        { code:'WS-RoyalShine', name:'Weathershield Royal Shine - Chống vệt bẩn, chống bám bụi', spec:'1L / 5L', desc:'Chống vệt bẩn, chống bám bụi, chống rêu mốc mạnh gấp 3 lần. Chống kiềm hóa, chống phai màu. Bảo vệ màng sơn 12 năm.', dm:'Theo hướng dẫn' },
+      ],
+      "Weathershield Powerflexx": [
+        { code:'WS-Powerflexx', name:'Weathershield Powerflexx - Màng co giãn gấp 6 lần', spec:'1L / 5L', desc:'Màng sơn co giãn gấp 6 lần, chống rạn nứt, chống thấm vượt trội, chống kiềm hóa, chống phai màu, chống rêu mốc.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🛡️ Ngoại thất cao cấp": {
+      "Weathershield": [
+        { code:'WS-CaoCap', name:'Weathershield Cao cấp - Chống rêu mốc, chống phai màu', spec:'1L / 5L / 15L', desc:'Chống rêu mốc dài lâu gấp 2 lần. Chống kiềm hóa, chống phai màu, chống bám bẩn, chống thấm.', dm:'Theo hướng dẫn' },
+      ],
+      "Weathershield Colour": [
+        { code:'WS-Colour', name:'Weathershield Colour - Chống phai màu vượt trội', spec:'15L', desc:'Chống phai màu vượt trội, chống kiềm hóa, chống thấm, chống bám bẩn, chống rêu mốc.', dm:'Theo hướng dẫn' },
+      ],
+      "Inspire Ngoại thất": [
+        { code:'IN-NgoaiThat-Bong', name:'Inspire Ngoại thất Bóng', spec:'5L', desc:'Màng sơn bền chắc, chống rêu mốc, chống bong tróc, bề mặt láng mịn, che phủ tốt.', dm:'Theo hướng dẫn' },
+        { code:'IN-NgoaiThat-Mo', name:'Inspire Ngoại thất Mờ', spec:'5L / 15L / 18L', desc:'Màng sơn bền chắc, chống rêu mốc, bề mặt láng mịn, che phủ tốt.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🎨 Nội thất siêu cao cấp": {
+      "Ambiance Breathing": [
+        { code:'AM-Breathing', name:'Ambiance Breathing - Sơn sinh học 22% gốc sinh học', spec:'5L', desc:'22% thành phần gốc sinh học (than tre hoạt tính). Vô hiệu hóa formaldehyde, benzene, VOC. Bảo vệ sức khỏe.', dm:'Theo hướng dẫn' },
+      ],
+      "Ambiance 5in1 Superflexx": [
+        { code:'AM-5in1-SieuBong', name:'Ambiance 5in1 Superflexx Siêu Bóng', spec:'1L / 3L', desc:'Màng sơn co giãn gấp 3 lần che lấp khe nứt nhỏ. Kháng khuẩn, ngăn ngừa nấm mốc.', dm:'Theo hướng dẫn' },
+        { code:'AM-5in1-BongMo', name:'Ambiance 5in1 Superflexx Bóng Mờ', spec:'1L / 3L / 5L / 8L', desc:'Giải pháp toàn diện về trang trí và bảo vệ.', dm:'Theo hướng dẫn' },
+      ],
+      "Ambiance 5in1 Diamond Glow": [
+        { code:'AM-DiamondGlow', name:'Ambiance 5in1 Diamond Glow Siêu Bóng', spec:'1L / 5L', desc:'Màu sắc rực rỡ, sắc nét, bền màu. Bề mặt láng mịn tuyệt hảo.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🎨 Nội thất cao cấp": {
+      "EasyClean Chống Bám Bẩn": [
+        { code:'EC-ChongBan-Bong', name:'EasyClean Chống Bám Bẩn Kháng Virus (Bóng)', spec:'1L / 5L / 15L', desc:'Kháng Virus & vi khuẩn. Chủ động chống bám bẩn, lau chùi cực hiệu quả. Bề mặt láng mịn, ngăn ngừa nấm mốc.', dm:'Theo hướng dẫn' },
+        { code:'EC-ChongBan-Mo', name:'EasyClean Chống Bám Bẩn Kháng Virus (Mờ)', spec:'1L / 5L / 15L', desc:'Kháng Virus. Chống bám bẩn, lau chùi hiệu quả. Bề mặt mờ sang trọng.', dm:'Theo hướng dẫn' },
+      ],
+      "EasyClean Lau Chùi Vượt Trội": [
+        { code:'EC-LauChuiVT-Bong', name:'EasyClean Lau Chùi Vượt Trội Kháng Virus (Bóng)', spec:'1L / 5L / 15L', desc:'Kháng Virus, lau chùi vượt trội, kháng khuẩn. Công nghệ Colourguard bảo vệ màng sơn.', dm:'Theo hướng dẫn' },
+        { code:'EC-LauChuiVT-Mo', name:'EasyClean Lau Chùi Vượt Trội Kháng Virus (Mờ)', spec:'5L / 15L', desc:'Kháng Virus, lau chùi vượt trội. Bề mặt mờ.', dm:'Theo hướng dẫn' },
+      ],
+      "Inspire Nội thất MỚI": [
+        { code:'IN-NoiThat-Bong-Moi', name:'Inspire Bóng (Mới) - ChromaBrite', spec:'5L', desc:'Công nghệ ChromaBrite giữ màu sắc bền và tươi đẹp. Dễ lau sạch vết bẩn. Chống vi khuẩn & nấm mốc.', dm:'Theo hướng dẫn' },
+        { code:'IN-NoiThat-Mo-Moi', name:'Inspire Bóng Mờ (Mới)', spec:'5L', desc:'Công nghệ ChromaBrite. Dễ lau sạch vết bẩn. Chống vi khuẩn & nấm mốc.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🎨 Nội thất kinh tế": {
+      "EasyClean Lau Chùi Hiệu Quả": [
+        { code:'EC-LauChuiHQ-Bong', name:'EasyClean Lau Chùi Hiệu Quả (Bóng)', spec:'1L / 5L / 15L / 18L', desc:'Lau chùi, kháng khuẩn. Công nghệ Colourguard. Bề mặt láng mịn, ngăn ngừa nấm mốc.', dm:'Theo hướng dẫn' },
+        { code:'EC-LauChuiHQ-Mo', name:'EasyClean Lau Chùi Hiệu Quả (Mờ)', spec:'1L / 5L / 15L / 18L', desc:'Lau chùi hiệu quả. Công nghệ Colourguard. Bề mặt mờ.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🧱 Sơn lót nội thất": [
+      { code:'Supersealer', name:'Supersealer - Sơn lót nội thất', spec:'5L / 18L', desc:'Độ bám dính cao, tạo độ nhẵn mịn, chống kiềm, lấp lỗ kim.', dm:'Theo hướng dẫn' },
+      { code:'AM-Primer', name:'Ambiance Primer - Lót nội thất cao cấp', spec:'5L / 18L', desc:'Tương thích dòng Ambiance. Bám dính cao, che phủ cao, tăng độ láng mịn.', dm:'Theo hướng dẫn' },
+      { code:'IN-Primer', name:'Interior Primer - Lót nội thất', spec:'5L / 18L', desc:'Độ bám dính cao, tăng độ bền màu cho lớp phủ.', dm:'Theo hướng dẫn' },
+      { code:'EC-Primer', name:'EasyClean Primer - Lót nội thất', spec:'5L / 15L', desc:'Tương thích dòng EasyClean & Inspire. Bám dính cực tốt.', dm:'Theo hướng dẫn' },
     ],
-    "🛡️ Sơn ngoại thất": [
-      { code:'WeatherShield', name:'Sơn ngoại thất chống thấm cao cấp', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời. Công nghệ bảo vệ vượt trội.', dm:'12-14 m²/lớp' },
+    "💧 Chống thấm Dulux": [
+      { code:'Aquatech-Max', name:'Aquatech Max - Chống thấm sàn thế hệ mới', spec:'5kg / 20kg', desc:'Chống thấm gấp 2 lần. Màng chống thấm dày, co giãn cao, che lấp khe nứt. Không cần pha xi măng.', dm:'Theo hướng dẫn' },
+      { code:'Aquatech-Flex', name:'Aquatech Flex - Chống thấm tường thế hệ mới', spec:'6kg / 20kg', desc:'Chống thấm gấp 2 lần. Màng dày, co giãn cao. Không cần pha xi măng.', dm:'Theo hướng dẫn' },
+      { code:'Aquatech-VuotTroi', name:'Aquatech Chống thấm Vượt trội', spec:'6kg / 20kg', desc:'Bề mặt dai chắc, bám dính cao, bề mặt sáng đẹp. Pha trộn với xi măng.', dm:'Theo hướng dẫn' },
+      { code:'Aquatech-BaoVe', name:'Chống thấm Bảo vệ Cao cấp', spec:'6kg / 20kg', desc:'Chống loang màu do kiềm hóa. Che phủ vết nứt. Không cần pha xi măng.', dm:'Theo hướng dẫn' },
+    ],
+    "🧱 Bột trét Dulux": [
+      { code:'Botret-IN-EX', name:'Bột trét Nội & Ngoại thất', spec:'40kg', desc:'Tạo bề mặt láng mịn, độ bám dính cao.', dm:'Theo hướng dẫn' },
+      { code:'Botret-IN', name:'Bột trét Nội thất', spec:'40kg', desc:'Tạo bề mặt láng mịn, độ bám dính cao, dễ thi công.', dm:'Theo hướng dẫn' },
+    ],
+    "🪵 Gỗ & Kim loại": [
+      { code:'SonDau-Maxilite', name:'Sơn Dầu Maxilite cho Gỗ & Kim Loại', spec:'0.75L / 2.5L / 17L', desc:'Bề mặt bóng mịn, nhanh khô, độ phủ cao. Hơn 1.000 màu. Không chì, không thủy ngân.', dm:'Theo hướng dẫn' },
+      { code:'Lot-ChongRi', name:'Sơn lót ngăn ngừa rỉ sét Maxilite', spec:'0.8L / 3L', desc:'Ngăn ngừa rỉ sét cho kim loại sắt thép. Tạo bám dính cho lớp hoàn thiện.', dm:'Theo hướng dẫn' },
     ],
   },
   jotun: {
@@ -261,6 +325,52 @@ const PRICE_MAP = {
     'CT-14 GOLD': { price:'4.210.000đ', spec:'20kg' },
     'MTN GOLD': { price:'855.000đ', spec:'25kg' },
     'CT08 GOLD': { price:'6.760.000đ', spec:'20kg' },
+  },
+  dulux: {
+    'WS-RoyalShine-1L': { price:'680.000đ', spec:'1L' },
+    'WS-RoyalShine-5L': { price:'2.980.000đ', spec:'5L' },
+    'WS-Powerflexx-1L': { price:'640.000đ', spec:'1L' },
+    'WS-Powerflexx-5L': { price:'2.890.000đ', spec:'5L' },
+    'WS-CaoCap-1L': { price:'568.000đ', spec:'1L' },
+    'WS-CaoCap-5L': { price:'2.544.000đ', spec:'5L' },
+    'WS-CaoCap-15L': { price:'7.250.000đ', spec:'15L' },
+    'WS-Colour': { price:'5.828.000đ', spec:'15L' },
+    'IN-NgoaiThat-Bong': { price:'4.575.000đ', spec:'5L' },
+    'IN-NgoaiThat-Mo-5L': { price:'1.500.000đ', spec:'5L' },
+    'IN-NgoaiThat-Mo-15L': { price:'4.300.000đ', spec:'15L' },
+    'IN-NgoaiThat-Mo-18L': { price:'5.145.000đ', spec:'18L' },
+    'AM-Breathing': { price:'2.061.000đ', spec:'5L' },
+    'AM-5in1-SieuBong': { price:'2.190.000đ', spec:'3L' },
+    'AM-DiamondGlow-1L': { price:'415.000đ', spec:'1L' },
+    'AM-DiamondGlow-5L': { price:'2.074.000đ', spec:'5L' },
+    'EC-ChongBan-Bong-5L': { price:'1.236.000đ', spec:'5L' },
+    'EC-ChongBan-Bong-15L': { price:'3.480.000đ', spec:'15L' },
+    'EC-ChongBan-Mo-5L': { price:'1.180.000đ', spec:'5L' },
+    'EC-ChongBan-Mo-15L': { price:'3.287.000đ', spec:'15L' },
+    'EC-LauChuiVT-Bong-5L': { price:'1.046.000đ', spec:'5L' },
+    'EC-LauChuiVT-Bong-15L': { price:'2.922.000đ', spec:'15L' },
+    'EC-LauChuiVT-Mo-5L': { price:'998.000đ', spec:'5L' },
+    'EC-LauChuiVT-Mo-15L': { price:'2.787.000đ', spec:'15L' },
+    'IN-NoiThat-Bong-Moi': { price:'2.454.000đ', spec:'5L' },
+    'IN-NoiThat-Mo-Moi': { price:'2.343.000đ', spec:'5L' },
+    'EC-LauChuiHQ-Bong-5L': { price:'1.153.000đ', spec:'5L' },
+    'EC-LauChuiHQ-Bong-18L': { price:'3.896.000đ', spec:'18L' },
+    'EC-LauChuiHQ-Mo-5L': { price:'1.098.000đ', spec:'5L' },
+    'EC-LauChuiHQ-Mo-18L': { price:'3.714.000đ', spec:'18L' },
+    'Supersealer-5L': { price:'976.000đ', spec:'5L' },
+    'Supersealer-18L': { price:'3.341.000đ', spec:'18L' },
+    'AM-Primer-5L': { price:'889.000đ', spec:'5L' },
+    'AM-Primer-18L': { price:'2.482.000đ', spec:'18L' },
+    'IN-Primer-5L': { price:'869.000đ', spec:'5L' },
+    'IN-Primer-18L': { price:'2.979.000đ', spec:'18L' },
+    'EC-Primer-5L': { price:'783.000đ', spec:'5L' },
+    'EC-Primer-15L': { price:'2.234.000đ', spec:'15L' },
+    'Aquatech-Max-5kg': { price:'1.301.000đ', spec:'5kg' },
+    'Aquatech-Max-20kg': { price:'4.126.000đ', spec:'20kg' },
+    'Aquatech-Flex-6kg': { price:'1.275.000đ', spec:'6kg' },
+    'Aquatech-Flex-20kg': { price:'4.014.000đ', spec:'20kg' },
+    'Botret-IN-EX': { price:'866.000đ', spec:'40kg' },
+    'Botret-IN': { price:'493.500đ', spec:'40kg' },
   },
   jotun: {
     'MJ-NguyenBan-1L':  { price:'545.000đ', spec:'1L' },
