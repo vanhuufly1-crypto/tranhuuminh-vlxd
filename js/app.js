@@ -77,9 +77,20 @@ function getBrandImages(brandId) {
 
 // Image error fallback
 function handleImgError(img) {
-  img.onerror = null; // prevent loop
+  img.onerror = null;
   img.style.display = 'none';
 }
+
+// Ảnh đại diện cho từng thương hiệu
+const BRAND_IMG = {
+  munich: 'images/munich_munich_cn-006.webp',
+  nano: 'images/nano_IMG_1623337789048_1623337954888-300x300.webp',
+  sika: 'images/sika_sikaflex11fc.webp',
+  dulux: 'images/dulux_5in1.webp',
+  jotun: 'images/jotun_jotashield.webp',
+  kova: 'images/kova_bn-1699232156.webp',
+  nippon: 'images/nippon_matex.webp',
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   // Attach onerror to all product/gallery images
@@ -237,7 +248,11 @@ function card(p, brand) {
     <a href="tel:0378679633" class="pa-btn pa-call" title="Hotline">📞 Hotline (Anh Hữu)</a>
   </div>`;
 
-  return `<div class="prod-card" style="--card-index:${Math.floor(Math.random()*5)}">
+  const imgSrc = BRAND_IMG[brand] || '';
+  const imgHTML = imgSrc ? `<div class="prod-img"><img src="${imgSrc}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.display='none'"></div>` : '';
+
+  return `<div class="prod-card">
+    ${imgHTML}
     <div class="prod-body">
       <span class="tag tag-${brand}">${p.code}</span>
       <h4>${p.name}</h4>
