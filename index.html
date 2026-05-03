@@ -86,7 +86,8 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="container">
-    <ul class="nav-list">
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+    <ul class="nav-list" id="navList">
       <li><a href="#home">🏠 Trang chủ</a></li>
       <li>
         <a href="#products">📦 Sản phẩm ▾</a>
@@ -122,6 +123,7 @@
       <li><a href="#projects">🏗️ Dự án</a></li>
       <li><a href="#news">📰 Tin tức</a></li>
       <li><a href="#services">🔧 Dịch vụ</a></li>
+      <li style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><a href="#" onclick="toggleNav();return false;">✕ Đóng</a></li>
     </ul>
   </div>
 </nav>

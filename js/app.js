@@ -66,15 +66,27 @@ function getBrandImages(brandId) {
     munich:  [0,1,9, 19,20,21,22,23,24],
     nano:    [4],
     sika:    [3,10, 32,33,34,35,36],
-    dulux:   [11, 40,41,42,43],           // let's colour + Weathershield, Inspire, 5in1, Ambiance
-    jotun:   [12, 25,26,27,28, 44,45,46], // Jotun + Jotashield, Majestic, Waterguard
-    kova:    [3,8, 29,30, 47,48],         // Kova + CT11A, K871, CT04T, CT14
-    nippon:  [8,10, 31, 37,38,39],        // Nippon + Weatherbond, Matex, Weathergard, SuperTech
+    dulux:   [11, 40,41,42,43],
+    jotun:   [12, 25,26,27,28, 44,45,46],
+    kova:    [3,8, 29,30, 47,48],
+    nippon:  [8,10, 31, 37,38,39],
   };
-  return (map[brandId] || []).map(i => PROD_IMAGES[i]);
+  // Filter out undefined indices
+  return (map[brandId] || []).map(i => PROD_IMAGES[i]).filter(Boolean);
+}
+
+// Image error fallback
+function handleImgError(img) {
+  img.onerror = null; // prevent loop
+  img.style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Attach onerror to all product/gallery images
+  document.querySelectorAll('.gallery-item img, .brand-gallery img, .pc-img img').forEach(img => {
+    img.addEventListener('error', () => handleImgError(img));
+  });
+
   // Render brand overview on home
   const grid = document.getElementById('brandGrid');
   BRANDS.forEach(b => {
@@ -90,9 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Render all brands
   BRANDS.forEach(b => renderBrand(b.id));
-  // Price table hidden — chỉ dùng nút tải PDF
 
-  // Navigation
+  // Navigation — close mobile nav on click
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -101,6 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
       showSection(id);
       document.querySelectorAll('.nav-list a').forEach(n => n.classList.remove('active'));
       a.classList.add('active');
+      // Close mobile nav if open
+      const navList = document.getElementById('navList');
+      if (navList.classList.contains('open')) toggleNav();
     });
   });
 
@@ -120,6 +134,7 @@ function showBrand(id) {
 
 function renderBrand(id) {
   const sec = document.getElementById(id + '-section');
+  if (!sec) return;
   const container = sec.querySelector('.brand-content');
   const data = PRODUCTS[id];
   
@@ -131,7 +146,7 @@ function renderBrand(id) {
     html += '<div class="brand-gallery">';
     imgList.forEach(img => {
       html += `<div class="gallery-item">
-        <img src="images/${img}.webp" alt="${id}" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images/${img}.webp" alt="${id}" loading="lazy" onerror="this.style.display='none'" onclick="openLightbox(this.src)">
       </div>`;
     });
     html += '</div>';
@@ -140,7 +155,7 @@ function renderBrand(id) {
   if (Array.isArray(data)) {
     // Simple list
     html += '<div class="cat-products active">';
-    data.forEach(p => html += card(p, id));
+    data.forEach((p, idx) => html += card(p, id));
     html += '</div>';
   } else {
     // Categories with tabs
@@ -192,7 +207,7 @@ function card(p, brand) {
     <a href="tel:0378679633" class="pa-btn pa-call" title="Hotline">📞 Hotline (Anh Hữu)</a>
   </div>`;
 
-  return `<div class="prod-card">
+  return `<div class="prod-card" style="--card-index:${Math.floor(Math.random()*5)}">
     <div class="prod-body">
       <span class="tag tag-${brand}">${p.code}</span>
       <h4>${p.name}</h4>
@@ -224,7 +239,12 @@ function renderPrices() {
 }
 
 function searchProd(q) {
-  if (!q || q.length < 2) return;
+  if (!q || q.length < 1) {
+    // Clear search when input empty
+    const grid = document.getElementById('searchGrid');
+    if (grid) grid.innerHTML = '';
+    return;
+  }
   q = q.toLowerCase();
   const results = [];
   for (const b of BRANDS) {
@@ -237,21 +257,33 @@ function searchProd(q) {
       }
     }
   }
-  if (!results.length) return;
   
-  document.getElementById('searchTitle').textContent = `🔍 Kết quả tìm: "${q}" (${results.length} SP)`;
   const grid = document.getElementById('searchGrid');
-  grid.innerHTML = results.map(p => {
-    const tag = `<span class="tag tag-${p.bid}">${p.bname} - ${p.code}</span>`;
-    return `<div class="prod-card"><div class="prod-body">${tag}
-      <h4>${p.name}</h4><div class="code">📦 ${p.spec}</div>
-      <div class="desc">${p.desc}</div><div class="meta">📐 ${p.dm}</div></div></div>`;
-  }).join('');
+  const title = document.getElementById('searchTitle');
+  
+  if (!results.length) {
+    title.textContent = `🔍 Không tìm thấy "${q}"`;
+    grid.innerHTML = '<p style="text-align:center;padding:40px;color:#999">😕 Không có sản phẩm phù hợp. Thử từ khóa khác hoặc <a href="#quote" style="color:var(--accent);font-weight:600">gửi yêu cầu báo giá</a>.</p>';
+  } else {
+    title.textContent = `🔍 Kết quả tìm: "${q}" (${results.length} SP)`;
+    grid.innerHTML = results.map(p => {
+      const tag = `<span class="tag tag-${p.bid}">${p.bname} - ${p.code}</span>`;
+      return `<div class="prod-card"><div class="prod-body">${tag}
+        <h4>${p.name}</h4><div class="code">📦 ${p.spec}</div>
+        <div class="desc">${p.desc}</div><div class="meta">📐 ${p.dm}</div></div></div>`;
+    }).join('');
+  }
   showSection('search-section');
 }
 
 function match(p, q) {
   return p.name.toLowerCase().includes(q) || p.code.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+}
+
+// Mobile nav toggle
+function toggleNav() {
+  const list = document.getElementById('navList');
+  list.classList.toggle('open');
 }
 
 // Download price as TXT file
