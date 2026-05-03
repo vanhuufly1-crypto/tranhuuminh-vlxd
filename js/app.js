@@ -232,6 +232,21 @@ function toggleNav() {
   list.classList.toggle('open');
 }
 
+// Mobile mega menu toggle — tap Sản phẩm to show/hide
+(function(){
+  const prodLink = document.querySelector('.nav-prod');
+  if (prodLink) {
+    prodLink.addEventListener('click', function(e) {
+      if (window.innerWidth > 768) return;
+      e.preventDefault();
+      const mega = this.parentElement.querySelector('.mega');
+      if (mega) {
+        mega.classList.toggle('open');
+      }
+    });
+  }
+})();
+
 /* ===== SCROLL-TO-TOP BUTTON ===== */
 (function initScrollTop() {
   const btn = document.createElement('button');
@@ -256,7 +271,7 @@ function toggleNav() {
 /* ===== FADE-IN ON SCROLL (IntersectionObserver) ===== */
 (function initFadeIn() {
   // Add fade-in classes to sections and cards dynamically
-  const sectionEls = document.querySelectorAll('.section, .features, .brand-grid, .project-grid, .news-grid, .svc-grid, .contact-grid');
+  const sectionEls = document.querySelectorAll('.section, .features, .brand-grid, .project-grid, .contact-grid');
   sectionEls.forEach(el => {
     el.classList.add('fade-in');
     // Also add staggered animation to direct children
