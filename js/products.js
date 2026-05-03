@@ -137,14 +137,56 @@ const PRODUCTS = {
     ],
   },
   jotun: {
-    "🎨 Sơn nội thất": [
-      { code:'Majestic', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Sơn nội thất sang trọng với bảng màu rộng. Độ phủ cao.', dm:'12-14 m²/lớp' },
-      { code:'Fenomastic', name:'Sơn nội thất giá cạnh tranh', spec:'Thùng 18L', desc:'Sơn nội thất chất lượng, giá thành hợp lý.', dm:'14-16 m²/lớp' },
-    ],
-    "🛡️ Sơn ngoại thất": [
-      { code:'Jotashield', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, chống bám bụi cho tường ngoài.', dm:'10-12 m²/lớp' },
-      { code:'Gardex', name:'Sơn ngoại thất chất lượng', spec:'Thùng 18L', desc:'Sơn ngoại thất chống thấm giá phải chăng, chất lượng tốt.', dm:'12-14 m²/lớp' },
-    ],
+    "🎨 Sơn nội thất": {
+      "Majestic": [
+        { code:'MJ-NguyenBan', name:'Majestic Đẹp Nguyên Bản - Siêu mờ, siêu bền', spec:'1L / 5L', desc:'Sơn nội thất đẹp nhất từ Jotun: mờ & siêu cao cấp, màu sắc trung thực, không phản quang, siêu bền, lau chùi vượt trội, kháng khuẩn, chống nấm mốc, rất nhẹ mùi.', dm:'Theo hướng dẫn' },
+        { code:'MJ-HoanHao-Bong5', name:'Majestic Đẹp Hoàn Hảo Bóng 5%', spec:'1L / 5L / 15L', desc:'Cải tiến vượt trội về bề mặt nhăn mịn và khả năng dễ lau chùi, màu sắc rực rỡ, bền màu, kháng khuẩn, chống nấm mốc.', dm:'Theo hướng dẫn' },
+        { code:'MJ-HoanHao-Mo', name:'Majestic Đẹp Hoàn Hảo Mờ', spec:'1L / 5L / 15L', desc:'Cải tiến vượt trội về bề mặt nhăn mịn và khả năng dễ lau chùi, màu sắc rực rỡ, bền màu, kháng khuẩn, chống nấm mốc, nhẹ mùi.', dm:'Theo hướng dẫn' },
+      ],
+      "Essence": [
+        { code:'ES-ChePhu-Bong', name:'Essence Che Phủ Tối Đa Bóng', spec:'1L / 5L / 15L', desc:'Che phủ tối đa, bề mặt láng mịn, dễ lau chùi, chống nấm mốc, VOC thấp, nhẹ mùi, dễ thi công.', dm:'Theo hướng dẫn' },
+        { code:'ES-ChePhu-Mo', name:'Essence Che Phủ Tối Đa Mờ', spec:'1L / 5L / 15L', desc:'Che phủ tối đa, bề mặt láng mịn, dễ lau chùi, chống nấm mốc, VOC thấp, nhẹ mùi, dễ thi công.', dm:'Theo hướng dẫn' },
+        { code:'ES-SonTrangTran', name:'Essence Sơn Trắng Trần Chuyên Dụng', spec:'3L / 17L', desc:'Chống văng bắn, che phủ tốt, siêu trắng, dễ thi công, chống nấm mốc, VOC thấp, nhẹ mùi.', dm:'Theo hướng dẫn' },
+        { code:'ES-DeLauChui', name:'Essence Dễ Lau Chùi', spec:'1L / 5L / 17L', desc:'Dễ lau chùi, nhẹ mùi, chống nấm mốc, VOC thấp, dễ thi công, độ che phủ cao.', dm:'Theo hướng dẫn' },
+      ],
+      "Jotaplast": [
+        { code:'Jotaplast', name:'Jotaplast - Sơn kinh tế', spec:'5L', desc:'Màu tiêu chuẩn và siêu trắng, màng sơn mờ, chống nấm mốc, độ phủ cao, dễ thi công, hiệu quả kinh tế.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🛡️ Sơn ngoại thất": {
+      "Jotashield": [
+        { code:'JS-BenMauToanDien', name:'Jotashield Bền Màu Toàn Diện', spec:'1L / 5L / 15L', desc:'Bảo vệ bền bỉ, bền màu, chống bám bụi tối ưu.', dm:'Theo hướng dẫn' },
+        { code:'JS-BenMauToiUu', name:'Jotashield Bền Màu Tối Ưu', spec:'1L / 5L', desc:'Bền màu dài lâu, ít bám bụi, chống rong rêu & nấm mốc, kháng tia UV tối đa.', dm:'Theo hướng dẫn' },
+        { code:'JS-SachVuotTroi', name:'Jotashield Sạch Vượt Trội', spec:'1L / 5L / 15L', desc:'Chống bám bụi đột phá, tự làm sạch bề mặt, chống rong rêu & nấm mốc, giảm nhiệt, kháng UV.', dm:'Theo hướng dẫn' },
+        { code:'JS-ChePhu-VetNut', name:'Jotashield Che Phủ Vết Nứt', spec:'5L', desc:'Đàn hồi cao cấp, che phủ vết nứt gấp 2 lần, ít bám bụi.', dm:'Theo hướng dẫn' },
+        { code:'JS-ChongPhaiMau', name:'Jotashield Chống Phai Màu', spec:'5L / 15L', desc:'Chống nắng hiệu quả, giảm nhiệt, ngăn ngừa vệt nước, chống rong rêu & nấm mốc, chống bám bụi, chống thấm nước.', dm:'Theo hướng dẫn' },
+      ],
+      "Tough Shield": [
+        { code:'TS-Max', name:'Tough Shield Max', spec:'5L / 17L', desc:'Kháng UV, chống rong rêu & nấm mốc, che phủ tốt.', dm:'Theo hướng dẫn' },
+      ],
+      "Chống thấm": [
+        { code:'WaterGuard', name:'Jotun WaterGuard Chống thấm', spec:'20kg', desc:'Kháng thấm tối ưu, độ đàn hồi cao, dễ sử dụng, chống nấm mốc.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "Sơn gỗ & Kim loại": {
+      "Gardex": [
+        { code:'Gardex-Primer', name:'Gardex Primer - Sơn lót gỗ', spec:'1L', desc:'Sơn lót Gardex nhẹ mùi, tăng cường độ bám dính.', dm:'Theo hướng dẫn' },
+        { code:'Gardex-Bong', name:'Gardex Bóng - Sơn phủ gỗ', spec:'0.8L / 2.5L', desc:'Chống thấm, bền màu, nhẹ mùi, nhanh khô, chống nấm mốc và rỉ sét.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🧱 Sơn lót & Bột trét": {
+      "Sơn lót": [
+        { code:'Lot-Majestic', name:'Sơn lót chống kiềm Majestic', spec:'3L / 5L / 17L', desc:'Sơn lót chống kiềm cao cấp nội thất, tăng cường bám dính.', dm:'Theo hướng dẫn' },
+        { code:'Lot-Essence', name:'Sơn lót chống kiềm Essence', spec:'3L / 5L', desc:'Sơn lót chống kiềm nội & ngoại thất, bám dính tốt, dễ thi công.', dm:'Theo hướng dẫn' },
+        { code:'Alkyd-Xam', name:'Sơn lót chống rỉ Alkyd màu xám', spec:'5L / 20L', desc:'Sơn lót chống rỉ cho bề mặt kim loại.', dm:'Theo hướng dẫn' },
+        { code:'Alkyd-Do', name:'Sơn lót chống rỉ Alkyd màu đỏ', spec:'5L / 20L', desc:'Sơn lót chống rỉ cho bề mặt kim loại.', dm:'Theo hướng dẫn' },
+      ],
+      "Bột trét": [
+        { code:'Putty-IN-EX', name:'Jotun Interior & Exterior Putty', spec:'40kg', desc:'Bột trét cao cấp nội & ngoại thất.', dm:'Theo hướng dẫn' },
+        { code:'Putty-EX', name:'Jotun Exterior Putty', spec:'40kg', desc:'Bột trét cao cấp ngoại thất.', dm:'Theo hướng dẫn' },
+        { code:'Putty-IN', name:'Jotun Interior Putty', spec:'40kg', desc:'Bột trét cao cấp nội thất.', dm:'Theo hướng dẫn' },
+      ],
+    },
   },
   kova: {
     "🎨 Sơn nội thất": [
@@ -219,6 +261,27 @@ const PRICE_MAP = {
     'CT-14 GOLD': { price:'4.210.000đ', spec:'20kg' },
     'MTN GOLD': { price:'855.000đ', spec:'25kg' },
     'CT08 GOLD': { price:'6.760.000đ', spec:'20kg' },
+  },
+  jotun: {
+    'MJ-NguyenBan-1L':  { price:'545.000đ', spec:'1L' },
+    'MJ-NguyenBan-5L':  { price:'2.325.000đ', spec:'5L' },
+    'MJ-HoanHao-Bong5-5L':  { price:'1.730.000đ', spec:'5L' },
+    'MJ-HoanHao-Mo-5L':  { price:'1.730.000đ', spec:'5L' },
+    'ES-ChePhu-Bong-5L':  { price:'1.395.000đ', spec:'5L' },
+    'ES-ChePhu-Mo-5L':  { price:'1.395.000đ', spec:'5L' },
+    'ES-DeLauChui-5L':  { price:'1.179.000đ', spec:'5L' },
+    'Jotaplast':  { price:'575.000đ', spec:'5L' },
+    'JS-BenMauToanDien-5L':  { price:'3.315.000đ', spec:'5L' },
+    'JS-BenMauToiUu-5L':  { price:'3.090.000đ', spec:'5L' },
+    'JS-SachVuotTroi-5L':  { price:'2.515.000đ', spec:'5L' },
+    'JS-ChePhu-VetNut-5L':  { price:'2.695.000đ', spec:'5L' },
+    'JS-ChongPhaiMau-5L':  { price:'2.495.000đ', spec:'5L' },
+    'TS-Max-5L':  { price:'1.730.000đ', spec:'5L' },
+    'WaterGuard': { price:'4.172.000đ', spec:'20kg' },
+    'Gardex-Primer': { price:'185.000đ', spec:'1L' },
+    'Putty-IN-EX': { price:'510.000đ', spec:'40kg' },
+    'Putty-EX':    { price:'490.000đ', spec:'40kg' },
+    'Putty-IN':    { price:'370.000đ', spec:'40kg' },
   },
   nippon: {
     'Matex':  { price:'~1.130.000đ', spec:'Thùng 18L' },
