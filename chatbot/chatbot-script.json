@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Mr Hữu - Trợ lý tư vấn VLXD Trần Hữu Minh",
+    "name": "MS MÂY - Trợ lý tư vấn VLXD Trần Hữu Minh",
     "version": "2.0.0",
     "lastUpdated": "2026-05-02",
     "store": {
@@ -12,7 +12,7 @@
       "tags": ["sơn chống thấm", "sơn nước", "epoxy", "phụ gia xây dựng", "bột bả", "keo dán gạch"]
     },
     "agent": {
-      "name": "Mr Hữu",
+      "name": "MS MÂY",
       "personality": "Ấm áp, tự nhiên, như em gái tư vấn nhiệt tình",
       "replyDelay": { "min": 2000, "max": 8000 },
       "typingDelayPerChar": 40,
@@ -61,7 +61,7 @@
     ]
   },
 
-  "disclaimer": "☁️ Mr Hữu là trợ lý ảo của Trần Hữu Minh — em sẽ tư vấn nhiệt tình cho anh/chị ạ!",
+  "disclaimer": "☁️ MS MÂY là trợ lý ảo của Trần Hữu Minh — em sẽ tư vấn nhiệt tình cho anh/chị ạ!",
 
   "storyBank": {
     "chong-tham-mai": [
@@ -137,10 +137,10 @@
     "root": {
       "id": "root",
       "type": "question",
-      "question": "☁️ Chào anh/chị! Em là Mr Hữu — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
+      "question": "☁️ Chào anh/chị! Em là MS MÂY — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
       "responseVariants": [
-        "☁️ Dạ Mr Hữu nghe anh/chị ơi! Anh/chị cần tư vấn về gì để em hỗ trợ cho mình ạ?",
-        "☁️ Ơ chào anh/chị, em Mr Hữu đây! Có gì em giúp được cho anh/chị hong ạ?",
+        "☁️ Dạ MS MÂY nghe anh/chị ơi! Anh/chị cần tư vấn về gì để em hỗ trợ cho mình ạ?",
+        "☁️ Ơ chào anh/chị, em MS MÂY đây! Có gì em giúp được cho anh/chị hong ạ?",
         "☁️ Có em đây ạ! Anh/chị cần gì để em tư vấn cho mình? Em chuyên sơn chống thấm với sơn nước nha!"
       ],
       "options": [
@@ -190,7 +190,7 @@
     "chong-tham-menu": {
       "id": "chong-tham-menu",
       "type": "question",
-      "question": "🛡️ Anh/chị cần chống thấm cho khu vực nào ạ? Mr Hữu tư vấn dòng phù hợp nhất cho từng hạng mục!",
+      "question": "🛡️ Anh/chị cần chống thấm cho khu vực nào ạ? MS MÂY tư vấn dòng phù hợp nhất cho từng hạng mục!",
       "responseVariants": [
         "🛡️ Dạ để em hỏi tí — anh/chị chống thấm cho chỗ nào ạ? Có mấy khu vực em hay làm này:",
         "🛡️ Vậy anh/chị cần chống thấm ở đâu để em tư vấn đúng dòng cho mình nha:",
@@ -233,7 +233,7 @@
     "chong-tham-mai": {
       "id": "chong-tham-mai",
       "type": "answer",
-      "answer": "☀️ **Chống thấm mái — chống dột + chống nóng**\n\nBên em có các giải pháp:\n\n**🏠 Mái tôn:**\n• **Munich UV20** — sơn chống nóng chuyên dụng, giảm 5-28°C so với mái tôn thường. Định mức: 8-10m²/lít. Bảo hành 5 năm.\n• Sika Flexproof — chống thấm đàn hồi cho mái tôn, bảo hành 7 năm.\n\n**🏗️ Mái bê tông / sân thượng:**\n• **Munich G20** — chống thấm gốc xi măng polymer, phủ trực tiếp lên bê tông. Định mức: 1.5kg/m² cho 2 lớp. Bảo hành 5 năm.\n• **Kova CT-11A / CT-11B** — chống thấm thẩm thấu cho bê tông, chịu được áp lực nước.\n\n💡 *Mẹo: Nếu kết hợp UV20 chống nóng + G20 chống thấm = hiệu quả tối ưu cho mái bằng.*\n\nAnh/chị cho em xin diện tích mái để Mr Hữu tính toán chi tiết hơn ạ!",
+      "answer": "☀️ **Chống thấm mái — chống dột + chống nóng**\n\nBên em có các giải pháp:\n\n**🏠 Mái tôn:**\n• **Munich UV20** — sơn chống nóng chuyên dụng, giảm 5-28°C so với mái tôn thường. Định mức: 8-10m²/lít. Bảo hành 5 năm.\n• Sika Flexproof — chống thấm đàn hồi cho mái tôn, bảo hành 7 năm.\n\n**🏗️ Mái bê tông / sân thượng:**\n• **Munich G20** — chống thấm gốc xi măng polymer, phủ trực tiếp lên bê tông. Định mức: 1.5kg/m² cho 2 lớp. Bảo hành 5 năm.\n• **Kova CT-11A / CT-11B** — chống thấm thẩm thấu cho bê tông, chịu được áp lực nước.\n\n💡 *Mẹo: Nếu kết hợp UV20 chống nóng + G20 chống thấm = hiệu quả tối ưu cho mái bằng.*\n\nAnh/chị cho em xin diện tích mái để MS MÂY tính toán chi tiết hơn ạ!",
       "responseVariants": [
         "☀️ **Chống thấm mái nhà** — cái này em làm nhiều lắm! Để em tư vấn cho mình nha.\n\n**🏠 Mái tôn:**\n• **Munich UV20** — quét lên là hết dột, lại còn chống nóng giảm 5-28°C. Bảo hành 5 năm luôn ạ.\n• Sika Flexproof — co giãn tốt, theo mái tôn lên xuống.\n\n**🏗️ Mái bê tông / sân thượng:**\n• **Munich G20** — dòng bán chạy nhất của em, dễ thi công, giá phải chăng.\n• **Kova CT-11** — chịu áp lực nước tốt, cho bể ngầm.\n\n💡 *Mẹo: UV20 + G20 kết hợp = combo vàng cho mái bằng.*\n\nDiện tích khoảng bao nhiêu mét vuông anh/chị ơi?",
         "☀️ À mái nhà hả anh/chị? Để em tư vấn cho:\n\n**Mái tôn:** Munich UV20 chống nóng + Sika Flexproof chống thấm\n**Mái bê tông:** Munich G20 hoặc Kova CT-11\n\nCả hai dòng đều có sẵn hàng, ship nội thành 2 tiếng. Anh/chị cho em diện tích để em báo giá cụ thể nha!"
@@ -326,7 +326,7 @@
     "chong-tham-ham": {
       "id": "chong-tham-ham",
       "type": "answer",
-      "answer": "🏗️ **Chống thấm tầng hầm / móng — chịu áp lực nước cao**\n\nĐây là hạng mục quan trọng — Mr Hữu xin tư vấn kỹ:\n\n**💪 Giải pháp chuyên nghiệp:**\n\n**Hệ thống 2 lớp:**\n• **Lớp 1 — Thẩm thấu tinh thể:**\n  - **Kova CT-11B** — thẩm thấu sâu vào bê tông, tự hàn kín vết nứt nhỏ. Chịu được áp lực nước 10 bar.\n  - **Sika Igolflex** — màng chống thấm gốc bitum, đàn hồi tốt cho nền có biến động.\n  \n• **Lớp 2 — Bảo vệ cơ học:**\n  - **Munich G40** — lớp chống thấm polymer dày, chịu mài mòn.\n  - Vải địa kỹ thuật (nếu cần) hoặc lưới thủy tinh gia cường.\n\n⚠️ *Lưu ý: Anh/chị nên có kỹ sư giám sát thi công. Nếu cần, bên em giới thiệu đội thi công chuyên nghiệp làm tầng hầm.*",
+      "answer": "🏗️ **Chống thấm tầng hầm / móng — chịu áp lực nước cao**\n\nĐây là hạng mục quan trọng — MS MÂY xin tư vấn kỹ:\n\n**💪 Giải pháp chuyên nghiệp:**\n\n**Hệ thống 2 lớp:**\n• **Lớp 1 — Thẩm thấu tinh thể:**\n  - **Kova CT-11B** — thẩm thấu sâu vào bê tông, tự hàn kín vết nứt nhỏ. Chịu được áp lực nước 10 bar.\n  - **Sika Igolflex** — màng chống thấm gốc bitum, đàn hồi tốt cho nền có biến động.\n  \n• **Lớp 2 — Bảo vệ cơ học:**\n  - **Munich G40** — lớp chống thấm polymer dày, chịu mài mòn.\n  - Vải địa kỹ thuật (nếu cần) hoặc lưới thủy tinh gia cường.\n\n⚠️ *Lưu ý: Anh/chị nên có kỹ sư giám sát thi công. Nếu cần, bên em giới thiệu đội thi công chuyên nghiệp làm tầng hầm.*",
       "chunks": [
         "🏗️ Tầng hầm hả? Cái này quan trọng lắm luôn ạ, để em tư vấn kỹ cho mình.",
         "Theo kinh nghiệm của em, tầng hầm nên làm **hệ 2 lớp**:\n**1.** Lớp thẩm thấu — **Kova CT-11B** hoặc **Sika Igolflex** — chịu áp lực nước\n**2.** Lớp bảo vệ cơ học — **Munich G40** — chịu mài mòn, bền lâu",
@@ -343,7 +343,7 @@
     "son-nuoc-menu": {
       "id": "son-nuoc-menu",
       "type": "question",
-      "question": "🎨 Mr Hữu giúp anh/chị chọn sơn nước phù hợp! Anh/chị cần sơn cho khu vực nào ạ?",
+      "question": "🎨 MS MÂY giúp anh/chị chọn sơn nước phù hợp! Anh/chị cần sơn cho khu vực nào ạ?",
       "responseVariants": [
         "🎨 Okee, sơn nước! Anh/chị sơn trong nhà hay ngoài trời để em tư vấn dòng phù hợp ạ?",
         "🎨 Sơn nước nè — em rành khoản này lắm! Anh/chị cần sơn nội thất hay ngoại thất ạ?",
@@ -408,7 +408,7 @@
     "son-noi-cao-cap": {
       "id": "son-noi-cao-cap",
       "type": "answer",
-      "answer": "🏆 **Sơn nội thất cao cấp — Đẳng cấp & Bền đẹp**\n\n**Munich Sensation:**\n• Siêu bền, lau chùi được, kháng khuẩn, không mùi\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Phòng khách, phòng ngủ chính, biệt thự\n• Bảo hành: 7 năm\n\n**Dulux Ambiance 5in1:**\n• Chống kiềm, kháng khuẩn, khử mùi, lau chùi dễ\n• Định mức: 10-14m²/lít/lớp\n• Phù hợp: Phòng ngủ trẻ em, người nhạy cảm mùi\n• Bảo hành: 5 năm\n\n💡 *Giá tham khảo: ~650.000-850.000đ/thùng 18L, tuỳ dòng.*\n\n👉 **Bước tiếp theo:** Anh/chị cho em biết diện tích tường cần sơn (dài x rộng x cao) để Mr Hữu tính số thùng cần mua & báo giá chi tiết ạ!",
+      "answer": "🏆 **Sơn nội thất cao cấp — Đẳng cấp & Bền đẹp**\n\n**Munich Sensation:**\n• Siêu bền, lau chùi được, kháng khuẩn, không mùi\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Phòng khách, phòng ngủ chính, biệt thự\n• Bảo hành: 7 năm\n\n**Dulux Ambiance 5in1:**\n• Chống kiềm, kháng khuẩn, khử mùi, lau chùi dễ\n• Định mức: 10-14m²/lít/lớp\n• Phù hợp: Phòng ngủ trẻ em, người nhạy cảm mùi\n• Bảo hành: 5 năm\n\n💡 *Giá tham khảo: ~650.000-850.000đ/thùng 18L, tuỳ dòng.*\n\n👉 **Bước tiếp theo:** Anh/chị cho em biết diện tích tường cần sơn (dài x rộng x cao) để MS MÂY tính số thùng cần mua & báo giá chi tiết ạ!",
       "chunks": [
         "🏆 Sơn cao cấp — chuẩn bài luôn anh/chị ơi!",
         "**Munich Sensation:**\n• Lau chùi thoải mái, kháng khuẩn, không mùi\n• Định mức: 10-12m²/lít\n• Bảo hành 7 năm — xịn xò luôn!\n• Giá: tầm 650-850k/thùng 18L",
@@ -446,7 +446,7 @@
     "son-noi-kinh-te": {
       "id": "son-noi-kinh-te",
       "type": "answer",
-      "answer": "💰 **Sơn nội thất kinh tế — Vẫn đẹp, tiết kiệm tối đa**\n\n**Munich Comfort:**\n• Mịn, phủ tốt, bền màu cơ bản\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Nhà cho thuê, cải tạo ngân sách thấp, nhà xưởng\n• Bảo hành: 3 năm\n• Giá tham khảo: ~320.000-380.000đ/thùng 18L\n\n**Nippon Vatex:**\n• Thương hiệu Nhật, phủ kín, giá phải chăng\n• Định mức: 10-12m²/lít/lớp\n• Bảo hành: 3 năm\n\n💡 *Dù là dòng kinh tế, Mr Hữu vẫn khuyên anh/chị nên dùng 1 lớp sơn lót để tăng độ bám dính và bền màu. Bên em sẵn sơn lót giá chỉ từ 250.000đ/thùng 18L.*",
+      "answer": "💰 **Sơn nội thất kinh tế — Vẫn đẹp, tiết kiệm tối đa**\n\n**Munich Comfort:**\n• Mịn, phủ tốt, bền màu cơ bản\n• Định mức: 10-12m²/lít/lớp\n• Phù hợp: Nhà cho thuê, cải tạo ngân sách thấp, nhà xưởng\n• Bảo hành: 3 năm\n• Giá tham khảo: ~320.000-380.000đ/thùng 18L\n\n**Nippon Vatex:**\n• Thương hiệu Nhật, phủ kín, giá phải chăng\n• Định mức: 10-12m²/lít/lớp\n• Bảo hành: 3 năm\n\n💡 *Dù là dòng kinh tế, MS MÂY vẫn khuyên anh/chị nên dùng 1 lớp sơn lót để tăng độ bám dính và bền màu. Bên em sẵn sơn lót giá chỉ từ 250.000đ/thùng 18L.*",
       "chunks": [
         "💰 Tiết kiệm — em hiểu mà! Vẫn có dòng ngon bổ rẻ nè.",
         "**Munich Comfort:**\n• Mịn, phủ tốt, bền màu cơ bản\n• Chỉ ~320-380k/thùng 18L\n• Bảo hành 3 năm — ổn cho nhà cho thuê hay cải tạo",
@@ -465,7 +465,7 @@
     "tinh-toan-son": {
       "id": "tinh-toan-son",
       "type": "input",
-      "question": "🔢 **Tính số lượng sơn cần mua**\n\nCông thức nhanh:\n**Diện tích tường = (Chu vi phòng × Chiều cao) − Diện tích cửa + Trần (nếu sơn)**\n\nHoặc tính nhanh: **Diện tích sàn × 3 ~ Diện tích tường cần sơn**\n\nVí dụ: Phòng 20m² sàn × 3 = 60m² tường\n→ Cần: 1 thùng 18L sơn lót + 2 thùng 18L sơn phủ (quét 2 lớp)\n\nAnh/chị cho Mr Hữu xin **diện tích tường (m²)** hoặc **kích thước phòng (dài × rộng × cao)** để Mr Hữu tính chính xác giúp ạ! 🙏",
+      "question": "🔢 **Tính số lượng sơn cần mua**\n\nCông thức nhanh:\n**Diện tích tường = (Chu vi phòng × Chiều cao) − Diện tích cửa + Trần (nếu sơn)**\n\nHoặc tính nhanh: **Diện tích sàn × 3 ~ Diện tích tường cần sơn**\n\nVí dụ: Phòng 20m² sàn × 3 = 60m² tường\n→ Cần: 1 thùng 18L sơn lót + 2 thùng 18L sơn phủ (quét 2 lớp)\n\nAnh/chị cho MS MÂY xin **diện tích tường (m²)** hoặc **kích thước phòng (dài × rộng × cao)** để MS MÂY tính chính xác giúp ạ! 🙏",
       "responseVariants": [
         "🔢 Để em tính giúp cho nha! Anh/chị cho em xin diện tích tường (m²) hoặc kích thước phòng ạ.\n\nVí dụ: phòng dài 5m, rộng 4m, cao 3m → tường ~ 54m², trần 20m².",
         "🔢 Tính sơn hả? Dễ mà! Anh/chị cho em:\n• Chiều dài phòng\n• Chiều rộng phòng\n• Chiều cao\n→ Em tính ra mét vuông & số thùng cần mua liền ạ!"
@@ -610,7 +610,7 @@
     "phu-gia-sika": {
       "id": "phu-gia-sika",
       "type": "answer",
-      "answer": "🧪 **Các dòng phụ gia Sika phổ biến tại Trần Hữu Minh:**\n\n**SikaGrout 214:**\n• Vữa rót không co ngót cho máy móc, cột thép\n• Dùng: chèn chân đế máy, neo bulông\n• Đóng gói: 25kg/bao\n\n**SikaFlex 118:**\n• Keo silicon trám khe, chống thấm\n• Dùng: bịt khe ống thoát, góc tường, khe cửa\n• Màu: trắng, xám, đen\n\n**Sika Latex:**\n• Phụ gia vữa — đã tư vấn ở mục trên\n\n**Sika Topseal 107:**\n• Chống thấm gốc xi măng, phù hợp tường ngoài\n\n💡 *Mẹo: Nếu cần tư vấn kỹ thuật cụ thể cho hạng mục nào, anh/chị cho Mr Hữu biết thêm chi tiết ạ!*",
+      "answer": "🧪 **Các dòng phụ gia Sika phổ biến tại Trần Hữu Minh:**\n\n**SikaGrout 214:**\n• Vữa rót không co ngót cho máy móc, cột thép\n• Dùng: chèn chân đế máy, neo bulông\n• Đóng gói: 25kg/bao\n\n**SikaFlex 118:**\n• Keo silicon trám khe, chống thấm\n• Dùng: bịt khe ống thoát, góc tường, khe cửa\n• Màu: trắng, xám, đen\n\n**Sika Latex:**\n• Phụ gia vữa — đã tư vấn ở mục trên\n\n**Sika Topseal 107:**\n• Chống thấm gốc xi măng, phù hợp tường ngoài\n\n💡 *Mẹo: Nếu cần tư vấn kỹ thuật cụ thể cho hạng mục nào, anh/chị cho MS MÂY biết thêm chi tiết ạ!*",
       "nextOptions": [
         { "text": "📄 Em muốn báo giá", "next": "bao-gia" },
         { "text": "🔄 Tư vấn mục khác", "next": "phu-gia-menu" },
@@ -687,7 +687,7 @@
     "bao-gia": {
       "id": "bao-gia",
       "type": "answer",
-      "answer": "📄 **Báo giá & Bảng giá sản phẩm**\n\nCảm ơn anh/chị đã quan tâm! Bên em hỗ trợ báo giá theo các cách sau:\n\n**📲 Cách 1: Nhận bảng giá qua Zalo**\nAnh/chị kết bạn Zalo **0378.679.633** → Em gửi ngay bảng giá chi tiết tất cả sản phẩm + chương trình khuyến mãi mới nhất.\n\n**📞 Cách 2: Gọi điện trực tiếp**\nGọi **0378.679.633** — em tư vấn & báo giá nhanh trong 2 phút.\n\n**📝 Cách 3: Để lại thông tin — em gọi lại**\nAnh/chị cho Mr Hữu xin:\n• Họ tên & SĐT\n• Sản phẩm quan tâm\n• Số lượng / diện tích\n→ Em gọi lại báo giá tốt nhất trong vòng 30 phút!\n\n💡 *Hoặc anh/chị nhắn trực tiếp ở đây, Mr Hữu tư vấn & báo giá luôn ạ!*",
+      "answer": "📄 **Báo giá & Bảng giá sản phẩm**\n\nCảm ơn anh/chị đã quan tâm! Bên em hỗ trợ báo giá theo các cách sau:\n\n**📲 Cách 1: Nhận bảng giá qua Zalo**\nAnh/chị kết bạn Zalo **0378.679.633** → Em gửi ngay bảng giá chi tiết tất cả sản phẩm + chương trình khuyến mãi mới nhất.\n\n**📞 Cách 2: Gọi điện trực tiếp**\nGọi **0378.679.633** — em tư vấn & báo giá nhanh trong 2 phút.\n\n**📝 Cách 3: Để lại thông tin — em gọi lại**\nAnh/chị cho MS MÂY xin:\n• Họ tên & SĐT\n• Sản phẩm quan tâm\n• Số lượng / diện tích\n→ Em gọi lại báo giá tốt nhất trong vòng 30 phút!\n\n💡 *Hoặc anh/chị nhắn trực tiếp ở đây, MS MÂY tư vấn & báo giá luôn ạ!*",
       "responseVariants": [
         "📄 Dạ để em báo giá cho mình nha! Có mấy cách này:\n\n📲 Kết bạn Zalo **0378.679.633** → em gửi bảng giá + KM mới\n📞 Gọi **0378.679.633** — tư vấn nhanh 2 phút\n📝 Để lại SĐT — em gọi lại báo giá tốt nhất trong 30 phút",
         "📄 Okee anh/chị! Báo giá thì em có 3 cách:\n1. Zalo: em gửi bảng giá đầy đủ\n2. Gọi 0378.679.633: tư vấn + báo giá siêu nhanh\n3. Để lại thông tin ở đây: em gọi lại liền ạ"
@@ -703,7 +703,7 @@
     "mua-si": {
       "id": "mua-si",
       "type": "answer",
-      "answer": "🏪 **Mua sỉ / Hợp tác đại lý**\n\nChào anh/chị! Trần Hữu Minh có chính sách bán sỉ và hợp tác đại lý hấp dẫn:\n\n**📦 Chính sách đại lý:**\n• Chiết khấu theo doanh số: 5% – 15%\n• Hỗ trợ vận chuyển nội thành Hải Phòng\n• Hàng luôn có sẵn, giao nhanh trong 2-4h\n• Thanh toán linh hoạt (chuyển khoản / tiền mặt)\n• Hỗ trợ trưng bày, POSM cho đại lý\n\n**📋 Điều kiện hợp tác:**\n• Đặt tối thiểu: 10 triệu/lần (hoặc thoả thuận)\n• Có cửa hàng / điểm bán tại Hải Phòng\n• Cam kết doanh số tối thiểu theo quý\n\n**🎯 Đặc quyền:**\n• Ưu tiên hàng độc quyền Munich\n• Hỗ trợ kỹ thuật, tư vấn cho khách của đại lý\n• Bảng giá đại lý cập nhật hàng tháng\n\n👉 Anh/chị cho Mr Hữu xin **SĐT + tên cửa hàng**, em chuyển bảng giá sỉ & liên hệ tư vấn hợp tác chi tiết ạ!",
+      "answer": "🏪 **Mua sỉ / Hợp tác đại lý**\n\nChào anh/chị! Trần Hữu Minh có chính sách bán sỉ và hợp tác đại lý hấp dẫn:\n\n**📦 Chính sách đại lý:**\n• Chiết khấu theo doanh số: 5% – 15%\n• Hỗ trợ vận chuyển nội thành Hải Phòng\n• Hàng luôn có sẵn, giao nhanh trong 2-4h\n• Thanh toán linh hoạt (chuyển khoản / tiền mặt)\n• Hỗ trợ trưng bày, POSM cho đại lý\n\n**📋 Điều kiện hợp tác:**\n• Đặt tối thiểu: 10 triệu/lần (hoặc thoả thuận)\n• Có cửa hàng / điểm bán tại Hải Phòng\n• Cam kết doanh số tối thiểu theo quý\n\n**🎯 Đặc quyền:**\n• Ưu tiên hàng độc quyền Munich\n• Hỗ trợ kỹ thuật, tư vấn cho khách của đại lý\n• Bảng giá đại lý cập nhật hàng tháng\n\n👉 Anh/chị cho MS MÂY xin **SĐT + tên cửa hàng**, em chuyển bảng giá sỉ & liên hệ tư vấn hợp tác chi tiết ạ!",
       "nextOptions": [
         { "text": "📞 Gọi tư vấn đại lý", "next": "call" },
         { "text": "💬 Chat Zalo", "next": "zalo" },
@@ -714,7 +714,7 @@
     "call": {
       "id": "call",
       "type": "info",
-      "message": "📞 **Gọi ngay để được tư vấn trực tiếp!**\n\n☎️ **Hotline: 0378.679.633**\n⏰ Giờ làm việc: 7:00 – 19:00 (T2-CN)\n📍 Địa chỉ: Hải Phòng\n\nHoặc anh/chị để lại **SĐT**, em gọi lại ngay ạ!\n\n*Mr Hữu luôn sẵn sàng hỗ trợ anh/chị 24/7 qua tin nhắn ạ!* ☁️",
+      "message": "📞 **Gọi ngay để được tư vấn trực tiếp!**\n\n☎️ **Hotline: 0378.679.633**\n⏰ Giờ làm việc: 7:00 – 19:00 (T2-CN)\n📍 Địa chỉ: Hải Phòng\n\nHoặc anh/chị để lại **SĐT**, em gọi lại ngay ạ!\n\n*MS MÂY luôn sẵn sàng hỗ trợ anh/chị 24/7 qua tin nhắn ạ!* ☁️",
       "responseVariants": [
         "📞 Dạ SĐT của em là **0378.679.633** ạ! Anh/chị gọi thoải mái, giờ hành chính 7h-19h cả T7, CN luôn.\nHoặc để lại SĐT ở đây, em gọi lại liền cho mình nha ☁️",
         "📞 Số em nè: **0378.679.633**\nHoặc anh/chị nhắn SĐT ở đây, em chủ động gọi lại ạ!"
@@ -729,7 +729,7 @@
     "zalo": {
       "id": "zalo",
       "type": "info",
-      "message": "💬 **Chat Zalo với Trần Hữu Minh**\n\n👉 **Zalo OA:** 0378.679.633\nHoặc quét mã QR tại website: **https://tranhuuminh.vn**\n\nAnh/chị kết bạn Zalo → em gửi ngay:\n✅ Bảng giá chi tiết\n✅ Hình ảnh sản phẩm\n✅ Tư vấn trực tiếp\n\n*Mr Hữu vẫn ở đây nếu anh/chị cần hỗ trợ thêm qua chat web ạ!* ☁️",
+      "message": "💬 **Chat Zalo với Trần Hữu Minh**\n\n👉 **Zalo OA:** 0378.679.633\nHoặc quét mã QR tại website: **https://tranhuuminh.vn**\n\nAnh/chị kết bạn Zalo → em gửi ngay:\n✅ Bảng giá chi tiết\n✅ Hình ảnh sản phẩm\n✅ Tư vấn trực tiếp\n\n*MS MÂY vẫn ở đây nếu anh/chị cần hỗ trợ thêm qua chat web ạ!* ☁️",
       "responseVariants": [
         "💬 Zalo của em là **0378.679.633** ạ. Kết bạn xong nhắn em tên sản phẩm quan tâm, em gửi bảng giá liền!",
         "💬 Kết bạn Zalo **0378.679.633** nha anh/chị! Em gửi bảng giá + hình ảnh sản phẩm cho mình ạ."
@@ -743,7 +743,7 @@
     "dat-hang": {
       "id": "dat-hang",
       "type": "input",
-      "question": "🛒 **Đặt hàng online**\n\nTuyệt vời! Anh/chị cho Mr Hữu xin thông tin đặt hàng ạ:\n\n**1️⃣ Sản phẩm & số lượng:**\n**2️⃣ Họ tên:**\n**3️⃣ SĐT:**\n**4️⃣ Địa chỉ giao hàng (trong Hải Phòng):**\n**5️⃣ Ghi chú (nếu có):**\n\n👉 Em sẽ kiểm hàng & báo giá chính xác + phí ship (nội thành miễn phí) ngay khi nhận được thông tin ạ! 💨",
+      "question": "🛒 **Đặt hàng online**\n\nTuyệt vời! Anh/chị cho MS MÂY xin thông tin đặt hàng ạ:\n\n**1️⃣ Sản phẩm & số lượng:**\n**2️⃣ Họ tên:**\n**3️⃣ SĐT:**\n**4️⃣ Địa chỉ giao hàng (trong Hải Phòng):**\n**5️⃣ Ghi chú (nếu có):**\n\n👉 Em sẽ kiểm hàng & báo giá chính xác + phí ship (nội thành miễn phí) ngay khi nhận được thông tin ạ! 💨",
       "responseVariants": [
         "🛒 Okee đặt hàng luôn! Anh/chị cho em xin:\n• Sản phẩm + số lượng\n• Họ tên, SĐT\n• Địa chỉ giao (trong HP)\n→ Em báo giá + ship nội thành free ạ!",
         "🛒 Vâng ạ! Để em chốt đơn cho mình. Anh/chị cho em xin thông tin nha:\n• Sản phẩm & số lượng\n• Họ tên & SĐT\n• Địa chỉ giao hàng"
@@ -759,7 +759,7 @@
   "fallback": {
     "id": "fallback",
     "type": "answer",
-    "answer": "☁️ **Mr Hữu chưa hiểu rõ ý anh/chị lắm** 🤔\n\nAnh/chị có thể nói rõ hơn một chút không ạ? Mr Hữu giúp được nhiều việc lắm nè:\n\n• 🛡️ Tư vấn **chống thấm** — mái, tường, nhà vệ sinh\n• 🎨 **Sơn nước** — nội thất, ngoại thất\n• 🏭 **Sơn Epoxy** — nhà xưởng, bãi xe\n• 🧪 **Phụ gia, hoá chất** xây dựng\n• 🧱 **Bột bả, keo dán gạch**\n• 🔧 **Dịch vụ thi công**\n• 📄 **Báo giá, bảng giá**\n• 🏪 **Mua sỉ, đại lý**\n\nHoặc anh/chị gọi trực tiếp **0378.679.633** để em tư vấn nhanh hơn ạ!",
+    "answer": "☁️ **MS MÂY chưa hiểu rõ ý anh/chị lắm** 🤔\n\nAnh/chị có thể nói rõ hơn một chút không ạ? MS MÂY giúp được nhiều việc lắm nè:\n\n• 🛡️ Tư vấn **chống thấm** — mái, tường, nhà vệ sinh\n• 🎨 **Sơn nước** — nội thất, ngoại thất\n• 🏭 **Sơn Epoxy** — nhà xưởng, bãi xe\n• 🧪 **Phụ gia, hoá chất** xây dựng\n• 🧱 **Bột bả, keo dán gạch**\n• 🔧 **Dịch vụ thi công**\n• 📄 **Báo giá, bảng giá**\n• 🏪 **Mua sỉ, đại lý**\n\nHoặc anh/chị gọi trực tiếp **0378.679.633** để em tư vấn nhanh hơn ạ!",
     "responseVariants": [
       "☁️ Dạ em chưa hiểu lắm ạ 🤔 Anh/chị nói rõ hơn tí được hong? Em bán sơn chống thấm, sơn nước, epoxy, phụ gia, bột bả — có dịch vụ thi công luôn. Anh/chị cần gì để em tư vấn ạ?",
       "☁️ Ơ em chưa hiểu ý anh/chị lắm 😅 Anh/chị ghé menu coi thử nha:\n🛡️ Chống thấm\n🎨 Sơn nước\n🏭 Epoxy\n🧪 Phụ gia\n🧱 Bột bả/Keo dán\n🔧 Thi công\n📄 Báo giá\n🏪 Mua sỉ"
@@ -775,10 +775,10 @@
 
   "scriptTemplates": {
     "welcome": [
-      "☁️ Chào anh/chị! Em là Mr Hữu — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
-      "☁️ Xin chào! Mr Hữu đây — trợ lý tư vấn của cửa hàng VLXD Trần Hữu Minh. Em có thể giúp gì cho anh/chị ạ?",
-      "☁️ Chào anh/chị! Em là Mr Hữu, trợ lý ảo của Trần Hữu Minh. Anh/chị cần tư vấn về sơn hay vật liệu xây dựng ạ?",
-      "☁️ Dạ Mr Hữu nghe anh/chị ơi! Anh/chị cần gì để em tư vấn cho mình ạ?",
+      "☁️ Chào anh/chị! Em là MS MÂY — trợ lý tư vấn của VLXD Trần Hữu Minh. Anh/chị cần tìm hiểu về sản phẩm gì ạ?",
+      "☁️ Xin chào! MS MÂY đây — trợ lý tư vấn của cửa hàng VLXD Trần Hữu Minh. Em có thể giúp gì cho anh/chị ạ?",
+      "☁️ Chào anh/chị! Em là MS MÂY, trợ lý ảo của Trần Hữu Minh. Anh/chị cần tư vấn về sơn hay vật liệu xây dựng ạ?",
+      "☁️ Dạ MS MÂY nghe anh/chị ơi! Anh/chị cần gì để em tư vấn cho mình ạ?",
       "☁️ Có em đây ạ! Anh/chị cần gì để em giúp cho mình? Em chuyên sơn chống thấm với sơn nước nha!"
     ],
     "reassurance": [
@@ -794,7 +794,7 @@
     ],
     "defer": [
       "Dạ vâng, anh cứ suy nghĩ. Em gửi anh bảng giá tham khảo qua Zalo nhé, khi nào cần anh nhắn em ạ.",
-      "Dạ không sao ạ. Anh/chị cứ tham khảo trước, khi nào quyết định thì nhắn Mr Hữu bất cứ lúc nào cũng được. Mr Hữu luôn ở đây ạ ☁️",
+      "Dạ không sao ạ. Anh/chị cứ tham khảo trước, khi nào quyết định thì nhắn MS MÂY bất cứ lúc nào cũng được. MS MÂY luôn ở đây ạ ☁️",
       "Vâng ạ, hông có vấn đề gì đâu. Anh/chị cứ từ từ suy nghĩ, cần em lúc nào thì nhắn nha ☁️"
     ],
     "competitorBuy": [
@@ -809,10 +809,10 @@
       "Okeee anh để em chốt đơn luôn nha! Em ship nội thành 2 tiếng có hàng. Thanh toán khi nhận hàng cũng được ạ."
     ],
     "followUp": [
-      "Chào anh, em Mr Hữu đây ạ ☁️ Hôm trước anh hỏi về sơn chống thấm, giờ anh đã quyết định chưa ạ?",
+      "Chào anh, em MS MÂY đây ạ ☁️ Hôm trước anh hỏi về sơn chống thấm, giờ anh đã quyết định chưa ạ?",
       "Em vừa có bảng giá mới của Munich tháng này, anh xem thử nhé. Có nhiều sản phẩm khuyến mãi lắm ạ!",
-      "Chào anh chị, em Mr Hữu đây ạ. Bên em đang có chương trình khuyến mãi tháng này. Anh chị có nhu cầu gì em báo giá ưu đãi ạ.",
-      "Dạ chào anh/chị, em Mr Hữu nè ☁️ Hôm trước mình hỏi về sơn, giờ anh/chị tính sao rồi ạ? Em sẵn sàng hỗ trợ nha!"
+      "Chào anh chị, em MS MÂY đây ạ. Bên em đang có chương trình khuyến mãi tháng này. Anh chị có nhu cầu gì em báo giá ưu đãi ạ.",
+      "Dạ chào anh/chị, em MS MÂY nè ☁️ Hôm trước mình hỏi về sơn, giờ anh/chị tính sao rồi ạ? Em sẵn sàng hỗ trợ nha!"
     ],
     "locationEcho": [
       "Dạ [location], quê em cũng gần đó nè!",

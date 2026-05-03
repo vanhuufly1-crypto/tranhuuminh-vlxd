@@ -1,4 +1,4 @@
-/* Chat widget - Mr Hữu AI ☁️ cho VLHT Trần Hữu Minh */
+/* Chat widget - MS MÂY AI ☁️ cho VLHT Trần Hữu Minh */
 // API URL - cập nhật khi chạy tunnel
 const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat.loca.lt';
 
@@ -12,17 +12,17 @@ const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat
   const widget = document.createElement('div');
   widget.id = 'chat-widget';
   widget.innerHTML = `
-    <button id="chat-toggle" onclick="toggleChat()" aria-label="Chat với Mr Hữu">
+    <button id="chat-toggle" onclick="toggleChat()" aria-label="Chat với MS MÂY">
       <span class="chat-icon">☁️</span>
     </button>
     <div id="chat-box" class="chat-hidden">
       <div id="chat-header">
-        <span>☁️ Mr Hữu - Trợ lý VLHT</span>
+        <span>☁️ MS MÂY - Trợ lý VLHT</span>
         <button onclick="toggleChat()" class="chat-close">&times;</button>
       </div>
       <div id="chat-messages">
         <div class="msg msg-may">
-          <strong>☁️ Mr Hữu:</strong> Chào bạn! Mình là Mr Hữu — trợ lý của Công ty VLHT Trần Hữu Minh. Mình có thể giúp gì cho bạn về sơn, chống thấm, vật liệu xây dựng không? 😊
+          <strong>☁️ MS MÂY:</strong> Chào bạn! Mình là MS MÂY — trợ lý của Công ty VLHT Trần Hữu Minh. Mình có thể giúp gì cho bạn về sơn, chống thấm, vật liệu xây dựng không? 😊
         </div>
       </div>
       <div id="chat-input-area">
@@ -121,7 +121,7 @@ const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat
     document.getElementById('chat-send').disabled = true;
 
     // Typing indicator
-    const typingId = addMessage('☁️ Mr Hữu đang trả lời...', 'typing');
+    const typingId = addMessage('☁️ MS MÂY đang trả lời...', 'typing');
 
     try {
       const resp = await fetch(CHAT_API_URL + '/chat', {
@@ -142,7 +142,7 @@ const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat
 
     } catch(e) {
       removeMessage(typingId);
-      addMessage('❌ Mr Hữu đang bảo trì. Vui lòng gọi hotline 0378.679.633 để được hỗ trợ!', 'error');
+      addMessage('❌ MS MÂY đang bảo trì. Vui lòng gọi hotline 0378.679.633 để được hỗ trợ!', 'error');
     }
 
     document.getElementById('chat-send').disabled = false;
@@ -156,7 +156,7 @@ const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat
                     type === 'error' ? 'msg msg-error' :
                     type === 'typing' ? 'msg msg-typing' : 'msg msg-may';
     div.innerHTML = type === 'user' ? text :
-                    type === 'may' ? '<strong>☁️ Mr Hữu:</strong> ' + text : text;
+                    type === 'may' ? '<strong>☁️ MS MÂY:</strong> ' + text : text;
     div.id = 'msg-' + Date.now();
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;

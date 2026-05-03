@@ -247,7 +247,7 @@ function card(p, brand) {
   
   const contactBtns = `<div class="prod-actions">
     <a href="#" onclick="if(window.THM_Chat){THM_Chat.navigate('bao-gia');THM_Chat.open();}return false;" class="pa-btn pa-quote" title="Báo Giá">📋 Báo Giá</a>
-    <a href="tel:0378679633" class="pa-btn pa-call" title="Hotline">📞 Hotline (Anh Hữu)</a>
+    <a href="tel:0378679633" class="pa-btn pa-call" title="Hotline">📞 Hotline (MR HỮU)</a>
   </div>`;
 
   const imgSrc = BRAND_IMG[brand] || '';
