@@ -282,14 +282,35 @@ const PRODUCTS = {
     ],
   },
   nippon: {
-    "🎨 Sơn nội thất": [
-      { code:'Matex', name:'Sơn nội thất', spec:'Thùng 18L', desc:'Sơn nước nội thất chất lượng tốt, giá thành hợp lý, phủ cao.', dm:'14-16 m²/lớp' },
-      { code:'SuperTech', name:'Sơn nội thất cao cấp', spec:'Thùng 18L', desc:'Không mùi, lau chùi dễ dàng, siêu bền.', dm:'12-14 m²/lớp' },
-    ],
-    "🛡️ Sơn ngoại thất": [
-      { code:'Weatherbond', name:'Sơn ngoại thất chống thấm', spec:'Thùng 18L', desc:'Chống thấm, chống kiềm, bền màu ngoài trời.', dm:'12-14 m²/lớp' },
-      { code:'Gold', name:'Sơn ngoại thất cao cấp', spec:'Thùng 18L', desc:'Bảo vệ tường vượt trội, 15 năm bền màu.', dm:'10-12 m²/lớp' },
-    ],
+    "🛡️ Sơn ngoại thất": {
+      "Weathergard Siêu Bóng": [
+        { code:'WG-SieuBong', name:'Weathergard Siêu Bóng - Công nghệ INFINIMATRIX', spec:'1L / 5L', desc:'Hoàn thiện độ bóng cao. Chống thấm tường. Công nghệ Colour Care bền màu x2. Solar Reflective giảm nhiệt. Chống rêu nấm mốc x2.', dm:'Theo hướng dẫn' },
+      ],
+      "Weathergard Plus+": [
+        { code:'WG-Plus', name:'Weathergard Plus+ - MicroGel bảo vệ 10 năm', spec:'1L / 5L / 18L', desc:'Công nghệ MicroGel giúp màng sơn bền bỉ, bảo vệ 10 năm. Chống bám bụi. Colour Care bền màu vượt trội. Solar Reflective giảm nhiệt.', dm:'Theo hướng dẫn' },
+      ],
+      "Weathergard Bóng": [
+        { code:'WG-Bong', name:'Weathergard Bóng - TitanGuard chống bám bụi', spec:'1L / 5L', desc:'Công nghệ TitanGuard & MicroGel chống bám bụi tuyệt vời. Colour Care bền màu. Bảo vệ 8 năm với chất lượng Nhật Bản.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🎨 Sơn nội thất siêu cao cấp": {
+      "Odour-Less All-in-1": [
+        { code:'OL-Allin1-SieuBong', name:'Odour-Less All-in-1 Siêu Bóng - INFINIMATRIX', spec:'1L / 5L', desc:'Công nghệ INFINIMATRIX độ bóng cao, màng sơn mịn màng. Dễ lau chùi x2. Colour Guard bền màu. Chứng nhận Green Label - an toàn sức khỏe.', dm:'Theo hướng dẫn' },
+      ],
+      "Odour-Less Bóng Sang Trọng": [
+        { code:'OL-BongSangTrong', name:'Odour-Less Bóng Sang Trọng - EZWash', spec:'1L / 5L', desc:'Màng sơn bóng láng mịn. Lau chùi tuyệt vời EZWash. Colour Guard bền màu. Kháng vi khuẩn E.Coli, Staphylococcus.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🎨 Sơn nội thất chất lượng": {
+      "Matex": [
+        { code:'Matex', name:'Matex - Sơn nội thất chất lượng cao', spec:'Thùng 18L', desc:'Được đánh giá cao trong phân khúc. Độ bao phủ & che phủ cao. Dễ thi công. Mùi nhẹ nhàng.', dm:'Theo hướng dẫn' },
+      ],
+    },
+    "🧱 Sơn lót nội thất": {
+      "Odour-Less Sealer": [
+        { code:'OL-Sealer', name:'Odour-Less Sealer - Sơn lót nội thất cao cấp', spec:'Thùng 18L', desc:'Hỗ trợ chống rêu & nấm mốc. Chống phai màu. Tạo màng sơn đẹp hơn khi thi công cùng sơn phủ cao cấp.', dm:'Theo hướng dẫn' },
+      ],
+    },
   },
 };
 
@@ -461,8 +482,13 @@ const PRICE_MAP = {
     'Putty-IN':    { price:'370.000đ', spec:'40kg' },
   },
   nippon: {
-    'Matex':  { price:'~1.130.000đ', spec:'Thùng 18L' },
-    'Weatherbond': { price:'~1.290.000đ', spec:'Thùng 18L' },
+    'WG-SieuBong-1L': { price:'645.000đ', spec:'1L' },
+    'WG-SieuBong-5L': { price:'3.119.000đ', spec:'5L' },
+    'WG-Plus-1L':  { price:'566.000đ', spec:'1L' },
+    'WG-Plus-5L':  { price:'2.706.000đ', spec:'5L' },
+    'WG-Plus-18L': { price:'8.012.000đ', spec:'18L' },
+    'WG-Bong-1L':  { price:'430.000đ', spec:'1L' },
+    'WG-Bong-5L':  { price:'2.065.000đ', spec:'5L' },
   },
   nano: {
     'NO1-15L': { price:'4.983.000đ', spec:'15L' },
