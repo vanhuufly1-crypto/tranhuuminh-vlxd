@@ -515,6 +515,18 @@ const PRICE_MAP = {
     'B1':      { price:'620.000đ', spec:'40kg' },
     'B2':      { price:'838.000đ', spec:'40kg' },
   },
+  jotun: {
+    'JS-BenMauToiUu-5L': { price:'2.440.000đ', spec:'5L' },
+    'JS-BenMauToiUu-15L': { price:'7.250.000đ', spec:'15L' },
+    'MJ-HoanHao-Bong5-5L': { price:'1.815.000đ', spec:'5L' },
+    'MJ-HoanHao-15L': { price:'5.185.000đ', spec:'15L' },
+    'ES-ChePhu-Bong-5L': { price:'1.215.000đ', spec:'5L' },
+    'ES-ChePhu-17L': { price:'3.720.000đ', spec:'17L' },
+    'WaterGuard-5L': { price:'1.060.000đ', spec:'5L' },
+    'WaterGuard-17L': { price:'3.340.000đ', spec:'17L' },
+    'WaterGuard': { price:'~4.170.000đ', spec:'20kg' },
+    'TS-Max': { price:'~4.950.000đ', spec:'17L' },
+  },
 };
 
 function getPrice(bid, code) {
@@ -622,8 +634,16 @@ const PRICES = [
   { brand:'Sika', product:'Sikaflex 11FC - Keo trám khe', spec:'Ống 600ml', price:'Liên hệ' },
   // --- JOTUN (giá niêm yết tham khảo) ---
   { brand:'Jotun', product:'Jotashield Bền Màu Toàn Diện - Ngoại thất', spec:'15L', price:'~9.545.000đ' },
+  { brand:'Jotun', product:'Jotashield Bền Màu Tối Ưu - Ngoại thất', spec:'5L', price:'2.440.000đ' },
+  { brand:'Jotun', product:'Jotashield Bền Màu Tối Ưu - Ngoại thất', spec:'15L', price:'7.250.000đ' },
   { brand:'Jotun', product:'Jotashield Sạch Vượt Trội - Ngoại thất', spec:'15L', price:'~7.355.000đ' },
   { brand:'Jotun', product:'Jotashield Chống Phai Màu - Ngoại thất', spec:'15L', price:'~7.145.000đ' },
+  { brand:'Jotun', product:'Majestic Đẹp Hoàn Hảo - Nội thất', spec:'5L', price:'1.815.000đ' },
+  { brand:'Jotun', product:'Majestic Đẹp Hoàn Hảo - Nội thất', spec:'15L', price:'5.185.000đ' },
+  { brand:'Jotun', product:'Essence Che Phủ Tối Đa - Nội thất', spec:'5L', price:'1.215.000đ' },
+  { brand:'Jotun', product:'Essence Che Phủ Tối Đa - Nội thất', spec:'17L', price:'3.720.000đ' },
+  { brand:'Jotun', product:'Jotun Water Guard - Chống thấm', spec:'5L', price:'1.060.000đ' },
+  { brand:'Jotun', product:'Jotun Water Guard - Chống thấm', spec:'17L', price:'3.340.000đ' },
   { brand:'Jotun', product:'Jotun Water Guard - Chống thấm', spec:'20kg', price:'~4.170.000đ' },
   { brand:'Jotun', product:'Tough Shield Max - Ngoại thất kinh tế', spec:'17L', price:'~4.950.000đ' },
 ];

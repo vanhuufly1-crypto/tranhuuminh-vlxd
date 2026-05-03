@@ -46,6 +46,22 @@ const PROD_IMAGES = [
   'nippon_matex',
   'nippon_weathergard',
   'nippon_supertech',
+  // Nano House product images from USB VLHT
+  'nano_a1',
+  'nano_IMG_1623337789048_1623337954888-300x300',
+  'nano_IMG_1623337789150_1623337954972-300x300',
+  'nano_IMG_1623337789358_1623337954932-1-300x300',
+  'nano_IMG_1623337789479_1623337954569-300x300',
+  'nano_IMG_1623337789570_1623337955073-300x300',
+  'nano_IMG_1623337789678_1623337954507-300x300',
+  'nano_IMG_1623337789778_1623337954639-300x300',
+  'nano_IMG_1623337789879_1623337954683-300x300',
+  'nano_IMG_1623337789979_1623337954742-300x300',
+  'nano_IMG_1623337790189_1623337954806-1-300x300',
+  'nano_IMG_1623337790398_1623337955032-300x300',
+  'nano_IMG_1623337790500_1623337954849-300x300',
+  'nano_IMG_1623337790600_1623337955112-300x300',
+  'nano_IMG_20210721_112021-300x300',
   // Dulux images from competitor websites
   'dulux_weathershield',
   'dulux_inspire',
@@ -64,7 +80,7 @@ const PROD_IMAGES = [
 function getBrandImages(brandId) {
   const map = {
     munich:  [0,1,9, 19,20,21,22,23,24],
-    nano:    [4],
+    nano:    [4, 49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65],
     sika:    [3,10, 32,33,34,35,36],
     dulux:   [11, 40,41,42,43],
     jotun:   [12, 25,26,27,28, 44,45,46],
@@ -85,6 +101,8 @@ function handleImgError(img) {
 const BRAND_IMG = {
   munich: 'images/munich_munich_cn-006.webp',
   nano: 'images/nano_IMG_1623337789048_1623337954888-300x300.webp',
+  nano_1: 'images/nano_IMG_1623337789150_1623337954972-300x300.webp',
+  nano_2: 'images/nano_IMG_1623337789358_1623337954932-1-300x300.webp',
   sika: 'images/sika_sikaflex11fc.webp',
   dulux: 'images/dulux_5in1.webp',
   jotun: 'images/jotun_jotashield.webp',
