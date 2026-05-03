@@ -137,6 +137,7 @@ function renderBrand(id) {
   if (!sec) return;
   const container = sec.querySelector('.brand-content');
   const data = PRODUCTS[id];
+  if (!data) return;
   
   let html = '';
   
@@ -155,21 +156,50 @@ function renderBrand(id) {
   if (Array.isArray(data)) {
     // Simple list
     html += '<div class="cat-products active">';
-    data.forEach((p, idx) => html += card(p, id));
+    data.forEach(p => html += card(p, id));
     html += '</div>';
   } else {
-    // Categories with tabs
     const cats = Object.keys(data);
-    html += '<div class="cat-tabs">';
-    cats.forEach((c, i) => {
-      html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
-    });
-    html += '</div>';
-    cats.forEach((c, i) => {
-      html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
-      data[c].forEach(p => html += card(p, id));
+    // Kiểm tra nếu là cây 3 cấp (value là object có con là array)
+    const isTree = cats.length > 0 && typeof data[cats[0]] === 'object' && !Array.isArray(data[cats[0]]);
+    
+    if (isTree) {
+      // 3 cấp: Brand → Group → Subgroup → Products
+      html += '<div class="cat-tabs">';
+      cats.forEach((c, i) => {
+        html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
+      });
       html += '</div>';
-    });
+      cats.forEach((c, i) => {
+        const subgroups = Object.keys(data[c]);
+        html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
+        // Sub-tabs
+        html += '<div class="sub-tabs">';
+        subgroups.forEach((sg, si) => {
+          html += `<span class="sub-tab ${si===0?'active':''}" onclick="switchSubCat(this,'${id}',${i},${si})">${sg}</span>`;
+        });
+        html += '</div>';
+        // Sub-product lists
+        subgroups.forEach((sg, si) => {
+          html += `<div class="sub-products ${si===0?'active':''}" data-subcat="${si}">`;
+          data[c][sg].forEach(p => html += card(p, id));
+          html += '</div>';
+        });
+        html += '</div>';
+      });
+    } else {
+      // 2 cấp: Brand → Category → Products
+      html += '<div class="cat-tabs">';
+      cats.forEach((c, i) => {
+        html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
+      });
+      html += '</div>';
+      cats.forEach((c, i) => {
+        html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
+        data[c].forEach(p => html += card(p, id));
+        html += '</div>';
+      });
+    }
   }
   
   container.innerHTML = html;
@@ -222,10 +252,24 @@ function card(p, brand) {
 
 function switchCat(el, brandId, idx) {
   const sec = document.getElementById(brandId + '-section');
+  if (!sec) return;
   sec.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   sec.querySelectorAll('.cat-products').forEach(c => c.classList.remove('active'));
-  sec.querySelector(`.cat-products[data-cat="${idx}"]`).classList.add('active');
+  const target = sec.querySelector(`.cat-products[data-cat="${idx}"]`);
+  if (target) target.classList.add('active');
+}
+
+function switchSubCat(el, brandId, catIdx, subIdx) {
+  const sec = document.getElementById(brandId + '-section');
+  if (!sec) return;
+  const parent = sec.querySelector(`.cat-products[data-cat="${catIdx}"]`);
+  if (!parent) return;
+  parent.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  parent.querySelectorAll('.sub-products').forEach(c => c.classList.remove('active'));
+  const target = parent.querySelector(`.sub-products[data-subcat="${subIdx}"]`);
+  if (target) target.classList.add('active');
 }
 
 function renderPrices() {
