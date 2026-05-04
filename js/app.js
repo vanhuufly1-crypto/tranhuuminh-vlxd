@@ -252,7 +252,7 @@ function toggleNav() {
 /* ===== FADE-IN ON SCROLL (IntersectionObserver) ===== */
 (function initFadeIn() {
   // Add fade-in classes to sections and cards dynamically
-  const sectionEls = document.querySelectorAll('.section, .features, .brand-grid, .project-grid, .contact-grid');
+  const sectionEls = document.querySelectorAll('.section, .brand-grid, .contact-grid');
   sectionEls.forEach(el => {
     el.classList.add('fade-in');
     // Also add staggered animation to direct children
@@ -266,7 +266,7 @@ function toggleNav() {
   });
 
   // Also add to specific elements
-  document.querySelectorAll('.feat-card, .brand-card, .prod-card, .contact-card, .project-card').forEach(el => {
+  document.querySelectorAll('.brand-card, .prod-card, .contact-card').forEach(el => {
     el.classList.add('fade-in');
   });
 
