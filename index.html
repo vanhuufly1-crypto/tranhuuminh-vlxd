@@ -12,7 +12,7 @@
 <!-- Open Graph / Social Media -->
 <meta property="og:title" content="Trần Hữu Minh - Vật liệu xây dựng & Chống thấm | Hải Phòng">
 <meta property="og:description" content="Nhà phân phối chính thức Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Thi công trọn gói — Vật liệu + Nhân công. Báo giá miễn phí!">
-<meta property="og:image" content="">
+
 <meta property="og:url" content="https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="vi_VN">
@@ -65,6 +65,7 @@
   <div class="container">
     <span>🏪 CÔNG TY TNHH XD & TM TRẦN HỮU MINH - MST: 0201961941</span>
     <span class="hotline">📞 Hotline: <strong>0378.679.633</strong></span>
+    <span class="topbar-social"><a href="https://zalo.me/0378679633" target="_blank" rel="noopener" style="color:#0068ff;font-weight:600">💬 Zalo</a></span>
   </div>
 </div>
 
@@ -102,6 +103,7 @@
         </div>
       </li>
       <li><a href="#quote">📋 Báo giá</a></li>
+      <li><a href="#projects">🏗️ Dự án</a></li>
       <li><a href="#contact">📞 Liên hệ</a></li>
       <li style="border-top:1px solid var(--border);margin-top:4px;padding-top:4px"><a href="#" onclick="toggleNav();return false;">✕ Đóng</a></li>
     </ul>
@@ -183,12 +185,18 @@
 
 
 
+  <!-- PROJECT GALLERY -->
+
+
   <!-- QUOTE FORM -->
   <section id="quote" class="section">
     <h2 class="section-title">📋 Yêu cầu báo giá nhanh</h2>
     <p class="note">Điền thông tin, chúng tôi sẽ gửi báo giá trong 30 phút!</p>
     <div class="quote-section">
-      <form id="quoteForm" class="quote-form" action="#" method="POST" onsubmit="alert('Cảm ơn anh/chị! Chúng tôi sẽ liên hệ trong 30 phút.')">
+      <form id="quoteForm" class="quote-form" action="https://formsubmit.co/vanhuufly@gmail.com" method="POST" onsubmit="document.getElementById('quoteBtn').disabled=true;document.getElementById('quoteBtn').innerHTML='⏳ Đang gửi...'">
+        <input type="hidden" name="_subject" value="Yêu cầu báo giá từ VLXD Trần Hữu Minh">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/#quote">
         <div class="qf-row">
           <input type="text" name="name" placeholder="Họ tên *" required>
           <input type="tel" name="phone" placeholder="Số điện thoại *" required>
@@ -200,7 +208,7 @@
         <div class="qf-row">
           <textarea name="note" rows="3" placeholder="Ghi chú thêm (địa chỉ công trình, yêu cầu...)" style="width:100%"></textarea>
         </div>
-        <button type="submit" class="btn" style="width:100%">📩 Gửi yêu cầu báo giá</button>
+        <button type="submit" class="btn" style="width:100%" id="quoteBtn">📩 Gửi yêu cầu báo giá</button>
       </form>
     </div>
   </section>

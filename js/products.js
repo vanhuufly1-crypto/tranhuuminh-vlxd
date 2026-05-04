@@ -486,11 +486,22 @@ function getPrice(bid, code) {
   return null;
 }
 
-// Count products
+// Count products (hỗ trợ cả cây 2 cấp và 3 cấp)
 for (const b of BRANDS) {
   const data = PRODUCTS[b.id];
-  if (Array.isArray(data)) b.count = data.length;
-  else { let c=0; for(const k in data) c+=data[k].length; b.count = c; }
+  if (!data) { b.count = 0; continue; }
+  if (Array.isArray(data)) { b.count = data.length; continue; }
+  let c = 0;
+  for (const k in data) {
+    if (Array.isArray(data[k])) { c += data[k].length; }
+    else {
+      // Cây 3 cấp: Category → Subcategory → Array
+      for (const sk in data[k]) {
+        if (Array.isArray(data[k][sk])) c += data[k][sk].length;
+      }
+    }
+  }
+  b.count = c;
 }
 
 // Danh sách giá cho bảng giá (front-end display)

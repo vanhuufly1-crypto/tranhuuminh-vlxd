@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render all brands
   BRANDS.forEach(b => renderBrand(b.id));
 
+  // Projects gallery — lightbox on click
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    img.addEventListener('click', function() {
+      const overlay = document.createElement('div');
+      overlay.className = 'lightbox';
+      overlay.innerHTML = '<span class="lightbox-close">&times;</span><img src="' + this.src + '" alt="' + this.alt + '">';
+      overlay.onclick = () => overlay.remove();
+      document.body.appendChild(overlay);
+    });
+  });
+
   // Navigation — close mobile nav on click
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
