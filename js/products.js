@@ -6,7 +6,7 @@ const BRANDS = [
   { id:'dulux', name:'Dulux', icon:'🎨', color:'#0984e3', desc:'Sơn nội thất & ngoại thất', count:30 },
   { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:24 },
   { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:21 },
-  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:7 },
+  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:19 },
 ];
 
 const PRODUCTS = {
@@ -282,35 +282,65 @@ const PRODUCTS = {
     ],
   },
   nippon: {
-    "🛡️ Sơn ngoại thất": {
+    "Sơn ngoại thất": {
       "Weathergard Siêu Bóng": [
-        { code:'WG-SieuBong', name:'Weathergard Siêu Bóng - Công nghệ INFINIMATRIX', spec:'1L / 5L', desc:'Hoàn thiện độ bóng cao. Chống thấm tường. Công nghệ Colour Care bền màu x2. Solar Reflective giảm nhiệt. Chống rêu nấm mốc x2.', dm:'Theo hướng dẫn' },
+        { code:'WG-SieuBong', name:'Weathergard Siêu Bóng - INFINIMATRIX', spec:'1L / 5L', desc:'Độ bóng cao, chống thấm, Colour Care bền màu x2, Solar Reflective giảm nhiệt.', dm:'Theo hướng dẫn' },
+        { code:'WG-SieuBong18L', name:'Weathergard Siêu Bóng (thùng 18L)', spec:'18L', desc:'Cùng INFINIMATRIX, dung tích lớn.', dm:'Theo hướng dẫn' },
       ],
       "Weathergard Plus+": [
-        { code:'WG-Plus', name:'Weathergard Plus+ - MicroGel bảo vệ 10 năm', spec:'1L / 5L / 18L', desc:'Công nghệ MicroGel giúp màng sơn bền bỉ, bảo vệ 10 năm. Chống bám bụi. Colour Care bền màu vượt trội. Solar Reflective giảm nhiệt.', dm:'Theo hướng dẫn' },
+        { code:'WG-Plus', name:'Weathergard Plus+ - MicroGel bảo vệ 10 năm', spec:'1L / 5L / 18L', desc:'MicroGel bền bỉ 10 năm. Chống bám bụi. Colour Care bền màu.', dm:'Theo hướng dẫn' },
       ],
       "Weathergard Bóng": [
-        { code:'WG-Bong', name:'Weathergard Bóng - TitanGuard chống bám bụi', spec:'1L / 5L', desc:'Công nghệ TitanGuard & MicroGel chống bám bụi tuyệt vời. Colour Care bền màu. Bảo vệ 8 năm với chất lượng Nhật Bản.', dm:'Theo hướng dẫn' },
+        { code:'WG-Bong', name:'Weathergard Bóng - TitanGuard', spec:'1L / 5L', desc:'TitanGuard chống bám bụi. Colour Care bền màu. Bảo vệ 8 năm.', dm:'Theo hướng dẫn' },
+      ],
+      "Weathergard Mờ": [
+        { code:'WG-Mo', name:'Weathergard Mờ - thanh lịch bền màu', spec:'1L / 5L / 18L', desc:'Hoàn thiện mờ sang trọng. Chống thấm, chống rêu mốc.', dm:'Theo hướng dẫn' },
       ],
     },
-    "🎨 Sơn nội thất siêu cao cấp": {
-      "Odour-Less All-in-1": [
-        { code:'OL-Allin1-SieuBong', name:'Odour-Less All-in-1 Siêu Bóng - INFINIMATRIX', spec:'1L / 5L', desc:'Công nghệ INFINIMATRIX độ bóng cao, màng sơn mịn màng. Dễ lau chùi x2. Colour Guard bền màu. Chứng nhận Green Label - an toàn sức khỏe.', dm:'Theo hướng dẫn' },
+    "Sơn nội thất siêu cao cấp": {
+      "Odour-Less All-in-1 Siêu Bóng": [
+        { code:'OL-Allin1', name:'Odour-Less All-in-1 Siêu Bóng', spec:'1L / 5L', desc:'INFINIMATRIX. Dễ lau x2. Colour Guard bền màu. Green Label.', dm:'Theo hướng dẫn' },
       ],
       "Odour-Less Bóng Sang Trọng": [
-        { code:'OL-BongSangTrong', name:'Odour-Less Bóng Sang Trọng - EZWash', spec:'1L / 5L', desc:'Màng sơn bóng láng mịn. Lau chùi tuyệt vời EZWash. Colour Guard bền màu. Kháng vi khuẩn E.Coli, Staphylococcus.', dm:'Theo hướng dẫn' },
+        { code:'OL-BongST', name:'Odour-Less Bóng Sang Trọng - EZWash', spec:'1L / 5L', desc:'EZWash lau chùi tuyệt vời. Kháng khuẩn. Colour Guard bền màu.', dm:'Theo hướng dẫn' },
+      ],
+      "Odour-Less Mờ Cao Cấp": [
+        { code:'OL-Mo', name:'Odour-Less Mờ Cao Cấp', spec:'1L / 5L', desc:'Hoàn thiện mờ. EZWash. Kháng khuẩn.', dm:'Theo hướng dẫn' },
+      ],
+      "Odour-Less Siêu Trắng": [
+        { code:'OL-Trang', name:'Odour-Less Siêu Trắng Mịn', spec:'5L', desc:'Siêu trắng sáng, mịn màng.', dm:'Theo hướng dẫn' },
       ],
     },
-    "🎨 Sơn nội thất chất lượng": {
-      "Matex": [
-        { code:'Matex', name:'Matex - Sơn nội thất chất lượng cao', spec:'Thùng 18L', desc:'Được đánh giá cao trong phân khúc. Độ bao phủ & che phủ cao. Dễ thi công. Mùi nhẹ nhàng.', dm:'Theo hướng dẫn' },
+    "Sơn nội thất chất lượng": {
+      "Matex Bóng": [
+        { code:'Matex-Bong', name:'Matex Bóng - Chất lượng cao', spec:'5L / 18L', desc:'Bao phủ cao. Dễ thi công. Mùi nhẹ.', dm:'Theo hướng dẫn' },
+      ],
+      "Matex Mờ": [
+        { code:'Matex-Mo', name:'Matex Mờ - Chất lượng cao', spec:'5L / 18L', desc:'Mờ sang trọng. Bao phủ cao.', dm:'Theo hướng dẫn' },
+      ],
+      "Vatex Bóng": [
+        { code:'Vatex-Bong', name:'Vatex Bóng - Kinh tế', spec:'5L / 18L', desc:'Sơn kinh tế, che phủ và bám dính tốt.', dm:'Theo hướng dẫn' },
+      ],
+      "Vatex Mờ": [
+        { code:'Vatex-Mo', name:'Vatex Mờ - Kinh tế', spec:'5L / 18L', desc:'Giá tốt, chất lượng ổn định.', dm:'Theo hướng dẫn' },
+      ],
+      "Super White Siêu Trắng": [
+        { code:'SuperWhite', name:'Super White Siêu Trắng - Sơn trần', spec:'5L / 18L', desc:'Siêu trắng, độ phủ cao, chống kiềm.', dm:'Theo hướng dẫn' },
       ],
     },
-    "🧱 Sơn lót nội thất": {
-      "Odour-Less Sealer": [
-        { code:'OL-Sealer', name:'Odour-Less Sealer - Sơn lót nội thất cao cấp', spec:'Thùng 18L', desc:'Hỗ trợ chống rêu & nấm mốc. Chống phai màu. Tạo màng sơn đẹp hơn khi thi công cùng sơn phủ cao cấp.', dm:'Theo hướng dẫn' },
+    "Sơn lót": {
+      "Nội thất": [
+        { code:'OL-Sealer', name:'Odour-Less Sealer - Lót cao cấp', spec:'18L', desc:'Chống rêu mốc. Chống phai màu. Tạo nền hoàn hảo.', dm:'Theo hướng dẫn' },
+        { code:'Vatex-PrimerNT', name:'Vatex Primer - Lót kiềm nội thất', spec:'18L', desc:'Chống kiềm, tăng bám dính.', dm:'Theo hướng dẫn' },
+      ],
+      "Ngoại thất": [
+        { code:'WG-Primer', name:'Weathergard Primer - Lót kiềm ngoại thất', spec:'5L / 18L', desc:'Chống kiềm, chống muối hóa.', dm:'Theo hướng dẫn' },
       ],
     },
+    "Chống thấm": [
+      { code:'NP-CT', name:'Chống thấm chống rêu mốc Nippon', spec:'4L / 18L', desc:'Chống thấm ngoại thất, chống rêu mốc.', dm:'Theo hướng dẫn' },
+      { code:'NP-WP', name:'Chống thấm xi măng polymer', spec:'Bộ 20kg', desc:'Chống thấm sân thượng, tường ngoài.', dm:'Theo hướng dẫn' },
+    ],
   },
 };
 
