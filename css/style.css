@@ -95,7 +95,6 @@ input, textarea, select, button { font-family:inherit; }
     transition-duration: 0.01ms !important;
   }
   html { scroll-behavior: auto; }
-}
 .hero-content { position:relative; z-index:1; }
 .hero-content h2 { font-size:42px; font-weight:800; color:var(--white); margin-bottom:16px; }
 .hero-content h2 span { color:var(--accent); display:block; font-size:28px; }
@@ -245,7 +244,6 @@ main { padding:40px 0; }
   background:var(--card-bg); border-radius:var(--radius); padding:24px;
   text-align:center; border:1px solid var(--border); transition:transform .3s ease, box-shadow .3s ease;
   will-change: transform;
-}
 
 /* ===== CONTACT ===== */
 .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
@@ -517,11 +515,43 @@ main { padding:40px 0; }
   .section { display:block !important; page-break-inside:avoid; }
 }
 
-/* ===== SIMPLE BRAND DROPDOWN (mobile-first) ===== */
+/* ===== SIMPLE BRAND DROPDOWN ===== */
 .nav-dropdown {
   display: none;
+  padding: 8px 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
 }
 
+/* Desktop: show on hover */
+@media(min-width:769px) {
+  .nav-list > li:has(.nav-dropdown):hover .nav-dropdown,
+  .nav-list > li:has(.nav-dropdown):focus-within .nav-dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 200;
+  }
+  .nav-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    transition: .2s;
+  }
+  .nav-dropdown a:hover {
+    background: #f5f5f5;
+    color: var(--accent);
+    padding-left: 24px;
+  }
+}
+
+/* Mobile: toggle with .open class */
 @media(max-width:768px) {
   .nav-dropdown.open {
     display: block;
@@ -612,11 +642,9 @@ main { padding:40px 0; }
 
 /* ===== PROJECT GRID ===== */
   display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; margin-top:20px;
-}
   background:var(--card-bg); border-radius:var(--radius); overflow:hidden;
   border:1px solid var(--border); transition:transform .3s ease, box-shadow .3s ease;
   will-change: transform;
-}
 
 /* ===== QUY TRÌNH THI CÔNG STEPS ===== */
 .process-steps {
@@ -727,20 +755,17 @@ main { padding:40px 0; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   margin-top: 20px;
-}
   background: white;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   text-align: center;
-}
   width: 100%;
   height: 250px;
   object-fit: contain;
   cursor: pointer;
   background: #f8f9fa;
   transition: transform 0.3s;
-}
   display: inline-block;
   padding: 6px 16px;
   margin: 4px 0 12px;
@@ -750,4 +775,3 @@ main { padding:40px 0; }
   text-decoration: none;
   font-size: 13px;
   transition: background 0.2s;
-}
