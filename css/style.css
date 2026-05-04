@@ -709,3 +709,33 @@ main { padding:40px 0; }
 }
 }
 }
+
+/* ===== PROJECT GALLERY ===== */
+.proj-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.proj-item {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.proj-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.proj-item img:hover {
+  transform: scale(1.05);
+}
+@media(max-width:480px) {
+  .proj-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
