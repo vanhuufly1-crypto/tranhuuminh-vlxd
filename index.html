@@ -75,7 +75,7 @@
       <div class="logo-icon">🏪</div>
       <div class="logo-text">
         <h1><span>TRẦN HỮU</span> MINH</h1>
-        <div class="slogan">Sơn bả - Chống thấm - Thiết bị điện nước - Gạch ốp - Nội thất - Cửa cổng</div>
+        <div class="slogan">Sơn bả - Chống thấm - Gạch ốp</div>
       </div>
     </div>
     <div class="header-search">
@@ -91,51 +91,14 @@
     <ul class="nav-list" id="navList">
       <li><a href="#home">🏠 Trang chủ</a></li>
       <li><a href="#products" onclick="return false" class="nav-prod">📦 Sản phẩm ▾</a>
-        <div class="mega">
-          <div class="mega-group">
-            <h4>⭐ Munich</h4>
-            <a href="#" data-brand="munich">Sơn nước</a>
-            <a href="#" data-brand="munich">Sơn chống thấm</a>
-            <a href="#" data-brand="munich">Sơn công nghiệp</a>
-            <a href="#" data-brand="munich">Phụ gia & VLXD</a>
-          </div>
-          <div class="mega-group">
-            <h4>🏡 Nano House</h4>
-            <a href="#" data-brand="nano">Sơn phủ nội thất</a>
-            <a href="#" data-brand="nano">Sơn phủ ngoại thất</a>
-            <a href="#" data-brand="nano">Sơn lót chống kiềm</a>
-            <a href="#" data-brand="nano">Bột bả</a>
-          </div>
-          <div class="mega-group">
-            <h4>🏺 Kova</h4>
-            <a href="#" data-brand="kova">Sơn nội thất</a>
-            <a href="#" data-brand="kova">Ngoại thất & Chống thấm</a>
-            <a href="#" data-brand="kova">Bột bả & Sàn</a>
-          </div>
-          <div class="mega-group">
-            <h4>🧪 Sika</h4>
-            <a href="#" data-brand="sika">Chống thấm & Vữa kỹ thuật</a>
-          </div>
-          <div class="mega-group">
-            <h4>🎨 Dulux</h4>
-            <a href="#" data-brand="dulux">Ngoại thất</a>
-            <a href="#" data-brand="dulux">Nội thất</a>
-            <a href="#" data-brand="dulux">Chống thấm</a>
-            <a href="#" data-brand="dulux">Lót & Bột trét</a>
-          </div>
-          <div class="mega-group">
-            <h4>🖌️ Jotun</h4>
-            <a href="#" data-brand="jotun">Nội thất</a>
-            <a href="#" data-brand="jotun">Ngoại thất</a>
-            <a href="#" data-brand="jotun">Gỗ & Kim loại</a>
-            <a href="#" data-brand="jotun">Lót & Bột trét</a>
-          </div>
-          <div class="mega-group">
-            <h4>🇯🇵 Nippon</h4>
-            <a href="#" data-brand="nippon">Nội thất</a>
-            <a href="#" data-brand="nippon">Ngoại thất</a>
-            <a href="#" data-brand="nippon">Sơn lót</a>
-          </div>
+        <div class="nav-dropdown" id="brandDropdown">
+          <a href="#" data-brand="munich" onclick="showBrand('munich');toggleNav();return false">⭐ Munich</a>
+          <a href="#" data-brand="nano" onclick="showBrand('nano');toggleNav();return false">🏡 Nano House</a>
+          <a href="#" data-brand="sika" onclick="showBrand('sika');toggleNav();return false">🧪 Sika</a>
+          <a href="#" data-brand="dulux" onclick="showBrand('dulux');toggleNav();return false">🎨 Dulux</a>
+          <a href="#" data-brand="jotun" onclick="showBrand('jotun');toggleNav();return false">🖌️ Jotun</a>
+          <a href="#" data-brand="kova" onclick="showBrand('kova');toggleNav();return false">🏺 Kova</a>
+          <a href="#" data-brand="nippon" onclick="showBrand('nippon');toggleNav();return false">🇯🇵 Nippon</a>
         </div>
       </li>
       <li><a href="#price">💰 Bảng giá</a></li>
@@ -333,8 +296,7 @@
       <div class="footer-col">
         <h4>🏗️ Trần Hữu Minh</h4>
         <p>Thách thức mọi nguồn nước!</p>
-        <p>Sơn bả - Chống thấm - Thiết bị điện nước</p>
-        <p>Gạch ốp - Nội thất - Cửa cổng</p>
+        <p>Sơn bả - Chống thấm - Gạch ốp</p>
       </div>
       <div class="footer-col">
         <h4>📍 Địa chỉ</h4>
