@@ -107,26 +107,7 @@ function renderBrand(id) {
   container.innerHTML = html;
 }
 
-// Lightbox
-function openLightbox(src) {
-  let lb = document.getElementById('lightbox');
-  if (!lb) {
-    lb = document.createElement('div');
-    lb.id = 'lightbox';
-    lb.className = 'lightbox';
-    lb.innerHTML = '<span class="lb-close" onclick="closeLightbox()">&times;</span><img id="lbImg">';
-    lb.addEventListener('click', closeLightbox);
-    document.body.appendChild(lb);
-  }
-  document.getElementById('lbImg').src = src;
-  lb.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  const lb = document.getElementById('lightbox');
-  if (lb) lb.classList.remove('active');
-  document.body.style.overflow = '';
-}
+
 
 function card(p, brand) {
   const pr = getPrice(brand, p.code);
@@ -232,16 +213,16 @@ function toggleNav() {
   list.classList.toggle('open');
 }
 
-// Mobile mega menu toggle — tap Sản phẩm to show/hide
+// Mobile brand dropdown toggle — tap Sản phẩm to show/hide
 (function(){
   const prodLink = document.querySelector('.nav-prod');
   if (prodLink) {
     prodLink.addEventListener('click', function(e) {
       if (window.innerWidth > 768) return;
       e.preventDefault();
-      const mega = this.parentElement.querySelector('.mega');
-      if (mega) {
-        mega.classList.toggle('open');
+      const dd = document.getElementById('brandDropdown');
+      if (dd) {
+        dd.classList.toggle('open');
       }
     });
   }
