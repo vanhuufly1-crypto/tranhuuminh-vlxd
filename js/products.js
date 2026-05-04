@@ -502,7 +502,30 @@ const PRICE_MAP = {
     'CT05':           { price:'Liên hệ', spec:'4kg' },
   },
   nippon: {
-    // Nippon - cần cập nhật sau (bảng giá PDF không đọc được)
+    // Ngoại thất - bảng giá 07/2025
+    'WG-SieuBong':    { price:'513.000đ', spec:'1L' },
+    'WG-SieuBong18L': { price:'2.272.000đ', spec:'5L' },
+    'WG-Plus':        { price:'Liên hệ', spec:'1L / 5L / 18L' },
+    'WG-Bong':        { price:'Liên hệ', spec:'1L / 5L' },
+    'WG-Mo':          { price:'Liên hệ', spec:'1L / 5L / 18L' },
+    // Nội thất siêu cao cấp - bảng giá 07/2025
+    'OL-Allin1':      { price:'513.000đ', spec:'1L' },
+    'OL-BongST':      { price:'458.000đ', spec:'1L' },
+    'OL-Mo':          { price:'250.000đ', spec:'1L' },
+    'OL-Trang':       { price:'Liên hệ', spec:'5L' },
+    // Nội thất chất lượng - bảng giá 07/2025
+    'Matex-Bong':     { price:'575.000đ', spec:'5KG' },
+    'Matex-Mo':       { price:'519.000đ', spec:'5L' },
+    'Vatex-Bong':     { price:'332.000đ', spec:'4.8KG' },
+    'Vatex-Mo':       { price:'Liên hệ', spec:'5L' },
+    'SuperWhite':     { price:'Liên hệ', spec:'5L' },
+    // Sơn lót - bảng giá 07/2025
+    'OL-Sealer':      { price:'1.040.000đ', spec:'5L' },
+    'Vatex-PrimerNT': { price:'593.000đ', spec:'5L' },
+    'WG-Primer':      { price:'1.491.000đ', spec:'5L' },
+    // Chống thấm - bảng giá 07/2025
+    'NP-CT':          { price:'1.196.000đ', spec:'5KG' },
+    'NP-WP':          { price:'1.378.000đ', spec:'6KG' },
   },
 };
 
