@@ -155,16 +155,6 @@ function switchSubCat(el, brandId, catIdx, subIdx) {
   if (target) target.classList.add('active');
 }
 
-function renderPrices() {
-  const tbl = document.getElementById('priceTable');
-  let html = '<table><thead><tr><th>STT</th><th>Hãng</th><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>';
-  PRICES.forEach((p, i) => {
-    html += `<tr><td>${i+1}</td><td><strong>${p.brand}</strong></td><td>${p.product}</td><td>${p.spec}</td><td><strong>${p.price}</strong></td></tr>`;
-  });
-  html += '</tbody></table>';
-  tbl.innerHTML = html;
-}
-
 function searchProd(q) {
   if (!q || q.length < 1) {
     // Clear search when input empty
