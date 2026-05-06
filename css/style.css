@@ -160,6 +160,7 @@ input, textarea, select, button { font-family:inherit; }
 .bt-jotun { background:rgba(243,156,18,0.2); color:#f9ca24; border:1px solid rgba(243,156,18,0.3); }
 .bt-kova { background:rgba(225,112,85,0.2); color:#fab1a0; border:1px solid rgba(225,112,85,0.3); }
 .bt-nippon { background:rgba(0,184,148,0.2); color:#55efc4; border:1px solid rgba(0,184,148,0.3); }
+.bt-maxilite { background:rgba(212,160,23,0.2); color:#f6b93b; border:1px solid rgba(212,160,23,0.3); }
 
 /* ===== MAIN ===== */
 main { padding:40px 0; }
@@ -202,6 +203,7 @@ main { padding:40px 0; }
 .bh-jotun { background:linear-gradient(135deg,#f39c12,#d68910); }
 .bh-kova { background:linear-gradient(135deg,#e17055,#c95a42); }
 .bh-nippon { background:linear-gradient(135deg,#00b894,#009977); }
+.bh-maxilite { background:linear-gradient(135deg,#d4a017,#b8860b); }
 
 .cat-tabs {
   display: flex;
@@ -518,6 +520,7 @@ main { padding:40px 0; }
 .tag-jotun { background:#f39c12; }
 .tag-kova { background:#e17055; }
 .tag-nippon { background:#00b894; }
+.tag-maxilite { background:#d4a017; }
 
 /* ===== PROD PRICE ===== */
 .prod-price { margin:8px 0 6px; padding:8px 10px; background:#fef9ef; border-radius:6px; border:1px solid #f1dca7; font-size:13px; }
