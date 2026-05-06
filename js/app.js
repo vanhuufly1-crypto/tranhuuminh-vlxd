@@ -73,46 +73,55 @@ function renderBrand(id) {
     html += '</div>';
   } else {
     const cats = Object.keys(data);
-    // Kiểm tra nếu là cây 3 cấp (value là object có con là array)
-    const isTree = cats.length > 0 && typeof data[cats[0]] === 'object' && !Array.isArray(data[cats[0]]);
     
-    if (isTree) {
-      // 3 cấp: Brand → Group → Subgroup → Products
-      html += '<div class="cat-tabs">';
-      cats.forEach((c, i) => {
-        html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
-      });
-      html += '</div>';
-      cats.forEach((c, i) => {
-        const subgroups = Object.keys(data[c]);
-        html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
-        // Sub-tabs
-        html += '<div class="sub-tabs">';
-        subgroups.forEach((sg, si) => {
-          html += `<span class="sub-tab ${si===0?'active':''}" onclick="switchSubCat(this,'${id}',${i},${si})">${sg}</span>`;
-        });
-        html += '</div>';
-        // Sub-product lists
-        subgroups.forEach((sg, si) => {
-          html += `<div class="sub-products ${si===0?'active':''}" data-subcat="${si}">`;
-          data[c][sg].forEach(p => html += card(p, id));
+    // Tab headers
+    html += '<div class="cat-tabs">';
+    cats.forEach((c, i) => {
+      html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
+    });
+    html += '</div>';
+    
+    // Category content — each category may have different structure
+    cats.forEach((c, i) => {
+      const val = data[c];
+      const isTree = typeof val === 'object' && !Array.isArray(val);
+      
+      html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
+      
+      if (isTree) {
+        // 3 cấp: Brand → Group → Subgroup → Products
+        const subgroups = Object.keys(val);
+        const allNumeric = subgroups.every(s => /^\d+$/.test(s));
+        
+        if (allNumeric) {
+          // Flat array disguised as object with numeric keys — render directly
+          subgroups.forEach(sg => {
+            html += card(val[sg], id);
+          });
+        } else {
+          // Real subgroups
+          html += '<div class="sub-tabs">';
+          subgroups.forEach((sg, si) => {
+            html += `<span class="sub-tab ${si===0?'active':''}" onclick="switchSubCat(this,'${id}',${i},${si})">${sg}</span>`;
+          });
           html += '</div>';
-        });
-        html += '</div>';
-      });
-    } else {
-      // 2 cấp: Brand → Category → Products
-      html += '<div class="cat-tabs">';
-      cats.forEach((c, i) => {
-        html += `<span class="cat-tab ${i===0?'active':''}" onclick="switchCat(this,'${id}',${i})">${c}</span>`;
-      });
+          subgroups.forEach((sg, si) => {
+            html += `<div class="sub-products ${si===0?'active':''}" data-subcat="${si}">`;
+            if (Array.isArray(val[sg])) {
+              val[sg].forEach(p => html += card(p, id));
+            } else {
+              html += card(val[sg], id);
+            }
+            html += '</div>';
+          });
+        }
+      } else if (Array.isArray(val)) {
+        // 2 cấp: Brand → Category → Products (flat array)
+        val.forEach(p => html += card(p, id));
+      }
+      
       html += '</div>';
-      cats.forEach((c, i) => {
-        html += `<div class="cat-products ${i===0?'active':''}" data-cat="${i}">`;
-        data[c].forEach(p => html += card(p, id));
-        html += '</div>';
-      });
-    }
+    });
   }
   
   container.innerHTML = html;
@@ -181,7 +190,19 @@ function searchProd(q) {
       data.forEach(p => { if (match(p,q)) results.push({...p,bid:b.id,bname:b.name}); });
     } else {
       for (const cat in data) {
-        data[cat].forEach(p => { if (match(p,q)) results.push({...p,bid:b.id,bname:b.name,cat}); });
+        const val = data[cat];
+        if (Array.isArray(val)) {
+          val.forEach(p => { if (match(p,q)) results.push({...p,bid:b.id,bname:b.name,cat}); });
+        } else if (typeof val === 'object') {
+          for (const sg in val) {
+            const items = val[sg];
+            if (Array.isArray(items)) {
+              items.forEach(p => { if (match(p,q)) results.push({...p,bid:b.id,bname:b.name,cat}); });
+            } else if (typeof items === 'object') {
+              if (match(items, q)) results.push({...items, bid:b.id, bname:b.name, cat});
+            }
+          }
+        }
       }
     }
   }
