@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   BRANDS.forEach(b => renderBrand(b.id));
 
   // Projects gallery — lightbox on click
-  document.querySelectorAll('.gallery-item img').forEach(img => {
+  document.querySelectorAll('.proj-item img').forEach(img => {
     img.addEventListener('click', function() {
       const overlay = document.createElement('div');
       overlay.className = 'lightbox';

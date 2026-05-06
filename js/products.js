@@ -7,7 +7,6 @@ const BRANDS = [
   { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:24 },
   { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:21 },
   { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:19 },
-  { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#e17055', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:26 },
 ];
 
 const PRODUCTS = {
