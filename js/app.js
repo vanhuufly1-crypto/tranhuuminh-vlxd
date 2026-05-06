@@ -121,7 +121,7 @@ function renderBrand(id) {
 
 
 function card(p, brand) {
-  const pr = getPrice(brand, p.code);
+  const pr = getPrice(brand, p.name);
   const priceHTML = pr && pr.price !== 'Liên hệ'
     ? `<div class="prod-price"><span class="price-val">${pr.price}</span> / ${pr.spec}</div>`
     : `<div class="prod-price"><span class="price-contact">📞 Liên hệ: 0378.679.633</span></div>`;
