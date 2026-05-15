@@ -13,13 +13,13 @@
 <meta property="og:title" content="Trần Hữu Minh - Vật liệu xây dựng & Chống thấm | Hải Phòng">
 <meta property="og:description" content="Nhà phân phối chính thức Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Thi công trọn gói — Vật liệu + Nhân công. Báo giá miễn phí!">
 
-<meta property="og:url" content="https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/">
+<meta property="og:url" content="https://tranhuuminhvlxd.id.vn">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trần Hữu Minh - Vật liệu xây dựng & Chống thấm | Hải Phòng">
 <meta name="twitter:description" content="Nhà phân phối chính thức Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Thi công trọn gói!">
-<link rel="canonical" href="https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/">
+<link rel="canonical" href="https://tranhuuminhvlxd.id.vn">
 
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -29,7 +29,7 @@
   "name": "Công ty TNHH XD & TM Trần Hữu Minh",
   "alternateName": "VLXD Trần Hữu Minh",
   "description": "Nhà phân phối chính thức Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Chuyên sơn chống thấm, vật liệu xây dựng, thi công trọn gói tại Hải Phòng.",
-  "url": "https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/",
+  "url": "https://tranhuuminhvlxd.id.vn",
   "telephone": "+84378679633",
   "email": "vanhuufly@gmail.com",
 
@@ -57,7 +57,7 @@
 <script src="js/products.js" defer></script>
 <script src="js/prices.js" defer></script>
 <script src="js/app.js" defer></script>
-<!-- <script src="js/chat.js" defer></script> -->
+<script src="js/chat.js" defer></script>
 </head>
 <body>
 
@@ -214,27 +214,31 @@
   </section>
 
 <!-- QUOTE FORM -->
-  <section id="quote" class="section">
+    <section id="quote" class="section">
     <h2 class="section-title">📋 Yêu cầu báo giá nhanh</h2>
-    <p class="note">Điền thông tin, chúng tôi sẽ gửi báo giá trong 30 phút!</p>
+    <p class="note">Hỏi MS MÂY — trả lời tự động về sản phẩm & giá cả!</p>
     <div class="quote-section">
-      <form id="quoteForm" class="quote-form" action="https://formsubmit.co/vanhuufly@gmail.com" method="POST" onsubmit="document.getElementById('quoteBtn').disabled=true;document.getElementById('quoteBtn').innerHTML='⏳ Đang gửi...'">
-        <input type="hidden" name="_subject" value="Yêu cầu báo giá từ VLXD Trần Hữu Minh">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://vanhuufly1-crypto.github.io/tranhuuminh-vlxd/#quote">
-        <div class="qf-row">
-          <input type="text" name="name" placeholder="Họ tên *" required>
-          <input type="tel" name="phone" placeholder="Số điện thoại *" required>
+      <div class="quote-chat">
+        <div id="quote-chat-msgs" class="quote-chat-msgs">
+          <div class="msg msg-may">
+            <strong>☁️ MS MÂY:</strong> Chào bạn! Mình là MS MÂY — trợ lý của VLHT Trần Hữu Minh.<br><br>
+            Mình có thể giúp bạn:<br>
+            • ⭐ Báo giá sơn Munich, Nano House, Dulux...<br>
+            • 🛡️ Sản phẩm chống thấm<br>
+            • 🔧 Thiết bị điện nước<br>
+            • 💰 Chiết khấu cho thợ/thầu<br><br>
+            <em style="font-size:12px;color:#666;">Gõ câu hỏi của bạn bên dưới!</em>
+          </div>
         </div>
-        <div class="qf-row">
-          <input type="text" name="product" placeholder="Sản phẩm cần báo giá">
-          <input type="text" name="quantity" placeholder="Số lượng / Diện tích">
+        <div class="quote-chat-input">
+          <input type="text" id="quote-chat-input" placeholder="Nhập sản phẩm cần báo giá..." 
+                 onkeydown="if(event.key==='Enter'){sendQuoteChat()}">
+          <button onclick="sendQuoteChat()" id="quote-chat-btn">Gửi</button>
         </div>
-        <div class="qf-row">
-          <textarea name="note" rows="3" placeholder="Ghi chú thêm (địa chỉ công trình, yêu cầu...)" style="width:100%"></textarea>
-        </div>
-        <button type="submit" class="btn" style="width:100%" id="quoteBtn">📩 Gửi yêu cầu báo giá</button>
-      </form>
+      </div>
+      <div style="text-align:center;margin-top:10px;font-size:13px;color:#666;">
+        ⏰ Liên hệ trực tiếp: <strong>0378.679.633</strong> | 💬 <a href="https://zalo.me/0378679633" style="color:#0068ff">Zalo</a>
+      </div>
     </div>
   </section>
 
@@ -248,7 +252,7 @@
       <div class="contact-card wide">
         <div class="crow"><span class="lb">📞 Điện thoại:</span> <strong>0378.679.633</strong></div>
         <div class="crow"><span class="lb">📧 Email:</span> <strong>vanhuufly@gmail.com</strong></div>
-        <div class="crow"><span class="lb">🌐 Website:</span> <strong>sonchongthamxaydung.com</strong></div>
+        <div class="crow"><span class="lb">🌐 Website:</span> <strong><a href="https://tranhuuminhvlxd.id.vn" style="color:var(--accent)">tranhuuminhvlxd.id.vn</a></strong></div>
         <div class="crow"><span class="lb">🏢 Công ty:</span> CÔNG TY TNHH XD & TM TRẦN HỮU MINH</div>
         <div class="crow"><span class="lb">📋 Mã số thuế:</span> 0201961941</div>
   
@@ -277,7 +281,7 @@
         <h4>📞 Liên hệ</h4>
         <p>☎️ <strong>0378.679.633</strong></p>
         <p>📧 vanhuufly@gmail.com</p>
-        <p>🌐 sonchongthamxaydung.com</p>
+        <p>🌐 <a href="https://tranhuuminhvlxd.id.vn" style="color:var(--gold)">tranhuuminhvlxd.id.vn</a></p>
       </div>
     </div>
     <div class="footer-bot">
@@ -292,7 +296,13 @@
     <span>📞</span>
     <span class="tooltip-text">Gọi 0378.679.633</span>
   </a>
+  <a href="https://zalo.me/0378679633" target="_blank" class="float-btn float-zalo" title="Zalo">
+    <span>💬</span>
+    <span class="tooltip-text">Chat Zalo</span>
+  </a>
 </div>
+
+
 
 <!-- Chatbot MS MÂY ☁️ -->
 </body>
