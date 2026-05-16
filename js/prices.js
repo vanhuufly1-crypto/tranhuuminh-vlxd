@@ -225,6 +225,24 @@ const PRICES = {
     'MX-SonDau': { price: '160.000đ', spec: '0.75L' },
     'MX-Lot-ChongRi': { price: '123.000đ', spec: '0.8L' },
   },
+  mpe: {
+    'LBD3-5':    { price: '37.200đ', spec: '5W' },
+    'LBD3-9':    { price: '50.700đ', spec: '9W' },
+    'LBD3-12':   { price: '62.100đ', spec: '12W' },
+    'LBD3-15':   { price: '79.200đ', spec: '15W' },
+    'A6M1':      { price: '17.500đ', spec: '1 cái' },
+    'A6M2':      { price: '37.800đ', spec: '1 cái' },
+    'A6US':      { price: '33.200đ', spec: '1 cái' },
+    'A6UES2':    { price: '79.100đ', spec: '1 cái' },
+    'A70M1':     { price: 'Liên hệ', spec: '1 cái' },
+    'A70M2':     { price: 'Liên hệ', spec: '1 cái' },
+    'A70US':     { price: 'Liên hệ', spec: '1 cái' },
+    'A70UES2':   { price: 'Liên hệ', spec: '1 cái' },
+    'A70USB':    { price: '227.800đ', spec: '1 cái' },
+    'MCB-MPE':   { price: 'Liên hệ', spec: '1P' },
+    'RCBO-MPE':  { price: 'Liên hệ', spec: '1P+N' },
+    'RCCB-MPE':  { price: 'Liên hệ', spec: '2P/4P' },
+  },
 };
 
 function getPrice(brand, code) {

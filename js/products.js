@@ -8,6 +8,7 @@ const BRANDS = [
   { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:21 },
   { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:19 },
   { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:26 },
+  { id:'mpe', name:'MPE (Rạng Đông)', icon:'💡', color:'#e74c3c', desc:'Thiết bị điện & đèn LED - Đại lý chính thức', count:15 },
 ];
 
 const PRODUCTS = {
@@ -387,6 +388,32 @@ const PRODUCTS = {
       { code:'NP-WP', name:'Chống thấm xi măng polymer', spec:'Bộ 20kg', desc:'Chống thấm sân thượng, tường ngoài.', dm:'Theo hướng dẫn' },
     ],
   },
+  mpe: {
+    "💡 Đèn LED Bulb": [
+      { code:'LBD3-5', name:'LED Bulb Chống Ẩm 5W', spec:'5W', desc:'Chip SMD 2835, 500Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
+      { code:'LBD3-9', name:'LED Bulb Chống Ẩm 9W', spec:'9W', desc:'Chip SMD 2835, 900Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
+      { code:'LBD3-12', name:'LED Bulb Chống Ẩm 12W', spec:'12W', desc:'Chip SMD 2835, 1200Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
+      { code:'LBD3-15', name:'LED Bulb Chống Ẩm 15W', spec:'15W', desc:'Chip SMD 2835, 1500Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
+    ],
+    "🔌 Công tắc & Ổ cắm A6": [
+      { code:'A6M1', name:'Công tắc 1 chiều 16A-250V', spec:'1 module', desc:'Công tắc 1 chiều seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
+      { code:'A6M2', name:'Công tắc 2 chiều 16A-250V', spec:'1 module', desc:'Công tắc 2 chiều seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
+      { code:'A6US', name:'Ổ cắm 2 chấu 16A-250V', spec:'1 module', desc:'Ổ cắm 2 chấu seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
+      { code:'A6UES2', name:'Ổ cắm 3 chấu 16A-250V', spec:'1 module', desc:'Ổ cắm 3 chấu seri A6, có tiếp địa, 16A-250V.', dm:'1 cái' },
+    ],
+    "🔌 Công tắc & Ổ cắm A70 Plus": [
+      { code:'A70M1', name:'Công tắc 1 chiều 16A (A70)', spec:'1 module', desc:'Công tắc 1 chiều seri A70 Plus, thiết kế sang trọng.', dm:'1 cái' },
+      { code:'A70M2', name:'Công tắc 2 chiều 16A (A70)', spec:'1 module', desc:'Công tắc 2 chiều seri A70 Plus, thiết kế sang trọng.', dm:'1 cái' },
+      { code:'A70US', name:'Ổ cắm 2 chấu (A70)', spec:'1 module', desc:'Ổ cắm 2 chấu seri A70 Plus, màu trắng sang trọng.', dm:'1 cái' },
+      { code:'A70UES2', name:'Ổ cắm 3 chấu (A70)', spec:'1 module', desc:'Ổ cắm 3 chấu có tiếp địa seri A70 Plus.', dm:'1 cái' },
+      { code:'A70USB', name:'Ổ cắm sạc USB (A70)', spec:'2 module', desc:'Ổ cắm sạc USB type A, DC 5V-2.1A, seri A70 Plus.', dm:'1 cái' },
+    ],
+    "⚡ Thiết bị đóng cắt": [
+      { code:'MCB-MPE', name:'MCB Tép 6-63A', spec:'1P', desc:'Aptomat tép MPE, 6-63A, 6kA, 230/400VAC.', dm:'1 cái' },
+      { code:'RCBO-MPE', name:'RCBO Chống giật 6-40A', spec:'1P+N', desc:'Aptomat chống giật MPE, 6-40A, 30mA, 230VAC.', dm:'1 cái' },
+      { code:'RCCB-MPE', name:'RCCB Chống giật 25-100A', spec:'2P/4P', desc:'Aptomat chống giật tổng MPE, 25-100A, 100mA.', dm:'1 cái' },
+    ],
+  },
 };
 
 /* ===== BẢNG GIÁ (từ USB VLHT tháng 04-07/2025 & 04/2026) ===== */
@@ -589,6 +616,18 @@ const PRICE_MAP = {
     // Chống thấm - bảng giá 07/2025
     'NP-CT':          { price:'1.196.000đ', spec:'5KG' },
     'NP-WP':          { price:'1.378.000đ', spec:'6KG' },
+  },
+  mpe: {
+    // MPE - Đèn LED & Thiết bị điện (Catalog 04/2026)
+    'LBD3-5':    { price:'37.200đ', spec:'5W' },
+    'LBD3-9':    { price:'50.700đ', spec:'9W' },
+    'LBD3-12':   { price:'62.100đ', spec:'12W' },
+    'LBD3-15':   { price:'79.200đ', spec:'15W' },
+    'A6M1':      { price:'17.500đ', spec:'1 cái' },
+    'A6M2':      { price:'37.800đ', spec:'1 cái' },
+    'A6US':      { price:'33.200đ', spec:'1 cái' },
+    'A6UES2':    { price:'79.100đ', spec:'1 cái' },
+    'A70USB':    { price:'227.800đ', spec:'1 cái' },
   },
 };
 

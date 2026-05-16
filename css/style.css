@@ -161,6 +161,7 @@ input, textarea, select, button { font-family:inherit; }
 .bt-kova { background:rgba(225,112,85,0.2); color:#fab1a0; border:1px solid rgba(225,112,85,0.3); }
 .bt-nippon { background:rgba(0,184,148,0.2); color:#55efc4; border:1px solid rgba(0,184,148,0.3); }
 .bt-maxilite { background:rgba(212,160,23,0.2); color:#f6b93b; border:1px solid rgba(212,160,23,0.3); }
+.bt-mpe { background:rgba(231,76,60,0.2); color:#e74c3c; border:1px solid rgba(231,76,60,0.3); }
 
 /* ===== MAIN ===== */
 main { padding:40px 0; }
