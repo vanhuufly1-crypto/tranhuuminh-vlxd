@@ -92,12 +92,13 @@ const PRICES = {
   },
 
   sika: {
-    'Grout G650': { price: '1.996.000đ', spec: '25kg' },
-    'Gel G-01': { price: '382.000đ', spec: '600ml' },
-    'Tile G07': { price: '382.000đ', spec: '600ml' },
-    'SikaGrout 214': { price: '1.996.000đ', spec: '25kg' },
-    'Sikaflex 11FC': { price: '382.000đ', spec: '600ml' },
+    'Sika Top 107': { price: '1.316.000đ', spec: 'Bao 25kg' },
+    'Sikalastic 1K': { price: '3.513.000đ', spec: 'Thùng 20kg' },
+    'Sika Latex': { price: '584.000đ', spec: 'Can 5L' },
+    'SikaGrout 214': { price: '397.000đ', spec: 'Bao 25kg' },
+    'Sikaflex 11FC': { price: 'Liên hệ', spec: 'Tuýp 600ml' },
   },
+
   dulux: {
     'NO7': { price: '358.000đ', spec: '20kg' },
     'WS-RoyalShine': { price: '660.000đ', spec: '1L' },
