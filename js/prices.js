@@ -225,6 +225,22 @@ const PRICES = {
     'MX-SonDau': { price: '160.000đ', spec: '0.75L' },
     'MX-Lot-ChongRi': { price: '123.000đ', spec: '0.8L' },
   },
+
+  hdpe: {
+    'HDPE-20':  { price: 'Liên hệ', spec: 'Ø20mm' },
+    'HDPE-25':  { price: 'Liên hệ', spec: 'Ø25mm' },
+    'HDPE-32':  { price: 'Liên hệ', spec: 'Ø32mm' },
+    'HDPE-40':  { price: 'Liên hệ', spec: 'Ø40mm' },
+    'HDPE-50':  { price: 'Liên hệ', spec: 'Ø50mm' },
+    'HDPE-63':  { price: 'Liên hệ', spec: 'Ø63mm' },
+    'HDPE-90':  { price: 'Liên hệ', spec: 'Ø90mm' },
+    'HDPE-110': { price: 'Liên hệ', spec: 'Ø110mm' },
+    'HDPE-C20': { price: 'Liên hệ', spec: 'Ø20mm' },
+    'HDPE-C32': { price: 'Liên hệ', spec: 'Ø32mm' },
+    'HDPE-T32': { price: 'Liên hệ', spec: 'Ø32mm' },
+    'HDPE-N20': { price: 'Liên hệ', spec: 'Ø20mm' },
+    'HDPE-G32': { price: 'Liên hệ', spec: '32-25mm' },
+  },
   mpe: {
     'LBD3-5':    { price: '37.200đ', spec: '5W' },
     'LBD3-9':    { price: '50.700đ', spec: '9W' },
