@@ -7,10 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'brand-card';
     card.onclick = () => showBrand(b.id);
-    card.innerHTML = `<div class="bi">${b.icon}</div>
-      <h4 style="color:${b.color}">${b.name}</h4>
-      <p style="font-size:12px;color:#777">${b.desc.split(' - ')[0]}</p>
-      <span class="cnt">${b.count} sản phẩm</span>`;
+    // Logo + icon
+    var logoHtml = '<img src="images/logo/'+b.id+'.jpg" style="width:48px;height:48px;object-fit:contain;margin-bottom:8px" onerror="this.style.display=\'none\'">';
+    card.innerHTML = '<div class="bi">'+logoHtml+'</div>      <h4 style="color:'+b.color+'">'+b.name+'</h4>      <p style="font-size:12px;color:#777">'+b.desc.split(' - ')[0]+'</p>      <span class="cnt">'+b.count+' sản phẩm</span>';
     grid.appendChild(card);
   });
 
