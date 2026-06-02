@@ -1,6 +1,23 @@
+/* Bot tư vấn local - 0 API */
+function searchLocal(query) {
+  query = query.toLowerCase().trim();
+  var results = [];
+  for (var brand in PRICES) {
+    for (var sp in PRICES[brand]) {
+      if (sp.toLowerCase().indexOf(query) >= 0 || brand.indexOf(query) >= 0) {
+        var p = PRICES[brand][sp];
+        results.push(brand + ": " + sp + " - " + p.price + "/" + p.spec);
+        if (results.length >= 5) break;
+      }
+    }
+    if (results.length >= 5) break;
+  }
+  return results.length ? results.join("\n") : "Xin lỗi, em chưa tìm thấy sản phẩm "" + query + "". Anh gọi 0378.679.633 để được tư vấn nhé!";
+}
+
 /* Chat widget - MS MÂY AI ☁️ cho VLHT Trần Hữu Minh */
 // API URL - cập nhật khi chạy tunnel
-const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat.loca.lt';
+// Bot local - 0 API
 
 (function() {
   'use strict';
@@ -109,45 +126,16 @@ const CHAT_API_URL = localStorage.getItem('vlht_chat_api') || 'https://vlht-chat
     }
   };
 
-  window.sendChat = async function() {
+  window.sendChat = function() {
     const input = document.getElementById('chat-input');
     const msg = input.value.trim();
     if (!msg) return;
-
-    // Hiển thị tin nhắn user
-    chatHistory.push({role:'user', content:msg});
-    addMessage(msg, 'user');
+    // Dùng local data — 0 API
+    var reply = searchLocal(msg);
     input.value = '';
-    document.getElementById('chat-send').disabled = true;
-
-    // Typing indicator
-    const typingId = addMessage('☁️ MS MÂY đang trả lời...', 'typing');
-
-    try {
-      const resp = await fetch(CHAT_API_URL + '/chat', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({message: msg, history: chatHistory.slice(-10)})
-      });
-
-      if (!resp.ok) throw new Error('Lỗi ' + resp.status);
-
-      const data = await resp.json();
-      const reply = data.reply || 'Xin lỗi, mình không hiểu. Bạn gọi 0378.679.633 để được tư vấn trực tiếp nhé!';
-
-      // Xóa typing, thêm reply
-      removeMessage(typingId);
-      addMessage(reply, 'may');
-      chatHistory.push({role:'assistant', content:reply});
-
-    } catch(e) {
-      removeMessage(typingId);
-      addMessage('❌ MS MÂY đang bảo trì. Vui lòng gọi hotline 0378.679.633 để được hỗ trợ!', 'error');
-    }
-
-    document.getElementById('chat-send').disabled = false;
-    document.getElementById('chat-input').focus();
-  };
+    addMessage(msg, 'user');
+    setTimeout(function() { addMessage(reply, 'may'); }, 300);
+  };;
 
   function addMessage(text, type) {
     const msgs = document.getElementById('chat-messages');
