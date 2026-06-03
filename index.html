@@ -356,5 +356,40 @@ document.getElementById('priceForm').style.display='none';document.getElementByI
 
 
 <!-- Chatbot MS MÂY ☁️ -->
+<script>
+function setupPagination(categoryId, totalProducts) {
+  console.log("📄 Phân trang cho " + categoryId + ": " + totalProducts + " SP");
+  var container = document.getElementById(categoryId + "-section");
+  if (!container) return;
+  var items = container.querySelectorAll(".product-card");
+  var perPage = 20;
+  var pages = Math.ceil(items.length / perPage);
+  if (pages <= 1) return;
+  for (var i = 0; i < items.length; i++) {
+    items[i].style.display = (i < perPage) ? "" : "none";
+  }
+  var nav = document.createElement("div");
+  nav.className = "pagination";
+  nav.style.cssText = "text-align:center;margin:20px 0;";
+  for (var p = 1; p <= pages; p++) {
+    var btn = document.createElement("button");
+    btn.textContent = p;
+    btn.onclick = (function(page) { return function() {
+      var start = (page-1) * perPage;
+      for (var j = 0; j < items.length; j++) {
+        items[j].style.display = (j >= start && j < start + perPage) ? "" : "none";
+      }
+    };})(p);
+    btn.style.cssText = "margin:2px;padding:6px 12px;border:1px solid #ddd;border-radius:4px;cursor:pointer;";
+    nav.appendChild(btn);
+  }
+  container.appendChild(nav);
+}
+window.addEventListener("DOMContentLoaded", function() {
+  var cats = ["munich","nano","sika","dulux","jotun","kova","nippon","maxilite","mpe","hdpe"];
+  var counts = {"munich":90,"nano":44,"sika":77,"dulux":77,"jotun":65,"kova":75,"nippon":89,"maxilite":28,"mpe":705,"hdpe":13};
+  cats.forEach(function(c) { if (counts[c]) setupPagination(c, counts[c]); });
+});
+</script>
 </body>
 </html>
