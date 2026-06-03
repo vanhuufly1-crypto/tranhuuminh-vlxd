@@ -137,14 +137,25 @@ function searchLocal(query) {
     setTimeout(function() { addMessage(reply, 'may'); }, 300);
   };;
 
+  function sanitize(str) {
+    var d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
   function addMessage(text, type) {
     const msgs = document.getElementById('chat-messages');
     const div = document.createElement('div');
     div.className = type === 'user' ? 'msg msg-user' :
                     type === 'error' ? 'msg msg-error' :
                     type === 'typing' ? 'msg msg-typing' : 'msg msg-may';
-    div.innerHTML = type === 'user' ? text :
-                    type === 'may' ? '<strong>☁️ MS MÂY:</strong> ' + text : text;
+    if (type === 'user') {
+      div.textContent = text;
+    } else if (type === 'may') {
+      div.innerHTML = '<strong>☁️ MS MÂY:</strong> ' + sanitize(text);
+    } else {
+      div.innerHTML = sanitize(text);
+    }
     div.id = 'msg-' + Date.now();
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;

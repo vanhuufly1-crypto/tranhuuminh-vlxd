@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /.well-known/
+Disallow: /js/
+Disallow: /css/
+
 Sitemap: https://tranhuuminhvlxd.id.vn/sitemap.xml
+
+# Security
+# Contact: mailto:vanhuufly@gmail.com
