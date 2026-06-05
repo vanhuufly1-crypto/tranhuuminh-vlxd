@@ -41,13 +41,22 @@
  <option value="Dulux">Dulux</option>
  <option value="Jotun">Jotun</option>
  </select>
- <select name="discount" id="discountSelect">
+ <select name="discount" id="discountSelect" onchange="updatePrice()">
  <option value="0">Chiết khấu 0%</option>
  </select>
+ <p id="priceDisplay" style="font-size:18px;font-weight:700;color:#e94560;text-align:center;margin:10px 0;"></p>
  <button type="submit" style="width:100%;padding:15px;background:#27ae60;color:white;border:none;border-radius:4px;font-size:16px;font-weight:700;">🔥 ĐẶT HÀNG NGAY</button>
  </form>
 
  <script>
+ function updatePrice() {
+  const product = document.getElementById('productSelect').value;
+  const discount = parseInt(document.getElementById('discountSelect').value) || 0;
+  const basePrices = {'Munich G20':1925950,'Nano House':1765000,'Sika':687000};
+  const price = basePrices[product] || 1000000;
+  const final = price * (1 - discount/100);
+  document.getElementById('priceDisplay').textContent = final > 0 ? final.toLocaleString('vi-VN') + '₫' : '';
+ }
  function checkDiscount() {
   const product = document.getElementById('productSelect').value;
   const select = document.getElementById('discountSelect');
@@ -57,7 +66,7 @@
    select.innerHTML += `<option value="${i}">${i}%</option>`;
   }
  }
- function selectProduct(p) { document.getElementById('productSelect').value = p; checkDiscount(); window.scrollTo(0, document.body.scrollHeight); }
+ function selectProduct(p) { document.getElementById('productSelect').value = p; checkDiscount(); updatePrice(); window.scrollTo(0, document.body.scrollHeight); }
  document.getElementById('orderForm').onsubmit = async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target));
