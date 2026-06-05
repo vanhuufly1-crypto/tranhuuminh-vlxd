@@ -16,7 +16,7 @@
 </head>
 <body>
 
- <h2>Danh mục Sản phẩm (Sẵn kho)</h2>
+ <h2>🔥 Sản phẩm (Sẵn kho)</h2>
  <div class="product-grid">
  <div class="product-card">
  <h3>Munich G20</h3>
@@ -29,25 +29,40 @@
  </div>
 
  <form id="orderForm">
- <h3>Đặt hàng nhanh</h3>
+ <h3>📋 Đặt hàng nhanh</h3>
  <input type="text" name="name" placeholder="Họ tên *" required>
- <input type="tel" name="phone" placeholder="SĐT *" required>
+ <input type="tel" name="phone" placeholder="SĐT *" required pattern="[0-9]{10,11}">
  <input type="text" name="address" placeholder="Địa chỉ *" required>
- <select name="product" id="productSelect">
+ <select name="product" id="productSelect" onchange="checkDiscount()">
+ <option value="">Chọn sản phẩm *</option>
  <option value="Munich G20">Munich G20</option>
  <option value="Nano House">Nano House</option>
+ <option value="Sika">Sika</option>
+ <option value="Dulux">Dulux</option>
+ <option value="Jotun">Jotun</option>
  </select>
- <button type="submit" style="width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 4px;">🔥 ĐẶT HÀNG NGAY</button>
+ <select name="discount" id="discountSelect">
+ <option value="0">Chiết khấu 0%</option>
+ </select>
+ <button type="submit" style="width:100%;padding:15px;background:#27ae60;color:white;border:none;border-radius:4px;font-size:16px;font-weight:700;">🔥 ĐẶT HÀNG NGAY</button>
  </form>
 
  <script>
- function selectProduct(p) { document.getElementById('productSelect').value = p; window.scrollTo(0, document.body.scrollHeight); }
-
+ function checkDiscount() {
+  const product = document.getElementById('productSelect').value;
+  const select = document.getElementById('discountSelect');
+  select.innerHTML = '';
+  let max = (product === "Munich G20" || product === "Nano House") ? 40 : (product === "Sika" ? 10 : 30);
+  for(let i = 0; i <= max; i += 5) {
+   select.innerHTML += `<option value="${i}">${i}%</option>`;
+  }
+ }
+ function selectProduct(p) { document.getElementById('productSelect').value = p; checkDiscount(); window.scrollTo(0, document.body.scrollHeight); }
  document.getElementById('orderForm').onsubmit = async (e) => {
- e.preventDefault();
- const data = Object.fromEntries(new FormData(e.target));
- await fetch('/order', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
- alert('Đã gửi đơn hàng!');
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  await fetch('/order', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+  alert('Đã gửi đơn hàng!');
  };
  </script>
 </body>
