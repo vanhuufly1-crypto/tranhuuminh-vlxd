@@ -1,13 +1,13 @@
 /* DỮ LIỆU SẢN PHẨM - TRẦN HỮU MINH */
 const BRANDS = [
-  { id:'munich', name:'Munich', icon:'⭐', color:'#e94560', desc:'Chống thấm & Sơn công nghiệp - Phân phối chính thức', count:61 },
-  { id:'nano', name:'Nano House', icon:'🏡', color:'#0fb9b1', desc:'Sơn & Chống thấm công nghệ Nano - Phân phối chính thức', count:18 },
-  { id:'sika', name:'Sika', icon:'🧪', color:'#6c5ce7', desc:'Vữa kỹ thuật & Chống thấm', count:13 },
-  { id:'dulux', name:'Dulux', icon:'🎨', color:'#0984e3', desc:'Sơn nội thất & ngoại thất', count:12 },
-  { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:14 },
-  { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:9 },
-  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:14 },
-  { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:7 },
+  { id:'munich', name:'Munich', icon:'⭐', color:'#e94560', desc:'Chống thấm & Sơn công nghiệp - Phân phối chính thức', count:46 },
+  { id:'nano', name:'Nano House', icon:'🏡', color:'#0fb9b1', desc:'Sơn & Chống thấm công nghệ Nano - Phân phối chính thức', count:44 },
+  { id:'sika', name:'Sika', icon:'🧪', color:'#6c5ce7', desc:'Vữa kỹ thuật & Chống thấm', count:77 },
+  { id:'dulux', name:'Dulux', icon:'🎨', color:'#0984e3', desc:'Sơn nội thất & ngoại thất', count:81 },
+  { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:65 },
+  { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:78 },
+  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:89 },
+  { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:28 },
   { id:'mpe', name:'MPE', icon:'💡', color:'#2d3436', desc:'Thiết bị điện MPE', count:10 },
 ];
 
