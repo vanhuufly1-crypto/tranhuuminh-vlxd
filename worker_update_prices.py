@@ -146,7 +146,7 @@ def parse_sika():
             if name.startswith('1.') or name.startswith('2.') or name.startswith('3.'): continue
             if len(set(cells[2:5])) == 1: continue
             spec = cells[2]
-            price_raw = cells[4] if len(cells) > 4 else cells[3]
+            price_raw = cells[3]  # GIÁ NIÊM YẾT — cột 3, KHÔNG lấy cột 4 (giá sau CK 15%)
             p = clean_price(price_raw)
             if p:
                 prods.append({'code': name[:15], 'name': name, 'spec': spec, 'price': p})
