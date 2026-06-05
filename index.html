@@ -1,160 +1,54 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trần Hữu Minh - VLXD & Chống Thấm | Hải Phòng</title>
-<meta name="description" content="Công ty TNHH XD & TM Trần Hữu Minh - Phân phối Munich, Nano House, Sika, Dulux, Jotun, Kova, Nippon. Báo giá nhanh 30 phút.">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:sans-serif;background:#f4f4f4;color:#333}
-.header{background:linear-gradient(135deg,#1a2940,#2c3e6b);color:#fff;padding:15px;text-align:center}
-.header h1{font-size:20px}
-.header p{font-size:12px;color:#f6b93b;margin-top:5px}
-.container{max-width:800px;margin:0 auto;padding:10px}
-h2{font-size:16px;margin:15px 0 10px;color:#1a2940}
-.brand-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
-.brand-tag{padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;color:#fff}
-.bt-munich{background:#e94560}.bt-nano{background:#0fb9b1}.bt-sika{background:#6c5ce7}
-.bt-dulux{background:#0984e3}.bt-jotun{background:#f39c12}.bt-kova{background:#e17055}
-.bt-nippon{background:#00b894}.bt-maxilite{background:#d4a017}.bt-mpe{background:#2d3436}
-.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:15px}
-.prod-card{background:#fff;padding:12px;border-radius:8px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
-.prod-card h3{font-size:13px;margin:5px 0;color:#1a2940}
-.prod-card .price{color:#e94560;font-weight:700;font-size:14px;margin:5px 0}
-.prod-card .spec{font-size:11px;color:#888;margin-bottom:5px}
-.prod-card button{background:#e94560;color:#fff;border:none;padding:8px;width:100%;border-radius:4px;font-size:13px;cursor:pointer;font-weight:600}
-.prod-card button:hover{background:#c0392b}
-.form-box{background:#fff;padding:20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.1);margin-bottom:15px}
-.form-box h3{font-size:16px;margin-bottom:10px;color:#1a2940}
-input,select,textarea{width:100%;padding:10px;margin:5px 0 10px;border:1px solid #ddd;border-radius:4px;font-size:14px}
-.btn-submit{width:100%;padding:14px;background:#27ae60;color:#fff;border:none;border-radius:4px;font-size:16px;font-weight:700;cursor:pointer}
-.btn-submit:hover{background:#219a52}
-.footer{text-align:center;padding:20px;font-size:12px;color:#888;border-top:1px solid #ddd;margin-top:20px}
-.footer strong{color:#1a2940}
-.success{display:none;text-align:center;padding:30px;background:#d4edda;border-radius:8px;color:#155724}
-.success h3{font-size:18px;margin-bottom:10px}
-</style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Trần Hữu Minh - VLXD & Chống Thấm</title>
+ <style>
+ body { font-family: sans-serif; margin: 0; padding: 10px; background: #f4f4f4; }
+ .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+ .product-card { background: white; padding: 10px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+ .product-card h3 { font-size: 14px; margin: 5px 0; }
+ .product-card button { background: #e74c3c; color: white; border: none; padding: 8px; width: 100%; border-radius: 4px; cursor: pointer; }
+ #orderForm { background: white; padding: 20px; border-radius: 8px; }
+ input, select { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+ </style>
 </head>
 <body>
 
-<div class="header">
-<h1>🏪 TRẦN HỮU MINH</h1>
-<p>Thách thức mọi nguồn nước! — Hotline: 0378.679.633</p>
-</div>
+ <h2>Danh mục Sản phẩm (Sẵn kho)</h2>
+ <div class="product-grid">
+ <div class="product-card">
+ <h3>Munich G20</h3>
+ <button onclick="selectProduct('Munich G20')">Mua ngay</button>
+ </div>
+ <div class="product-card">
+ <h3>Nano House</h3>
+ <button onclick="selectProduct('Nano House')">Mua ngay</button>
+ </div>
+ </div>
 
-<div class="container">
+ <form id="orderForm">
+ <h3>Đặt hàng nhanh</h3>
+ <input type="text" name="name" placeholder="Họ tên *" required>
+ <input type="tel" name="phone" placeholder="SĐT *" required>
+ <input type="text" name="address" placeholder="Địa chỉ *" required>
+ <select name="product" id="productSelect">
+ <option value="Munich G20">Munich G20</option>
+ <option value="Nano House">Nano House</option>
+ </select>
+ <button type="submit" style="width: 100%; padding: 15px; background: #27ae60; color: white; border: none; border-radius: 4px;">🔥 ĐẶT HÀNG NGAY</button>
+ </form>
 
-<div class="brand-strip">
-<span class="brand-tag bt-munich">MUNICH</span>
-<span class="brand-tag bt-nano">NANO HOUSE</span>
-<span class="brand-tag bt-sika">SIKA</span>
-<span class="brand-tag bt-dulux">DULUX</span>
-<span class="brand-tag bt-jotun">JOTUN</span>
-<span class="brand-tag bt-kova">KOVA</span>
-<span class="brand-tag bt-nippon">NIPPON</span>
-<span class="brand-tag bt-maxilite">MAXILITE</span>
-<span class="brand-tag bt-mpe">MPE</span>
-</div>
+ <script>
+ function selectProduct(p) { document.getElementById('productSelect').value = p; window.scrollTo(0, document.body.scrollHeight); }
 
-<h2>🔥 Sản phẩm bán chạy (Sẵn kho)</h2>
-<div id="prodList" class="prod-grid"></div>
-
-<div id="orderBox" class="form-box">
-<h3>📋 Đặt hàng nhanh</h3>
-<form id="orderForm">
-<input type="text" name="name" placeholder="Họ tên *" required>
-<input type="tel" name="phone" placeholder="Số điện thoại *" required pattern="[0-9]{10,11}">
-<input type="text" name="address" placeholder="Địa chỉ giao hàng *" required>
-<select name="product" id="prodSelect">
-<option value="">Chọn sản phẩm *</option>
-</select>
-<input type="number" name="qty" placeholder="Số lượng" value="1" min="1">
-<input type="text" name="note" placeholder="Ghi chú (quy cách, màu sắc...)">
-<button type="submit" class="btn-submit">🔥 ĐẶT HÀNG NGAY</button>
-</form>
-<div id="orderSuccess" class="success">
-<h3>✅ ĐẶT HÀNG THÀNH CÔNG!</h3>
-<p>Chúng tôi sẽ gọi xác nhận trong 5 phút.</p>
-<p>Hotline: <strong>0378.679.633</strong></p>
-</div>
-</div>
-
-<div class="footer">
-<p><strong>CÔNG TY TNHH XD & TM TRẦN HỮU MINH</strong></p>
-<p>MST: 0201961941 📧 vanhuufly@gmail.com 🌐 tranhuuminhvlxd.id.vn</p>
-<p>📍 TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng</p>
-<p>📞 <strong>0378.679.633</strong> (Zalo)</p>
-</div>
-
-</div>
-
-<script>
-// Danh sách sản phẩm
-const PRODUCTS = [
-  {name:'Munich - Chống thấm G20', brand:'MUNICH', spec:'Bộ 26kg', price:'1.925.950đ'},
-  {name:'Munich - Sơn siêu bóng NT', brand:'MUNICH', spec:'5L / 18L', price:'983.333đ'},
-  {name:'Munich - Sơn siêu bóng NT2', brand:'MUNICH', spec:'5L / 18L', price:'1.266.667đ'},
-  {name:'Munich - Chống thấm PU S700', brand:'MUNICH', spec:'1L / 4L', price:'247.104đ'},
-  {name:'Nano House - ECO Interior NO5', brand:'NANO', spec:'18L / 5L', price:'~500.000đ'},
-  {name:'Nano House - ECO Exterior NA2', brand:'NANO', spec:'15L / 5L', price:'~1.620.000đ'},
-  {name:'Sika - Chống thấm Sika Latex', brand:'SIKA', spec:'Can 5L', price:'192.000đ'},
-  {name:'Sika - Vữa rót SikaGrout 214', brand:'SIKA', spec:'Bao 25kg', price:'1.996.000đ'},
-  {name:'Dulux - Weathershield 5L', brand:'DULUX', spec:'5L', price:'~2.980.000đ'},
-  {name:'Dulux - Ambiance 5in1 5L', brand:'DULUX', spec:'5L', price:'~2.234.000đ'},
-  {name:'Jotun - Majestic Nguyên Bản 5L', brand:'JOTUN', spec:'5L', price:'~2.440.000đ'},
-  {name:'Jotun - Jotashield 5L', brand:'JOTUN', spec:'5L', price:'~3.580.000đ'},
-  {name:'Kova - Sơn nội thất K871 20kg', brand:'KOVA', spec:'20kg/th', price:'5.175.000đ'},
-  {name:'Kova - Sơn ngoại thất CT-04 4.5L', brand:'KOVA', spec:'4.5L', price:'~2.425.000đ'},
-  {name:'Nippon - Weathergard Siêu Bóng 5L', brand:'NIPPON', spec:'5L', price:'~3.119.000đ'},
-  {name:'Nippon - Odour-Less All-in-1 5L', brand:'NIPPON', spec:'5L', price:'~2.272.000đ'},
-  {name:'Maxilite - Tough (Mờ) 5L', brand:'MAXILITE', spec:'5L', price:'749.000đ'},
-  {name:'Maxilite - Total (Bóng Mờ) 5L', brand:'MAXILITE', spec:'5L', price:'629.000đ'},
-  {name:'MPE - Panel LED 12W', brand:'MPE', spec:'12W', price:'62.100đ'},
-  {name:'MPE - Downlight LED 5W', brand:'MPE', spec:'5W', price:'Liên hệ'},
-];
-
-// Render sản phẩm
-const list = document.getElementById('prodList');
-const select = document.getElementById('prodSelect');
-PRODUCTS.forEach(p => {
-  const card = document.createElement('div');
-  card.className = 'prod-card';
-  card.innerHTML = `<h3>${p.name}</h3><div class="spec">${p.spec}</div><div class="price">${p.price}</div><button onclick="orderProduct('${p.name.replace(/'/g,"\\'")}')">Mua ngay</button>`;
-  list.appendChild(card);
-  const opt = document.createElement('option');
-  opt.value = p.name;
-  opt.textContent = `${p.brand} - ${p.name} (${p.spec})`;
-  select.appendChild(opt);
-});
-
-function orderProduct(name) {
-  document.getElementById('prodSelect').value = name;
-  document.getElementById('orderBox').scrollIntoView({behavior:'smooth'});
-}
-
-// Submit đơn
-document.getElementById('orderForm').onsubmit = async (e) => {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.disabled = true;
-  btn.textContent = '⏳ Đang gửi...';
-  
-  const data = Object.fromEntries(new FormData(e.target));
-  
-  try {
-    await fetch('/order', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
-    });
-  } catch(err) {
-    // Fallback: luôn success
-  }
-  
-  e.target.style.display = 'none';
-  document.getElementById('orderSuccess').style.display = 'block';
-};
-</script>
+ document.getElementById('orderForm').onsubmit = async (e) => {
+ e.preventDefault();
+ const data = Object.fromEntries(new FormData(e.target));
+ await fetch('/order', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data) });
+ alert('Đã gửi đơn hàng!');
+ };
+ </script>
 </body>
 </html>
