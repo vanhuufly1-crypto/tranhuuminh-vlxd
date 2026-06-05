@@ -236,53 +236,98 @@ gtag('config', 'G-XXXXXXXXXX');
     </div>
   </section>
 
-<!-- QUOTE FORM -->
-    <section id="quote" class="section">
-    <h2 class="section-title">📋 ĐĂNG KÝ NHẬN TƯ VẤN & BÁO GIÁ MIỄN PHÍ</h2>
-    <p class="note">Hỏi MS MÂY — trả lời tự động về sản phẩm & giá cả!</p>
-    <div class="quote-section">
-      <div class="quote-chat">
-        <div id="quote-chat-msgs" class="quote-chat-msgs">
-          <div class="msg msg-may">
-            <strong>☁️ MS MÂY:</strong> Chào bạn! Mình là MS MÂY — trợ lý của VLHT Trần Hữu Minh.<br><br>
-            Mình có thể giúp bạn:<br>
-            • ⭐ Báo giá sơn Munich, Nano House, Dulux...<br>
-            • 🛡️ Sản phẩm chống thấm<br>
-            • 🔧 Thiết bị điện nước<br>
-            • 💰 Chiết khấu cho thợ/thầu<br><br>
-            <em style="font-size:12px;color:#666;">Gõ câu hỏi của bạn bên dưới!</em>
-          </div>
-        </div>
-        <div class="quote-chat-input">
-          <input type="text" id="quote-chat-input" placeholder="Nhập sản phẩm cần báo giá..." 
-                 onkeydown="if(event.key==='Enter'){sendQuoteChat()}">
-          <button onclick="sendQuoteChat()" id="quote-chat-btn">Gửi</button>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:10px;font-size:13px;color:#666;">
-        ⏰ Liên hệ trực tiếp: <strong>0378.679.633</strong> | 💬 <a href="https://zalo.me/0378679633" style="color:#0068ff">Zalo</a>
-      </div>
-    </div>
-  </section>
-
-
-<!-- FORM BAO GIA -->
-<section id="quote-fast" style="background:#e8f4fd;border-radius:12px;padding:25px;margin:20px auto;max-width:600px;">
-<h2 style="text-align:center;color:#c0392b;margin-top:0;">📋 NHẬN BÁO GIÁ NHANH - MIỄN PHÍ</h2>
-<p style="text-align:center;color:#c0392b;font-weight:700;">👇 Nhập SĐT để xem bảng giá!</p>
-<form id="priceForm" onsubmit="return getPrice(event)" style="display:flex;flex-direction:column;gap:10px;background:white;padding:20px;border-radius:8px;">
-<input type="text" id="formName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:5px;">
-<input type="tel" id="formPhone" placeholder="Số điện thoại *" required pattern="[0-9]{10}" style="padding:12px;border:2px solid #e74c3c;border-radius:5px;font-weight:700;">
-<select id="formService" style="padding:12px;border:1px solid #ccc;border-radius:5px;"><option value="">Dịch vụ</option><option>Chống thấm</option><option>Sơn Epoxy sàn</option><option>Sân Pickleball</option><option>Sơn sửa nhà</option></select>
-<button type="submit" style="background:#e74c3c;color:white;padding:14px;border:none;border-radius:5px;font-size:16px;font-weight:700;cursor:pointer;">🔥 NHẬN BÁO GIÁ NGAY</button>
+<!-- ORDER FORM -->
+<section id="quote" class="section">
+<h2 class="section-title" style="color:#c0392b">🛒 ĐẶT HÀNG NHANH</h2>
+<p class="note">Nhập thông tin, chúng tôi sẽ giao hàng tận nơi!</p>
+<div style="max-width:500px;margin:0 auto;background:white;border-radius:12px;padding:25px;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+<form id="orderForm" onsubmit="return submitOrder(event)">
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">👤 Họ tên *</label>
+    <input type="text" id="ordName" required placeholder="Nguyễn Văn A" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:15px;margin-top:4px;">
+  </div>
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">📞 Số điện thoại *</label>
+    <input type="tel" id="ordPhone" required pattern="[0-9]{10,11}" placeholder="0912345678" style="width:100%;padding:12px;border:2px solid #e94560;border-radius:6px;font-size:15px;margin-top:4px;">
+  </div>
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">🏠 Địa chỉ giao hàng</label>
+    <input type="text" id="ordAddr" required placeholder="Số nhà, đường, phường, quận, Hải Phòng" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:15px;margin-top:4px;">
+  </div>
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">📦 Sản phẩm *</label>
+    <select id="ordProduct" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:15px;margin-top:4px;">
+      <option value="Munich - Chống thấm G20 26kg">Munich - Chống thấm G20 (Bộ 26kg)</option>
+      <option value="Munich - Sơn siêu bóng NT 5L">Munich - Sơn siêu bóng nội thất (5L)</option>
+      <option value="Munich - Sơn siêu bóng NT2 5L">Munich - Sơn siêu bóng ngoại thất (5L)</option>
+      <option value="Sika - Chống thấm Sika Latex 5L">Sika - Chống thấm Sika Latex (5L)</option>
+      <option value="Dulux - Weathershield 5L">Dulux - Weathershield (5L)</option>
+      <option value="Nano - ECO Interior 5L">Nano House - ECO Nội thất (5L)</option>
+      <option value="Jotun - Majestic 5L">Jotun - Majestic Nguyên Bản (5L)</option>
+      <option value="Kova - Sơn nội thất 4kg">Kova - Sơn nội thất cao cấp (4kg)</option>
+      <option value="Nippon - Weathergard 5L">Nippon - Weathergard Siêu Bóng (5L)</option>
+      <option value="Maxilite - Tough 5L">Maxilite - Tough (5L)</option>
+      <option value="MPE - Đèn Panel LED">MPE - Đèn Panel LED</option>
+      <option value="Khác">Khác (ghi rõ ở ghi chú)</option>
+    </select>
+  </div>
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">🔢 Số lượng</label>
+    <input type="number" id="ordQty" min="1" value="1" style="width:80px;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:15px;margin-top:4px;">
+  </div>
+  <div style="margin-bottom:12px;">
+    <label style="font-weight:600;font-size:14px;color:#333;">📝 Ghi chú</label>
+    <textarea id="ordNote" rows="2" placeholder="Yêu cầu thêm..." style="width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;font-size:14px;margin-top:4px;"></textarea>
+  </div>
+  <button type="submit" id="ordBtn" style="width:100%;padding:14px;background:linear-gradient(135deg,#e94560,#c0392b);color:white;border:none;border-radius:6px;font-size:17px;font-weight:700;cursor:pointer;">🔥 ĐẶT HÀNG NGAY</button>
 </form>
-<div id="formResult" style="display:none;padding:15px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;">✅ Đã nhận! Chúng tôi sẽ gọi lại ngay. Hotline: <a href="tel:0378679633" style="color:#155724;">0378.679.633</a></div>
-<p style="text-align:center;font-size:12px;color:#999;">🔒 Bảo mật thông tin. Cam kết không spam.</p>
+<div id="ordSuccess" style="display:none;text-align:center;padding:30px;">
+  <div style="font-size:60px;margin-bottom:10px;">✅</div>
+  <h3 style="color:#27ae60;">ĐẶT HÀNG THÀNH CÔNG!</h3>
+  <p style="color:#555;">Chúng tôi sẽ liên hệ xác nhận đơn hàng trong 5 phút.</p>
+  <p style="font-size:14px;color:#999;">Hotline: <strong>0378.679.633</strong></p>
+</div>
+</div>
 </section>
+
 <script>
-function getPrice(e){e.preventDefault();var n=document.getElementById('formName').value,p=document.getElementById('formPhone').value,s=document.getElementById('formService').value||'',t='';if(!p||p.length<10){alert('Nhap SĐT 10 so!');return false}
-fetch("https://api.telegram.org/bot8593614848:AAGGVEPfWCr_b1JT_LvtX7NIWP-fCJcQAG0/sendMessage?chat_id=7441535472&text="+encodeURIComponent("📞 KHACH MOI\nTen: "+n+"\nSDT: "+p+"\nDV: "+s)+"&parse_mode=Markdown");
-document.getElementById('priceForm').style.display='none';document.getElementById('formResult').style.display='block';return false}
+async function submitOrder(e) {
+  e.preventDefault();
+  var btn = document.getElementById('ordBtn');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Đang gửi...';
+  
+  var data = {
+    name: document.getElementById('ordName').value,
+    phone: document.getElementById('ordPhone').value,
+    address: document.getElementById('ordAddr').value,
+    product: document.getElementById('ordProduct').value,
+    qty: parseInt(document.getElementById('ordQty').value) || 1,
+    note: document.getElementById('ordNote').value,
+    total: 0
+  };
+  
+  try {
+    var r = await fetch('https://tranhuuminhvlxd.id.vn/order', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    var res = await r.json();
+    if (res.status === 'ok' || res.status === 'success') {
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('ordSuccess').style.display = 'block';
+    } else {
+      alert('Lỗi gửi đơn, vui lòng gọi 0378.679.633');
+    }
+  } catch(e) {
+    // Fallback: gửi bằng Telegram API trực tiếp
+    var txt = '🔥 ĐƠN HÀNG MỚI\n━━━━━━━━━━━\n👤 '+data.name+'\n📞 '+data.phone+'\n🏠 '+data.address+'\n📦 '+data.product+' x'+data.qty+'\n📝 '+data.note;
+    fetch('https://api.telegram.org/bot8132405122:AAHnlqBrxlfwRkh9D1MhBE7hIVlULfPiuUY/sendMessage?chat_id=7441535472&text='+encodeURIComponent(txt)+'&parse_mode=HTML');
+    document.getElementById('orderForm').style.display = 'none';
+    document.getElementById('ordSuccess').style.display = 'block';
+  }
+}
 </script>
 
 
