@@ -9,7 +9,6 @@ const BRANDS = [
   { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:14 },
   { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:7 },
   { id:'mpe', name:'MPE', icon:'💡', color:'#2d3436', desc:'Thiết bị điện MPE', count:10 },
-  { id:'hdpe', name:'Ống nhựa HDPE', icon:'🔧', color:'#2d98da', desc:'Ống HDPE & phụ kiện - Cung cấp bởi Hưng Thịnh', count:13 },
 ];
 
 const PRODUCTS = {
@@ -389,40 +388,6 @@ const PRODUCTS = {
       { code:'NP-WP', name:'Chống thấm xi măng polymer', spec:'Bộ 20kg', desc:'Chống thấm sân thượng, tường ngoài.', dm:'Theo hướng dẫn' },
     ],
   },
-  hdpe: {
-    "🔧 Ống HDPE PN8": [
-      { code:'HDPE-20', name:'Ống HDPE PE80 PN8 Ø20', spec:'Ø20mm', desc:'Ống HDPE PE80 PN8, đường kính 20mm, cuộn 200m.', dm:'Liên hệ' },
-      { code:'HDPE-25', name:'Ống HDPE PE80 PN8 Ø25', spec:'Ø25mm', desc:'Ống HDPE PE80 PN8, đường kính 25mm, cuộn 200m.', dm:'Liên hệ' },
-      { code:'HDPE-32', name:'Ống HDPE PE80 PN8 Ø32', spec:'Ø32mm', desc:'Ống HDPE PE80 PN8, đường kính 32mm, cuộn 100m.', dm:'Liên hệ' },
-      { code:'HDPE-40', name:'Ống HDPE PE80 PN8 Ø40', spec:'Ø40mm', desc:'Ống HDPE PE80 PN8, đường kính 40mm, cuộn 100m.', dm:'Liên hệ' },
-      { code:'HDPE-50', name:'Ống HDPE PE80 PN8 Ø50', spec:'Ø50mm', desc:'Ống HDPE PE80 PN8, đường kính 50mm, cuộn 100m.', dm:'Liên hệ' },
-      { code:'HDPE-63', name:'Ống HDPE PE80 PN8 Ø63', spec:'Ø63mm', desc:'Ống HDPE PE80 PN8, đường kính 63mm, cây 6m.', dm:'Liên hệ' },
-      { code:'HDPE-90', name:'Ống HDPE PE80 PN8 Ø90', spec:'Ø90mm', desc:'Ống HDPE PE80 PN8, đường kính 90mm, cây 6m.', dm:'Liên hệ' },
-      { code:'HDPE-110', name:'Ống HDPE PE80 PN8 Ø110', spec:'Ø110mm', desc:'Ống HDPE PE80 PN8, đường kính 110mm, cây 6m.', dm:'Liên hệ' },
-    ],
-    "🔧 Phụ kiện ống HDPE": [
-      { code:'HDPE-C20', name:'Cút 90° HDPE Ø20', spec:'Ø20mm', desc:'Cút nối 90 độ HDPE, ren trong/ngoài.', dm:'1 cái' },
-      { code:'HDPE-C32', name:'Cút 90° HDPE Ø32', spec:'Ø32mm', desc:'Cút nối 90 độ HDPE, ren trong/ngoài.', dm:'1 cái' },
-      { code:'HDPE-T32', name:'Tê HDPE Ø32', spec:'Ø32mm', desc:'Tê nối 3 nhánh HDPE, ren trong.', dm:'1 cái' },
-      { code:'HDPE-N20', name:'Nối thẳng HDPE Ø20', spec:'Ø20mm', desc:'Nối thẳng 2 đầu HDPE.', dm:'1 cái' },
-      { code:'HDPE-G32', name:'Giảm HDPE 32-25', spec:'32-25mm', desc:'Giảm kích thước HDPE 32 xuống 25.', dm:'1 cái' },
-    ],
-  },
-  hdpe: {
-    // Ống nhựa HDPE - Hưng Thịnh (Bảng giá 05/2026)
-    'HDPE-20':  { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-25':  { price:'Liên hệ', spec:'Ø25mm' },
-    'HDPE-32':  { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-40':  { price:'Liên hệ', spec:'Ø40mm' },
-    'HDPE-50':  { price:'Liên hệ', spec:'Ø50mm' },
-    'HDPE-63':  { price:'Liên hệ', spec:'Ø63mm' },
-    'HDPE-90':  { price:'Liên hệ', spec:'Ø90mm' },
-    'HDPE-110': { price:'Liên hệ', spec:'Ø110mm' },
-    'HDPE-C20': { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-C32': { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-T32': { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-N20': { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-G32': { price:'Liên hệ', spec:'32-25mm' },
   },
   mpe: {
     "💡 Đèn LED Bulb": [
@@ -652,22 +617,6 @@ const PRICE_MAP = {
     // Chống thấm - bảng giá 07/2025
     'NP-CT':          { price:'1.196.000đ', spec:'5KG' },
     'NP-WP':          { price:'1.378.000đ', spec:'6KG' },
-  },
-  hdpe: {
-    // Ống nhựa HDPE - Hưng Thịnh (Bảng giá 05/2026)
-    'HDPE-20':  { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-25':  { price:'Liên hệ', spec:'Ø25mm' },
-    'HDPE-32':  { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-40':  { price:'Liên hệ', spec:'Ø40mm' },
-    'HDPE-50':  { price:'Liên hệ', spec:'Ø50mm' },
-    'HDPE-63':  { price:'Liên hệ', spec:'Ø63mm' },
-    'HDPE-90':  { price:'Liên hệ', spec:'Ø90mm' },
-    'HDPE-110': { price:'Liên hệ', spec:'Ø110mm' },
-    'HDPE-C20': { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-C32': { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-T32': { price:'Liên hệ', spec:'Ø32mm' },
-    'HDPE-N20': { price:'Liên hệ', spec:'Ø20mm' },
-    'HDPE-G32': { price:'Liên hệ', spec:'32-25mm' },
   },
   mpe: {
     // MPE - Đèn LED & Thiết bị điện (Catalog 04/2026)

@@ -1280,22 +1280,6 @@ const PRICES = {
     '3 pha': { price: '10000', spec: '' },
     'KHUNG, GIÁ ĐỠ SOLAR': { price: '144702000', spec: '' },
   },
-
-  hdpe: {
-    'HDPE-110': { price: '259.956đ', spec: 'Ø110mm' },
-    'HDPE-20': { price: '15.980đ', spec: 'Ø20mm' },
-    'HDPE-25': { price: '20.496đ', spec: 'Ø25mm' },
-    'HDPE-32': { price: '27.540đ', spec: 'Ø32mm' },
-    'HDPE-40': { price: '35.208đ', spec: 'Ø40mm' },
-    'HDPE-50': { price: '54.884đ', spec: 'Ø50mm' },
-    'HDPE-63': { price: '87.264đ', spec: 'Ø63mm' },
-    'HDPE-90': { price: '178.848đ', spec: 'Ø90mm' },
-    'HDPE-C20': { price: '37.044đ', spec: 'Ø20mm' },
-    'HDPE-C32': { price: '58.104đ', spec: 'Ø32mm' },
-    'HDPE-G32': { price: 'Liên hệ', spec: '32-25mm' },
-    'HDPE-N20': { price: '29.916đ', spec: 'Ø20mm' },
-    'HDPE-T32': { price: '58.104đ', spec: 'Ø32mm' },
-  },
 };
 
 function getPrice(brand, code) {
