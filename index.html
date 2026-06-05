@@ -308,24 +308,22 @@ async function submitOrder(e) {
   };
   
   try {
-    var r = await fetch('https://tranhuuminhvlxd.id.vn/order', {
+    var isMunichNano = data.product.indexOf('Munich') >= 0 || data.product.indexOf('Nano') >= 0;
+    var msg = '';
+    if (isMunichNano) {
+      msg = '🔥 <b>ĐƠN HÀNG MỚI CHỐT</b>\n━━━━━━━━━━━━━━━━━━\n👤 Khách: '+data.name+'\n📞 SĐT: <b>'+data.phone+'</b>\n🏠 Địa chỉ: '+data.address+'\n📦 Sản phẩm: '+data.product+' x'+data.qty+'\n━━━━━━━━━━━━━━━━━━\n☎️ Hotline: 0378679633';
+    } else {
+      msg = '⚠️ <b>ĐƠN NGOÀI DANH MỤC CHÍNH</b>\n━━━━━━━━━\n👤 '+data.name+'\n📞 '+data.phone+'\n📦 '+data.product+' x'+data.qty+'\n━━━━━━━━━\n☎️ Gọi xử lý!';
+    }
+    await fetch('https://api.telegram.org/bot8132405122:AAHnlqBrxlfwRkh9D1MhBE7hIVlULfPiuUY/sendMessage', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+      body: JSON.stringify({chat_id:'7441535472', text: msg, parse_mode:'HTML'})
     });
-    var res = await r.json();
-    if (res.status === 'ok' || res.status === 'success') {
-      document.getElementById('orderForm').style.display = 'none';
-      document.getElementById('ordSuccess').style.display = 'block';
-    } else {
-      alert('Lỗi gửi đơn, vui lòng gọi 0378.679.633');
-    }
-  } catch(e) {
-    // Fallback: gửi bằng Telegram API trực tiếp
-    var txt = '🔥 ĐƠN HÀNG MỚI\n━━━━━━━━━━━\n👤 '+data.name+'\n📞 '+data.phone+'\n🏠 '+data.address+'\n📦 '+data.product+' x'+data.qty+'\n📝 '+data.note;
-    fetch('https://api.telegram.org/bot8132405122:AAHnlqBrxlfwRkh9D1MhBE7hIVlULfPiuUY/sendMessage?chat_id=7441535472&text='+encodeURIComponent(txt)+'&parse_mode=HTML');
     document.getElementById('orderForm').style.display = 'none';
     document.getElementById('ordSuccess').style.display = 'block';
+  } catch(e) {
+    alert('Lỗi! Gọi 0378.679.633 để đặt hàng.');
   }
 }
 </script>
