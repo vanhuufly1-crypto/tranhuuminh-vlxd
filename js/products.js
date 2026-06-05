@@ -1,15 +1,15 @@
 /* DỮ LIỆU SẢN PHẨM - TRẦN HỮU MINH */
 const BRANDS = [
-  { id:'munich', name:'Munich', icon:'⭐', color:'#e94560', desc:'Chống thấm & Sơn công nghiệp - Phân phối chính thức', count:43 },
-  { id:'nano', name:'Nano House', icon:'🏡', color:'#0fb9b1', desc:'Sơn & Chống thấm công nghệ Nano - Phân phối chính thức', count:22 },
-  { id:'sika', name:'Sika', icon:'🧪', color:'#6c5ce7', desc:'Vữa kỹ thuật & Chống thấm', count:5 },
-  { id:'dulux', name:'Dulux', icon:'🎨', color:'#0984e3', desc:'Sơn nội thất & ngoại thất', count:55 },
-  { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:24 },
-  { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:21 },
-  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:19 },
-  { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:26 },
-  { id:'mpe', name:'MPE (Rạng Đông)', icon:'💡', color:'#e74c3c', desc:'Thiết bị điện & đèn LED - Đại lý chính thức', count:15 },
-  { id:'hdpe', name:'Ống nhựa HDPE', icon:'🔧', color:'#2d98da', desc:'Ống HDPE & phụ kiện - Cung cấp bởi Hưng Thịnh', count:14 },
+  { id:'munich', name:'Munich', icon:'⭐', color:'#e94560', desc:'Chống thấm & Sơn công nghiệp - Phân phối chính thức', count:61 },
+  { id:'nano', name:'Nano House', icon:'🏡', color:'#0fb9b1', desc:'Sơn & Chống thấm công nghệ Nano - Phân phối chính thức', count:18 },
+  { id:'sika', name:'Sika', icon:'🧪', color:'#6c5ce7', desc:'Vữa kỹ thuật & Chống thấm', count:13 },
+  { id:'dulux', name:'Dulux', icon:'🎨', color:'#0984e3', desc:'Sơn nội thất & ngoại thất', count:12 },
+  { id:'jotun', name:'Jotun', icon:'🖌️', color:'#f39c12', desc:'Sơn nội thất & ngoại thất cao cấp', count:14 },
+  { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:9 },
+  { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:14 },
+  { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:7 },
+  { id:'mpe', name:'MPE', icon:'💡', color:'#2d3436', desc:'Thiết bị điện MPE', count:10 },
+  { id:'hdpe', name:'Ống nhựa HDPE', icon:'🔧', color:'#2d98da', desc:'Ống HDPE & phụ kiện - Cung cấp bởi Hưng Thịnh', count:13 },
 ];
 
 const PRODUCTS = {
