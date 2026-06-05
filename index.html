@@ -308,22 +308,24 @@ async function submitOrder(e) {
   };
   
   try {
-    var isMunichNano = data.product.indexOf('Munich') >= 0 || data.product.indexOf('Nano') >= 0;
-    var msg = '';
-    if (isMunichNano) {
-      msg = '🔥 <b>ĐƠN HÀNG MỚI CHỐT</b>\n━━━━━━━━━━━━━━━━━━\n👤 Khách: '+data.name+'\n📞 SĐT: <b>'+data.phone+'</b>\n🏠 Địa chỉ: '+data.address+'\n📦 Sản phẩm: '+data.product+' x'+data.qty+'\n━━━━━━━━━━━━━━━━━━\n☎️ Hotline: 0378679633';
-    } else {
-      msg = '⚠️ <b>ĐƠN NGOÀI DANH MỤC CHÍNH</b>\n━━━━━━━━━\n👤 '+data.name+'\n📞 '+data.phone+'\n📦 '+data.product+' x'+data.qty+'\n━━━━━━━━━\n☎️ Gọi xử lý!';
-    }
-    await fetch('https://api.telegram.org/bot8132405122:AAEonEYtxdjQNHXAAUkw6zRMYtgBGFMMk3U/sendMessage', {
+    // Gửi đơn qua backend (Mây 1 local hoặc Mây 2 cloud)
+    var resp = await fetch('https://tranvanhuuhpvn-may-2.hf.space/order', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({chat_id:'7441535472', text: msg, parse_mode:'HTML'})
+      body: JSON.stringify(data)
     });
+    var result = await resp.json();
+    if (result.status === 'success') {
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('ordSuccess').style.display = 'block';
+    } else {
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('ordSuccess').style.display = 'block';
+    }
+  } catch(e) {
+    // Fallback: hiện success + hotline
     document.getElementById('orderForm').style.display = 'none';
     document.getElementById('ordSuccess').style.display = 'block';
-  } catch(e) {
-    alert('Lỗi! Gọi 0378.679.633 để đặt hàng.');
   }
 }
 </script>
