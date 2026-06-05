@@ -315,7 +315,7 @@ async function submitOrder(e) {
     } else {
       msg = '⚠️ <b>ĐƠN NGOÀI DANH MỤC CHÍNH</b>\n━━━━━━━━━\n👤 '+data.name+'\n📞 '+data.phone+'\n📦 '+data.product+' x'+data.qty+'\n━━━━━━━━━\n☎️ Gọi xử lý!';
     }
-    await fetch('https://api.telegram.org/bot8132405122:AAHnlqBrxlfwRkh9D1MhBE7hIVlULfPiuUY/sendMessage', {
+    await fetch('https://api.telegram.org/bot8132405122:AAEonEYtxdjQNHXAAUkw6zRMYtgBGFMMk3U/sendMessage', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({chat_id:'7441535472', text: msg, parse_mode:'HTML'})
