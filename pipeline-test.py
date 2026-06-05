@@ -55,7 +55,7 @@ for b in expected_brands:
 
 print(f"[TEST] 1b. Brand counts: {brand_counts}")
 total_prices = sum(brand_counts.values())
-log_test(f"prices.js — tổng {total_prices} SP có giá", "PASSED" if total_prices >= 500 else "FAILED", f"Có {total_prices} SP, cần ≥500")
+log_test(f"prices.js — tổng {total_prices} SP có giá", "PASSED" if total_prices >= 530 else "FAILED", f"Có {total_prices} SP, cần ≥530")
 
 # ==========================================
 # 2. KIỂM TRA products.js
@@ -146,7 +146,9 @@ try:
     
     if p3 and p4:
         # Check prices.js uses col3 value
-        if str(int(p3.group(0))) in prices_content:
+        # Check giá niêm yết (format: '323.000đ')
+        price_str = f"{int(p3.group(0)):,}đ".replace(',', '.')
+        if price_str in prices_content:
             log_test("Sika — đúng cột GIÁ NIÊM YẾT", "PASSED")
         else:
             log_test("Sika — đúng cột GIÁ NIÊM YẾT", "FAILED", f"Giá {p3.group(0)} không tìm thấy trong prices.js")
@@ -159,11 +161,10 @@ except Exception as e:
 # 7. KIỂM TRA MUNICH — tách quy cách
 # ==========================================
 print("[TEST] 7. Munich spec split...")
-# Count entries with size-specific keys (containing -5L, -18L, etc.)
-size_pattern = re.findall(r"'([^']+-\d+L[^']*)':", prices_content)
-size_pattern2 = re.findall(r"'([^']+-\d+kg[^']*)':", prices_content)
-total_sized = len(size_pattern) + len(size_pattern2)
-if total_sized > 10:
+# Count entries with specific spec (containing L, kg, ml etc)
+size_pattern = re.findall(r"spec: '\d+", prices_content)
+total_sized = len(size_pattern)
+if total_sized > 50:
     log_test(f"Munich — tách quy cách ({total_sized} entries có size)", "PASSED")
 else:
     log_test(f"Munich — tách quy cách", "WARNING", f"Chỉ {total_sized} entries có size, có thể chưa tách hết")
