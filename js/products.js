@@ -8,7 +8,6 @@ const BRANDS = [
   { id:'kova', name:'Kova', icon:'🏺', color:'#e17055', desc:'Chống thấm & Sơn nước', count:78 },
   { id:'nippon', name:'Nippon', icon:'🇯🇵', color:'#00b894', desc:'Sơn nội thất & ngoại thất', count:89 },
   { id:'maxilite', name:'Maxilite', icon:'🔶', color:'#d4a017', desc:'Sơn kinh tế từ Dulux - AkzoNobel', count:28 },
-  { id:'mpe', name:'MPE', icon:'💡', color:'#2d3436', desc:'Thiết bị điện MPE', count:16 },
 ];
 
 const PRODUCTS = {
