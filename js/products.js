@@ -388,7 +388,6 @@ const PRODUCTS = {
       { code:'NP-WP', name:'Chống thấm xi măng polymer', spec:'Bộ 20kg', desc:'Chống thấm sân thượng, tường ngoài.', dm:'Theo hướng dẫn' },
     ],
   },
-  },
   mpe: {
     "💡 Đèn LED Bulb": [
       { code:'LBD3-5', name:'LED Bulb Chống Ẩm 5W', spec:'5W', desc:'Chip SMD 2835, 500Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
