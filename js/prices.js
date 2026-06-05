@@ -536,6 +536,23 @@ const PRICES = {
     'Separol': { price: '539.000đ', spec: 'Can 5 lít' },
     'Separol': { price: '2.648.000đ', spec: 'Can 25 lít' },
   },
+  mpe: {
+    'LBD3-5': { price: '37.200đ', spec: '5W' },
+    'LBD3-9': { price: '50.700đ', spec: '9W' },
+    'LBD3-12': { price: '62.100đ', spec: '12W' },
+    'LBD3-18': { price: '79.200đ', spec: '18W' },
+    'DL02-5': { price: 'Liên hệ', spec: '5W' },
+    'TLED-09': { price: 'Liên hệ', spec: '0.9m' },
+    'CT-MPE': { price: 'Liên hệ', spec: 'Bộ' },
+    'MCB-MPE': { price: 'Liên hệ', spec: 'Cực' },
+    'MPE-Smart': { price: 'Liên hệ', spec: 'Bộ' },
+    'A6-BLACK': { price: '17.500đ', spec: 'Bộ' },
+    'A6-WHITE': { price: '17.500đ', spec: 'Bộ' },
+    'A70-SINGLE': { price: '56.600đ', spec: 'Cái' },
+    'A70-DOUBLE': { price: '79.100đ', spec: 'Cái' },
+    'RCCB-2P': { price: '452.200đ', spec: '2P' },
+    'RCCB-4P': { price: 'Liên hệ', spec: '4P' },
+  },
 };
 
 function getPrice(brand, code) {
