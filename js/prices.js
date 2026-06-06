@@ -7,7 +7,7 @@ const PRICES = {
     "G20 (Bộ 26kg)": { price: "1.925.950đ", spec: "Bộ 26kg" },
     "G20 (Thùng 20kg)": { price: "1.629.650đ", spec: "Thùng 20kg" },
     "G20 (Lon 5kg)": { price: "562.970đ", spec: "Lon 5kg" },
-    "G20S (Bộ 25kg)": { price: "1.197.000đ", spec: "Bộ 25kg" },
+    "G20S (Bộ 25kg)": { price: "1.431.000đ", spec: "Bộ 25kg" },
     "G20C (Bộ 20kg)": { price: "1.143.718đ", spec: "Bộ 20kg" },
     "C20 (Thùng 20kg)": { price: "1.232.608đ", spec: "Thùng 20kg" },
     "G20C-Đen (Bộ 20kg)": { price: "1.291.868đ", spec: "Bộ 20kg" },
