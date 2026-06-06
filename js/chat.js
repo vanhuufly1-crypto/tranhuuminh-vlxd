@@ -40,12 +40,7 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
 ✅ Độ bền trên 15 năm, an toàn cho bể nước sinh hoạt
 ✅ Phù hợp: sân thượng, nhà vệ sinh, bể bơi, tường ngoài
 
-🏗️ **Sơn Epoxy sàn (EP11, EP12):**
-🔹 **EP11 Lót** — Gốc dung môi — Bộ 3kg — **1.046.250₫**
-🔹 **EP11 Phủ** — Hệ lăn — Bộ 3kg — **1.012.500₫**
-🔹 **EP11 Tự san** — Tự san phẳng — Bộ 5kg — **1.938.649₫**
-🔹 **EP12 Lót** — Gốc nước — Bộ 5kg — **1.618.539₫**
-🔹 **EP12 Phủ** — Gốc nước — Bộ 5kg — **1.773.356₫**
+🏗️ **Sơn sàn Epoxy & Thể thao (tham khảo):**
 🔹 **C631** — Sơn sân thể thao — 5kg — **1.328.001₫**
 🔹 **S632** — Sân thể thao hiệu năng cao — 5kg — **2.451.999₫**
 
