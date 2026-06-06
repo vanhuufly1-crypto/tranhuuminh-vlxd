@@ -273,6 +273,154 @@ gtag('config', 'G-XXXXXXXXXX');
   </section>
 
 
+<!-- FORM DAT HANG MUNICH -->
+<section id="order-section" style="background:#fff5f5;border:2px solid #e74c3c;border-radius:16px;padding:30px;margin:20px auto;max-width:650px;">
+<div style="text-align:center;margin-bottom:5px;">
+<span style="background:#e74c3c;color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;">⭐ CHỦ LỰC</span>
+</div>
+<h2 style="text-align:center;color:#c0392b;margin:5px 0;">🔥 ĐẶT HÀNG MUNICH</h2>
+<p style="text-align:center;font-size:14px;color:#666;margin-bottom:20px;">Chiết khấu lên đến <strong style="color:#e74c3c;">50%</strong> cho đơn hàng lớn</p>
+
+<form id="orderMunichForm" onsubmit="return submitOrderMunich(event)" style="display:flex;flex-direction:column;gap:12px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+<select id="orderProduct" style="padding:12px;border:1px solid #e74c3c;border-radius:8px;font-weight:600;">
+<option value="">🔧 Chọn sản phẩm *</option>
+<option value="G20">G20 — Màng chống thấm 2TP đàn hồi 200%</option>
+<option value="G20S">G20S — Màng 2TP siêu bám dính</option>
+<option value="G20C">G20C — Màng 2TP siêu cứng lá sen</option>
+<option value="C20">C20 — Màng 2TP siêu cứng</option>
+<option value="CT0">CT0 — Chống thấm Acrylic sàn mái</option>
+<option value="EP11 Lot">EP11 Lót — Sơn lót Epoxy</option>
+<option value="EP11 Phu">EP11 Phủ — Sơn phủ Epoxy</option>
+<option value="EP12 Lot">EP12 Lót — Epoxy gốc nước</option>
+<option value="PU S700">PU S700 — Chống thấm PU</option>
+</select>
+
+<select id="orderQty" style="padding:12px;border:1px solid #ddd;border-radius:8px;">
+<option value="1">Số lượng: 1</option>
+<option value="2">Số lượng: 2</option>
+<option value="3">Số lượng: 3</option>
+<option value="5">Số lượng: 5</option>
+<option value="10">Số lượng: 10</option>
+<option value="20">Số lượng: 20</option>
+</select>
+</div>
+
+<select id="orderDiscount" onchange="updateOrderPrice()" style="padding:12px;border:1px solid #e74c3c;border-radius:8px;font-weight:700;background:#fff8f8;">
+<option value="0">💰 Chiết khấu: 0% (Giá niêm yết)</option>
+<option value="5">💰 Chiết khấu: 5%</option>
+<option value="10">💰 Chiết khấu: 10%</option>
+<option value="15">💰 Chiết khấu: 15%</option>
+<option value="20">💰 Chiết khấu: 20%</option>
+<option value="25">💰 Chiết khấu: 25%</option>
+<option value="30">💰 Chiết khấu: 30%</option>
+<option value="35">💰 Chiết khấu: 35%</option>
+<option value="40">💰 Chiết khấu: 40%</option>
+<option value="45">💰 Chiết khấu: 45%</option>
+<option value="50">💰 Chiết khấu: 50%</option>
+</select>
+
+<div id="orderPriceDisplay" style="background:#fff;border:1px solid #27ae60;border-radius:8px;padding:12px;text-align:center;font-size:18px;font-weight:700;color:#27ae60;">
+💵 Chọn sản phẩm để xem giá
+</div>
+
+<input type="text" id="orderName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:8px;">
+<input type="tel" id="orderPhone" placeholder="Số điện thoại *" required pattern="[0-9]{10}" style="padding:12px;border:2px solid #e74c3c;border-radius:8px;font-weight:700;">
+<input type="text" id="orderAddress" placeholder="Địa chỉ giao hàng *" style="padding:12px;border:1px solid #ccc;border-radius:8px;">
+<input type="text" id="orderNote" placeholder="Ghi chú (vị trí thi công...)" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:13px;">
+
+<button type="submit" style="background:#e74c3c;color:white;padding:16px;border:none;border-radius:10px;font-size:18px;font-weight:700;cursor:pointer;">
+🔥 ĐẶT HÀNG NGAY — GỌI LẠI XÁC NHẬN
+</button>
+</form>
+<div id="orderResult" style="display:none;padding:15px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;margin-top:10px;">
+✅ Đã nhận đơn hàng! <strong>0378.679.633</strong> sẽ gọi lại xác nhận ngay.
+</div>
+<p style="text-align:center;font-size:12px;color:#999;margin-top:8px;">🔒 Bảo mật thông tin. Giao hàng nhanh tại Hải Phòng.</p>
+</section>
+
+<script>
+// Bảng giá Munich từ DOCX chuẩn
+const MUNICH_PRICES = {
+  'G20': 1925950, 'G20S': 1431000, 'G20C': 1143718,
+  'C20': 1232608, 'CT0': 829640,
+  'EP11 Lot': 1046250, 'EP11 Phu': 1012500,
+  'EP12 Lot': 1618539, 'PU S700': 247104
+};
+
+function updateOrderPrice() {
+  const sp = document.getElementById('orderProduct').value;
+  const qty = parseInt(document.getElementById('orderQty').value) || 1;
+  const dk = parseInt(document.getElementById('orderDiscount').value) || 0;
+  const display = document.getElementById('orderPriceDisplay');
+  
+  if (!sp || !MUNICH_PRICES[sp]) {
+    display.textContent = '💵 Chọn sản phẩm để xem giá';
+    display.style.color = '#27ae60';
+    return;
+  }
+  
+  const basePrice = MUNICH_PRICES[sp];
+  const total = basePrice * qty;
+  const discountAmount = Math.round(total * dk / 100);
+  const finalPrice = total - discountAmount;
+  
+  display.innerHTML = '💵 Giá niêm yết: <span style="text-decoration:line-through;color:#999;">' + 
+    total.toLocaleString('vi-VN') + '₫</span>' + 
+    ' → <span style="color:#e74c3c;">' + finalPrice.toLocaleString('vi-VN') + '₫</span>' + 
+    (dk > 0 ? ' <span style="background:#e74c3c;color:white;padding:2px 8px;border-radius:10px;font-size:13px;">-' + dk + '%</span>' : '');
+  display.style.color = '#27ae60';
+}
+
+function submitOrderMunich(e) {
+  e.preventDefault();
+  const product = document.getElementById('orderProduct').value;
+  const qty = document.getElementById('orderQty').value;
+  const discount = document.getElementById('orderDiscount').value;
+  const name = document.getElementById('orderName').value;
+  const phone = document.getElementById('orderPhone').value;
+  const address = document.getElementById('orderAddress').value;
+  const note = document.getElementById('orderNote').value;
+  
+  if (!product || !phone || phone.length < 10) {
+    alert('Chọn sản phẩm và nhập SĐT 10 số!');
+    return false;
+  }
+  
+  // Tính giá
+  const basePrice = MUNICH_PRICES[product] || 0;
+  const total = basePrice * parseInt(qty);
+  const final = total * (1 - parseInt(discount) / 100);
+  
+  // Gửi server
+  fetch((window.API_URL || '') + '/order', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: name,
+      phone: phone,
+      address: address,
+      product: 'Munich ' + product + ' x' + qty,
+      note: note || 'Chiết khấu: ' + discount + '%',
+      total: Math.round(final),
+      priority: 'ưu tiên'
+    })
+  }).catch(function(){});
+  
+  document.getElementById('orderMunichForm').style.display = 'none';
+  document.getElementById('orderResult').style.display = 'block';
+  return false;
+}
+
+// Cập nhật giá khi chọn sản phẩm mới
+document.addEventListener('DOMContentLoaded', function() {
+  var sel = document.getElementById('orderProduct');
+  if (sel) sel.addEventListener('change', updateOrderPrice);
+  var qtySel = document.getElementById('orderQty');
+  if (qtySel) qtySel.addEventListener('change', updateOrderPrice);
+});
+</script>
+
 <!-- FORM BAO GIA -->
 <section id="quote-fast" style="background:#e8f4fd;border-radius:12px;padding:25px;margin:20px auto;max-width:600px;">
 <h2 style="text-align:center;color:#c0392b;margin-top:0;">📋 NHẬN BÁO GIÁ NHANH - MIỄN PHÍ</h2>
