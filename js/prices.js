@@ -142,6 +142,10 @@ const PRICES = {
   dulux: {
     // NGOẠI THẤT SIÊU CAO CẤP
     "Weathershield Royal Shine (1L)": { price: "660.000đ", spec: "1L" },
+
+    // MAXILITE (thương hiệu con Dulux - AkzoNobel)
+// NGOẠI THẤT
+    "Tough Mờ (5L)": { price: "749.000đ", spec: "5L"
     "Weathershield Royal Shine (5L)": { price: "2.980.000đ", spec: "5L" },
     "Weathershield Powerflexx Mờ (1L)": { price: "640.000đ", spec: "1L" },
     "Weathershield Powerflexx Bóng (5L)": { price: "2.890.000đ", spec: "5L" },
@@ -230,10 +234,7 @@ const PRICES = {
     "Aquatech Chống Thấm Vượt Trội (6kg)": { price: "1.274.000đ", spec: "6KG" },
     "Aquatech Chống Thấm Vượt Trội (20kg)": { price: "4.010.000đ", spec: "20KG" },
   },
-  maxilite: {
-    // NGOẠI THẤT
-    "Tough Mờ (5L)": { price: "749.000đ", spec: "5L" },
-    "Tough Mờ (15L)": { price: "2.013.000đ", spec: "15L" },
+      "Tough Mờ (15L)": { price: "2.013.000đ", spec: "15L" },
     "Tough Bóng Mờ (5L)": { price: "828.000đ", spec: "5L" },
     "Tough Bóng Mờ (15L)": { price: "2.216.000đ", spec: "15L" },
     // NỘI THẤT
