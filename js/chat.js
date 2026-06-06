@@ -147,10 +147,21 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
 ✅ Fenomastic, Mardis, Majestic...
 ✅ Lớp phủ khô nhanh, bám dính tốt\n\n`;
       } else if (q.indexOf('kova') >= 0) {
-        reply = `🏺 **Kova — Sơn & chống thấm nội địa**
+        reply = `🏺 **KOVA — Sơn & chống thấm nội địa cao cấp**
 
-✅ Sơn nước, bột trét, chống thấm
-✅ Giá cạnh tranh, dễ thi công\n\n`;
+✅ Sơn nước trong nhà: K871 (bóng), K5500 (bán bóng), K771/K260
+✅ Sơn nước ngoài trời: K360 (bóng), CT04T (chống thấm), K5800
+✅ Sơn sàn thể thao: CT08 tennis, KL5T sàn CN
+✅ Chống thấm: CT-11A, CT-11B, CT-14
+✅ Matit, bột bả, sơn đá nghệ thuật KSP
+✅ Thương hiệu Việt, giá cạnh tranh
+
+📋 **Giá tham khảo:**
+• K871 Bóng (20kg): **5.175.000₫**
+• K5500 Bán bóng (20kg): **4.010.000₫**
+• CT04T Chống thấm (20kg): **5.486.000₫**
+• CT-11A Chống thấm (20kg): **4.585.000₫**
+`;
       } else if (q.indexOf('nippon') >= 0) {
         reply = `🇯🇵 **Nippon — Công nghệ Nhật Bản**
 
