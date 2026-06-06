@@ -8,7 +8,7 @@
 
   // === ĐỊNH NGHĨA ===
   const CHU_LUC = ['munich'];  // Chỉ Munich mới là chủ lực
-  const PHO_THONG = ['sika', 'dulux', 'jotun', 'kova', 'nippon', 'maxilite', 'mpe', 'hdpe'];
+  const PHO_THONG = ['sika', 'dulux', 'jotun', 'kova', 'nippon', 'maxilite', 'mpe', 'hdpe'];  // Dulux & Maxilite từ DOCX 13/03/2026
   const HOTLINE = '0378.679.633';
 
   const INTRO = `Chào anh/chị! Mình là ☁️ MS MÂY — Nhân viên kinh doanh của **Công ty VLHT Trần Hữu Minh**.

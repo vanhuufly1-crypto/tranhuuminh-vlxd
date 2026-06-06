@@ -1,6 +1,6 @@
-// BẢNG GIÁ SẢN PHẨM MUNICH — Trần Hữu Minh
-// Dữ liệu từ bảng giá nhà máy Munich Group — 04/2026
-// KHÔNG thêm bớt — chỉ lấy đúng dữ liệu PDF
+// BẢNG GIÁ SẢN PHẨM — Trần Hữu Minh
+// Nguồn: PDF Munich Group (04/2026) + DOCX Dulux/Maxilite (03/2026)
+// KHÔNG thêm bớt — đúng nguyên văn bảng giá
 
 const PRICES = {
   munich: {
@@ -120,7 +120,6 @@ const PRICES = {
     "S909 Ngoại (Bao 25kg)": { price: "500.000đ", spec: "Bao 25kg" },
     "Bán Bóng NT (18L)": { price: "2.219.000đ", spec: "18L" },
     "Bán Bóng NT2 (18L)": { price: "2.929.000đ", spec: "18L" },
-    // SƠN SÀN EPOXY & CÔNG NGHIỆP (từ PDF Sơn Công Nghiệp 04/2026)
     "EP11 Lót (Bộ 3kg)": { price: "1.046.250đ", spec: "Bộ 3kg" },
     "EP11 Lót (15kg)": { price: "4.185.000đ", spec: "15kg" },
     "EP11 Phủ (Bộ 3kg)": { price: "1.012.500đ", spec: "Bộ 3kg" },
@@ -135,8 +134,135 @@ const PRICES = {
     "Epoxy Resin (15kg)": { price: "5.866.740đ", spec: "15kg" },
     "Epoxy Resin EP15 (Bộ 6kg)": { price: "2.340.000đ", spec: "Bộ 6kg" },
     "Epoxy Resin EP15 (24kg)": { price: "8.640.000đ", spec: "24kg" },
+    "Topcoat UV Màu (Lon 4kg)": { price: "1.866.672đ", spec: "Lon 4kg" },
+    "Topcoat UV Trong suốt (Lon 1kg)": { price: "572.914đ", spec: "Lon 1kg" },
     "S106 (Bộ 3kg)": { price: "983.716đ", spec: "Bộ 3kg" },
     "S106 (15kg)": { price: "3.229.670đ", spec: "15kg" },
-
-  }
+  },
+  dulux: {
+    // NGOẠI THẤT SIÊU CAO CẤP
+    "Weathershield Royal Shine (1L)": { price: "660.000đ", spec: "1L" },
+    "Weathershield Royal Shine (5L)": { price: "2.980.000đ", spec: "5L" },
+    "Weathershield Powerflexx Mờ (1L)": { price: "640.000đ", spec: "1L" },
+    "Weathershield Powerflexx Bóng (5L)": { price: "2.890.000đ", spec: "5L" },
+    // NGOẠI THẤT CAO CẤP
+    "Weathershield Mờ (1L)": { price: "570.000đ", spec: "1L" },
+    "Weathershield Mờ (5L)": { price: "2.580.000đ", spec: "5L" },
+    "Weathershield Bóng (15L)": { price: "7.350.000đ", spec: "15L" },
+    "Weathershield Colour Protect Mờ (1L)": { price: "454.000đ", spec: "1L" },
+    "Weathershield Colour Protect Mờ (5L)": { price: "2.045.000đ", spec: "5L" },
+    "Weathershield Colour Protect Bóng (15L)": { price: "5.828.000đ", spec: "15L" },
+    "Inspire Ngoại Thất Mờ (5L)": { price: "1.500.000đ", spec: "5L" },
+    "Inspire Ngoại Thất Mờ (15L)": { price: "4.300.000đ", spec: "15L" },
+    "Inspire Ngoại Thất Mờ (18L)": { price: "5.145.000đ", spec: "18L" },
+    "Inspire Ngoại Thất Bóng (5L)": { price: "1.575.000đ", spec: "5L" },
+    "Inspire Ngoại Thất Bóng (15L)": { price: "4.518.000đ", spec: "15L" },
+    "Inspire Ngoại Thất Bóng (18L)": { price: "5.400.000đ", spec: "18L" },
+    // NỘI THẤT SIÊU CAO CẤP
+    "Ambiance 5in1 Superflexx Siêu bóng (1L)": { price: "452.000đ", spec: "1L" },
+    "Ambiance 5in1 Superflexx Siêu bóng (5L)": { price: "2.234.000đ", spec: "5L" },
+    "Ambiance 5in1 Superflexx Bóng mờ (1L)": { price: "431.000đ", spec: "1L" },
+    "Ambiance 5in1 Superflexx Bóng mờ (5L)": { price: "2.122.000đ", spec: "5L" },
+    "Ambiance 5in1 Diamond Glow Siêu bóng (1L)": { price: "446.000đ", spec: "1L" },
+    "Ambiance 5in1 Diamond Glow (5L)": { price: "2.137.000đ", spec: "5L" },
+    "Ambiance 5in1 Diamond Glow (15L)": { price: "6.075.000đ", spec: "15L" },
+    "Ambiance 5in1 Pearl Glow Bóng mờ (1L)": { price: "429.000đ", spec: "1L" },
+    "Ambiance 5in1 Pearl Glow (5L)": { price: "2.053.000đ", spec: "5L" },
+    "Ambiance 5in1 Pearl Glow (15L)": { price: "5.834.000đ", spec: "15L" },
+    "Ambiance Airfresh (1L)": { price: "332.000đ", spec: "1L" },
+    "Ambiance Airfresh (5L)": { price: "1.587.000đ", spec: "5L" },
+    "Ambiance Airfresh (15L)": { price: "4.509.000đ", spec: "15L" },
+    // NỘI THẤT CAO CẤP
+    "EasyClean Chống Bám Bẩn Kháng Virus Bóng (1L)": { price: "248.000đ", spec: "1L" },
+    "EasyClean Chống Bám Bẩn Kháng Virus (5L)": { price: "1.236.000đ", spec: "5L" },
+    "EasyClean Chống Bám Bẩn Kháng Virus (15L)": { price: "3.460.000đ", spec: "15L" },
+    "EasyClean Chống Bám Bẩn Kháng Virus Mờ (1L)": { price: "236.000đ", spec: "1L" },
+    "EasyClean Chống Bám Bẩn Kháng Virus Mờ (5L)": { price: "1.180.000đ", spec: "5L" },
+    "EasyClean Chống Bám Bẩn Kháng Virus Mờ (15L)": { price: "3.287.000đ", spec: "15L" },
+    "EasyClean Lau Chùi Vượt Trội Bóng (1L)": { price: "216.000đ", spec: "1L" },
+    "EasyClean Lau Chùi Vượt Trội (5L)": { price: "1.046.000đ", spec: "5L" },
+    "EasyClean Lau Chùi Vượt Trội (15L)": { price: "2.922.000đ", spec: "15L" },
+    "EasyClean Lau Chùi Vượt Trội Mờ (1L)": { price: "208.000đ", spec: "1L" },
+    "EasyClean Lau Chùi Vượt Trội Mờ (5L)": { price: "998.000đ", spec: "5L" },
+    "EasyClean Lau Chùi Vượt Trội Mờ (15L)": { price: "2.787.000đ", spec: "15L" },
+    "Inspire Nội Thất Bóng (5L)": { price: "861.000đ", spec: "5L" },
+    "Inspire Nội Thất Bóng (15L)": { price: "2.454.000đ", spec: "15L" },
+    "Inspire Nội Thất Mờ (5L)": { price: "820.000đ", spec: "5L" },
+    "Inspire Nội Thất Mờ (15L)": { price: "2.343.000đ", spec: "15L" },
+    "EasyClean Lau Chùi Hiệu Quả Bóng (1L)": { price: "230.000đ", spec: "1L" },
+    "EasyClean Lau Chùi Hiệu Quả (5L)": { price: "1.153.000đ", spec: "5L" },
+    "EasyClean Lau Chùi Hiệu Quả (15L)": { price: "3.175.000đ", spec: "15L" },
+    "EasyClean Lau Chùi Hiệu Quả (18L)": { price: "3.896.000đ", spec: "18L" },
+    "EasyClean Lau Chùi Hiệu Quả Mờ (1L)": { price: "219.000đ", spec: "1L" },
+    "EasyClean Lau Chùi Hiệu Quả Mờ (5L)": { price: "1.098.000đ", spec: "5L" },
+    "EasyClean Lau Chùi Hiệu Quả Mờ (15L)": { price: "3.030.000đ", spec: "15L" },
+    "EasyClean Lau Chùi Hiệu Quả Mờ (18L)": { price: "3.714.000đ", spec: "18L" },
+    "Inspire 2in1 Lót+Phủ (1L)": { price: "165.000đ", spec: "1L" },
+    "Inspire 2in1 Lót+Phủ (5L)": { price: "810.000đ", spec: "5L" },
+    "Inspire 2in1 Lót+Phủ (15L)": { price: "2.252.000đ", spec: "15L" },
+    // SƠN LÓT NGOẠI THẤT
+    "Weathershield Powersealer (5L)": { price: "1.355.000đ", spec: "5L" },
+    "Weathershield Powersealer (18L)": { price: "4.680.000đ", spec: "18L" },
+    "Weathershield Chống Kiềm (5L)": { price: "1.230.000đ", spec: "5L" },
+    "Weathershield Chống Kiềm (15L)": { price: "3.370.000đ", spec: "15L" },
+    "Weathershield Chống Kiềm (18L)": { price: "4.250.000đ", spec: "18L" },
+    // SƠN LÓT NỘI THẤT
+    "Supersealer (5L)": { price: "976.000đ", spec: "5L" },
+    "Supersealer (18L)": { price: "3.341.000đ", spec: "18L" },
+    "Ambiance Primer (5L)": { price: "869.000đ", spec: "5L" },
+    "Ambiance Primer (15L)": { price: "2.482.000đ", spec: "15L" },
+    "Interior Primer (5L)": { price: "869.000đ", spec: "5L" },
+    "Interior Primer (18L)": { price: "2.979.000đ", spec: "18L" },
+    "EasyClean Primer (5L)": { price: "783.000đ", spec: "5L" },
+    "EasyClean Primer (15L)": { price: "2.234.000đ", spec: "15L" },
+    // BỘT TRÉT
+    "Bột Trét NT&T Nội Ngoại (20kg)": { price: "358.000đ", spec: "20KG" },
+    "Bột Trét NT&T Nội Ngoại (40kg)": { price: "666.000đ", spec: "40KG" },
+    "Bột Trét Nội Thất (20kg)": { price: "268.000đ", spec: "20KG" },
+    "Bột Trét Nội Thất (40kg)": { price: "493.500đ", spec: "40KG" },
+    // CHỐNG THẤM
+    "Aquatech Max Sàn (6kg)": { price: "1.301.000đ", spec: "6KG" },
+    "Aquatech Max Sàn (20kg)": { price: "4.126.000đ", spec: "20KG" },
+    "Aquatech Flex Tường (6kg)": { price: "1.275.000đ", spec: "6KG" },
+    "Aquatech Flex Tường (20kg)": { price: "4.014.000đ", spec: "20KG" },
+    "Aquatech 3in1 (6kg)": { price: "936.000đ", spec: "6KG" },
+    "Aquatech 3in1 (20kg)": { price: "3.060.000đ", spec: "20KG" },
+    "Aquatech Chống Thấm Vượt Trội (6kg)": { price: "1.274.000đ", spec: "6KG" },
+    "Aquatech Chống Thấm Vượt Trội (20kg)": { price: "4.010.000đ", spec: "20KG" },
+  },
+  maxilite: {
+    // NGOẠI THẤT
+    "Tough Mờ (5L)": { price: "749.000đ", spec: "5L" },
+    "Tough Mờ (15L)": { price: "2.013.000đ", spec: "15L" },
+    "Tough Bóng Mờ (5L)": { price: "828.000đ", spec: "5L" },
+    "Tough Bóng Mờ (15L)": { price: "2.216.000đ", spec: "15L" },
+    // NỘI THẤT
+    "Total Mờ (5L)": { price: "549.000đ", spec: "5L" },
+    "Total Mờ (15L)": { price: "1.460.000đ", spec: "15L" },
+    "Total Bóng Mờ (5L)": { price: "629.000đ", spec: "5L" },
+    "Total Bóng Mờ (15L)": { price: "1.638.000đ", spec: "15L" },
+    "Che Phủ Hiệu Quả (5L)": { price: "360.000đ", spec: "5L" },
+    "Che Phủ Hiệu Quả (15L)": { price: "1.007.000đ", spec: "15L" },
+    "Smooth (5L)": { price: "269.000đ", spec: "5L" },
+    "Smooth (18L)": { price: "917.000đ", spec: "18L" },
+    // SƠN LÓT
+    "Lót Ngoại Thất (5L)": { price: "757.000đ", spec: "5L" },
+    "Lót Ngoại Thất (15L)": { price: "2.072.000đ", spec: "15L" },
+    "Lót Ngoại Thất (18L)": { price: "2.437.000đ", spec: "18L" },
+    "Lót Nội Thất (5L)": { price: "460.000đ", spec: "5L" },
+    "Lót Nội Thất (15L)": { price: "1.290.000đ", spec: "15L" },
+    "Lót Nội Thất (18L)": { price: "1.518.000đ", spec: "18L" },
+    // BỘT TRÉT
+    "Bột Trét Nội Ngoại (20kg)": { price: "210.000đ", spec: "20KG" },
+    "Bột Trét Nội Ngoại (40kg)": { price: "385.000đ", spec: "40KG" },
+    // SƠN DẦU GỖ & KIM LOẠI
+    "Sơn Dầu (0.75L)": { price: "160.000đ", spec: "0.75L" },
+    "Sơn Dầu (2.5L)": { price: "505.000đ", spec: "2.5L" },
+    "Sơn Dầu (15L)": { price: "2.717.000đ", spec: "15L" },
+    "Sơn Dầu (17L)": { price: "3.137.000đ", spec: "17L" },
+    "Sơn Lót Ngừa Rỉ Sét (0.8L)": { price: "123.000đ", spec: "0.8L" },
+    "Sơn Lót Ngừa Rỉ Sét (3L)": { price: "414.000đ", spec: "3L" },
+    "Sơn Lót Ngừa Rỉ Sét (15L)": { price: "1.997.000đ", spec: "15L" },
+    "Sơn Lót Ngừa Rỉ Sét (18L)": { price: "2.397.000đ", spec: "18L" },
+  },
 };
