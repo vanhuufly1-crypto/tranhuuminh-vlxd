@@ -89,10 +89,10 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
         if (brand.toLowerCase().indexOf(kw) >= 0 || sp.toLowerCase().indexOf(kw) >= 0) {
           const p = window.PRICES[brand][sp];
           results.push({ brand, product: sp, price: p.price, spec: p.spec });
-          if (results.length >= 5) break;
+          if (results.length >= 10) break;
         }
       }
-      if (results.length >= 5) break;
+      if (results.length >= 10) break;
     }
     return results;
   }
