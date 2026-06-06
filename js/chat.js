@@ -132,13 +132,27 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
     } else if (laHangPhoThong(q)) {
       // --- PHỔ THÔNG: Báo giá + câu dẫn ---
       if (q.indexOf('sika') >= 0) {
-        reply = `🧪 **Sika — Phụ gia chống thấm & sửa chữa**
+        reply = `🧪 **SIKA — Chống thấm & xây dựng chuyên nghiệp**
 
-✅ Đa dạng: chống thấm, phụ gia bê tông, keo dán
-✅ Phù hợp: sân thượng, nhà vệ sinh, hồ bơi\n\n`;
-      } else if (q.indexOf('dulux') >= 0) {
-        reply = `🎨 **Dulux — Sơn trang trí cao cấp**
+✅ Chống thấm: Sika Lite, Latex TH, Latex, Sikagard, Sikatop
+✅ Màng chống thấm: Sikaproof, Raintile, Sikalastic, Bit W-15
+✅ Vữa: Grout GP/212/214, Monotop, Refit, Sikagard
+✅ Keo Epoxy: Sikadur 731/732/752, Anchorfix
+✅ Sàn CN: Sikafloor Chapdur, 161/2530/263/264
+✅ Phụ gia: Sikament, Rugasol, Separol
 
+      } else if (q.indexOf('jotun') >= 0) {
+        reply = `🖌️ **JOTUN — Bảo vệ tài sản - Trang trí cuộc sống**
+
+✅ Ngoại thất: Jotashield, Tough Shield, WaterGuard
+✅ Nội thất: Majestic, Essence, Jotaplast
+✅ Sơn lót: Ultra Primer, Jotashield, Majestic, Essence Primer
+✅ Gỗ & Kim loại: Gardex, Essence Siêu Bóng
+✅ Bột trét: Interior/Exterior Putty
+
+📋 Giá niêm yết: **190.000₫ - 9.715.000₫**
+`;
+      }
 ✅ Bền màu, lau chùi được
 ✅ Đa dạng: Weathershield, Inspire, Ambiance...\n\n`;
       } else if (q.indexOf('jotun') >= 0) {
