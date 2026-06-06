@@ -348,10 +348,12 @@ gtag('config', 'G-XXXXXXXXXX');
 <script>
 // Bảng giá Munich từ DOCX chuẩn
 const MUNICH_PRICES = {
-  'G20': 1925950, 'G20S': 1431000, 'G20C': 1143718,
+  'G20': 1925950, 'G20S': 1197000, 'G20C': 1143718,
   'C20': 1232608, 'CT0': 829640,
   'EP11 Lot': 1046250, 'EP11 Phu': 1012500,
-  'EP12 Lot': 1618539, 'PU S700': 247104
+  'EP12 Lot': 1618539, 'PU S700': 247104,
+  'PU S400': 1104300, 'Glass 2K': 1600020,
+  'Kyton K101': 1000540
 };
 
 function updateOrderPrice() {
@@ -596,7 +598,7 @@ window.addEventListener("DOMContentLoaded", function() {
           var area = parseFloat(areaInput.value);
           if (!area || area < 5) { resultDiv.textContent = ''; return; }
           // Định mức Munich (theo DOCX): G20 ~20m²/lớp (bộ 26kg), 2 lớp ~10m²/bộ
-          var dinhMuc = { 'G20': 12, 'G20S': 10, 'CT0': 5 };
+          var dinhMuc = { 'G20': 12, 'G20S': 10, 'CT0': 5, 'C20': 12, 'PU S700': 8 };
           var gia = { 'G20': 1925950, 'G20S': 1431000, 'CT0': 829640 };
           var sp = productSelect.value;
           var soBo = Math.ceil(area / dinhMuc[sp]);
