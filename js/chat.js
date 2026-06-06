@@ -1,5 +1,5 @@
 /* ☁️ MS MÂY — Sales Ảo Trần Hữu Minh */
-/* Chiến lược: Chủ lực (Munich, Nano House) → tư vấn sâu → form */
+/* Chiến lược: Chủ lực (Munich) → tư vấn sâu → form */
 /*             Phổ thông → báo giá + câu dẫn về chủ lực */
 /* 100% local, 0 API */
 
@@ -7,7 +7,7 @@
   'use strict';
 
   // === ĐỊNH NGHĨA ===
-  const CHU_LUC = ['munich', 'nano house', 'nano'];
+  const CHU_LUC = ['munich'];  // Chỉ Munich mới là chủ lực
   const PHO_THONG = ['sika', 'dulux', 'jotun', 'kova', 'nippon', 'maxilite', 'mpe', 'hdpe'];
   const HOTLINE = '0378.679.633';
 
@@ -18,29 +18,52 @@
 Bên mình là nhà phân phối chính thức các thương hiệu sơn & chống thấm hàng đầu tại Hải Phòng:
 
 ⭐ **Munich** — Chống thấm số 1
-🏡 **Nano House** — Sơn thế hệ mới
+🏡 **Nano House** — Sơn nước Nhật Bản
 🧪 **Sika** — Phụ gia chống thấm
 🎨 **Dulux, Jotun, Kova, Nippon, Maxilite** — Sơn trang trí
 
 Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
 
-  const GIOI_THIEU_MUNICH = `⭐ **Munich** — *"Giải pháp chống thấm công nghệ Đức"*
+  const GIOI_THIEU_MUNICH = `⭐ **MUNICH** — *"Giải pháp chống thấm công nghệ Đức"*
 
-✅ Chống thấm đàn hồi 200% — chịu được nứt tường
-✅ Độ bền trên 15 năm
-✅ An toàn cho bể nước, bể bơi, sân thượng
-✅ Được ưa chuộng số 1 tại Hải Phòng
+🏆 Chống thấm số 1 tại Hải Phòng với phương châm: *"Thách thức mọi nguồn nước!"*
 
-📌 Sản phẩm chủ lực: G20, G20S, Anti-Crack S302, C20, CT0, EP11, EP12...`;
+📦 **Dòng chống thấm chủ lực:**
+🔹 **G20** — Màng chống thấm 2TP đàn hồi 200% — Bộ 26kg — **1.925.950₫**
+🔹 **G20S** — Màng chống thấm 2TP siêu bám dính — Bộ 25kg — **1.431.000₫**
+🔹 **G20C** — Màng chống thấm 2TP siêu cứng lá sen — Bộ 20kg — **1.143.718₫**
+🔹 **C20** — Màng chống thấm 2TP siêu cứng — Thùng 20kg — **1.232.608₫**
+🔹 **CT0** — Chống thấm Acrylic sàn mái — 5kg — **829.640₫**
+🔹 **G20C-Đen** — Chống thấm bể cá Koi — Bộ 20kg — **1.291.868₫**
 
-  const GIOI_THIEU_NANO = `🏡 **Nano House** — *"Công nghệ Nano vượt trội"*
+✅ Độ đàn hồi lên tới 200% — chịu được nứt tường
+✅ Độ bền trên 15 năm, an toàn cho bể nước sinh hoạt
+✅ Phù hợp: sân thượng, nhà vệ sinh, bể bơi, tường ngoài
 
-✅ Lớp màng chống thấm siêu bám dính
-✅ Cách nhiệt, chống nóng gấp 2-3 lần sơn thường
-✅ Phù hợp mái tôn, sân thượng, tường ngoài
-✅ 100% sản xuất tại Nhật Bản
+🏗️ **Sơn Epoxy sàn (EP11, EP12):**
+🔹 **EP11 Lót** — Gốc dung môi — Bộ 3kg — **1.046.250₫**
+🔹 **EP11 Phủ** — Hệ lăn — Bộ 3kg — **1.012.500₫**
+🔹 **EP11 Tự san** — Tự san phẳng — Bộ 5kg — **1.938.649₫**
+🔹 **EP12 Lót** — Gốc nước — Bộ 5kg — **1.618.539₫**
+🔹 **EP12 Phủ** — Gốc nước — Bộ 5kg — **1.773.356₫**
+🔹 **C631** — Sơn sân thể thao — 5kg — **1.328.001₫**
+🔹 **S632** — Sân thể thao hiệu năng cao — 5kg — **2.451.999₫**
 
-📌 Dòng bán chạy: Jumbo, Syncolife, X-treme...`;
+🧪 **Phụ gia & vật tư:**
+🔹 **Latex S** — Phụ gia kết nối chống thấm — 5kg — **400.000₫**
+🔹 **S302** — Phụ gia tăng bám dính — Túi 1kg — **174.817₫**
+🔹 **Walling** — Chống thấm ngược tinh thể — 1L — **237.040₫**
+🔹 **PU S700/S400/S800F** — Chống thấm PU gốc nước — từ **247.104₫**
+🔹 **Glass 2K** — Chống thấm trong suốt 2TP — Bộ 3kg — **1.600.020₫**
+
+🖌️ **Sơn nước Munich:**
+🔹 Luxury Prime (NT/NT2), Luxury Siêu bóng, Fly, Action
+🔹 Nano AB — Diệt khuẩn 99,99% — từ **2.943.333₫/5L**`;
+
+  const GIOI_THIEU_NANO = `🏡 **Nano House** — Sơn nước công nghệ Nhật
+
+✅ Sơn nước nội/ngoại thất chất lượng cao
+✅ Giá cạnh tranh: từ **250.000₫ - 1.500.000₫/5L**`;
 
   function laHangChuLuc(keyword) {
     const kw = keyword.toLowerCase().trim();
@@ -98,8 +121,6 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
       // --- CHỦ LỰC: Tư vấn sâu ---
       if (q.indexOf('munich') >= 0) {
         reply += GIOI_THIEU_MUNICH;
-      } else if (q.indexOf('nano') >= 0) {
-        reply += GIOI_THIEU_NANO;
       }
 
       if (sanPham.length > 0) {
@@ -166,19 +187,22 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
       }
 
       // Câu dẫn về chủ lực
-      reply += `\n\n💡 Ngoài ra, bên em đang có **giải pháp chống thấm công nghệ cao từ ⭐Munich và 🏡Nano House** rất được ưa chuộng tại Hải Phòng. Anh/chị có muốn tham khảo thêm để tối ưu công trình không ạ?`;
+      reply += `\n\n💡 Ngoài ra, bên em đang có **giải pháp chống thấm công nghệ cao từ ⭐Munich** rất được ưa chuộng tại Hải Phòng. Anh/chị có muốn tham khảo thêm để tối ưu công trình không ạ?`;
 
       reply += `\n\n👇 Để lại SĐT, em báo giá nhanh nhất!`;
 
     } else if (q.indexOf('chống thấm') >= 0 || q.indexOf('chong tham') >= 0 || q.indexOf('chong thấm') >= 0) {
-      reply = `🛡️ **Giải pháp chống thấm toàn diện**\n\n`;
-      reply += `Với phương châm *"Thách thức mọi nguồn nước!"*, bên em cung cấp:\n\n`;
-      reply += `⭐ **Munich G20** — Màng chống thấm 2TP đàn hồi 200% — **Bộ 26kg**\n`;
-      reply += `⭐ **Munich G20S** — Siêu bám dính — **Bộ 25kg**\n`;
-      reply += `⭐ **Munich Anti-Crack S302** — Chống nứt — **20kg**\n`;
-      reply += `🏡 **Nano House** — Sơn chống thấm cách nhiệt thế hệ mới\n`;
-      reply += `🧪 **Sika Latex, SikaTop** — Phụ gia chống thấm\n\n`;
-      reply += `🏆 Khách hàng tại Hải Phòng tin dùng nhất là **Munich** — chống thấm số 1.\n\n`;
+      reply = `🛡️ **CHỐNG THẤM — Giải pháp toàn diện**\n\n`;
+      reply += `Với phương châm *"Thách thức mọi nguồn nước!"*, bên em phân phối chính thức **Munich** — chống thấm số 1 tại Hải Phòng:\n\n`;
+      reply += `🔹 **G20** — Màng 2TP đàn hồi 200% — Bộ 26kg — **1.925.950₫**\n`;
+      reply += `🔹 **G20S** — Siêu bám dính — Bộ 25kg — **1.431.000₫**\n`;
+      reply += `🔹 **G20C** — Siêu cứng lá sen — Bộ 20kg — **1.143.718₫**\n`;
+      reply += `🔹 **C20** — Màng siêu cứng — Thùng 20kg — **1.232.608₫**\n`;
+      reply += `🔹 **CT0** — Acrylic sàn mái — 5kg — **829.640₫**\n`;
+      reply += `🔹 **PU S700/S400** — Chống thấm PU — từ **247.104₫/L**\n`;
+      reply += `🔹 **Glass 2K** — Chống thấm trong suốt — Bộ 3kg — **1.600.020₫**\n`;
+      reply += `🔹 **Kyton K101** — Thẩm thấu tinh thể — Bao 20kg — **1.000.540₫**\n\n`;
+      reply += `🏆 Khách hàng tại Hải Phòng tin dùng **Munich** vì độ bền 15 năm và đàn hồi 200%.\n\n`;
       reply += `👇 Anh/chị để lại SĐT, em tư vấn chi tiết ạ!`;
 
     } else if (q.indexOf('giá') >= 0 || q.indexOf('bao nhiêu') >= 0 || q.indexOf('gia') >= 0) {
@@ -191,7 +215,7 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
         if (hang && CHU_LUC.some(b => hang.toLowerCase().indexOf(b) >= 0)) {
           reply += `\n💡 Đây là dòng chủ lực của bên em! Anh/chị để lại SĐT để em báo giá tốt nhất nhé 👇`;
         } else {
-          reply += `\n\n💡 Ngoài ra bên em có **giải pháp chống thấm ⭐Munich & 🏡Nano House** công nghệ cao. Anh/chị có muốn tham khảo thêm không ạ?`;
+          reply += `\n\n💡 Ngoài ra bên em có **giải pháp chống thấm ⭐Munich** công nghệ cao. Anh/chị có muốn tham khảo thêm không ạ?`;
         }
       } else {
         reply = 'Anh/chị hỏi sản phẩm gì ạ? Mình có:\n';
@@ -220,7 +244,7 @@ Anh/chị quan tâm đến sản phẩm nào ạ? Mình tư vấn ngay! 😊`;
       if (hang && CHU_LUC.some(b => hang.toLowerCase().indexOf(b) >= 0)) {
         reply += `\n💡 Anh/chị để lại SĐT để em báo giá tốt nhất nhé 👇`;
       } else {
-        reply += `\n\n💡 Bên em còn có **giải pháp chống thấm ⭐Munich & 🏡Nano House** công nghệ cao. Anh/chị có muốn tham khảo thêm không ạ?`;
+        reply += `\n\n💡 Bên em còn có **giải pháp chống thấm ⭐Munich** công nghệ cao. Anh/chị có muốn tham khảo thêm không ạ?`;
       }
 
     } else {
@@ -369,8 +393,7 @@ Anh/chị có thể hỏi mình về:
     // Detect nếu khách hỏi về chủ lực → show form luôn
     const isChuLuc = laHangChuLuc(q) ||
       (q.indexOf('chống thấm') >= 0) ||
-      (q.indexOf('chong tham') >= 0) ||
-      (q.indexOf('bao gia') >= 0 && timHang(q) && CHU_LUC.some(b => (timHang(q)||'').toLowerCase().indexOf(b) >= 0));
+      (q.indexOf('chong tham') >= 0);
 
     setTimeout(function() {
       var reply = searchLocal(msg);
@@ -450,9 +473,9 @@ Anh/chị có thể hỏi mình về:
       var html = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
       // Thêm quick buttons nếu là tin đầu
       if (text === INTRO) {
-        html += '<br><br><button class="msg-q-btn" onclick="quickAsk(\'Munich G20\')">⭐ Munich G20</button>';
-        html += '<button class="msg-q-btn" onclick="quickAsk(\'Nano House\')">🏡 Nano House</button>';
-        html += '<button class="msg-q-btn" onclick="quickAsk(\'Chống thấm\')">🛡️ Chống thấm</button>';
+        html += '<br><br><button class="msg-q-btn" onclick="quickAsk(\'Munich G20\')">⭐ G20</button>';
+        html += '<button class="msg-q-btn" onclick="quickAsk(\'Munich chống thấm\')">🛡️ Chống thấm</button>';
+        html += '<button class="msg-q-btn" onclick="quickAsk(\'Munich Epoxy\')">🏗️ Epoxy sàn</button>';
         html += '<button class="msg-q-btn" onclick="quickAsk(\'Báo giá thi công\')">🔨 Thi công</button>';
       }
       div.innerHTML = html;
