@@ -336,6 +336,11 @@ gtag('config', 'G-XXXXXXXXXX');
 <div id="orderResult" style="display:none;padding:15px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;margin-top:10px;">
 ✅ Đã nhận đơn hàng! <strong>0378.679.633</strong> sẽ gọi lại xác nhận ngay.
 </div>
+<div id="crosssellPopup" style="display:none;margin-top:10px;padding:15px;background:#fff3e0;border:2px solid #ff9800;border-radius:10px;text-align:center;">
+<strong style="color:#e65100;">🎯 COMBO TIẾT KIỆM</strong>
+<p style="margin:8px 0;font-size:13px;color:#555;">Mua thêm sơn lót hoặc phụ gia — giảm thêm <strong style="color:#e65100;">10%</strong> combo!</p>
+<button onclick="window.location.href='#order-section'" style="background:#ff9800;color:white;border:none;padding:10px 20px;border-radius:6px;font-weight:700;cursor:pointer;">🔥 XEM COMBO</button>
+</div>
 <p style="text-align:center;font-size:12px;color:#999;margin-top:8px;">🔒 Bảo mật thông tin. Giao hàng nhanh tại Hải Phòng.</p>
 </section>
 
@@ -540,6 +545,197 @@ window.addEventListener("DOMContentLoaded", function() {
   var counts = {"munich":90,"nano":44,"sika":77,"dulux":77,"jotun":65,"kova":75,"nippon":89,"maxilite":28,"mpe":705,"hdpe":13};
   cats.forEach(function(c) { if (counts[c]) setupPagination(c, counts[c]); });
 });
+</script>
+
+<!-- 🎯 MARKETING AUTOMATION: Săn lead + Cross-sell + Abandon cart -->
+<script>
+(function() {
+  'use strict';
+  
+  // === 1. POPUP SĂN LEAD (Scroll gần cuối / hover Munich) ===
+  var daShowPopLead = localStorage.getItem('may_lead_popup') === '1';
+  var daScrollGanCuoi = false;
+  var daHoverMunich = false;
+  var popupTimer = null;
+  
+  function showLeadPopup() {
+    if (daShowPopLead) return;
+    daShowPopLead = true;
+    localStorage.setItem('may_lead_popup', '1');
+    
+    var popup = document.createElement('div');
+    popup.id = 'lead-popup';
+    popup.style.cssText = 'position:fixed;bottom:100px;right:90px;z-index:9998;background:white;border:2px solid #e74c3c;border-radius:14px;padding:18px;width:320px;box-shadow:0 5px 25px rgba(0,0,0,0.25);animation:slideIn 0.4s ease;';
+    popup.innerHTML = '<div style="font-size:20px;text-align:center;margin-bottom:8px;">⭐ Munich G20</div>' +
+      '<p style="font-size:14px;color:#333;line-height:1.5;margin:6px 0;">Anh/chị đang quan tâm dòng chống thấm Munich phải không? Em đang có <strong style="color:#e74c3c;">voucher chiết khấu thêm</strong> cho khách Hải Phòng hôm nay. Để lại SĐT em báo giá tốt nhất nhé!</p>' +
+      '<div style="display:flex;gap:6px;margin-top:8px;">' +
+      '<input type="tel" id="lead-phone" placeholder="SĐT của anh/chị *" style="flex:1;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;">' +
+      '<button onclick="document.getElementById(\'lead-popup\').remove();window.open(\'tel:0378679633\')" style="background:#e74c3c;color:white;border:none;padding:10px 16px;border-radius:6px;font-weight:700;cursor:pointer;">NHẬN</button></div>' +
+      '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
+    
+    // Gửi SĐT nếu nhập
+    setTimeout(function() {
+      var btn = popup.querySelector('button');
+      var input = popup.querySelector('input');
+      if (!btn || !input) return;
+      btn.onclick = function() {
+        var phone = input.value.trim();
+        if (phone.length >= 10) {
+          fetch((window.API_URL || '') + '/api/quote', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({name: '(Popup lead)', phone: phone, service: 'Popup — Munich'})
+          }).catch(function(){});
+        }
+        popup.remove();
+        window.open('tel:0378679633');
+      };
+    }, 100);
+    
+    document.body.appendChild(popup);
+    
+    // Tự động ẩn sau 15s
+    setTimeout(function() {
+      var p = document.getElementById('lead-popup');
+      if (p) p.remove();
+    }, 15000);
+  }
+  
+  // Scroll trigger: khi scroll qua 70% trang
+  window.addEventListener('scroll', function() {
+    if (daShowPopLead || daScrollGanCuoi) return;
+    var scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+    if (scrollPercent > 0.7) {
+      daScrollGanCuoi = true;
+      setTimeout(showLeadPopup, 2000);
+    }
+  });
+  
+  // Hover trigger: khi hover vào sản phẩm Munich > 10 giây
+  document.addEventListener('mouseover', function(e) {
+    if (daShowPopLead || daHoverMunich) return;
+    var target = e.target;
+    var isMunich = target.textContent && target.textContent.toLowerCase().indexOf('munich') >= 0;
+    isMunich = isMunich || (target.closest && target.closest('[data-brand="munich"],.bt-munich,.product-card'));
+    if (isMunich) {
+      if (popupTimer) clearTimeout(popupTimer);
+      popupTimer = setTimeout(function() {
+        daHoverMunich = true;
+        showLeadPopup();
+      }, 10000);
+    }
+  });
+  document.addEventListener('mouseout', function(e) {
+    var target = e.target;
+    var isMunich = target.textContent && target.textContent.toLowerCase().indexOf('munich') >= 0;
+    isMunich = isMunich || (target.closest && target.closest('[data-brand="munich"],.bt-munich'));
+    if (isMunich && popupTimer) {
+      clearTimeout(popupTimer);
+      popupTimer = null;
+    }
+  });
+  
+  // === 2. CROSS-SELL: Hiện popup combo khi đặt hàng thành công ===
+  // Đã có crosssellPopup trong HTML, chỉ cần show nó
+  var origSubmit = window.submitOrderMunich;
+  if (origSubmit) {
+    var wrapped = function(e) {
+      var result = origSubmit(e);
+      setTimeout(function() {
+        var cs = document.getElementById('crosssellPopup');
+        if (cs) cs.style.display = 'block';
+      }, 1000);
+      return result;
+    };
+    window.submitOrderMunich = wrapped;
+  }
+  
+  // PriceForm cũng show cross-sell
+  var origGetPrice = window.getPrice;
+  if (origGetPrice) {
+    var wrappedPrice = function(e) {
+      var result = origGetPrice(e);
+      setTimeout(function() {
+        // Tự động scroll xuống cross-sell
+        var fr = document.getElementById('formResult');
+        if (fr && fr.style.display !== 'none') {
+          // Không hiển thị cross-sell riêng cho form báo giá (chỉ cho đặt hàng)
+        }
+      }, 500);
+      return result;
+    };
+    window.getPrice = wrappedPrice;
+  }
+  
+  // === 3. ABANDON CART: Theo dõi SĐT nhập dở ===
+  var abandonTimer = null;
+  
+  function trackAbandon(phone) {
+    if (!phone || phone.length < 10) return;
+    // Lưu SĐT vào localStorage
+    localStorage.setItem('may_abandon_phone', phone);
+    localStorage.setItem('may_abandon_time', Date.now().toString());
+    
+    // Set timeout 10 phút
+    if (abandonTimer) clearTimeout(abandonTimer);
+    abandonTimer = setTimeout(function() {
+      var savedPhone = localStorage.getItem('may_abandon_phone');
+      var savedTime = parseInt(localStorage.getItem('may_abandon_time') || '0');
+      // Nếu đã quá 10 phút và SĐT chưa được clear (chưa submit thành công)
+      if (savedPhone && (Date.now() - savedTime > 600000)) {
+        fetch((window.API_URL || '') + '/api/abandon', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({phone: savedPhone})
+        }).catch(function(){});
+        localStorage.removeItem('may_abandon_phone');
+        localStorage.removeItem('may_abandon_time');
+      }
+    }, 600000); // 10 phút
+  }
+  
+  // Theo dõi các input SĐT
+  document.addEventListener('input', function(e) {
+    if (e.target.type === 'tel' || (e.target.id && e.target.id.indexOf('phone') >= 0) || (e.target.id && e.target.id.indexOf('Phone') >= 0)) {
+      var phone = e.target.value.trim();
+      if (phone.length >= 10) {
+        trackAbandon(phone);
+      }
+    }
+  });
+  
+  // Khi form submit thành công → clear abandon
+  document.addEventListener('click', function(e) {
+    var btn = e.target;
+    if (btn.tagName === 'BUTTON' && btn.textContent.indexOf('ĐẶT HÀNG') >= 0) {
+      // Clear abandon sau khi đặt thành công
+      setTimeout(function() {
+        localStorage.removeItem('may_abandon_phone');
+        localStorage.removeItem('may_abandon_time');
+      }, 2000);
+    }
+  });
+  
+  // Kiểm tra abandon cũ khi load trang
+  (function() {
+    var savedPhone = localStorage.getItem('may_abandon_phone');
+    var savedTime = parseInt(localStorage.getItem('may_abandon_time') || '0');
+    if (savedPhone && savedTime && (Date.now() - savedTime > 600000)) {
+      fetch((window.API_URL || '') + '/api/abandon', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({phone: savedPhone})
+      }).catch(function(){});
+      localStorage.removeItem('may_abandon_phone');
+      localStorage.removeItem('may_abandon_time');
+    }
+  })();
+  
+  // Style cho popup
+  var style = document.createElement('style');
+  style.textContent = '@keyframes slideIn { from { opacity:0;transform:translateY(20px); } to { opacity:1;transform:translateY(0); } }';
+  document.head.appendChild(style);
+})();
 </script>
 </body>
 </html>
