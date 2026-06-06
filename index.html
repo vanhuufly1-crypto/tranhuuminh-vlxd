@@ -558,47 +558,100 @@ window.addEventListener("DOMContentLoaded", function() {
   var daHoverMunich = false;
   var popupTimer = null;
   
-  function showLeadPopup() {
+  function showLeadPopup(type) {
     if (daShowPopLead) return;
     daShowPopLead = true;
     localStorage.setItem('may_lead_popup', '1');
     
     var popup = document.createElement('div');
     popup.id = 'lead-popup';
-    popup.style.cssText = 'position:fixed;bottom:100px;right:90px;z-index:9998;background:white;border:2px solid #e74c3c;border-radius:14px;padding:18px;width:320px;box-shadow:0 5px 25px rgba(0,0,0,0.25);animation:slideIn 0.4s ease;';
-    popup.innerHTML = '<div style="font-size:20px;text-align:center;margin-bottom:8px;">⭐ Munich G20</div>' +
-      '<p style="font-size:14px;color:#333;line-height:1.5;margin:6px 0;">Anh/chị đang quan tâm dòng chống thấm Munich phải không? Em đang có <strong style="color:#e74c3c;">voucher chiết khấu thêm</strong> cho khách Hải Phòng hôm nay. Để lại SĐT em báo giá tốt nhất nhé!</p>' +
-      '<div style="display:flex;gap:6px;margin-top:8px;">' +
-      '<input type="tel" id="lead-phone" placeholder="SĐT của anh/chị *" style="flex:1;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;">' +
-      '<button onclick="document.getElementById(\'lead-popup\').remove();window.open(\'tel:0378679633\')" style="background:#e74c3c;color:white;border:none;padding:10px 16px;border-radius:6px;font-weight:700;cursor:pointer;">NHẬN</button></div>' +
-      '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
+    popup.style.cssText = 'position:fixed;bottom:100px;right:90px;z-index:9998;background:white;border:2px solid #e74c3c;border-radius:14px;padding:18px;width:340px;box-shadow:0 5px 25px rgba(0,0,0,0.25);animation:slideIn 0.4s ease;';
     
-    // Gửi SĐT nếu nhập
-    setTimeout(function() {
-      var btn = popup.querySelector('button');
-      var input = popup.querySelector('input');
-      if (!btn || !input) return;
-      btn.onclick = function() {
-        var phone = input.value.trim();
-        if (phone.length >= 10) {
+    if (type === 'estimate') {
+      // === BẢNG DỰ TOÁN CHỐNG THẤM ===
+      popup.innerHTML = '<div style="font-size:18px;text-align:center;margin-bottom:10px;color:#e74c3c;font-weight:700;">📋 BẢNG DỰ TOÁN CHỐNG THẤM</div>' +
+        '<p style="font-size:13px;color:#555;text-align:center;margin:4px 0 10px;">Nhập diện tích + SĐT — nhận dự toán chính xác 90% ngay!</p>' +
+        '<div style="background:#f5f5f5;border-radius:8px;padding:12px;">' +
+        '<div style="display:flex;gap:6px;margin-bottom:6px;">' +
+        '<input type="number" id="estimate-area" placeholder="Diện tích (m²) *" style="flex:1;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px;">' +
+        '<select id="estimate-product" style="padding:10px;border:1px solid #ccc;border-radius:6px;font-size:13px;">' +
+        '<option value="G20">G20 (1.925.950₫)</option>' +
+        '<option value="G20S">G20S (1.431.000₫)</option>' +
+        '<option value="CT0">CT0 (829.640₫)</option>' +
+        '</select></div>' +
+        '<input type="tel" id="estimate-phone" placeholder="SĐT *" style="width:92%;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;font-weight:700;">' +
+        '<div id="estimate-result" style="margin-top:8px;text-align:center;font-size:14px;color:#27ae60;font-weight:600;"></div>' +
+        '<button id="estimate-btn" style="width:100%;background:#e74c3c;color:white;border:none;padding:12px;border-radius:6px;font-weight:700;font-size:15px;margin-top:8px;cursor:pointer;">🔥 NHẬN DỰ TOÁN</button>' +
+        '</div>' +
+        '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
+      
+      // Tính dự toán tự động
+      setTimeout(function() {
+        var areaInput = document.getElementById('estimate-area');
+        var productSelect = document.getElementById('estimate-product');
+        var resultDiv = document.getElementById('estimate-result');
+        
+        function tinhDuToan() {
+          var area = parseFloat(areaInput.value);
+          if (!area || area < 5) { resultDiv.textContent = ''; return; }
+          // Định mức Munich (theo DOCX): G20 ~20m²/lớp (bộ 26kg), 2 lớp ~10m²/bộ
+          var dinhMuc = { 'G20': 12, 'G20S': 10, 'CT0': 5 };
+          var gia = { 'G20': 1925950, 'G20S': 1431000, 'CT0': 829640 };
+          var sp = productSelect.value;
+          var soBo = Math.ceil(area / dinhMuc[sp]);
+          var tong = soBo * gia[sp];
+          resultDiv.innerHTML = 'Cần <strong>' + soBo + ' bộ</strong> — Tạm tính: <strong>' + tong.toLocaleString('vi-VN') + '₫</strong><br><span style="font-size:11px;color:#999;">(chưa gồm nhân công)</span>';
+        }
+        
+        areaInput.addEventListener('input', tinhDuToan);
+        productSelect.addEventListener('change', tinhDuToan);
+        
+        document.getElementById('estimate-btn').onclick = function() {
+          var phone = document.getElementById('estimate-phone').value.trim();
+          var area = areaInput.value.trim();
+          var product = productSelect.value;
+          if (!phone || phone.length < 10 || !area) { alert('Nhập SĐT và diện tích!'); return; }
           fetch((window.API_URL || '') + '/api/quote', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({name: '(Popup lead)', phone: phone, service: 'Popup — Munich'})
+            body: JSON.stringify({name: '(Bảng dự toán)', phone: phone, service: 'Dự toán ' + product + ' — ' + area + 'm²'})
           }).catch(function(){});
-        }
-        popup.remove();
-        window.open('tel:0378679633');
-      };
-    }, 100);
+          popup.innerHTML = '<div style="text-align:center;padding:20px;color:#27ae60;font-weight:700;">✅ Đã nhận! Em sẽ gọi báo giá lại ngay.</div><button onclick="this.parentElement.remove()" style="display:block;margin:10px auto;background:none;border:none;color:#999;cursor:pointer;">Đóng</button>';
+          window.open('tel:0378679633');
+        };
+      }, 100);
+    } else {
+      // === VOUCHER CHIẾT KHẤU ===
+      popup.innerHTML = '<div style="font-size:18px;text-align:center;margin-bottom:8px;color:#e74c3c;font-weight:700;">⭐ Munich G20 — Voucher</div>' +
+        '<p style="font-size:14px;color:#333;line-height:1.5;margin:6px 0;">Anh/chị đang quan tâm dòng chống thấm Munich phải không? Em đang có <strong style="color:#e74c3c;">voucher chiết khấu thêm</strong> cho khách Hải Phòng hôm nay. Để lại SĐT em báo giá tốt nhất nhé!</p>' +
+        '<div style="display:flex;gap:6px;margin-top:8px;">' +
+        '<input type="tel" id="lead-phone" placeholder="SĐT của anh/chị *" style="flex:1;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;">' +
+        '<button style="background:#e74c3c;color:white;border:none;padding:10px 16px;border-radius:6px;font-weight:700;cursor:pointer;">NHẬN</button></div>' +
+        '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
+      
+      setTimeout(function() {
+        var btn = popup.querySelector('button');
+        var input = popup.querySelector('input');
+        if (!btn || !input) return;
+        btn.onclick = function() {
+          var phone = input.value.trim();
+          if (phone.length >= 10) {
+            fetch((window.API_URL || '') + '/api/quote', {
+              method: 'POST', headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({name: '(Voucher)', phone: phone, service: 'Voucher Munich'})
+            }).catch(function(){});
+          }
+          popup.remove();
+          window.open('tel:0378679633');
+        };
+      }, 100);
+    }
     
     document.body.appendChild(popup);
-    
-    // Tự động ẩn sau 15s
     setTimeout(function() {
       var p = document.getElementById('lead-popup');
       if (p) p.remove();
-    }, 15000);
+    }, 20000);
   }
   
   // Scroll trigger: khi scroll qua 70% trang
@@ -607,7 +660,7 @@ window.addEventListener("DOMContentLoaded", function() {
     var scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
     if (scrollPercent > 0.7) {
       daScrollGanCuoi = true;
-      setTimeout(showLeadPopup, 2000);
+      setTimeout(function() { showLeadPopup('estimate'); }, 2000);
     }
   });
   
@@ -621,7 +674,7 @@ window.addEventListener("DOMContentLoaded", function() {
       if (popupTimer) clearTimeout(popupTimer);
       popupTimer = setTimeout(function() {
         daHoverMunich = true;
-        showLeadPopup();
+        showLeadPopup('voucher');
       }, 10000);
     }
   });
