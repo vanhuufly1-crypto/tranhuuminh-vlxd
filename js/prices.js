@@ -120,5 +120,23 @@ const PRICES = {
     "S909 Ngoại (Bao 25kg)": { price: "500.000đ", spec: "Bao 25kg" },
     "Bán Bóng NT (18L)": { price: "2.219.000đ", spec: "18L" },
     "Bán Bóng NT2 (18L)": { price: "2.929.000đ", spec: "18L" },
+    // SƠN SÀN EPOXY & CÔNG NGHIỆP (từ PDF Sơn Công Nghiệp 04/2026)
+    "EP11 Lót (Bộ 3kg)": { price: "1.046.250đ", spec: "Bộ 3kg" },
+    "EP11 Lót (15kg)": { price: "4.185.000đ", spec: "15kg" },
+    "EP11 Phủ (Bộ 3kg)": { price: "1.012.500đ", spec: "Bộ 3kg" },
+    "EP11 Phủ (15kg)": { price: "4.050.000đ", spec: "15kg" },
+    "EP11 Tự san (Bộ 5kg)": { price: "1.938.649đ", spec: "Bộ 5kg" },
+    "EP11 Tự san (25kg)": { price: "6.785.270đ", spec: "25kg" },
+    "EP12 Lót (Bộ 5kg)": { price: "1.618.539đ", spec: "Bộ 5kg" },
+    "EP12 Lót (25kg)": { price: "5.896.370đ", spec: "25kg" },
+    "EP12 Phủ (Bộ 5kg)": { price: "1.773.356đ", spec: "Bộ 5kg" },
+    "EP12 Phủ (25kg)": { price: "6.637.120đ", spec: "25kg" },
+    "Epoxy Resin (Bộ 3kg)": { price: "1.604.465đ", spec: "Bộ 3kg" },
+    "Epoxy Resin (15kg)": { price: "5.866.740đ", spec: "15kg" },
+    "Epoxy Resin EP15 (Bộ 6kg)": { price: "2.340.000đ", spec: "Bộ 6kg" },
+    "Epoxy Resin EP15 (24kg)": { price: "8.640.000đ", spec: "24kg" },
+    "S106 (Bộ 3kg)": { price: "983.716đ", spec: "Bộ 3kg" },
+    "S106 (15kg)": { price: "3.229.670đ", spec: "15kg" },
+
   }
 };
