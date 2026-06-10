@@ -1,5 +1,108 @@
 /* APP - TRẦN HỮU MINH WEBSITE */
 
+/* ===== HÌNH ẢNH SẢN PHẨM ===== */
+const IMAGE_MAP = {
+  kova: {
+    "k10-gold": "kova-k10-gold.webp",
+    "k360-gold": "kova-k360-gold.webp",
+    "k260-gold": "kova-k260-gold.webp",
+    "k261-gold": "kova-k261-gold.webp",
+    "k5800-gold": "kova-k5800-gold.webp",
+    "k5500-gold": "kova-k5500-gold.webp",
+    "ksp-gold": "kova-ksp-gold.webp",
+    "mtt-gold": "kova-mtt-gold.webp",
+    "mb-t": "kova-mb-t.webp",
+    "ct-11a-gold": "kova-ct-11a-gold.webp",
+    "k871-gold": "kova-k871-gold.webp",
+    "mb-n": "kova-mb-n.webp",
+    "mt-kl5t-gold-mn": "kova-mt-kl5t-gold-mn.webp",
+    "k109-gold": "kova-k109-gold.webp",
+    "kgp": "kova-kgp.webp",
+    "ct-11b-gold": "kova-ct-11b-gold.webp",
+    "ct-14-gold": "kova-ct-14-gold.webp",
+    "kl5t-gold": "kova-kl5t-gold.webp",
+    "k462": "kova-k462.webp",
+    "mtn-gold": "kova-mtn-gold.webp",
+    "cn-05": "kova-cn-05.webp",
+    "k5501-gold": "kova-k5501-gold.webp",
+    "kl5t-aqua-gold": "kova-kl5t-aqua-gold.webp",
+    "ct08-gold": "kova-ct08-gold.webp",
+    "kova-bt": "kova-kova-bt.webp",
+    "k209-gold": "kova-k209-gold.webp",
+    "k180-gold": "kova-k180-gold.webp",
+    "clear-kl5-gold": "kova-clear-kl5-gold.webp",
+    "k771-gold": "kova-k771-gold.webp",
+    "mt-kl5t-aqua-gold": "kova-mt-kl5t-aqua-gold.webp",
+    "clear-n-gold": "kova-clear-n-gold.webp",
+    "nt26": "kova-nt26.webp",
+    "tna-gold": "kova-tna-gold.webp",
+    "sk-6": "kova-sk-6.webp",
+    "mt-kl5t-gold-th": "kova-mt-kl5t-gold-th.webp",
+    "ct04t-gold": "kova-ct04t-gold.webp",
+    "kova-bn": "kova-kova-bn.webp",
+    "k280-gold": "kova-k280-gold.webp",
+    "ap153--ap171-ton-b-k-t-cui-16": "kova-ap153--ap171-ton-b-k-t-cui-16.webp",
+    "ap23--ap152-k-t-cui-l-3-5": "kova-ap23--ap152-k-t-cui-l-3-5.webp",
+    "m-mu-ui-ow": "kova-m-mu-ui-ow.webp",
+    "ap1--ap22-ton-b-k-t-cui-16-ap23--ap152-k": "kova-ap1--ap22-ton-b-k-t-cui-16-ap23--ap152-k.webp",
+    "ap23--ap152-k-t-cui-l-4": "kova-ap23--ap152-k-t-cui-l-4.webp"
+  },
+  munich: {
+    "grout-g650": "munich-grout-g650.webp",
+    "pu-s700": "munich-pu-s700.webp",
+    "pu-s800f": "munich-pu-s800f.webp",
+    "ct0-tuong": "munich-ct0-tuong.webp",
+    "c20": "munich-c20.webp",
+    "repair-g50": "munich-repair-g50.webp",
+    "g10": "munich-g10.webp",
+    "ep11-tự-san": "munich-ep11-tự-san.webp",
+    "uv20-primer": "munich-uv20-primer.webp",
+    "nano-ab": "munich-nano-ab.webp",
+    "water-plug": "munich-water-plug.webp",
+    "pu-glass": "munich-pu-glass.webp",
+    "s909-ngoai": "munich-s909-ngoai.webp",
+    "s302": "munich-s302.webp",
+    "s208": "munich-s208.webp",
+    "gel-g-01": "munich-gel-g-01.webp",
+    "g20c": "munich-g20c.webp",
+    "stone-sf": "munich-stone-sf.webp",
+    "s909-noi": "munich-s909-noi.webp",
+    "g68": "munich-g68.webp",
+    "c631": "munich-c631.webp",
+    "pu-s400": "munich-pu-s400.webp",
+    "g20c-đen": "munich-g20c-đen.webp",
+    "tile-g07": "munich-tile-g07.webp",
+    "ct0": "munich-ct0.webp",
+    "g20s": "munich-g20s.webp",
+    "uv20": "munich-uv20.webp",
+    "economy": "munich-economy.webp",
+    "glass-2k": "munich-glass-2k.webp",
+    "s632": "munich-s632.webp",
+    "walling": "munich-walling.webp",
+    "ep12-lót": "munich-ep12-lót.webp",
+    "ep11-phủ": "munich-ep11-phủ.webp",
+    "ep12-phủ": "munich-ep12-phủ.webp",
+    "liquid-glass-2k": "munich-liquid-glass-2k.webp",
+    "s902": "munich-s902.webp"
+  }
+};
+
+function getProductImage(brandId, productCode) {
+  const brandMap = IMAGE_MAP[brandId];
+  if (!brandMap) return null;
+  const key = productCode.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9à-ýđ-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+  if (brandMap[key]) {
+    return 'images/products/' + brandMap[key];
+  }
+  // Try partial match
+  for (const k in brandMap) {
+    if (key.includes(k) || k.includes(key)) {
+      return 'images/products/' + brandMap[k];
+    }
+  }
+  return null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Render brand overview on home
   const grid = document.getElementById('brandGrid');
@@ -8,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.className = 'brand-card';
     card.onclick = () => showBrand(b.id);
     // Logo + icon
-    var logoHtml = '<img src="images/logo/'+b.id+'.jpg" style="width:48px;height:48px;object-fit:contain;margin-bottom:8px" onerror="this.style.display=\'none\'">';
+    var logoHtml = '<img src="images/logo/'+b.id+'.jpg" alt="'+b.name+' | Trần Hữu Minh" style="width:48px;height:48px;object-fit:contain;margin-bottom:8px" onerror="this.style.display=\'none\'">';
     card.innerHTML = '<div class="bi">'+logoHtml+'</div>      <h4 style="color:'+b.color+'">'+b.name+'</h4>      <p style="font-size:12px;color:#777">'+b.desc.split(' - ')[0]+'</p>      <span class="cnt">'+b.count+' sản phẩm</span>';
     grid.appendChild(card);
   });
@@ -139,7 +242,14 @@ function card(p, brand) {
     <a href="tel:0378679633" class="pa-btn pa-call" title="Hotline">📞 Hotline (MR HỮU)</a>
   </div>`;
 
+  // Look up product image
+  const imgSrc = getProductImage(brand, p.code);
+  const imgHTML = imgSrc
+    ? `<img src="${imgSrc}" alt="${p.name} - ${p.code} | Trần Hữu Minh" class="prod-img" loading="lazy" onerror="this.style.display='none'">`
+    : '';
+
   return `<div class="prod-card">
+    ${imgHTML}
     <div class="prod-body">
       <span class="tag tag-${brand}">${p.code}</span>
       <h4>${p.name}</h4>
