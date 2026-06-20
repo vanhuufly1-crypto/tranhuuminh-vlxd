@@ -99,4 +99,7 @@ git add -A
 git commit -m "auto-blog: ${BRAND} - ${TODAY}" --quiet || true
 git push --quiet 2>&1 || echo "⚠️ Push may have failed, will retry next time"
 
+# === KIỂM TRA SAU DEPLOY ===
+${SITES_DIR}/web-check.sh || echo "⚠️  Web-check phát hiện lỗi! Xem log để biết chi tiết."
+
 echo "✅ Deploy xong: ${BRAND} - ${SUBTOPIC}"
