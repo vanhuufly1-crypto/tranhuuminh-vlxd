@@ -59,3 +59,23 @@
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Nanohouse - bảng giá Nanohouse mới nhất tại Hải Phòng 2026
 ✅ Đã tạo: kova-bang-gia-kova-moi-nhat-tai-hai-phong-2026-2026-06-20.html
+[2026-06-20 14:00:19] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-20 14:00:20] ✅ HTTP 200 OK
+[2026-06-20 14:00:20] ✅ index.html: 42234 bytes (>= 20KB)
+[2026-06-20 14:00:20] ✅ Có css/style.css
+[2026-06-20 14:00:20] ✅ Có js/products.js
+[2026-06-20 14:00:20] ✅ Có js/app.js
+[2026-06-20 14:00:20] ✅ Có 'Navigation menu'
+[2026-06-20 14:00:20] ✅ Có 'Khu vực sản phẩm'
+[2026-06-20 14:00:20] ✅ Có 'Footer'
+[2026-06-20 14:00:20] ✅ Có 'Nút liên hệ nổi'
+[2026-06-20 14:00:20] ✅ Có 'Form đặt hàng'
+[2026-06-20 14:00:20] ✅ Có 'Tiêu đề form Munich'
+[2026-06-20 14:00:20] ✅ Có 'Form báo giá'
+[2026-06-20 14:00:20] ✅ Có 'Đầu danh mục hãng'
+[2026-06-20 14:00:20] ✅ Blog: HTTP 200 OK
+[2026-06-20 14:00:20] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Kova - bảng giá Kova mới nhất tại Hải Phòng 2026
+✅ Đã tạo: sika-bang-gia-sika-moi-nhat-tai-hai-phong-2026-2026-06-20.html
