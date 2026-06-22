@@ -144,6 +144,83 @@ git add -A
 git commit -m "auto-blog: ${BRAND} - ${TODAY}" --quiet || true
 git push --quiet 2>&1 || echo "⚠️ Push may have failed, will retry next time"
 
+# === CẬP NHẬT BRAND PAGE ===
+echo "Cap nhat brand pages..."
+# Goi Python de regenerate brand pages tu danh sach blog hien tai
+python3 << 'PYEOF' > /dev/null 2>&1
+import os, re
+
+BLOG_DIR = "/home/huu-minh/website-vlxd/blog"
+BRANDS_DIR = "/home/huu-minh/website-vlxd/brands"
+os.makedirs(BRANDS_DIR, exist_ok=True)
+
+brands = [
+    {"key": "munich", "name": "Munich", "icon": "🛡️", "desc": "Chống thấm và sơn cao cấp Đức — NPP chính thức tại Hải Phòng", "keywords": "munich"},
+    {"key": "nanohouse", "name": "Nano House", "icon": "🏡", "desc": "Sơn giả đá và chống thấm Việt Nam — NPP chính thức", "keywords": "nano"},
+    {"key": "dulux", "name": "Dulux", "icon": "🎨", "desc": "Sơn cao cấp Anh Quốc (AkzoNobel) — Đại lý chính thức", "keywords": "dulux"},
+    {"key": "jotun", "name": "Jotun", "icon": "🖌️", "desc": "Sơn Na Uy hàng đầu thế giới — Đại lý chính thức", "keywords": "jotun"},
+    {"key": "kova", "name": "Kova", "icon": "🏺", "desc": "Sơn và chống thấm nổi tiếng Việt Nam — Đại lý chính thức", "keywords": "kova"},
+    {"key": "sika", "name": "Sika", "icon": "🧪", "desc": "Hóa chất xây dựng và chống thấm Thụy Sĩ — Đại lý chính thức", "keywords": "sika"},
+    {"key": "nippon", "name": "Nippon", "icon": "🇯🇵", "desc": "Sơn Nhật Bản hàng đầu châu Á — Đại lý chính thức", "keywords": "nippon"},
+]
+
+# Doc blog posts
+posts = []
+for f in os.listdir(BLOG_DIR):
+    if not f.endswith(".html") or f == "index.html":
+        continue
+    fp = os.path.join(BLOG_DIR, f)
+    try:
+        content = open(fp, encoding="utf-8").read()
+        title_m = re.search(r"<title>(.*?)</title>", content)
+        title = title_m.group(1).strip() if title_m else f
+        date_m = re.search(r"(\d{4}-\d{2}-\d{2})", f)
+        date = date_m.group(1) if date_m else ""
+        desc_m = re.search(r'<meta name="description" content="(.*?)">', content)
+        desc = desc_m.group(1) if desc_m else ""
+        brand_key = "khac"
+        for b in brands:
+            if b["keywords"] in title.lower() or b["keywords"] in f.lower():
+                brand_key = b["key"]
+                break
+        posts.append({"file": f, "title": title, "date": date, "desc": desc, "brand_key": brand_key})
+    except:
+        continue
+
+posts.sort(key=lambda x: x["date"], reverse=True)
+
+BRAND_KEY_MAP = {
+    "munich": "munich",
+    "nano": "nanohouse",
+    "dulux": "dulux",
+    "jotun": "jotun",
+    "kova": "kova",
+    "sika": "sika",
+    "nippon": "nippon"
+}
+
+BRAND_KEY = BRAND_KEY_MAP.get("""${BRAND,,}""")
+
+if BRAND_KEY:
+    brand_info = {b["key"]: b for b in brands}.get(BRAND_KEY)
+    if brand_info:
+        brand_posts = [p for p in posts if p["brand_key"] == BRAND_KEY]
+        blog_items = ""
+        for p in brand_posts[:20]:
+            blog_items += f'''        <a href="/blog/{p["file"]}" class="brand-post-item">\n          <span class="post-title">{p["title"]}</span>\n          <span class="post-date">📅 {p["date"]}</span>\n        </a>\n'''
+        # Write updated HTML for this brand
+        html = open(f"{BRANDS_DIR}/{BRAND_KEY}.html", encoding="utf-8").read()
+        # Replace the post list section
+        html = re.sub(
+            r'<div class="brand-posts">.*?</div>',
+            f'''<div class="brand-posts">\n  <h2>📰 Bài viết về {brand_info["name"]}</h2>\n{blog_items}</div>''',
+            html, flags=re.DOTALL
+        )
+        with open(f"{BRANDS_DIR}/{BRAND_KEY}.html", "w", encoding="utf-8") as f:
+            f.write(html)
+PYEOF
+echo "Brand pages updated."
+
 # === KIỂM TRA SAU DEPLOY ===
 ${SITES_DIR}/web-check.sh || echo "⚠️  Web-check phát hiện lỗi! Xem log để biết chi tiết."
 
