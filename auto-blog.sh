@@ -37,28 +37,73 @@ SLUG="$(echo "${BRAND}-${SUBTOPIC}" | iconv -t ascii//TRANSLIT 2>/dev/null || ec
 SLUG="$(echo "$SLUG" | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/--*/-/g; s/^-//; s/-$//')"
 SLUG="${SLUG}-${TODAY}.html"
 
-# Tạo nội dung bằng llama3.2:3b
-PROMPT="Em là nhân viên viết nội dung cho công ty vật liệu xây dựng. Hãy viết bài blog SEO tiếng Việt, khoảng 150-250 từ, chủ đề: '${SUBTOPIC}'.
+# Tạo nội dung bằng llama3.2:3b (dùng API, tránh ANSI escape)
+# Dùng Python gọi API Ollama + xử lý text sạch
+PARAGRAPHS=$(python3 << 'PYEOF'
+import json, urllib.request, re, sys
+
+brand = """${BRAND}"""
+desc = """${DESC}"""
+subtopic = """${SUBTOPIC}"""
+
+prompt = f"""Em là nhân viên viết nội dung cho công ty vật liệu xây dựng. Hãy viết bài blog SEO tiếng Việt, khoảng 150-250 từ, chủ đề: '{subtopic}'.
 
 Yêu cầu:
 - Viết tự nhiên, chuyên nghiệp, dễ đọc
-- Tập trung vào sản phẩm ${DESC}
+- Tập trung vào sản phẩm {desc}
 - Nhấn mạnh: Công ty TNHH XD & TM Hữu Minh có địa chỉ tại TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng
 - Kết thúc với: Hotline/Zalo: 0378.679.633 - Email: vanhuufly@gmail.com - Website: tranhuuminhvlxd.id.vn
 
-Viết liền mạch, không xuống dòng. KHÔNG thêm chú thích hay giải thích gì khác."
+Viết liền mạch, không xuống dòng. KHÔNG thêm chú thích hay giải thích gì khác."""
 
-CONTENT=$(ollama run llama3.2:3b "$PROMPT" 2>/dev/null)
-# Làm sạch ANSI và ký tự điều khiển
-CONTENT=$(echo "$CONTENT" | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g; s/\[[0-9]\+D//g; s/\[K//g; s/\[[0-9]\+[a-zA-Z]//g' | tr -s '[:space:]')
+payload = {
+    "model": "llama3.2:3b",
+    "prompt": prompt,
+    "stream": False,
+    "options": {"num_predict": 512, "temperature": 0.3}
+}
 
-# Tạo HTML từ nội dung (mỗi dòng là 1 đoạn văn)
-PARAGRAPHS=""
-while IFS= read -r line; do
-  line=$(echo "$line" | xargs)
-  [ -z "$line" ] && continue
-  PARAGRAPHS="${PARAGRAPHS}<p>${line}</p>"
-done <<< "$CONTENT"
+try:
+    req = urllib.request.Request(
+        "http://localhost:11434/api/generate",
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json"}
+    )
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read())
+        text = data.get("response", "")
+except Exception:
+    text = ""
+
+if text:
+    text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
+    text = text.replace('\n', ' ')
+    text = re.sub(r'  +', ' ', text)
+
+    # Tách câu, gộp 2-3 câu thành đoạn
+    sentences = re.split(r'(?<=[.!?])\s+(?=[A-ZƯẤẵầậẫổộợờĐ])', text)
+    sentences = [s.strip() for s in sentences if s.strip()]
+
+    paragraphs = []
+    buf = []
+    for s in sentences:
+        buf.append(s)
+        if len(buf) >= 3 or s == sentences[-1]:
+            paragraphs.append(' '.join(buf))
+            buf = []
+    if buf:
+        paragraphs.append(' '.join(buf))
+
+    # Output <p> tags
+    for p in paragraphs:
+        print(f'<p>{p}</p>')
+else:
+    # Fallback text
+    print(f'<p>Giới thiệu {desc} tại Hải Phòng. Liên hệ 0378.679.633 để được tư vấn miễn phí.</p>')
+PYEOF
+)
+
+[ -z "$PARAGRAPHS" ] && PARAGRAPHS="<p>${CONTENT:-Giới thiệu $DESC tại Hải Phòng. Liên hệ 0378.679.633.}</p>"
 
 TITLE=$(echo "$SUBTOPIC" | sed 's/^./\u&/')
 META_DESC="${BRAND} tại Hải Phòng - Công ty TNHH XD & TM Hữu Minh. ${SUBTOPIC}"
