@@ -132,6 +132,28 @@ HTMLBLOCK
 
 echo "✅ Đã tạo: ${SLUG}"
 
+# Chup screenshot bai blog
+python3 << 'PYEOF' 2>/dev/null || true
+from playwright.sync_api import sync_playwright
+import os
+
+blog_file = "${BLOG_DIR}/${SLUG}"
+img_dir = "${SITES_DIR}/images/blog"
+os.makedirs(img_dir, exist_ok=True)
+
+out = os.path.join(img_dir, "${SLUG}" + ".jpg")
+thumb = os.path.join(img_dir, "${SLUG}" + "-thumb.jpg")
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    page = browser.new_page(viewport={"width": 800, "height": 900})
+    page.goto(f"file://{os.path.abspath(blog_file)}", wait_until="networkidle")
+    page.screenshot(path=out, full_page=True)
+    page.screenshot(path=thumb)
+    browser.close()
+    print(f"Screenshot: {os.path.basename(out)}")
+PYEOF
+
 # Update blog index - thêm entry mới vào đầu danh sách
 NEW_ENTRY="<a href=\"/blog/${SLUG}\" class=\"blog-item\"><span class=\"icon\">${ICON}</span><span class=\"info\"><span class=\"title\">${BRAND} - ${SUBTOPIC} | Trần Hữu Minh</span><span class=\"date\">📅 ${TODAY}</span></span></a>"
 

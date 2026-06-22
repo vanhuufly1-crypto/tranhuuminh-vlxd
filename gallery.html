@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Hình ảnh - Trần Hữu Minh VLXD & Chống Thấm Hải Phòng</title>
+<meta name="description" content="Hình ảnh bài viết và sản phẩm vật liệu xây dựng tại Công ty TNHH XD & TM Hữu Minh - Hải Phòng">
+<link rel="stylesheet" href="css/style.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;max-width:960px;margin:auto;padding:20px;line-height:1.6;color:#333}
+h1{color:#1a5276;border-bottom:3px solid #e74c3c;padding-bottom:12px;margin-bottom:30px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:15px}
+.gallery-item{background:#f9f9f9;border-radius:8px;overflow:hidden;border:1px solid #eee;transition:0.2s;text-decoration:none;color:#333;display:block}
+.gallery-item:hover{border-color:#e74c3c;transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.gallery-item img{width:100%;height:200px;object-fit:cover;display:block}
+.gallery-item .caption{padding:12px;font-size:0.9em;font-weight:bold;color:#1a5276}
+.back-link{display:inline-block;margin-bottom:20px;color:#e74c3c;text-decoration:none;font-weight:bold}
+.back-link:hover{text-decoration:underline}
+.empty{text-align:center;padding:50px;color:#888;font-size:1.1em}
+footer{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid #ddd;color:#888;font-size:0.9em}
+</style>
+</head>
+<body>
+<a href="/" class="back-link">← Về trang chủ</a>
+<h1>📸 Hình ảnh bài viết</h1>
+<div class="gallery-grid" id="gallery">
+  <div class="empty">Đang tải hình ảnh...</div>
+</div>
+<footer>
+  <p><strong>CÔNG TY TNHH XD & TM HỮU MINH</strong></p>
+  <p>TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng</p>
+  <p>Hotline: 0378.679.633 | Email: vanhuufly@gmail.com</p>
+</footer>
+<script>
+// Dùng JS để kiểm tra file ảnh tồn tại
+const brands = {
+  munich: "🛡️", nanohouse: "🏡", dulux: "🎨", jotun: "🖌️",
+  kova: "🏺", sika: "🧪", nippon: "🇯🇵"
+};
+const blogPosts = [
+EOF
+
+# Generate JS list of blog posts with images
+cd /home/huu-minh/website-vlxd
+python3 << 'PYEOF' >> gallery.html
+import os, re
+from datetime import datetime
+
+blog_dir = "blog"
+items = []
+for f in sorted(os.listdir(blog_dir), reverse=True):
+    if not f.endswith(".html") or f == "index.html":
+        continue
+    fp = os.path.join(blog_dir, f)
+    try:
+        content = open(fp, encoding="utf-8").read()
+        title_m = re.search(r'<title>(.*?)</title>', content)
+        title = title_m.group(1).strip() if title_m else f.replace(".html","")
+        slug = f.replace(".html", "")
+        # map brand
+        brand_icon = "📄"
+        for brand, icon in [
+            ("munich", "🛡️"), ("nano", "🏡"), ("dulux", "🎨"),
+            ("jotun", "🖌️"), ("kova", "🏺"), ("sika", "🧪"), ("nippon", "🇯🇵")
+        ]:
+            if brand in f.lower() or brand in title.lower():
+                brand_icon = icon
+                break
+        items.append({
+            "slug": slug,
+            "title": title.replace("\\", "\\\\").replace("'", "\\'"),
+            "icon": brand_icon,
+            "date": re.search(r'(\d{4}-\d{2}-\d{2})', f).group(1) if re.search(r'(\d{4}-\d{2}-\d{2})', f) else ""
+        })
+    except:
+        continue
+
+for i, item in enumerate(items):
+    comma = "," if i < len(items) - 1 else ""
+    print(f'  {{slug: "{item["slug"]}", title: "{item["title"]}", icon: "{item["icon"]}", date: "{item["date"]}"}}{comma}')
+PYEOF
+
+cat >> /home/huu-minh/website-vlxd/gallery.html << 'JSEND'
+];
+
+const gallery = document.getElementById('gallery');
+gallery.innerHTML = '';
+blogPosts.forEach(post => {
+  const imgSrc = `images/blog/${post.slug}.jpg`;
+  const item = document.createElement('a');
+  item.href = `blog/${post.slug}.html`;
+  item.className = 'gallery-item';
+  item.innerHTML = `
+    <img src="${imgSrc}" alt="${post.title}" loading="lazy"
+         onerror="this.parentElement.style.display='none'">
+    <div class="caption">${post.icon} ${post.title}<br><small>${post.date}</small></div>
+  `;
+  gallery.appendChild(item);
+});
+</script>
+</body>
+</html>
+JSEND
+
+echo "✅ gallery.html created"
