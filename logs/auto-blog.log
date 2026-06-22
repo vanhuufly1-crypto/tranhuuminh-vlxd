@@ -207,3 +207,25 @@ fatal: could not read Username for 'https://github.com': No such device or addre
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Sika - hướng dẫn thi công Sika đúng kỹ thuật, bền đẹp
 ✅ Đã tạo: jotun-huong-dan-thi-cong-jotun-dung-ky-thuat-ben-dep-2026-06-21.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+[2026-06-21 20:00:20] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-21 20:00:20] ✅ HTTP 200 OK
+[2026-06-21 20:00:20] ✅ index.html: 42234 bytes (>= 20KB)
+[2026-06-21 20:00:20] ✅ Có css/style.css
+[2026-06-21 20:00:20] ✅ Có js/products.js
+[2026-06-21 20:00:20] ✅ Có js/app.js
+[2026-06-21 20:00:20] ✅ Có 'Navigation menu'
+[2026-06-21 20:00:21] ✅ Có 'Khu vực sản phẩm'
+[2026-06-21 20:00:21] ✅ Có 'Footer'
+[2026-06-21 20:00:21] ✅ Có 'Nút liên hệ nổi'
+[2026-06-21 20:00:21] ✅ Có 'Form đặt hàng'
+[2026-06-21 20:00:21] ✅ Có 'Tiêu đề form Munich'
+[2026-06-21 20:00:21] ✅ Có 'Form báo giá'
+[2026-06-21 20:00:21] ✅ Có 'Đầu danh mục hãng'
+[2026-06-21 20:00:21] ✅ Blog: HTTP 200 OK
+[2026-06-21 20:00:21] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Jotun - hướng dẫn thi công Jotun đúng kỹ thuật, bền đẹp
+✅ Đã tạo: munich-kinh-nghiem-chon-mua-munich-chinh-hang-tranh-hang-gia-2026-06-22.html
