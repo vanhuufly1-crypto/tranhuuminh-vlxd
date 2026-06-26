@@ -645,3 +645,25 @@ Brand pages updated.
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Sika - bảng giá Sika mới nhất tại Hải Phòng 2026
 ✅ Đã tạo: jotun-bang-gia-jotun-moi-nhat-tai-hai-phong-2026-2026-06-25.html
+Cap nhat brand pages...
+Brand pages updated.
+[2026-06-25 20:00:20] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-25 20:00:21] ✅ HTTP 200 OK
+[2026-06-25 20:00:21] ✅ index.html: 42008 bytes (>= 20KB)
+[2026-06-25 20:00:21] ✅ Có css/style.css
+[2026-06-25 20:00:21] ✅ Có js/products.js
+[2026-06-25 20:00:21] ✅ Có js/app.js
+[2026-06-25 20:00:21] ✅ Có 'Navigation menu'
+[2026-06-25 20:00:21] ✅ Có 'Khu vực sản phẩm'
+[2026-06-25 20:00:21] ✅ Có 'Footer'
+[2026-06-25 20:00:21] ✅ Có 'Nút liên hệ nổi'
+[2026-06-25 20:00:21] ✅ Có 'Form đặt hàng'
+[2026-06-25 20:00:21] ✅ Có 'Tiêu đề form Munich'
+[2026-06-25 20:00:21] ✅ Có 'Form báo giá'
+[2026-06-25 20:00:21] ✅ Có 'Đầu danh mục hãng'
+[2026-06-25 20:00:22] ✅ Blog: HTTP 200 OK
+[2026-06-25 20:00:22] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Jotun - bảng giá Jotun mới nhất tại Hải Phòng 2026
+✅ Đã tạo: munich-huong-dan-thi-cong-munich-dung-ky-thuat-ben-dep-2026-06-26.html
