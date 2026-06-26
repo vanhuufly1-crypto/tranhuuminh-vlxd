@@ -27,3 +27,28 @@
 2026-06-26 08:37:55,532 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test — 0378679633
 2026-06-26 08:37:55,533 [INFO] 📋 Quote: Test - 0378679633 - Chong tham Munich
 2026-06-26 08:37:55,533 [INFO] 127.0.0.1 - - [26/Jun/2026 08:37:55] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 10:38:29,357 [INFO] 127.0.0.1 - - [26/Jun/2026 10:38:29] "GET /ping HTTP/1.1" 200 -
+2026-06-26 10:39:08,581 [INFO] 127.0.0.1 - - [26/Jun/2026 10:39:08] "GET /ping HTTP/1.1" 200 -
+2026-06-26 10:39:22,867 [INFO] 📧 Email sent: 🔥 ĐƠN HÀNG MỚI — Munich G20 x1 — 0378679633
+2026-06-26 10:39:22,867 [INFO] 📦 Order: Test - 0378679633 - Munich G20 x1 - 1,925,950₫
+2026-06-26 10:39:22,868 [INFO] 127.0.0.1 - - [26/Jun/2026 10:39:22] "POST /order HTTP/1.1" 200 -
+2026-06-26 10:39:53,210 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test — 0378679633
+2026-06-26 10:39:53,211 [INFO] 📋 Quote: Test - 0378679633 - Chong tham Munich
+2026-06-26 10:39:53,211 [INFO] 127.0.0.1 - - [26/Jun/2026 10:39:53] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 10:41:03,465 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:03] "[31m[1mPOST /ping HTTP/1.1[0m" 405 -
+2026-06-26 10:41:06,737 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:06] "GET /ping HTTP/1.1" 200 -
+2026-06-26 10:41:10,688 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test — 0378679633
+2026-06-26 10:41:10,689 [INFO] 📋 Quote: Test - 0378679633 - Chong tham
+2026-06-26 10:41:10,689 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:10] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 10:41:28,920 [INFO] 🚀 API Server starting on port 3001...
+2026-06-26 10:41:28,920 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-06-26 10:41:28,928 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 10:41:28,928 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 10:41:28,928 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 10:41:28,928 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 10:41:43,442 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:43] "GET /ping HTTP/1.1" 200 -
+2026-06-26 10:41:43,442 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:43] "GET /ping HTTP/1.1" 200 -
