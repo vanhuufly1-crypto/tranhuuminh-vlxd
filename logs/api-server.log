@@ -52,3 +52,13 @@
 2026-06-26 10:41:28,928 [INFO] [33mPress CTRL+C to quit[0m
 2026-06-26 10:41:43,442 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:43] "GET /ping HTTP/1.1" 200 -
 2026-06-26 10:41:43,442 [INFO] 127.0.0.1 - - [26/Jun/2026 10:41:43] "GET /ping HTTP/1.1" 200 -
+2026-04-16 01:33:02,912 [INFO] 🚀 API Server starting on port 3001...
+2026-04-16 01:33:02,912 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-04-16 01:33:02,935 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-04-16 01:33:02,935 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-04-16 01:33:02,936 [INFO] [33mPress CTRL+C to quit[0m
+2026-04-16 01:33:02,936 [INFO] [33mPress CTRL+C to quit[0m

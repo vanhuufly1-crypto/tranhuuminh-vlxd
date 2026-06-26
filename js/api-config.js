@@ -1,3 +1,3 @@
 // 🌐 API Configuration for Trần Hữu Minh website
 // Auto-updated by start-tunnel.sh
-var API_URL = 'https://terminology-unto-letters-warrior.trycloudflare.com';
+var API_URL = 'https://api.trycloudflare.com';
