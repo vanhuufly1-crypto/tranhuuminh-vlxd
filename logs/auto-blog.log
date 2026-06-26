@@ -667,3 +667,27 @@ Brand pages updated.
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Jotun - bảng giá Jotun mới nhất tại Hải Phòng 2026
 ✅ Đã tạo: munich-huong-dan-thi-cong-munich-dung-ky-thuat-ben-dep-2026-06-26.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+[2026-06-26 08:00:22] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-26 08:00:23] ✅ HTTP 200 OK
+[2026-06-26 08:00:23] ✅ index.html: 42008 bytes (>= 20KB)
+[2026-06-26 08:00:23] ✅ Có css/style.css
+[2026-06-26 08:00:23] ✅ Có js/products.js
+[2026-06-26 08:00:23] ✅ Có js/app.js
+[2026-06-26 08:00:23] ✅ Có 'Navigation menu'
+[2026-06-26 08:00:23] ✅ Có 'Khu vực sản phẩm'
+[2026-06-26 08:00:23] ✅ Có 'Footer'
+[2026-06-26 08:00:23] ✅ Có 'Nút liên hệ nổi'
+[2026-06-26 08:00:23] ✅ Có 'Form đặt hàng'
+[2026-06-26 08:00:23] ✅ Có 'Tiêu đề form Munich'
+[2026-06-26 08:00:23] ✅ Có 'Form báo giá'
+[2026-06-26 08:00:23] ✅ Có 'Đầu danh mục hãng'
+[2026-06-26 08:00:24] ✅ Blog: HTTP 200 OK
+[2026-06-26 08:00:24] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - hướng dẫn thi công Munich đúng kỹ thuật, bền đẹp
+✅ Đã tạo: nanohouse-huong-dan-thi-cong-nanohouse-dung-ky-thuat-ben-dep-2026-06-26.html
