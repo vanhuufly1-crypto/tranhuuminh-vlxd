@@ -62,3 +62,63 @@
  * Running on http://127.0.0.1:3001
 2026-04-16 01:33:02,936 [INFO] [33mPress CTRL+C to quit[0m
 2026-04-16 01:33:02,936 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:46:02,957 [INFO] 127.0.0.1 - - [26/Jun/2026 22:46:02] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:46:02,957 [INFO] 127.0.0.1 - - [26/Jun/2026 22:46:02] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:46:21,015 [INFO] 127.0.0.1 - - [26/Jun/2026 22:46:21] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:46:21,015 [INFO] 127.0.0.1 - - [26/Jun/2026 22:46:21] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:47:22,838 [INFO] 🚀 API Server starting on port 3001...
+2026-06-26 22:47:22,838 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-06-26 22:47:22,846 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:47:22,846 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:47:22,846 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:47:22,846 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:48:25,547 [INFO] 🚀 API Server starting on port 3001...
+2026-06-26 22:48:25,547 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-06-26 22:48:25,555 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:48:25,555 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:48:25,555 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:48:25,555 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:48:28,351 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:28] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:48:28,351 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:28] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:48:43,942 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:43] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:48:43,942 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:43] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:48:48,833 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test — 0378679633
+2026-06-26 22:48:48,833 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test — 0378679633
+2026-06-26 22:48:48,833 [INFO] 📋 Quote: Test - 0378679633 - Chong tham
+2026-06-26 22:48:48,833 [INFO] 📋 Quote: Test - 0378679633 - Chong tham
+2026-06-26 22:48:48,834 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:48] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 22:48:48,834 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:48] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 22:48:57,862 [INFO] 📧 Email sent: 🔥 ĐƠN HÀNG MỚI — Munich G20 x2 — 0378679633
+2026-06-26 22:48:57,862 [INFO] 📧 Email sent: 🔥 ĐƠN HÀNG MỚI — Munich G20 x2 — 0378679633
+2026-06-26 22:48:57,862 [INFO] 📦 Order: Test Huu - 0378679633 - Munich G20 x2 - 1,925,950₫
+2026-06-26 22:48:57,862 [INFO] 📦 Order: Test Huu - 0378679633 - Munich G20 x2 - 1,925,950₫
+2026-06-26 22:48:57,863 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:57] "POST /order HTTP/1.1" 200 -
+2026-06-26 22:48:57,863 [INFO] 127.0.0.1 - - [26/Jun/2026 22:48:57] "POST /order HTTP/1.1" 200 -
+2026-06-26 22:50:07,628 [INFO] 🚀 API Server starting on port 3001...
+2026-06-26 22:50:07,628 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-06-26 22:50:07,636 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:50:07,636 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-26 22:50:07,637 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:50:07,637 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-26 22:50:10,424 [INFO] 127.0.0.1 - - [26/Jun/2026 22:50:10] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:50:10,424 [INFO] 127.0.0.1 - - [26/Jun/2026 22:50:10] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:51:00,277 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:00] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:51:00,277 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:00] "GET /ping HTTP/1.1" 200 -
+2026-06-26 22:51:04,354 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test Huu — 0378679633
+2026-06-26 22:51:04,354 [INFO] 📧 Email sent: 📋 YÊU CẦU BÁO GIÁ — Test Huu — 0378679633
+2026-06-26 22:51:04,354 [INFO] 📋 Quote: Test Huu - 0378679633 - Chong tham Munich
+2026-06-26 22:51:04,354 [INFO] 📋 Quote: Test Huu - 0378679633 - Chong tham Munich
+2026-06-26 22:51:04,355 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:04] "POST /api/quote HTTP/1.1" 200 -
+2026-06-26 22:51:04,355 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:04] "POST /api/quote HTTP/1.1" 200 -
