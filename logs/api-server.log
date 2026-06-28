@@ -122,3 +122,13 @@
 2026-06-26 22:51:04,354 [INFO] 📋 Quote: Test Huu - 0378679633 - Chong tham Munich
 2026-06-26 22:51:04,355 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:04] "POST /api/quote HTTP/1.1" 200 -
 2026-06-26 22:51:04,355 [INFO] 127.0.0.1 - - [26/Jun/2026 22:51:04] "POST /api/quote HTTP/1.1" 200 -
+2026-06-28 06:01:47,732 [INFO] 🚀 API Server starting on port 3001...
+2026-06-28 06:01:47,732 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-06-28 06:01:47,771 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-28 06:01:47,771 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-06-28 06:01:47,771 [INFO] [33mPress CTRL+C to quit[0m
+2026-06-28 06:01:47,771 [INFO] [33mPress CTRL+C to quit[0m
