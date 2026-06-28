@@ -979,3 +979,27 @@ Brand pages updated.
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Kova - Kova có gì nổi bật? Ưu điểm và ứng dụng thực tế
 ✅ Đã tạo: sika-sika-co-gi-noi-bat-uu-diem-va-ung-dung-thuc-te-2026-06-28.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+[2026-06-28 16:00:17] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-28 16:00:18] ✅ HTTP 200 OK
+[2026-06-28 16:00:18] ✅ index.html: 42008 bytes (>= 20KB)
+[2026-06-28 16:00:18] ✅ Có css/style.css
+[2026-06-28 16:00:18] ✅ Có js/products.js
+[2026-06-28 16:00:18] ✅ Có js/app.js
+[2026-06-28 16:00:18] ✅ Có 'Navigation menu'
+[2026-06-28 16:00:18] ✅ Có 'Khu vực sản phẩm'
+[2026-06-28 16:00:18] ✅ Có 'Footer'
+[2026-06-28 16:00:18] ✅ Có 'Nút liên hệ nổi'
+[2026-06-28 16:00:18] ✅ Có 'Form đặt hàng'
+[2026-06-28 16:00:18] ✅ Có 'Tiêu đề form Munich'
+[2026-06-28 16:00:18] ✅ Có 'Form báo giá'
+[2026-06-28 16:00:18] ✅ Có 'Đầu danh mục hãng'
+[2026-06-28 16:00:18] ✅ Blog: HTTP 200 OK
+[2026-06-28 16:00:18] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Sika - Sika có gì nổi bật? Ưu điểm và ứng dụng thực tế
+✅ Đã tạo: jotun-jotun-co-gi-noi-bat-uu-diem-va-ung-dung-thuc-te-2026-06-28.html
