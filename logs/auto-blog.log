@@ -1027,3 +1027,27 @@ Brand pages updated.
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Jotun - Jotun có gì nổi bật? Ưu điểm và ứng dụng thực tế
 ✅ Đã tạo: munich-mua-munich-o-dau-uy-tin-tai-hai-phong-2026-06-29.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+[2026-06-29 08:00:18] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-29 08:00:19] ✅ HTTP 200 OK
+[2026-06-29 08:00:19] ✅ index.html: 42008 bytes (>= 20KB)
+[2026-06-29 08:00:19] ✅ Có css/style.css
+[2026-06-29 08:00:19] ✅ Có js/products.js
+[2026-06-29 08:00:19] ✅ Có js/app.js
+[2026-06-29 08:00:19] ✅ Có 'Navigation menu'
+[2026-06-29 08:00:19] ✅ Có 'Khu vực sản phẩm'
+[2026-06-29 08:00:19] ✅ Có 'Footer'
+[2026-06-29 08:00:19] ✅ Có 'Nút liên hệ nổi'
+[2026-06-29 08:00:19] ✅ Có 'Form đặt hàng'
+[2026-06-29 08:00:19] ✅ Có 'Tiêu đề form Munich'
+[2026-06-29 08:00:19] ✅ Có 'Form báo giá'
+[2026-06-29 08:00:19] ✅ Có 'Đầu danh mục hãng'
+[2026-06-29 08:00:20] ✅ Blog: HTTP 200 OK
+[2026-06-29 08:00:20] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - mua Munich ở đâu uy tín tại Hải Phòng?
+✅ Đã tạo: nanohouse-mua-nanohouse-o-dau-uy-tin-tai-hai-phong-2026-06-29.html
