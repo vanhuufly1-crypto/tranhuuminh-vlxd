@@ -1,7 +1,7 @@
 #!/bin/bash
 # auto-blog.sh - Thợ quảng cáo tự động viết bài cho website
 # Chạy bởi cron, 5 lần/ngày
-# Thợ: llama3.2:3b (viết content) + shell script (deploy)
+# Thợ: deepseek-r1:7b (viết content) + shell script (deploy)
 
 set -e
 cd /home/huu-minh/website-vlxd
@@ -37,7 +37,7 @@ SLUG="$(echo "${BRAND}-${SUBTOPIC}" | iconv -t ascii//TRANSLIT 2>/dev/null || ec
 SLUG="$(echo "$SLUG" | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]' | sed 's/--*/-/g; s/^-//; s/-$//')"
 SLUG="${SLUG}-${TODAY}.html"
 
-# Tạo nội dung bằng llama3.2:3b (dùng API, tránh ANSI escape)
+# Tạo nội dung bằng deepseek-r1:7b (dùng API Ollama local)
 # Dùng Python gọi API Ollama + xử lý text sạch
 PARAGRAPHS=$(python3 << 'PYEOF'
 import json, urllib.request, re, sys
@@ -46,21 +46,24 @@ brand = """${BRAND}"""
 desc = """${DESC}"""
 subtopic = """${SUBTOPIC}"""
 
-prompt = f"""Em là nhân viên viết nội dung cho công ty vật liệu xây dựng. Hãy viết bài blog SEO tiếng Việt, khoảng 150-250 từ, chủ đề: '{subtopic}'.
+prompt = f"""Em là chuyên gia viết nội dung SEO cho công ty vật liệu xây dựng. Hãy viết bài blog tiếng Việt chất lượng cao, khoảng 300-500 từ, chủ đề: '{subtopic}'.
 
-Yêu cầu:
-- Viết tự nhiên, chuyên nghiệp, dễ đọc
-- Tập trung vào sản phẩm {desc}
+Yêu cầu chi tiết:
+- Viết tự nhiên, chuyên nghiệp, giọng văn thân thiện và đầy đủ thông tin
+- Tập trung chuyên sâu vào sản phẩm {desc}
+- Giải thích rõ lợi ích, tính năng nổi bật, ứng dụng thực tế
+- Đưa ra lời khuyên hữu ích cho người đọc (cách chọn, cách dùng, lưu ý khi mua)
+- Lồng ghép từ khóa một cách tự nhiên: {brand}, vật liệu xây dựng Hải Phòng, Trần Hữu Minh
 - Nhấn mạnh: Công ty TNHH XD & TM Hữu Minh có địa chỉ tại TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng
 - Kết thúc với: Hotline/Zalo: 0378.679.633 - Email: vanhuufly@gmail.com - Website: tranhuuminhvlxd.id.vn
 
-Viết liền mạch, không xuống dòng. KHÔNG thêm chú thích hay giải thích gì khác."""
+Viết liền mạch thành 3-5 đoạn văn (mỗi đoạn 80-120 từ). KHÔNG thêm tiêu đề phụ, chú thích hay giải thích gì khác ngoài nội dung bài viết."""
 
 payload = {
-    "model": "llama3.2:3b",
+    "model": "deepseek-r1:7b",
     "prompt": prompt,
     "stream": False,
-    "options": {"num_predict": 512, "temperature": 0.3}
+    "options": {"num_predict": 2048, "temperature": 0.7, "top_p": 0.9}
 }
 
 try:
@@ -77,22 +80,26 @@ except Exception:
 
 if text:
     text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
-    text = text.replace('\n', ' ')
+    # Xử lý text: giữ xuống dòng tự nhiên, loại bỏ markdown
+    text = text.replace('**', '').replace('__', '')
     text = re.sub(r'  +', ' ', text)
 
-    # Tách câu, gộp 2-3 câu thành đoạn
-    sentences = re.split(r'(?<=[.!?])\s+(?=[A-ZƯẤẵầậẫổộợờĐ])', text)
-    sentences = [s.strip() for s in sentences if s.strip()]
-
-    paragraphs = []
-    buf = []
-    for s in sentences:
-        buf.append(s)
-        if len(buf) >= 3 or s == sentences[-1]:
+    # Tách thành đoạn theo xuống dòng hoặc câu
+    if '\n' in text and not text.startswith('<p>'):
+        paragraphs = [p.strip() for p in text.split('\n') if p.strip()]
+    else:
+        # Tách câu, gộp 2-3 câu thành đoạn
+        sentences = re.split(r'(?<=[.!?])\s+', text)
+        sentences = [s.strip() for s in sentences if s.strip()]
+        paragraphs = []
+        buf = []
+        for s in sentences:
+            buf.append(s)
+            if len(buf) >= 3 or s == sentences[-1]:
+                paragraphs.append(' '.join(buf))
+                buf = []
+        if buf:
             paragraphs.append(' '.join(buf))
-            buf = []
-    if buf:
-        paragraphs.append(' '.join(buf))
 
     # Output <p> tags
     for p in paragraphs:
@@ -108,6 +115,49 @@ PYEOF
 TITLE=$(echo "$SUBTOPIC" | sed 's/^./\u&/')
 META_DESC="${BRAND} tại Hải Phòng - Công ty TNHH XD & TM Hữu Minh. ${SUBTOPIC}"
 
+# === JSON-LD Product Schema ===
+BRAND_LC="$(echo "$BRAND" | tr '[:upper:]' '[:lower:]')"
+case "$BRAND_LC" in
+  munich)    SCHEMA_NAME="Sơn và chống thấm Munich" ; SCHEMA_DESC="Chống thấm và sơn cao cấp Đức — NPP chính thức tại Hải Phòng" ;;
+  nanohouse) SCHEMA_NAME="Sơn giả đá và chống thấm Nanohouse" ; SCHEMA_DESC="Sơn giả đá và chống thấm Việt Nam — NPP chính thức" ;;
+  kova)      SCHEMA_NAME="Chống thấm Kova và phụ gia bê tông" ; SCHEMA_DESC="Sơn và chống thấm nổi tiếng Việt Nam — Đại lý chính thức" ;;
+  sika)      SCHEMA_NAME="Chống thấm và hóa chất xây dựng Sika" ; SCHEMA_DESC="Hóa chất xây dựng và chống thấm Thụy Sĩ — Đại lý chính thức" ;;
+  jotun)     SCHEMA_NAME="Sơn Jotun cao cấp" ; SCHEMA_DESC="Sơn Na Uy hàng đầu thế giới — Đại lý chính thức" ;;
+  dulux)     SCHEMA_NAME="Sơn Dulux cao cấp" ; SCHEMA_DESC="Sơn cao cấp Anh Quốc (AkzoNobel) — Đại lý chính thức" ;;
+  nippon)    SCHEMA_NAME="Sơn Nippon cao cấp" ; SCHEMA_DESC="Sơn Nhật Bản hàng đầu châu Á — Đại lý chính thức" ;;
+  *)         SCHEMA_NAME="Vật liệu xây dựng - ${BRAND}" ; SCHEMA_DESC="Sản phẩm ${BRAND} tại Hải Phòng" ;;
+esac
+
+SCHEMA_JSON=$(cat << JSONEOF
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "${SCHEMA_NAME}",
+  "description": "${SCHEMA_DESC}. ${SUBTOPIC}",
+  "brand": {
+    "@type": "Brand",
+    "name": "${BRAND}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "VND",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "CÔNG TY TNHH XD & TM HỮU MINH",
+      "address": "TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng",
+      "telephone": "0378679633"
+    }
+  }
+}
+</script>
+JSONEOF
+)
+
+# === Công ty info footer ===
+COMPANY_FOOTER="Công ty TNHH XD & TM HỮU MINH - MST: 0201961941 - Địa chỉ: TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng"
+
 cat > "${BLOG_DIR}/${SLUG}" << HTMLBLOCK
 <!DOCTYPE html>
 <html lang="vi">
@@ -115,10 +165,12 @@ cat > "${BLOG_DIR}/${SLUG}" << HTMLBLOCK
 <title>${TITLE} | Trần Hữu Minh - VLXD & Chống Thấm Hải Phòng</title>
 <meta name="description" content="${META_DESC}">
 <meta name="keywords" content="${BRAND}, ${SUBTOPIC}, VLXD Hải Phòng, chống thấm, Trần Hữu Minh">
+${SCHEMA_JSON}
 </head>
 <body style="font-family:Arial;max-width:800px;margin:auto;padding:20px;line-height:1.6;">
 <h1>${TITLE}</h1>
 ${PARAGRAPHS}
+<p><strong>${COMPANY_FOOTER}</strong></p>
 <h2>📞 Liên hệ mua hàng</h2>
 <p><strong>CÔNG TY TNHH XD & TM HỮU MINH</strong></p>
 <p>Địa chỉ: TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng</p>
@@ -242,6 +294,11 @@ if BRAND_KEY:
             f.write(html)
 PYEOF
 echo "Brand pages updated."
+
+# === PING GOOGLE ===
+echo "📡 Pinging Google..."
+curl -s "https://www.google.com/ping?sitemap=https://tranhuuminhvlxd.id.vn/sitemap.xml" > /dev/null 2>&1
+echo "✅ Google pinged"
 
 # === KIỂM TRA SAU DEPLOY ===
 ${SITES_DIR}/web-check.sh || echo "⚠️  Web-check phát hiện lỗi! Xem log để biết chi tiết."
