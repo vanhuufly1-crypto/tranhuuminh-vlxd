@@ -11,13 +11,15 @@ SITES_DIR="/home/huu-minh/website-vlxd"
 BLOG_DIR="${SITES_DIR}/blog"
 TODAY="$(date '+%Y-%m-%d')"
 
-# Topic tuỳ theo khung giờ
+# Topic tuỳ theo khung giờ (tránh khung cao điểm UTC+8: 9-12h, 14-18h)
+# Giờ an toàn UTC+7: 06, 07, 12, 18, 20
 case "$(date +%H)" in
-  08) BRAND="Munich";     ICON="🛡️"; DESC="sơn và chống thấm Munich" ;;
-  10) BRAND="Nanohouse";  ICON="🏡"; DESC="sơn giả đá và chống thấm Nanohouse" ;;
-  14) BRAND="Kova";       ICON="🏺"; DESC="chống thấm Kova và phụ gia bê tông" ;;
-  16) BRAND="Sika";       ICON="🧪"; DESC="chống thấm và hóa chất xây dựng Sika" ;;
+  06) BRAND="Munich";     ICON="🛡️"; DESC="sơn và chống thấm Munich" ;;
+  07) BRAND="Nanohouse";  ICON="🏡"; DESC="sơn giả đá và chống thấm Nanohouse" ;;
+  12) BRAND="Kova";       ICON="🏺"; DESC="chống thấm Kova và phụ gia bê tông" ;;
+  18) BRAND="Sika";       ICON="🧪"; DESC="chống thấm và hóa chất xây dựng Sika" ;;
   20) BRAND="Jotun";      ICON="🖌️"; DESC="sơn Jotun cao cấp" ;;
+  *) echo "⏰ Gio cao diem UTC+8: 9-12h, 14-18h. Bo qua."; exit 0 ;;
 esac
 
 # Chọn sub-topic theo ngày (xoay vòng)
