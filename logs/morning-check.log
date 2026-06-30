@@ -103,3 +103,18 @@
 ✅ Morning check hoan tat (2026-06-29 08:05)
    Pass: 7 | Fail: 0
    Log: /home/huu-minh/website-vlxd/logs/check.log
+[2026-06-30 08:16] === MORNING CHECK ===
+[2026-06-30 08:16] ✅ Blog: 1 bai hom nay
+[2026-06-30 08:16] ✅ Noi dung sach
+[2026-06-30 08:16] ✅ Web: HTTP 200
+[2026-06-30 08:16] ✅ Brands: 9 trang hien thi
+[2026-06-30 08:16] ✅ Gallery: OK
+[2026-06-30 08:16] ✅ SEO: meta tags OK
+[2026-06-30 08:16] ✅ GPU: 5790MB trong
+[2026-06-30 08:16] ✅ Disk: 15334MB trong
+[2026-06-30 08:16] ---
+[2026-06-30 08:16] 📊 Check: 7/7+0 pass | Loi: 0
+
+✅ Morning check hoan tat (2026-06-30 08:16)
+   Pass: 7 | Fail: 0
+   Log: /home/huu-minh/website-vlxd/logs/check.log
