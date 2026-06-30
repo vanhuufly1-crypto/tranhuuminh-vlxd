@@ -6,6 +6,34 @@
 set -e
 cd /home/huu-minh/website-vlxd
 
+# GPU Guard check — exit ngay neu GPU dang ban
+# Kiem tra lock file, Ollama model, GPU usage
+GPU_GUARD_LOG="${HOME}/.openclaw/workspace/gpu-guard.log"
+if [ -f "/tmp/gpu-guard.lock" ]; then
+  LOCK_PID=$(cat /tmp/gpu-guard.lock 2>/dev/null || echo "")
+  if [ -n "$LOCK_PID" ] && kill -0 "$LOCK_PID" 2>/dev/null; then
+    echo "[$(date '+%H:%M:%S')] [auto-blog] GPU ban: lock PID $LOCK_PID dang chay" | tee -a "$GPU_GUARD_LOG"
+    exit 1
+  fi
+  rm -f /tmp/gpu-guard.lock
+fi
+OLLAMA_LOADED=$(ollama ps 2>/dev/null | tail -n +2 | wc -l)
+if [ "$OLLAMA_LOADED" -gt 0 ]; then
+  echo "[$(date '+%H:%M:%S')] [auto-blog] GPU ban: Ollama dang co $OLLAMA_LOADED model(s)" | tee -a "$GPU_GUARD_LOG"
+  exit 1
+fi
+GPU_UTIL=$(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader 2>/dev/null | tr -d ' %' || echo "0")
+GPU_MEM=$(nvidia-smi --query-gpu=memory.used --format=csv,noheader 2>/dev/null | tr -d ' MiB' || echo "0")
+if [ "${GPU_UTIL:-0}" -gt 5 ]; then
+  echo "[$(date '+%H:%M:%S')] [auto-blog] GPU ban: util ${GPU_UTIL}%" | tee -a "$GPU_GUARD_LOG"
+  exit 1
+fi
+if [ "${GPU_MEM:-0}" -gt 500 ]; then
+  echo "[$(date '+%H:%M:%S')] [auto-blog] GPU ban: mem ${GPU_MEM}MB" | tee -a "$GPU_GUARD_LOG"
+  exit 1
+fi
+echo "[$(date '+%H:%M:%S')] [auto-blog] GPU ranh (util=${GPU_UTIL}% mem=${GPU_MEM}MB)" | tee -a "$GPU_GUARD_LOG"
+
 # === Cấu hình ===
 SITES_DIR="/home/huu-minh/website-vlxd"
 BLOG_DIR="${SITES_DIR}/blog"
@@ -48,7 +76,7 @@ brand = """${BRAND}"""
 desc = """${DESC}"""
 subtopic = """${SUBTOPIC}"""
 
-prompt = f"""Em là chuyên gia viết nội dung SEO cho công ty vật liệu xây dựng. Hãy viết bài blog tiếng Việt chất lượng cao, khoảng 300-500 từ, chủ đề: '{subtopic}'.
+prompt = f"""Em là chuyên gia viết nội dung SEO cho công ty vật liệu xây dựng. Hãy viết bài blog tiếng Việt chất lượng cao, khoảng 400-600 từ, chủ đề: '{subtopic}'.
 
 Yêu cầu chi tiết:
 - Viết tự nhiên, chuyên nghiệp, giọng văn thân thiện và đầy đủ thông tin
@@ -57,9 +85,10 @@ Yêu cầu chi tiết:
 - Đưa ra lời khuyên hữu ích cho người đọc (cách chọn, cách dùng, lưu ý khi mua)
 - Lồng ghép từ khóa một cách tự nhiên: {brand}, vật liệu xây dựng Hải Phòng, Trần Hữu Minh
 - Nhấn mạnh: Công ty TNHH XD & TM Hữu Minh có địa chỉ tại TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng
+- Lồng ghép ít nhất 1 lần tên quận/huyện cụ thể của Hải Phòng (ví dụ: Đồ Sơn, Ngô Quyền, Hồng Bàng, Lê Chân, Dương Kinh, Hải An, Kiến An, An Dương, Thủy Nguyên)
 - Kết thúc với: Hotline/Zalo: 0378.679.633 - Email: vanhuufly@gmail.com - Website: tranhuuminhvlxd.id.vn
 
-Viết liền mạch thành 3-5 đoạn văn (mỗi đoạn 80-120 từ). KHÔNG thêm tiêu đề phụ, chú thích hay giải thích gì khác ngoài nội dung bài viết."""
+Viết liền mạch thành 4-6 đoạn văn (mỗi đoạn 80-120 từ). KHÔNG thêm tiêu đề phụ, chú thích hay giải thích gì khác ngoài nội dung bài viết."""
 
 payload = {
     "model": "deepseek-r1:7b",
@@ -297,10 +326,13 @@ if BRAND_KEY:
 PYEOF
 echo "Brand pages updated."
 
-# === PING GOOGLE ===
+# === PING GOOGLE & GOOGLE SEARCH CONSOLE ===
 echo "📡 Pinging Google..."
 curl -s "https://www.google.com/ping?sitemap=https://tranhuuminhvlxd.id.vn/sitemap.xml" > /dev/null 2>&1
 echo "✅ Google pinged"
+echo "📡 Pinging Google Search Console..."
+curl -s "https://search.google.com/search-console/inspect?url=https://tranhuuminhvlxd.id.vn/blog/${SLUG}" > /dev/null 2>&1
+echo "✅ GSC pinged"
 
 # === KIỂM TRA SAU DEPLOY ===
 ${SITES_DIR}/web-check.sh || echo "⚠️  Web-check phát hiện lỗi! Xem log để biết chi tiết."

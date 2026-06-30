@@ -1165,3 +1165,28 @@ Brand pages updated.
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Munich - bảng giá Munich mới nhất tại Hải Phòng 2026
 ✅ Đã tạo: kova-bang-gia-kova-moi-nhat-tai-hai-phong-2026-2026-06-30.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+[2026-06-30 12:01:05] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-06-30 12:01:05] ✅ HTTP 200 OK
+[2026-06-30 12:01:05] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-06-30 12:01:05] ✅ Có css/style.css
+[2026-06-30 12:01:05] ✅ Có js/products.js
+[2026-06-30 12:01:05] ✅ Có js/app.js
+[2026-06-30 12:01:05] ✅ Có 'Navigation menu'
+[2026-06-30 12:01:05] ✅ Có 'Khu vực sản phẩm'
+[2026-06-30 12:01:05] ✅ Có 'Footer'
+[2026-06-30 12:01:05] ✅ Có 'Nút liên hệ nổi'
+[2026-06-30 12:01:05] ✅ Có 'Form đặt hàng'
+[2026-06-30 12:01:05] ✅ Có 'Tiêu đề form Munich'
+[2026-06-30 12:01:05] ✅ Có 'Form báo giá'
+[2026-06-30 12:01:05] ✅ Có 'Đầu danh mục hãng'
+[2026-06-30 12:01:06] ✅ Blog: HTTP 200 OK
+[2026-06-30 12:01:06] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Kova - bảng giá Kova mới nhất tại Hải Phòng 2026
