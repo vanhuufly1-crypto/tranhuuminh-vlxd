@@ -178,54 +178,66 @@ else
   log "⏭️  GPU ban - bo qua phan tich R1"
 fi
 
-# ===== 3. BRAND DEEP DIVE =====
+# ===== 3. KEYWORD-TARGETED BLOG POST =====
 log ""
-log "📝 BAI VIET CHUYEN SAU HOM NAY..."
+log "📝 BAI VIET TU KHOA HOM NAY..."
 
-# Rotate through 7 brands based on day of year
-BRAND_LIST=("Munich" "Nanohouse" "Kova" "Sika" "Jotun" "Dulux" "Nippon")
-BRAND_DESC=(
-  "son va chong tham Munich"
-  "son gia da va chong tham Nanohouse"
-  "chong tham Kova va phu gia be tong"
-  "chong tham va hoa chat xay dung Sika"
-  "son Jotun cao cap"
-  "son Dulux cao cap"
-  "son Nippon cao cap"
-)
-BRAND_ICON=("🛡️" "🏡" "🏺" "🧪" "🖌️" "🎨" "🇯🇵")
-BRAND_SLUG=("munich" "nanohouse" "kova" "sika" "jotun" "dulux" "nippon")
+# Try load keyword strategy brief
+KEYWORD_BRIEF="/tmp/seo-keyword-brief.json"
+if [ -f "$KEYWORD_BRIEF" ]; then
+  HEAD_KW=$(python3 -c "import json; d=json.load(open('$KEYWORD_BRIEF')); print(d.get('head_keyword',''))" 2>/dev/null || echo "")
+  TARGET_KWS=$(python3 -c "import json; d=json.load(open('$KEYWORD_BRIEF')); print('|'.join(d.get('target_keywords',[])))" 2>/dev/null || echo "")
+  CLUSTER=$(python3 -c "import json; d=json.load(open('$KEYWORD_BRIEF')); print(d.get('cluster','munich'))" 2>/dev/null || echo "munich")
+else
+  # Fallback: brand rotation
+  BRAND_LIST_S=("munich" "nanohouse" "kova" "sika" "jotun" "dulux" "nippon")
+  DAY_OF_YEAR=$(date +%j)
+  CLUSTER="${BRAND_LIST_S[$(( (10#$DAY_OF_YEAR) % 7 ))]}"
+  HEAD_KW=""
+  TARGET_KWS=""
+fi
 
-DAY_OF_YEAR=$(date +%j)
-BRAND_INDEX=$(( (10#$DAY_OF_YEAR) % 7 ))
-BRAND="${BRAND_LIST[$BRAND_INDEX]}"
-DESC="${BRAND_DESC[$BRAND_INDEX]}"
-ICON="${BRAND_ICON[$BRAND_INDEX]}"
-BRAND_LC="${BRAND_SLUG[$BRAND_INDEX]}"
+# Map cluster to brand info
+case "${CLUSTER}" in
+  munich) BRAND="Munich"; DESC="son va chong tham Munich"; ICON="🛡️"; BRAND_LC="munich" ;;
+  nanohouse|nano*) BRAND="Nanohouse"; DESC="son gia da va chong tham Nanohouse"; ICON="🏡"; BRAND_LC="nanohouse" ;;
+  kova) BRAND="Kova"; DESC="chong tham Kova va phu gia be tong"; ICON="🏺"; BRAND_LC="kova" ;;
+  sika) BRAND="Sika"; DESC="chong tham va hoa chat xay dung Sika"; ICON="🧪"; BRAND_LC="sika" ;;
+  jotun) BRAND="Jotun"; DESC="son Jotun cao cap"; ICON="🖌️"; BRAND_LC="jotun" ;;
+  dulux) BRAND="Dulux"; DESC="son Dulux cao cap"; ICON="🎨"; BRAND_LC="dulux" ;;
+  nippon) BRAND="Nippon"; DESC="son Nippon cao cap"; ICON="🇯🇵"; BRAND_LC="nippon" ;;
+  *) BRAND="VLXD"; DESC="vat lieu xay dung tai Hai Phong"; ICON="🏪"; BRAND_LC="vlxd" ;;
+esac
 
-log "🎯 Brand hom nay: ${ICON} ${BRAND} (xoay vong index ${BRAND_INDEX}/7)"
+# Build keyword-focused topic
+if [ -n "$HEAD_KW" ]; then
+  # Derive slug from keyword
+  DEEP_TOPIC=$(echo "${HEAD_KW}" | sed 's/ /-/g' | sed 's/[àáạảãâầấậẩẫăằắặẳẵ]/a/g; s/[èéẹẻẽêềếệểễ]/e/g; s/[ìíịỉĩ]/i/g; s/[òóọỏõôồốộổỗơờớợởỡ]/o/g; s/[ùúụủũưừứựửữ]/u/g; s/[ỳýỵỷỹ]/y/g; s/[đ]/d/g')
+  DEEP_TITLE_CASE=$(echo "${HEAD_KW}" | sed 's/^./\U&/')
+  log "🎯 Target keyword: ${HEAD_KW}"
+  if [ -n "$TARGET_KWS" ]; then
+    log "📌 Long-tail: $(echo $TARGET_KWS | tr '|' ', ')"
+  fi
+else
+  # Fallback: rotation topic
+  DEEP_TOPICS_F=(
+    "so-sanh-${BRAND_LC}-voi-doi-thu-cung-phan-khuc"
+    "danh-gia-chi-tiet-${BRAND_LC}-chat-luong-gia-thanh"
+    "kinh-nghiem-su-dung-${BRAND_LC}-hieu-qua"
+  )
+  DAY_OF_YEAR=$(date +%j)
+  SUB_INDEX=$(( (10#$DAY_OF_YEAR) % 3 ))
+  DEEP_TOPIC="${DEEP_TOPICS_F[$SUB_INDEX]}"
+  DEEP_TITLE_CASE=$(echo "${DEEP_TOPIC}" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
+fi
 
-# Deep topics for each brand
-DEEP_TOPICS=(
-  "so-sanh-${BRAND_LC}-voi-doi-thu-cung-phan-khuc"
-  "danh-gia-chi-tiet-${BRAND_LC}-chat-luong-gia-thanh"
-  "kinh-nghiem-su-dung-${BRAND_LC}-hieu-qua"
-  "${BRAND_LC}-co-phu-hop-voi-khi-hau-hai-phong"
-  "tai-sao-nen-chon-${BRAND_LC}-cho-cong-trinh"
-  "bao-tri-va-bao-quan-${BRAND_LC}-dung-cach"
-  "${BRAND_LC}-chinh-hang-phan-biet-that-gia"
-)
-SUB_INDEX=$(( (10#$DAY_OF_YEAR) % 7 ))
-DEEP_TOPIC="${DEEP_TOPICS[$SUB_INDEX]}"
+log "📖 Bai viet: ${DEEP_TITLE_CASE}"
 
-DEEP_TITLE_CASE=$(echo "${DEEP_TOPIC}" | sed 's/-/ /g' | sed 's/\b\(.\)/\u\1/g')
-
-log "📖 Chu de chuyen sau: ${DEEP_TOPIC}"
-
-# Generate deep article only if GPU is free
+# Generate article only if GPU is free
 if ! $gpu_busy; then
-  log "⚡ Dang tao bai viet chuyen sau..."
-  DEEP_SLUG="${DEEP_TOPIC}-${TODAY}.html"
+  log "⚡ Dang tao bai viet..."
+  DEEP_SLUG=$(echo "${DEEP_TOPIC}" | sed 's/[àáạảãâầấậẩẫăằắặẳẵ]/a/g; s/[èéẹẻẽêềếệểễ]/e/g; s/[ìíịỉĩ]/i/g; s/[òóọỏõôồốộổỗơờớợởỡ]/o/g; s/[ùúụủũưừứựửữ]/u/g; s/[ỳýỵỷỹ]/y/g; s/[đ]/d/g; s/ /-/g; s/[^a-zA-Z0-9-]//g')
+  DEEP_SLUG="${DEEP_SLUG}-${TODAY}.html"
   DEEP_FILE="${BLOG_DIR}/${DEEP_SLUG}"
 
   # Write Python generation script to temp file
@@ -240,7 +252,30 @@ brand_lc = "${BRAND_LC}"
 
 today = os.popen("date +%Y-%m-%d").read().strip()
 
-prompt = f"""Em la chuyen gia viet noi dung SEO chuyen sau cho cong ty vat lieu xay dung. Hay viet bai blog tieng Viet chat luong cao, 500-700 tu, chu de: '{topic_title} cho {brand}'.
+# Load target keywords from brief if available
+import json
+try:
+    with open('/tmp/seo-keyword-brief.json') as bf:
+        brief = json.load(bf)
+    head_kw = brief.get('head_keyword', '')
+    target_kws = '; '.join(brief.get('target_keywords', []))
+except:
+    head_kw = ''
+    target_kws = ''
+
+kw_instruction = ""
+if head_kw:
+    kw_instruction = f"""
+TU KHOA CHINH can tap trung: "{head_kw}"
+TU KHOA DANG LONG-TAIL can long ghep:
+{chr(10).join('- ' + kw for kw in brief.get('target_keywords', []))}
+
+Yeu cau bo sung:
+- Dua "{head_kw}" vao: tieu de (H1), doan mo dau, it nhat 2-3 lan trong than bai
+- Dat tu khoa o vi tri tu nhien, khong nhen nhot (keyword stuffing)
+- Long ghep it nhat 2 trong cac tu khoa long-tail vao noi dung"""
+
+prompt = f"""Em la chuyen gia viet noi dung SEO chuyen sau cho cong ty vat lieu xay dung. Hay viet bai blog tieng Viet chat luong cao, 500-700 tu, chu de: '{topic_title} cho {brand}'.{kw_instruction}
 
 Yeu cau chi tiet:
 - Viet tu nhien, chuyen nghiep, giong van than thien va day du thong tin
@@ -330,6 +365,15 @@ PYEOF
 <title>${DEEP_META}</title>
 <meta name="description" content="${DEEP_DESC}">
 <meta name="keywords" content="${BRAND}, ${DEEP_TOPIC}, VLXD Hai Phong, chong tham, Tran Huu Minh">
+<meta property="og:title" content="${DEEP_META}">
+<meta property="og:description" content="${DEEP_DESC}">
+<meta property="og:image" content="https://tranhuuminhvlxd.id.vn/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://tranhuuminhvlxd.id.vn/blog/${DEEP_SLUG}">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tranhuuminhvlxd.id.vn/images/og-image.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
