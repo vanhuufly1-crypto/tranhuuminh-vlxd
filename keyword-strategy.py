@@ -239,11 +239,24 @@ def main():
             print(f"  → {kw}")
         
         # Save brief for pipeline
+        matched = 'vlxd'
+        head_lower = head.lower()
+        cluster_map = {
+            'munich': 'munich', 'nanohouse': 'nanohouse', 'nano': 'nanohouse',
+            'kova': 'kova', 'sika': 'sika', 'jotun': 'jotun', 'dulux': 'dulux',
+            'nippon': 'nippon', 'toto': 'vlxd', 'inax': 'vlxd', 'caesar': 'vlxd',
+            'cotto': 'vlxd', 'cadivi': 'vlxd', 'panasonic': 'vlxd',
+            'rang dong': 'vlxd',
+        }
+        for key, val in cluster_map.items():
+            if key in head_lower:
+                matched = val
+                break
         brief_data = {
             "date": os.popen("date +%Y-%m-%d").read().strip(),
             "head_keyword": head,
             "target_keywords": kws[:3],
-            "cluster": head.split()[-1].lower() if len(head.split()) > 0 else ""
+            "cluster": matched
         }
         with open("/tmp/seo-keyword-brief.json", "w") as f:
             json.dump(brief_data, f, ensure_ascii=False)
