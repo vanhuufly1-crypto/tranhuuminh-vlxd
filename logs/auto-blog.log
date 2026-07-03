@@ -1607,3 +1607,33 @@ Brand pages updated.
 ✅ Deploy xong: Nanohouse - Nanohouse có gì nổi bật? Ưu điểm và ứng dụng thực tế
 [12:00:02] [auto-blog] GPU ranh (util=0% mem=103MB)
 ✅ Đã tạo: kova-kova-co-gi-noi-bat-uu-diem-va-ung-dung-thuc-te-2026-07-03.html
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/vanhuufly1-crypto/tranhuuminh-vlxd.git/'
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-03 12:00:50] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-03 12:00:51] ✅ HTTP 200 OK
+[2026-07-03 12:00:51] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-07-03 12:00:51] ✅ Có css/style.css
+[2026-07-03 12:00:51] ✅ Có js/products.js
+[2026-07-03 12:00:51] ✅ Có js/app.js
+[2026-07-03 12:00:51] ✅ Có 'Navigation menu'
+[2026-07-03 12:00:51] ✅ Có 'Khu vực sản phẩm'
+[2026-07-03 12:00:51] ✅ Có 'Footer'
+[2026-07-03 12:00:51] ✅ Có 'Nút liên hệ nổi'
+[2026-07-03 12:00:51] ✅ Có 'Form đặt hàng'
+[2026-07-03 12:00:51] ✅ Có 'Tiêu đề form Munich'
+[2026-07-03 12:00:51] ✅ Có 'Form báo giá'
+[2026-07-03 12:00:51] ✅ Có 'Đầu danh mục hãng'
+[2026-07-03 12:00:51] ✅ Blog: HTTP 200 OK
+[2026-07-03 12:00:51] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Kova - Kova có gì nổi bật? Ưu điểm và ứng dụng thực tế
+[18:00:01] [auto-blog] GPU ranh (util=0% mem=103MB)
+✅ Đã tạo: sika-sika-co-gi-noi-bat-uu-diem-va-ung-dung-thuc-te-2026-07-03.html
