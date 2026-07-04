@@ -86,3 +86,11 @@ Tunnel URL: https://thinks-paul-wood-televisions.trycloudflare.com
 2026-07-03T01:26:11Z INF Retrying connection in up to 16s connIndex=0 event=0 ip=198.41.192.47
 2026-07-03T01:26:11Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.47
 2026-07-03T01:26:12Z INF Registered tunnel connection connIndex=0 connection=0a330369-eba6-4ea2-a2da-69122ff59825 event=0 ip=198.41.192.47 location=hkg09 protocol=quic
+2026-07-04T01:15:22Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.6.1
+2026-07-04T01:26:14Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z ERR failed to serve tunnel connection error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z ERR Serve tunnel error error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.47
+2026-07-04T01:26:14Z INF Registered tunnel connection connIndex=0 connection=b32026f4-69da-49ef-bb4d-3b93b9df188f event=0 ip=198.41.192.47 location=hkg01 protocol=quic
