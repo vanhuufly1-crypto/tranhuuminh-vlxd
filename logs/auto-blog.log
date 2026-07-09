@@ -2477,3 +2477,31 @@ Brand pages updated.
 ✅ Deploy xong: Munich - mua Munich ở đâu uy tín tại Hải Phòng?
 [07:00:01] [auto-blog] GPU ranh (util=0% mem=71MB)
 ✅ Đã tạo: nanohouse-mua-nanohouse-o-dau-uy-tin-tai-hai-phong-2026-07-09.html
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/vanhuufly1-crypto/tranhuuminh-vlxd.git/'
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-09 07:01:21] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-09 07:01:22] ✅ HTTP 200 OK
+[2026-07-09 07:01:22] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-07-09 07:01:22] ✅ Có css/style.css
+[2026-07-09 07:01:22] ✅ Có js/products.js
+[2026-07-09 07:01:22] ✅ Có js/app.js
+[2026-07-09 07:01:22] ✅ Có 'Navigation menu'
+[2026-07-09 07:01:22] ✅ Có 'Khu vực sản phẩm'
+[2026-07-09 07:01:22] ✅ Có 'Footer'
+[2026-07-09 07:01:22] ✅ Có 'Nút liên hệ nổi'
+[2026-07-09 07:01:22] ✅ Có 'Form đặt hàng'
+[2026-07-09 07:01:22] ✅ Có 'Tiêu đề form Munich'
+[2026-07-09 07:01:22] ✅ Có 'Form báo giá'
+[2026-07-09 07:01:22] ✅ Có 'Đầu danh mục hãng'
+[2026-07-09 07:01:22] ✅ Blog: HTTP 200 OK
+[2026-07-09 07:01:22] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Nanohouse - mua Nanohouse ở đâu uy tín tại Hải Phòng?
