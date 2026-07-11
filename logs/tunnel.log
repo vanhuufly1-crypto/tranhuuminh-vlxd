@@ -293,3 +293,10 @@ Tunnel URL: https://caused-mat-pleasant-wiki.trycloudflare.com
 2026-07-10T16:47:12Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.193
 2026-07-10T16:47:13Z INF Registered tunnel connection connIndex=0 connection=3ca0787d-9cc6-4239-b9f1-535e969dcdac event=0 ip=198.41.200.193 location=hkg08 protocol=quic
 2026-07-10T23:02:45Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.7.1
+2026-07-11T16:46:30Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:30Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:30Z WRN failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:30Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:30Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:31Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.193
+2026-07-11T16:46:31Z INF Registered tunnel connection connIndex=0 connection=d3b4f73e-e56f-4f0b-a5b9-92d172096737 event=0 ip=198.41.200.193 location=hkg12 protocol=quic
