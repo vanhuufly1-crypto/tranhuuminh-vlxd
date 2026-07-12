@@ -2897,3 +2897,33 @@ Brand pages updated.
 ✅ Deploy xong: Jotun - hướng dẫn thi công Jotun đúng kỹ thuật, bền đẹp
 [06:00:01] [auto-blog] GPU ranh (util=0% mem=71MB)
 ✅ Đã tạo: munich-kinh-nghiem-chon-mua-munich-chinh-hang-tranh-hang-gia-2026-07-12.html
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/vanhuufly1-crypto/tranhuuminh-vlxd.git/'
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-12 06:01:04] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-12 06:01:04] ✅ HTTP 200 OK
+[2026-07-12 06:01:04] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-07-12 06:01:04] ✅ Có css/style.css
+[2026-07-12 06:01:04] ✅ Có js/products.js
+[2026-07-12 06:01:04] ✅ Có js/app.js
+[2026-07-12 06:01:04] ✅ Có 'Navigation menu'
+[2026-07-12 06:01:04] ✅ Có 'Khu vực sản phẩm'
+[2026-07-12 06:01:04] ✅ Có 'Footer'
+[2026-07-12 06:01:04] ✅ Có 'Nút liên hệ nổi'
+[2026-07-12 06:01:04] ✅ Có 'Form đặt hàng'
+[2026-07-12 06:01:04] ✅ Có 'Tiêu đề form Munich'
+[2026-07-12 06:01:04] ✅ Có 'Form báo giá'
+[2026-07-12 06:01:04] ✅ Có 'Đầu danh mục hãng'
+[2026-07-12 06:01:05] ✅ Blog: HTTP 200 OK
+[2026-07-12 06:01:05] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - kinh nghiệm chọn mua Munich chính hãng, tránh hàng giả
+[07:00:01] [auto-blog] GPU ranh (util=0% mem=107MB)
+✅ Đã tạo: nanohouse-kinh-nghiem-chon-mua-nanohouse-chinh-hang-tranh-hang-gia-2026-07-12.html
