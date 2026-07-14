@@ -3317,3 +3317,33 @@ Brand pages updated.
 ✅ Deploy xong: Sika - mua Sika ở đâu uy tín tại Hải Phòng?
 [20:00:01] [auto-blog] GPU ranh (util=0% mem=71MB)
 ✅ Đã tạo: jotun-mua-jotun-o-dau-uy-tin-tai-hai-phong-2026-07-14.html
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/vanhuufly1-crypto/tranhuuminh-vlxd.git/'
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-14 20:01:59] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-14 20:02:00] ✅ HTTP 200 OK
+[2026-07-14 20:02:00] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-07-14 20:02:00] ✅ Có css/style.css
+[2026-07-14 20:02:00] ✅ Có js/products.js
+[2026-07-14 20:02:00] ✅ Có js/app.js
+[2026-07-14 20:02:00] ✅ Có 'Navigation menu'
+[2026-07-14 20:02:00] ✅ Có 'Khu vực sản phẩm'
+[2026-07-14 20:02:00] ✅ Có 'Footer'
+[2026-07-14 20:02:00] ✅ Có 'Nút liên hệ nổi'
+[2026-07-14 20:02:00] ✅ Có 'Form đặt hàng'
+[2026-07-14 20:02:00] ✅ Có 'Tiêu đề form Munich'
+[2026-07-14 20:02:00] ✅ Có 'Form báo giá'
+[2026-07-14 20:02:00] ✅ Có 'Đầu danh mục hãng'
+[2026-07-14 20:02:00] ✅ Blog: HTTP 200 OK
+[2026-07-14 20:02:00] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Jotun - mua Jotun ở đâu uy tín tại Hải Phòng?
+[06:00:01] [auto-blog] GPU ranh (util=0% mem=71MB)
+✅ Đã tạo: munich-bang-gia-munich-moi-nhat-tai-hai-phong-2026-2026-07-15.html
