@@ -3737,3 +3737,33 @@ Brand pages updated.
 ✅ Deploy xong: Kova - kinh nghiệm chọn mua Kova chính hãng, tránh hàng giả
 [18:00:01] [auto-blog] GPU ranh (util=0% mem=179MB)
 ✅ Đã tạo: sika-kinh-nghiem-chon-mua-sika-chinh-hang-tranh-hang-gia-2026-07-17.html
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/vanhuufly1-crypto/tranhuuminh-vlxd.git/'
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-17 18:01:05] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-17 18:01:06] ✅ HTTP 200 OK
+[2026-07-17 18:01:06] ✅ index.html: 42049 bytes (>= 20KB)
+[2026-07-17 18:01:06] ✅ Có css/style.css
+[2026-07-17 18:01:06] ✅ Có js/products.js
+[2026-07-17 18:01:06] ✅ Có js/app.js
+[2026-07-17 18:01:06] ✅ Có 'Navigation menu'
+[2026-07-17 18:01:06] ✅ Có 'Khu vực sản phẩm'
+[2026-07-17 18:01:06] ✅ Có 'Footer'
+[2026-07-17 18:01:06] ✅ Có 'Nút liên hệ nổi'
+[2026-07-17 18:01:06] ✅ Có 'Form đặt hàng'
+[2026-07-17 18:01:06] ✅ Có 'Tiêu đề form Munich'
+[2026-07-17 18:01:06] ✅ Có 'Form báo giá'
+[2026-07-17 18:01:06] ✅ Có 'Đầu danh mục hãng'
+[2026-07-17 18:01:06] ✅ Blog: HTTP 200 OK
+[2026-07-17 18:01:06] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Sika - kinh nghiệm chọn mua Sika chính hãng, tránh hàng giả
+[20:00:02] [auto-blog] GPU ranh (util=0% mem=174MB)
+✅ Đã tạo: jotun-kinh-nghiem-chon-mua-jotun-chinh-hang-tranh-hang-gia-2026-07-17.html
