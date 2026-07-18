@@ -169,3 +169,4 @@ Tunnel URL: https://various-residential-change-wonderful.trycloudflare.com
 2026-07-17T07:06:24Z INF Retrying connection in up to 8s connIndex=0 event=0 ip=198.41.200.63
 2026-07-17T07:06:28Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.63
 2026-07-17T07:06:29Z INF Registered tunnel connection connIndex=0 connection=2a72eacc-2398-4333-84d6-28a4a9c36d98 event=0 ip=198.41.200.63 location=hkg11 protocol=quic
+2026-07-17T23:01:56Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.7.2
