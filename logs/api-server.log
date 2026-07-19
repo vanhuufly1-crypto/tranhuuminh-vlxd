@@ -176,3 +176,13 @@
 2026-07-15 03:46:36,555 [INFO] 127.0.0.1 - - [15/Jul/2026 03:46:36] "[33mHEAD / HTTP/1.1[0m" 404 -
 2026-07-15 03:46:36,826 [INFO] 127.0.0.1 - - [15/Jul/2026 03:46:36] "[33mHEAD / HTTP/1.1[0m" 404 -
 2026-07-15 03:46:36,826 [INFO] 127.0.0.1 - - [15/Jul/2026 03:46:36] "[33mHEAD / HTTP/1.1[0m" 404 -
+2026-07-19 06:02:22,118 [INFO] 🚀 API Server starting on port 3001...
+2026-07-19 06:02:22,118 [INFO] 🚀 API Server starting on port 3001...
+ * Serving Flask app 'api-server'
+ * Debug mode: off
+2026-07-19 06:02:22,137 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-07-19 06:02:22,137 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:3001
+2026-07-19 06:02:22,137 [INFO] [33mPress CTRL+C to quit[0m
+2026-07-19 06:02:22,137 [INFO] [33mPress CTRL+C to quit[0m
