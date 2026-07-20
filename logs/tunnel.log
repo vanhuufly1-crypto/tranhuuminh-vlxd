@@ -30,3 +30,11 @@ Tunnel URL: https://openings-ping-tiny-config.trycloudflare.com
 2026-07-18T23:04:18Z INF Retrying connection in up to 4s connIndex=0 event=0 ip=198.41.192.57
 2026-07-18T23:04:19Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.47
 2026-07-18T23:04:24Z INF Registered tunnel connection connIndex=0 connection=0540348d-5b44-4139-af1b-8153d697e19e event=0 ip=198.41.192.47 location=hkg01 protocol=quic
+2026-07-19T23:02:44Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.7.2
+2026-07-19T23:04:23Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.47
+2026-07-19T23:04:23Z INF Registered tunnel connection connIndex=0 connection=9dbce49b-3df7-43c6-bcd2-47d686900e71 event=0 ip=198.41.192.47 location=hkg09 protocol=quic
