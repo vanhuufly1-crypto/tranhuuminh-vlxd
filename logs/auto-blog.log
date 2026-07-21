@@ -4340,3 +4340,30 @@ Brand pages updated.
 ✅ Deploy xong: Sika - hướng dẫn thi công Sika đúng kỹ thuật, bền đẹp
 [20:00:01] [auto-blog] GPU ranh (util=0% mem=120MB)
 ✅ Đã tạo: jotun-huong-dan-thi-cong-jotun-dung-ky-thuat-ben-dep-2026-07-21.html
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-21 20:01:17] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-21 20:01:18] ✅ HTTP 200 OK
+[2026-07-21 20:01:18] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-07-21 20:01:18] ✅ Có css/style.css
+[2026-07-21 20:01:18] ✅ Có js/products.js
+[2026-07-21 20:01:18] ✅ Có js/app.js
+[2026-07-21 20:01:18] ✅ Có 'Navigation menu'
+[2026-07-21 20:01:18] ✅ Có 'Khu vực sản phẩm'
+[2026-07-21 20:01:18] ✅ Có 'Footer'
+[2026-07-21 20:01:18] ✅ Có 'Nút liên hệ nổi'
+[2026-07-21 20:01:18] ✅ Có 'Form đặt hàng'
+[2026-07-21 20:01:18] ✅ Có 'Tiêu đề form Munich'
+[2026-07-21 20:01:18] ✅ Có 'Form báo giá'
+[2026-07-21 20:01:18] ✅ Có 'Đầu danh mục hãng'
+[2026-07-21 20:01:18] ✅ Blog: HTTP 200 OK
+[2026-07-21 20:01:18] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Jotun - hướng dẫn thi công Jotun đúng kỹ thuật, bền đẹp
+[06:00:02] [auto-blog] GPU ranh (util=0% mem=120MB)
+✅ Đã tạo: munich-kinh-nghiem-chon-mua-munich-chinh-hang-tranh-hang-gia-2026-07-22.html
