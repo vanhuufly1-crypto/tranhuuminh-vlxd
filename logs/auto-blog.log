@@ -4367,3 +4367,30 @@ Brand pages updated.
 ✅ Deploy xong: Jotun - hướng dẫn thi công Jotun đúng kỹ thuật, bền đẹp
 [06:00:02] [auto-blog] GPU ranh (util=0% mem=120MB)
 ✅ Đã tạo: munich-kinh-nghiem-chon-mua-munich-chinh-hang-tranh-hang-gia-2026-07-22.html
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-22 06:00:39] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-22 06:00:40] ✅ HTTP 200 OK
+[2026-07-22 06:00:40] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-07-22 06:00:40] ✅ Có css/style.css
+[2026-07-22 06:00:40] ✅ Có js/products.js
+[2026-07-22 06:00:40] ✅ Có js/app.js
+[2026-07-22 06:00:40] ✅ Có 'Navigation menu'
+[2026-07-22 06:00:40] ✅ Có 'Khu vực sản phẩm'
+[2026-07-22 06:00:40] ✅ Có 'Footer'
+[2026-07-22 06:00:40] ✅ Có 'Nút liên hệ nổi'
+[2026-07-22 06:00:40] ✅ Có 'Form đặt hàng'
+[2026-07-22 06:00:40] ✅ Có 'Tiêu đề form Munich'
+[2026-07-22 06:00:40] ✅ Có 'Form báo giá'
+[2026-07-22 06:00:40] ✅ Có 'Đầu danh mục hãng'
+[2026-07-22 06:00:40] ✅ Blog: HTTP 200 OK
+[2026-07-22 06:00:40] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - kinh nghiệm chọn mua Munich chính hãng, tránh hàng giả
+[07:00:01] [auto-blog] GPU ranh (util=0% mem=120MB)
+✅ Đã tạo: nanohouse-kinh-nghiem-chon-mua-nanohouse-chinh-hang-tranh-hang-gia-2026-07-22.html
