@@ -4695,3 +4695,11 @@ Brand pages updated.
 
 ✅ WEB-CHECK: OK
 ✅ Deploy xong: Nanohouse - mua Nanohouse ở đâu uy tín tại Hải Phòng?
+auto-blog.sh: line 27: [: FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173: integer expected
+auto-blog.sh: line 31: [: FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173: integer expected
+[12:00:01] [auto-blog] GPU ranh (util=FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173MB)
+✅ Đã tạo: kova-mua-kova-o-dau-uy-tin-tai-hai-phong-2026-07-24.html
