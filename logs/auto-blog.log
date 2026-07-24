@@ -4637,3 +4637,36 @@ Brand pages updated.
 ✅ Deploy xong: Jotun - Jotun có gì nổi bật? Ưu điểm và ứng dụng thực tế
 [06:00:01] [auto-blog] GPU ranh (util=0% mem=120MB)
 ✅ Đã tạo: munich-mua-munich-o-dau-uy-tin-tai-hai-phong-2026-07-24.html
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-24 06:00:45] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-24 06:00:45] ✅ HTTP 200 OK
+[2026-07-24 06:00:45] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-07-24 06:00:45] ✅ Có css/style.css
+[2026-07-24 06:00:45] ✅ Có js/products.js
+[2026-07-24 06:00:45] ✅ Có js/app.js
+[2026-07-24 06:00:45] ✅ Có 'Navigation menu'
+[2026-07-24 06:00:45] ✅ Có 'Khu vực sản phẩm'
+[2026-07-24 06:00:45] ✅ Có 'Footer'
+[2026-07-24 06:00:45] ✅ Có 'Nút liên hệ nổi'
+[2026-07-24 06:00:45] ✅ Có 'Form đặt hàng'
+[2026-07-24 06:00:45] ✅ Có 'Tiêu đề form Munich'
+[2026-07-24 06:00:45] ✅ Có 'Form báo giá'
+[2026-07-24 06:00:45] ✅ Có 'Đầu danh mục hãng'
+[2026-07-24 06:00:46] ✅ Blog: HTTP 200 OK
+[2026-07-24 06:00:46] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - mua Munich ở đâu uy tín tại Hải Phòng?
+auto-blog.sh: line 27: [: FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173: integer expected
+auto-blog.sh: line 31: [: FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173: integer expected
+[07:00:01] [auto-blog] GPU ranh (util=FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173MB)
+✅ Đã tạo: nanohouse-mua-nanohouse-o-dau-uy-tin-tai-hai-phong-2026-07-24.html
