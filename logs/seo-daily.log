@@ -2836,3 +2836,72 @@ Updated /home/huu-minh/website-vlxd/brands/kova.html
 [2026-07-24 09:05:08] ✅ SEO DAILY HOAN TAT — 2026-07-24
 [2026-07-24 09:05:08] ============================================
 [2026-07-24 09:05:08] ============================================
+[2026-07-25 09:00:01] ============================================
+[2026-07-25 09:00:01] ============================================
+[2026-07-25 09:00:01] 🚀 SEO DAILY START — 2026-07-25
+[2026-07-25 09:00:01] 🚀 SEO DAILY START — 2026-07-25
+[2026-07-25 09:00:01] ============================================
+[2026-07-25 09:00:01] ============================================
+[2026-07-25 09:00:01] 🔍 Kiem tra GPU...
+[2026-07-25 09:00:01] 🔍 Kiem tra GPU...
+seo-daily.sh: line 59: [: FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173
+0: integer expected
+seo-daily.sh: line 62: [: FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173
+0: integer expected
+[2026-07-25 09:00:01] ✅ GPU ranh (util=FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173
+0% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173
+0MB)
+[2026-07-25 09:00:01] ✅ GPU ranh (util=FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173
+0% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173
+0MB)
+[2026-07-25 09:00:01] 
+[2026-07-25 09:00:01] 
+[2026-07-25 09:00:01] 📊 PHAN TICH SEO...
+[2026-07-25 09:00:01] 📊 PHAN TICH SEO...
+[2026-07-25 09:00:01] 📝 So blog posts: 244
+[2026-07-25 09:00:01] 📝 So blog posts: 244
+[2026-07-25 09:00:01] 🗺️  Sitemap: 250 URLs, 57926 bytes, lastmod 2026-07-24
+[2026-07-25 09:00:01] 🗺️  Sitemap: 250 URLs, 57926 bytes, lastmod 2026-07-24
+[2026-07-25 09:00:01] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-07-25 09:00:01] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-07-25 09:00:01] 🧠 Goi R1 phan tich SEO...
+[2026-07-25 09:00:01] 🧠 Goi R1 phan tich SEO...
+[2026-07-25 09:02:01] 📋 Phan tich R1:
+[2026-07-25 09:02:01] 📋 Phan tich R1:
+[2026-07-25 09:02:01]    (Khong the phan tich: timed out)
+[2026-07-25 09:02:01]    (Khong the phan tich: timed out)
+[2026-07-25 09:02:01] 
+[2026-07-25 09:02:01] 
+[2026-07-25 09:02:01] 📝 BAI VIET TU KHOA HOM NAY...
+[2026-07-25 09:02:01] 📝 BAI VIET TU KHOA HOM NAY...
+[2026-07-25 09:02:01] 📖 Bai viet: Kinh Nghiem Su Dung Sika Hieu Qua
+[2026-07-25 09:02:01] 📖 Bai viet: Kinh Nghiem Su Dung Sika Hieu Qua
+[2026-07-25 09:02:01] ⚡ Dang tao bai viet...
+[2026-07-25 09:02:01] ⚡ Dang tao bai viet...
+[2026-07-25 09:05:01] ✅ Da tao bai viet chuyen sau: kinh-nghiem-su-dung-sika-hieu-qua-2026-07-25.html
+[2026-07-25 09:05:01] ✅ Da tao bai viet chuyen sau: kinh-nghiem-su-dung-sika-hieu-qua-2026-07-25.html
+[2026-07-25 09:05:01] ✅ Da cap nhat blog index
+[2026-07-25 09:05:01] ✅ Da cap nhat blog index
+Updated /home/huu-minh/website-vlxd/brands/sika.html
+[2026-07-25 09:05:01] ✅ Da cap nhat brand page: sika.html
+[2026-07-25 09:05:01] ✅ Da cap nhat brand page: sika.html
+[2026-07-25 09:05:01] 
+[2026-07-25 09:05:01] 
+[2026-07-25 09:05:01] 🗺️  TAO LAI SITEMAP...
+[2026-07-25 09:05:01] 🗺️  TAO LAI SITEMAP...
+[2026-07-25 09:05:04]    🔧 Đang tạo sitemap.xml...
+[2026-07-25 09:05:04]    🔧 Đang tạo sitemap.xml...
+[2026-07-25 09:05:04]    ✅ Đã tạo sitemap.xml với 256 URL
+[2026-07-25 09:05:04]    ✅ Đã tạo sitemap.xml với 256 URL
+[2026-07-25 09:05:04] ✅ Sitemap da duoc tao lai
+[2026-07-25 09:05:04] ✅ Sitemap da duoc tao lai
+[2026-07-25 09:05:04] 
+[2026-07-25 09:05:04] 
+[2026-07-25 09:05:04] 📤 GIT PUSH...
+[2026-07-25 09:05:04] 📤 GIT PUSH...
