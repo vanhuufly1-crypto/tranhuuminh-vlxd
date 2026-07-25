@@ -4901,3 +4901,36 @@ NVLlbraryverson:580.173: integer expected
 NVMLlibraryversion:580.173% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
 NVLlbraryverson:580.173MB)
 ✅ Đã tạo: sika-bang-gia-sika-moi-nhat-tai-hai-phong-2026-2026-07-25.html
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-25 18:02:05] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-25 18:02:05] ✅ HTTP 200 OK
+[2026-07-25 18:02:05] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-07-25 18:02:05] ✅ Có css/style.css
+[2026-07-25 18:02:05] ✅ Có js/products.js
+[2026-07-25 18:02:05] ✅ Có js/app.js
+[2026-07-25 18:02:05] ✅ Có 'Navigation menu'
+[2026-07-25 18:02:05] ✅ Có 'Khu vực sản phẩm'
+[2026-07-25 18:02:05] ✅ Có 'Footer'
+[2026-07-25 18:02:05] ✅ Có 'Nút liên hệ nổi'
+[2026-07-25 18:02:05] ✅ Có 'Form đặt hàng'
+[2026-07-25 18:02:05] ✅ Có 'Tiêu đề form Munich'
+[2026-07-25 18:02:05] ✅ Có 'Form báo giá'
+[2026-07-25 18:02:05] ✅ Có 'Đầu danh mục hãng'
+[2026-07-25 18:02:06] ✅ Blog: HTTP 200 OK
+[2026-07-25 18:02:06] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Sika - bảng giá Sika mới nhất tại Hải Phòng 2026
+auto-blog.sh: line 27: [: FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173: integer expected
+auto-blog.sh: line 31: [: FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173: integer expected
+[20:00:01] [auto-blog] GPU ranh (util=FailedtoinitializeNVML:Driver/libraryversionmismatch
+NVMLlibraryversion:580.173% mem=FaledtontalzeNVL:Drver/lbraryversonmsmatch
+NVLlbraryverson:580.173MB)
+✅ Đã tạo: jotun-bang-gia-jotun-moi-nhat-tai-hai-phong-2026-2026-07-25.html
