@@ -25,3 +25,6 @@ Tunnel URL: https://api.trycloudflare.com
 [Sun Jul 19 06:02:41 +07 2026] Starting tunnel...
 Tunnel URL: https://openings-ping-tiny-config.trycloudflare.com
 ✅ Updated api-config.js with https://openings-ping-tiny-config.trycloudflare.com
+[Sun Jul 26 06:03:22 AM +07 2026] Starting tunnel...
+Tunnel URL: https://portion-stats-hostels-major.trycloudflare.com
+✅ Updated api-config.js with https://portion-stats-hostels-major.trycloudflare.com
