@@ -5554,3 +5554,30 @@ Brand pages updated.
 ✅ Deploy xong: Jotun - bảng giá Jotun mới nhất tại Hải Phòng 2026
 [06:00:01] [auto-blog] GPU ranh (util=0% mem=76MB)
 ✅ Đã tạo: munich-huong-dan-thi-cong-munich-dung-ky-thuat-ben-dep-2026-07-31.html
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-07-31 06:00:52] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-07-31 06:00:52] ✅ HTTP 200 OK
+[2026-07-31 06:00:52] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-07-31 06:00:52] ✅ Có css/style.css
+[2026-07-31 06:00:52] ✅ Có js/products.js
+[2026-07-31 06:00:52] ✅ Có js/app.js
+[2026-07-31 06:00:52] ✅ Có 'Navigation menu'
+[2026-07-31 06:00:52] ✅ Có 'Khu vực sản phẩm'
+[2026-07-31 06:00:52] ✅ Có 'Footer'
+[2026-07-31 06:00:52] ✅ Có 'Nút liên hệ nổi'
+[2026-07-31 06:00:52] ✅ Có 'Form đặt hàng'
+[2026-07-31 06:00:52] ✅ Có 'Tiêu đề form Munich'
+[2026-07-31 06:00:52] ✅ Có 'Form báo giá'
+[2026-07-31 06:00:52] ✅ Có 'Đầu danh mục hãng'
+[2026-07-31 06:00:53] ✅ Blog: HTTP 200 OK
+[2026-07-31 06:00:53] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Munich - hướng dẫn thi công Munich đúng kỹ thuật, bền đẹp
+[07:00:02] [auto-blog] GPU ranh (util=0% mem=71MB)
+✅ Đã tạo: nanohouse-huong-dan-thi-cong-nanohouse-dung-ky-thuat-ben-dep-2026-07-31.html
