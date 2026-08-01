@@ -99,3 +99,4 @@ Tunnel URL: https://neil-interest-election-hwy.trycloudflare.com
 2026-07-31T14:19:56Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.57
 2026-07-31T14:19:57Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.57
 2026-07-31T14:19:57Z INF Registered tunnel connection connIndex=0 connection=7b0e6a21-9a8e-405f-a949-54e693f71443 event=0 ip=198.41.192.57 location=hkg01 protocol=quic
+2026-08-01T12:41:58Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.7.3
