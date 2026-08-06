@@ -5938,3 +5938,32 @@ Brand pages updated.
 ✅ Deploy xong: Sika - kinh nghiệm chọn mua Sika chính hãng, tránh hàng giả
 [20:00:02] [auto-blog] GPU ranh (util=0% mem=144MB)
 ✅ Đã tạo: jotun-kinh-nghiem-chon-mua-jotun-chinh-hang-tranh-hang-gia-2026-08-02.html
+fatal: could not read Username for 'https://github.com': No such device or address
+⚠️ Push may have failed, will retry next time
+Cap nhat brand pages...
+Brand pages updated.
+📡 Pinging Google...
+✅ Google pinged
+📡 Pinging Google Search Console...
+✅ GSC pinged
+[2026-08-02 20:01:17] 🔍 Kiểm tra website: https://tranhuuminhvlxd.id.vn
+[2026-08-02 20:01:18] ✅ HTTP 200 OK
+[2026-08-02 20:01:18] ✅ index.html: 44735 bytes (>= 20KB)
+[2026-08-02 20:01:18] ✅ Có css/style.css
+[2026-08-02 20:01:18] ✅ Có js/products.js
+[2026-08-02 20:01:18] ✅ Có js/app.js
+[2026-08-02 20:01:18] ✅ Có 'Navigation menu'
+[2026-08-02 20:01:18] ✅ Có 'Khu vực sản phẩm'
+[2026-08-02 20:01:18] ✅ Có 'Footer'
+[2026-08-02 20:01:18] ✅ Có 'Nút liên hệ nổi'
+[2026-08-02 20:01:18] ✅ Có 'Form đặt hàng'
+[2026-08-02 20:01:18] ✅ Có 'Tiêu đề form Munich'
+[2026-08-02 20:01:18] ✅ Có 'Form báo giá'
+[2026-08-02 20:01:18] ✅ Có 'Đầu danh mục hãng'
+[2026-08-02 20:01:18] ✅ Blog: HTTP 200 OK
+[2026-08-02 20:01:18] 🎉 OK — website hoạt động bình thường
+
+✅ WEB-CHECK: OK
+✅ Deploy xong: Jotun - kinh nghiệm chọn mua Jotun chính hãng, tránh hàng giả
+[12:00:01] [auto-blog] GPU ranh (util=0% mem=115MB)
+✅ Đã tạo: kova-huong-dan-thi-cong-kova-dung-ky-thuat-ben-dep-2026-08-06.html
