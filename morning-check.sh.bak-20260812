@@ -93,7 +93,10 @@ log "---"
 log "📊 Check: $check/${check}+$fail pass | Loi: $fail"
 if [ "$fail" -gt 0 ]; then
     log "⚠️  CO LOI, dang tu dong fix..."
-    # KHOÁ 2026-08-12: khong goi auto-blog (tho local) nua
+    # Neu bi loi blog -> chay lai
+    if [ "$COUNT" -lt 1 ]; then
+        cd "$SITES_DIR" && bash auto-blog.sh 2>/dev/null && log "✅ Auto-fix: chay lai blog"
+    fi
 fi
 
 echo ""

@@ -7,7 +7,6 @@
 # 5. Ping Google
 # 6. Ghi log vào logs/seo-daily.log
 
-SKIP_LOCAL_BLOG="${SKIP_LOCAL_BLOG:-1}"  # KHOÁ thợ local viết blog (2026-08-12)
 set -euo pipefail
 
 BASE_DIR="/home/huu-minh/website-vlxd"
@@ -179,8 +178,7 @@ else
   log "⏭️  GPU ban - bo qua phan tich R1"
 fi
 
-# ===== 3. KEYWORD-TARGETED BLOG POST (KHOÁ: R1 local không viết blog - 2026-08-12) =====
-if [ "$SKIP_LOCAL_BLOG" != "1" ]; then
+# ===== 3. KEYWORD-TARGETED BLOG POST =====
 log ""
 log "📝 BAI VIET TU KHOA HOM NAY..."
 
@@ -488,7 +486,6 @@ else
   log "⏭️  GPU ban - bo qua bai viet chuyen sau"
 fi
 
-fi
 # ===== 4. REGENERATE SITEMAP =====
 log ""
 log "🗺️  TAO LAI SITEMAP..."
