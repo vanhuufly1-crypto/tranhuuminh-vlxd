@@ -19,7 +19,7 @@ if re.search(r'\b(\w{3,})\b(?:\s+\1){2,}', s): errors.append("lặp từ")
 text = re.sub(r'<[^>]+>', ' ', s); text = re.sub(r'\s+', ' ', text).strip()
 if len(text) < 1500: errors.append(f"quá ngắn ({len(text)} ký tự)")
 if "0378.679.633" not in s: errors.append("thiếu hotline")
-if "TRẦN HỮU MINH" not in s.upper() and "HỮU MINH" not in s.upper(): errors.append("thiếu tên công ty")
+if "TRẦN HỮU MINH" not in s.upper(): errors.append("thiếu tên công ty")
 if errors:
     print("FAIL | " + " | ".join(errors)); sys.exit(1)
 print("PASS")

@@ -176,7 +176,7 @@ SCHEMA_JSON=$(cat << JSONEOF
     "availability": "https://schema.org/InStock",
     "seller": {
       "@type": "Organization",
-      "name": "CÔNG TY TNHH XD & TM HỮU MINH",
+      "name": "CÔNG TY TNHH XD & TM TRẦN HỮU MINH",
       "address": "TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng",
       "telephone": "0378679633"
     }
@@ -187,7 +187,7 @@ JSONEOF
 )
 
 # === Công ty info footer ===
-COMPANY_FOOTER="Công ty TNHH XD & TM HỮU MINH - MST: 0201961941 - Địa chỉ: TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng"
+COMPANY_FOOTER="Công ty TNHH XD & TM TRẦN HỮU MINH - MST: 0201961941 - Địa chỉ: TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng"
 
 cat > "${BLOG_DIR}/${SLUG}" << HTMLBLOCK
 <!DOCTYPE html>
@@ -203,7 +203,7 @@ ${SCHEMA_JSON}
 ${PARAGRAPHS}
 <p><strong>${COMPANY_FOOTER}</strong></p>
 <h2>📞 Liên hệ mua hàng</h2>
-<p><strong>CÔNG TY TNHH XD & TM HỮU MINH</strong></p>
+<p><strong>CÔNG TY TNHH XD & TM TRẦN HỮU MINH</strong></p>
 <p>Địa chỉ: TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng</p>
 <p><strong>Hotline/Zalo: 0378.679.633</strong></p>
 <p>Email: vanhuufly@gmail.com</p>
