@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hồ sơ năng lực — Công ty TNHH XD &amp; TM Trần Hữu Minh</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, "Noto Sans", sans-serif;
+    color: #2b2f36;
+    background: #dfe3e8;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 11mm 13mm 12mm 13mm;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: linear-gradient(135deg, #082f5c 0%, #0f4d8f 55%, #1a6dc2 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 22px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(8,47,92,0.25);
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    right: -30px; top: -30px;
+    width: 150px; height: 150px;
+    border: 3px solid rgba(255,255,255,0.12);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(to right, #f0a500, #f7c948);
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #f0d9a8;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding: 2px 12px;
+    margin-bottom: 7px;
+  }
+  .header h1 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    line-height: 1.15;
+  }
+  .header .role {
+    font-size: 11.5px;
+    color: #9fc6ee;
+    margin-top: 1px;
+  }
+  .header h2 {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #eaf3fc;
+    margin-top: 7px;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 11px;
+  }
+  .pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 10.5px;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .pill b { font-weight: 600; color: #ffd98a; }
+
+  /* ===== SECTIONS ===== */
+  .section { margin-top: 11px; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    color: #0b3a6f;
+    margin-bottom: 7px;
+  }
+  .section-title .bar {
+    width: 5px; height: 15px;
+    background: #f0a500;
+    border-radius: 2px;
+  }
+  .section-title .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, #cfd8e2, transparent);
+  }
+
+  .addr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 10px;
+  }
+  .addr-item {
+    display: flex;
+    gap: 9px;
+    background: #f5f7fa;
+    border: 1px solid #e8edf2;
+    border-radius: 8px;
+    padding: 7px 11px;
+    align-items: center;
+  }
+  .addr-item .ic {
+    width: 26px; height: 26px;
+    flex: 0 0 26px;
+    border-radius: 50%;
+    background: #0b3a6f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  .addr-item .label {
+    display: block;
+    font-size: 8.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #7a8694;
+  }
+  .addr-item .value { font-size: 11px; font-weight: 600; color: #2b2f36; line-height: 1.35; }
+
+  .brand-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px 10px;
+  }
+  .brand-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #f8fafc;
+    border: 1px solid #e3e8ee;
+    border-left: 3px solid #1a6dc2;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+  .brand-item .dot { color: #1a6dc2; font-size: 9px; }
+  .brand-item b { color: #0b3a6f; }
+  .brand-item .tag {
+    display: inline-block;
+    background: #f0a500;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    padding: 1px 7px;
+    margin-left: auto;
+  }
+
+  .field-box {
+    background: linear-gradient(135deg, #eef4fb, #e2ecf7);
+    border: 1px solid #cfe0f0;
+    border-left: 4px solid #1a6dc2;
+    border-radius: 8px;
+    padding: 8px 13px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0b3a6f;
+  }
+
+  .connect ul {
+    list-style: none;
+    margin: 4px 0 6px 0;
+  }
+  .connect ul li {
+    font-size: 11.5px;
+    padding-left: 15px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+  .connect ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 2px;
+    color: #f0a500;
+    font-weight: 700;
+  }
+  .connect p { font-size: 11.5px; text-align: justify; }
+
+  /* ===== PHOTOS ===== */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
+  }
+  .photo {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e8edf2;
+    box-shadow: 0 2px 6px rgba(11,58,111,0.12);
+    background: #f0f3f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b98a6;
+    font-size: 9.5px;
+    text-align: center;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .footer-note {
+    margin-top: 10px;
+    font-size: 9.5px;
+    color: #8b98a6;
+    text-align: center;
+    border-top: 1px solid #e3e8ee;
+    padding-top: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== PAGE 2 GALLERY ===== */
+  .page + .page { page-break-before: always; }
+  .gallery-header {
+    background: linear-gradient(135deg, #082f5c, #1a6dc2);
+    border-radius: 10px;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+  .gallery-header h3 { font-size: 16px; letter-spacing: 1.5px; }
+  .gallery-header span { font-size: 10px; color: #9fc6ee; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .gallery-grid .photo {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #e8edf2;
+    box-shadow: 0 2px 8px rgba(11,58,111,0.15);
+    background: #f0f3f6;
+  }
+  .gallery-grid .photo img { width: 100%; height: 100%; object-fit: cover; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="badge">Hồ sơ năng lực công ty</span>
+    <h1>TRẦN VĂN HỮU</h1>
+    <div class="role">Giám đốc</div>
+    <h2>CÔNG TY TNHH XD &amp; TM TRẦN HỮU MINH</h2>
+    <div class="contact">
+      <span class="pill">📞 <b>0378.679.633</b> (Zalo)</span>
+      <span class="pill">✉️ <b>vanhuufly@gmail.com</b></span>
+      <span class="pill">🌐 <b>tranhuuminhvlxd.id.vn</b></span>
+    </div>
+  </div>
+
+  <!-- TRỤ SỞ -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>Trụ sở &amp; Đăng ký kinh doanh<span class="line"></span></div>
+    <div class="addr-grid">
+      <div class="addr-item">
+        <span class="ic">📍</span>
+        <div><span class="label">Trụ sở</span><span class="value">TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng</span></div>
+      </div>
+      <div class="addr-item">
+        <span class="ic">🗂️</span>
+        <div><span class="label">ĐKKD 01</span><span class="value">1434 Phạm Văn Đồng, Nam Đồ Sơn, Hải Phòng</span></div>
+      </div>
+      <div class="addr-item">
+        <span class="ic">🗂️</span>
+        <div><span class="label">ĐKKD 02</span><span class="value">Thôn Hà Hương, Xã Vĩnh Hoà, Hải Phòng</span></div>
+      </div>
+      <div class="addr-item">
+        <span class="ic">🕗</span>
+        <div><span class="label">Giờ làm việc</span><span class="value">Thứ 2 – Thứ 7: 07:30 – 17:00</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THƯƠNG HIỆU -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>Thương hiệu phân phối<span class="line"></span></div>
+    <div class="brand-grid">
+      <div class="brand-item"><span class="dot">■</span><b>Munich</b> — Nhà phân phối <span class="tag">NPP</span></div>
+      <div class="brand-item"><span class="dot">■</span><b>Nanohouse</b> — Nhà phân phối <span class="tag">NPP</span></div>
+      <div class="brand-item"><span class="dot">■</span><b>Sơn:</b> Jotun, Dulux, Kova, Sika</div>
+      <div class="brand-item"><span class="dot">■</span><b>Chống thấm:</b> Munich, Sika, Kova</div>
+      <div class="brand-item"><span class="dot">■</span><b>Sơn công nghiệp, sơn epoxy, Hoá chất xây dựng</b></div>
+      <div class="brand-item"><span class="dot">■</span><b>Thiết bị vệ sinh</b></div>
+      <div class="brand-item"><span class="dot">■</span><b>Thiết bị điện nước</b></div>
+      <div class="brand-item"><span class="dot">■</span><b>Gạch ốp lát</b></div>
+    </div>
+  </div>
+
+  <!-- LĨNH VỰC -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>Lĩnh vực hoạt động<span class="line"></span></div>
+    <div class="field-box">Vật liệu xây dựng – Sơn &amp; chống thấm – Thi công hoàn thiện công trình.</div>
+  </div>
+
+  <!-- NHU CẦU KẾT NỐI -->
+  <div class="section connect">
+    <div class="section-title"><span class="bar"></span>Nhu cầu kết nối<span class="line"></span></div>
+    <ul>
+      <li><b>Chủ đầu tư, Đại lý, Cửa hàng</b>, nhà thầu xây dựng, thầu phụ hoàn thiện, kiến trúc sư, thợ xây dựng;</li>
+      <li>Các đối tác có nhu cầu <b>vật liệu xây dựng, sơn, chống thấm, thiết bị vệ sinh, thiết bị điện</b>;</li>
+      <li>Các đơn vị cần <b>thi công hoàn thiện công trình</b>.</li>
+    </ul>
+    <p>Sẵn sàng kết nối với các cá nhân, doanh nghiệp có sản phẩm, dịch vụ phù hợp để hợp tác kinh doanh, khai thác thị trường, gia tăng giá trị và cùng nhau phát triển bền vững.</p>
+  </div>
+
+  <!-- HÌNH ẢNH -->
+  <div class="section">
+    <div class="section-title"><span class="bar"></span>Hình ảnh công ty<span class="line"></span></div>
+    <div class="photo-grid">
+      <div class="photo"><img src="images/1.jpg" alt="Ảnh công ty"></div>
+      <div class="photo"><img src="images/3.jpg" alt="Ảnh công ty"></div>
+      <div class="photo"><img src="images/5.jpg" alt="Ảnh công ty"></div>
+      <div class="photo"><img src="images/7.jpg" alt="Ảnh công ty"></div>
+      <div class="photo"><img src="images/10.jpg" alt="Ảnh công ty"></div>
+    </div>
+  </div>
+
+  <div class="footer-note">CÔNG TY TNHH XD &amp; TM TRẦN HỮU MINH — tranhuuminhvlxd.id.vn · <a href="cv-cong-ty-huu-minh.pdf" style="color:#8b98a6">📄 Tải bản PDF</a></div>
+</div>
+</body>
+</html>
