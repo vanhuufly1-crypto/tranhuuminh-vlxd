@@ -62,3 +62,20 @@ git add -A
 git commit -m "auto-blog (Mây): ${BASENAME}" > /dev/null
 git push origin main > /dev/null 2>&1
 echo "✅ ĐÃ ĐĂNG LÊN WEBSITE: blog/${BASENAME}"
+
+# ===== 5. IndexNow — báo Bing/Yandex có bài mới (chờ GitHub Pages build) =====
+SLUG="${BASENAME%.html}"
+INDEXNOW_URL="https://tranhuuminhvlxd.id.vn/blog/${SLUG}.html"
+for i in 1 2 3 4 5 6; do
+  sleep 15
+  CODE=$(curl -s -o /dev/null -w "%{http_code}" "${INDEXNOW_URL}")
+  if [ "$CODE" = "200" ]; then break; fi
+done
+RESULT=$(curl -s -o /dev/null -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
+  -H "Content-Type: application/json; charset=utf-8" -H "User-Agent: Mozilla/5.0" \
+  -d "{\"host\":\"tranhuuminhvlxd.id.vn\",\"key\":\"tranhuuminh-vlxd-key\",\"keyLocation\":\"https://tranhuuminhvlxd.id.vn/tranhuuminh-vlxd-key.txt\",\"urlList\":[\"${INDEXNOW_URL}\"]}")
+if [ "$RESULT" = "200" ] || [ "$RESULT" = "202" ]; then
+  echo "✅ IndexNow: đã báo bài mới (HTTP $RESULT)"
+else
+  echo "⚠️ IndexNow: HTTP $RESULT (thử lại lần sau)"
+fi
