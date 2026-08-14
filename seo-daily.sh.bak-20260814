@@ -507,7 +507,7 @@ log ""
 log "📤 GIT PUSH..."
 cd "${BASE_DIR}"
 git add -A 2>/dev/null || true
-git commit -m "seo-daily: ${BRAND:-VLXD}-${TODAY}" --quiet 2>/dev/null || true
+git commit -m "seo-daily: ${BRAND}-${TODAY}" --quiet 2>/dev/null || true
 git push --quiet 2>&1 || log "⚠️  Git push that bai (se thu lai sau)"
 
 # ===== 6. PING GOOGLE =====
