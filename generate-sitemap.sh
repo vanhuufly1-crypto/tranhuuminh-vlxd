@@ -44,7 +44,16 @@ echo "  <url>
     <priority>0.8</priority>
   </url>" >> "${SITEMAP}"
 
-# === 3. Các trang brands/ ===
+# === 3. Trang liên hệ ===
+LASTMOD=$(get_lastmod "lien-he.html")
+echo "  <url>
+    <loc>${BASE_URL}/lien-he.html</loc>
+    <lastmod>${LASTMOD}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>" >> "${SITEMAP}"
+
+# === 4. Các trang brands/ ===
 if [ -d "brands" ]; then
     for f in brands/*.html; do
         [ -f "$f" ] || continue
@@ -59,7 +68,7 @@ if [ -d "brands" ]; then
     done
 fi
 
-# === 4. Blog index ===
+# === 5. Blog index ===
 LASTMOD=$(get_lastmod "blog/index.html")
 echo "  <url>
     <loc>${BASE_URL}/blog/index.html</loc>
@@ -68,7 +77,7 @@ echo "  <url>
     <priority>0.7</priority>
   </url>" >> "${SITEMAP}"
 
-# === 5. Các bài blog (trừ index.html) ===
+# === 6. Các bài blog (trừ index.html) ===
 if [ -d "blog" ]; then
     for f in blog/*.html; do
         [ -f "$f" ] || continue
