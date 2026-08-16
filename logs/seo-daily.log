@@ -4731,3 +4731,101 @@ seo-daily.sh: line 510: BRAND: unbound variable
 [2026-08-15 09:00:48] ✅ SEO DAILY HOAN TAT — 2026-08-15
 [2026-08-15 09:00:48] ============================================
 [2026-08-15 09:00:48] ============================================
+[2026-08-16 09:00:01] ============================================
+[2026-08-16 09:00:01] ============================================
+[2026-08-16 09:00:01] 🚀 SEO DAILY START — 2026-08-16
+[2026-08-16 09:00:01] 🚀 SEO DAILY START — 2026-08-16
+[2026-08-16 09:00:01] ============================================
+[2026-08-16 09:00:01] ============================================
+[2026-08-16 09:00:01] 🔍 Kiem tra GPU...
+[2026-08-16 09:00:01] 🔍 Kiem tra GPU...
+[2026-08-16 09:00:01] ✅ GPU ranh (util=0% mem=114MB)
+[2026-08-16 09:00:01] ✅ GPU ranh (util=0% mem=114MB)
+[2026-08-16 09:00:01] 
+[2026-08-16 09:00:01] 
+[2026-08-16 09:00:01] 📊 PHAN TICH SEO...
+[2026-08-16 09:00:01] 📊 PHAN TICH SEO...
+[2026-08-16 09:00:01] 📝 So blog posts: 307
+[2026-08-16 09:00:01] 📝 So blog posts: 307
+[2026-08-16 09:00:01] 🗺️  Sitemap: 319 URLs, 73938 bytes, lastmod 2026-08-15
+[2026-08-16 09:00:01] 🗺️  Sitemap: 319 URLs, 73938 bytes, lastmod 2026-08-15
+[2026-08-16 09:00:01] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-08-16 09:00:01] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-08-16 09:00:01] 🧠 Goi R1 phan tich SEO...
+[2026-08-16 09:00:01] 🧠 Goi R1 phan tich SEO...
+[2026-08-16 09:01:03] 📋 Phan tich R1:
+[2026-08-16 09:01:03] 📋 Phan tich R1:
+[2026-08-16 09:01:03]    **Phân tích trang thai SEO hien tai:**
+[2026-08-16 09:01:03]    **Phân tích trang thai SEO hien tai:**
+[2026-08-16 09:01:03]    1. **Danh gia Tong quan:**
+[2026-08-16 09:01:03]    1. **Danh gia Tong quan:**
+[2026-08-16 09:01:03]       - **So bai blog:** 307 bài blog đã được pub, phản ánh 1 bai blog every 16 ngày (triệuoiday 2026-08). 
+[2026-08-16 09:01:03]       - **So bai blog:** 307 bài blog đã được pub, phản ánh 1 bai blog every 16 ngày (triệuoiday 2026-08). 
+[2026-08-16 09:01:03]         - Tỷ lệ distribution subbrand:
+[2026-08-16 09:01:03]         - Tỷ lệ distribution subbrand:
+[2026-08-16 09:01:03]           - munich: 57% (2/3)
+[2026-08-16 09:01:03]           - munich: 57% (2/3)
+[2026-08-16 09:01:03]           - nanohouse, kova, sika, jotun: 53%, 55%, 56%, 60%
+[2026-08-16 09:01:03]           - nanohouse, kova, sika, jotun: 53%, 55%, 56%, 60%
+[2026-08-16 09:01:03]           - dulux, nippon: 1%
+[2026-08-16 09:01:03]           - dulux, nippon: 1%
+[2026-08-16 09:01:03]         - Quá trình growth subbrand: munich và jotun đang tăng nhanh, khiom three others vẫn ổn.
+[2026-08-16 09:01:03]         - Quá trình growth subbrand: munich và jotun đang tăng nhanh, khiom three others vẫn ổn.
+[2026-08-16 09:01:03]       - **sitemap:** 319 URL, trong đó:
+[2026-08-16 09:01:03]       - **sitemap:** 319 URL, trong đó:
+[2026-08-16 09:01:03]         - 24% là subbrand (trong đó 60% là jotun)
+[2026-08-16 09:01:03]         - 24% là subbrand (trong đó 60% là jotun)
+[2026-08-16 09:01:03]         - 76% là pages cá nhân.
+[2026-08-16 09:01:03]         - 76% là pages cá nhân.
+[2026-08-16 09:01:03]       - **Traffic:** Giả sử traffic trung bình mỗi tháng 10.000 visit, với CTR 3%. 
+[2026-08-16 09:01:03]       - **Traffic:** Giả sử traffic trung bình mỗi tháng 10.000 visit, với CTR 3%. 
+[2026-08-16 09:01:03]         - ROAS: 5-8 USD/visit.
+[2026-08-16 09:01:03]         - ROAS: 5-8 USD/visit.
+[2026-08-16 09:01:03]    2. **Goi y cai thien:**
+[2026-08-16 09:01:03]    2. **Goi y cai thien:**
+[2026-08-16 09:01:03]       - **Subbrand munich:** Là subbrand chính, đã có nhiều content và traffic, nhưng cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]       - **Subbrand munich:** Là subbrand chính, đã có nhiều content và traffic, nhưng cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]       - **Subbrand jotun:** Quá trình growth nhanh, nhưng sitemap thiếu các articl chi tiết.
+[2026-08-16 09:01:03]       - **Subbrand jotun:** Quá trình growth nhanh, nhưng sitemap thiếu các articl chi tiết.
+[2026-08-16 09:01:03]       - **Subbrand nanohouse, kova, sika, Dulux:** Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]       - **Subbrand nanohouse, kova, sika, Dulux:** Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]    3. **Nhung gi dang tot va can duy tri:**
+[2026-08-16 09:01:03]    3. **Nhung gi dang tot va can duy tri:**
+[2026-08-16 09:01:03]       - **Tinh tế:** 
+[2026-08-16 09:01:03]       - **Tinh tế:** 
+[2026-08-16 09:01:03]         - munich: FAVORITE của người dùng, nên cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]         - munich: FAVORITE của người dùng, nên cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]         - jotun: Quá trình growth nhanh, nhưng cần thêm các articl chi tiết.
+[2026-08-16 09:01:03]         - jotun: Quá trình growth nhanh, nhưng cần thêm các articl chi tiết.
+[2026-08-16 09:01:03]         - nanohouse, kova, sika, Dulux: Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]         - nanohouse, kova, sika, Dulux: Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]       - **Khối viền:** 
+[2026-08-16 09:01:03]       - **Khối viền:** 
+[2026-08-16 09:01:03]         - munich: FAVORITE của người dùng, nên cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]         - munich: FAVORITE của người dùng, nên cần thêm các articl mới cho các collection mới.
+[2026-08-16 09:01:03]         - jotun: Quá trình growth nhanh, nhưng cần thêm các articl chi tiết.
+[2026-08-16 09:01:03]         - jotun: Quá trình growth nhanh, nhưng cần thêm các articl chi tiết.
+[2026-08-16 09:01:03]         - nanohouse, kova, sika, Dulux: Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]         - nanohouse, kova, sika, Dulux: Có content but traffic ít. Yêu cầu thêm các articl mới để hút traffic.
+[2026-08-16 09:01:03]    **Recommendation:**
+[2026-08-16 09:01:03]    **Recommendation:**
+[2026-08-16 09:01:03]    - Tách phần content chi tiết cho các subbrand.
+[2026-08-16 09:01:03]    - Tách phần content chi tiết cho các subbrand.
+[2026-08-16 09:01:03]    - Thêm các articl mới cho các collection mới của Munich và Jotun.
+[2026-08-16 09:01:03]    - Thêm các articl mới cho các collection mới của Munich và Jotun.
+[2026-08-16 09:01:03]    - Tích v IPs cho các articl chi tiết của Nanohouse, Kova, Sika, Dulux.
+[2026-08-16 09:01:03]    - Tích v IPs cho các articl chi tiết của Nanohouse, Kova, Sika, Dulux.
+[2026-08-16 09:01:03] 
+[2026-08-16 09:01:03] 
+[2026-08-16 09:01:03] 🗺️  TAO LAI SITEMAP...
+[2026-08-16 09:01:03] 🗺️  TAO LAI SITEMAP...
+[2026-08-16 09:01:06]    🔧 Đang tạo sitemap.xml...
+[2026-08-16 09:01:06]    🔧 Đang tạo sitemap.xml...
+[2026-08-16 09:01:06]    ✅ Đã tạo sitemap.xml với 319 URL
+[2026-08-16 09:01:06]    ✅ Đã tạo sitemap.xml với 319 URL
+[2026-08-16 09:01:06] ✅ Sitemap da duoc tao lai
+[2026-08-16 09:01:06] ✅ Sitemap da duoc tao lai
+[2026-08-16 09:01:06] 
+[2026-08-16 09:01:06] 
+[2026-08-16 09:01:06] 📤 GIT PUSH...
+[2026-08-16 09:01:06] 📤 GIT PUSH...
