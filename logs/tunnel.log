@@ -30,3 +30,16 @@ Tunnel URL: https://promises-mario-conjunction-although.trycloudflare.com
 2026-08-21T05:37:18Z INF Retrying connection in up to 4s connIndex=0 event=0 ip=198.41.192.47
 2026-08-21T05:37:21Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.167
 2026-08-21T05:37:26Z INF Registered tunnel connection connIndex=0 connection=d000b907-c232-44e0-b702-5250e2ecdde6 event=0 ip=198.41.192.167 location=hkg09 protocol=quic
+2026-08-21T20:12:11Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:11Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:11Z ERR failed to serve tunnel connection error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:11Z ERR Serve tunnel error error="datagram manager encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:11Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:12Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:20Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:20Z INF Retrying connection in up to 4s connIndex=0 event=0 ip=198.41.192.167
+2026-08-21T20:12:20Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.47
+2026-08-21T20:12:25Z ERR Failed to dial a quic connection error="failed to dial to edge with quic: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.47
+2026-08-21T20:12:25Z INF Retrying connection in up to 8s connIndex=0 event=0 ip=198.41.192.47
+2026-08-21T20:12:30Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.53
+2026-08-21T20:12:31Z INF Registered tunnel connection connIndex=0 connection=ce446445-f3a1-4d2c-8e4e-a55257329f1f event=0 ip=198.41.200.53 location=hkg08 protocol=quic
