@@ -58,6 +58,9 @@ with open('blog/index.html', 'w', encoding='utf-8') as fh: fh.write(idx)
 print("✅ Đã thêm link vào blog/index.html")
 PYEOF
 
+# ===== 3b. Cập nhật mục "Bài viết mới nhất" trên trang chủ =====
+python3 update-blog-home.py
+
 # ===== 4. Sitemap + commit + push =====
 ./generate-sitemap.sh
 git add -A
