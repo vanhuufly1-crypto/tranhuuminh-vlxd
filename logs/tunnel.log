@@ -20,3 +20,18 @@
 2026-08-22T23:02:14Z INF Registered tunnel connection connIndex=0 connection=2c4fc82b-a7bf-4e8b-8cd7-a8e32de87d3a event=0 ip=198.41.192.37 location=hkg01 protocol=quic
 Tunnel URL: https://foundations-analyses-soundtrack-nuts.trycloudflare.com
 ✅ Updated api-config.js with https://foundations-analyses-soundtrack-nuts.trycloudflare.com
+2026-08-23T15:09:00Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:00Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:00Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:00Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:00Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:01Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T15:09:05Z INF Registered tunnel connection connIndex=0 connection=317b3d57-add9-4d41-96c6-18b1fa9b86a6 event=0 ip=198.41.192.37 location=hkg01 protocol=quic
+2026-08-23T23:02:14Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.8.2
+2026-08-23T23:02:19Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:19Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:19Z WRN failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:19Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:19Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:19Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.37
+2026-08-23T23:02:20Z INF Registered tunnel connection connIndex=0 connection=15c92d50-5484-4a97-8a54-40bfc6a70b83 event=0 ip=198.41.192.37 location=hkg09 protocol=quic
