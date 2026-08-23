@@ -88,6 +88,16 @@ else
     log "⚠️  Disk: ${DISK_MB}MB (sap day)"
 fi
 
+# 8. Kiem tra ten cong ty trong toan bo blog (khong duoc thieu chu TRAN)
+BAD_CT=$(grep -rEl 'TM (?!TRAN)HUU MINH|TM (?!TRẦN)HỮU MINH' "$BLOG_DIR" --include='*.html' 2>/dev/null | wc -l || true)
+if [ "$BAD_CT" -gt 0 ]; then
+    log "❌ Ten cong ty: $BAD_CT bai thieu chu TRAN (vd 'TM HUU MINH') — can sua ngay"
+    fail=$((fail+1))
+else
+    log "✅ Ten cong ty: toan bo bai dung 'TM TRAN HUU MINH'"
+    check=$((check+1))
+fi
+
 # Tong ket
 log "---"
 log "📊 Check: $check/${check}+$fail pass | Loi: $fail"

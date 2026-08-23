@@ -20,6 +20,7 @@ text = re.sub(r'<[^>]+>', ' ', s); text = re.sub(r'\s+', ' ', text).strip()
 if len(text) < 1500: errors.append(f"quá ngắn ({len(text)} ký tự)")
 if "0378.679.633" not in s: errors.append("thiếu hotline")
 if "TRẦN HỮU MINH" not in s.upper(): errors.append("thiếu tên công ty")
+if re.search(r'TM (?!TRAN)HUU MINH|TM (?!TRẦN)HỮU MINH', s, re.I): errors.append("tên công ty thiếu chữ TRẦN (vd 'TM HUU MINH')")
 if errors:
     print("FAIL | " + " | ".join(errors)); sys.exit(1)
 print("PASS")
