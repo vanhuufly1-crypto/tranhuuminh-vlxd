@@ -9,7 +9,7 @@ fi
 cd /home/huu-minh/website-vlxd
 
 # ===== 1. Kiểm tra chất lượng =====
-CHECK=$(python3 - "$FILE" <<'PYEOF'
+CHECK_OUT=$(python3 - "$FILE" <<'PYEOF'
 import re, sys
 s = open(sys.argv[1], encoding='utf-8').read()
 errors = []
@@ -25,7 +25,8 @@ if errors:
     print("FAIL | " + " | ".join(errors)); sys.exit(1)
 print("PASS")
 PYEOF
-)
+) || true
+CHECK="${CHECK_OUT:-FAIL | lỗi khi chạy kiểm tra}"
 echo "Kiểm tra: $CHECK"
 [ "$CHECK" = "PASS" ] || { echo "❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng"; exit 1; }
 
