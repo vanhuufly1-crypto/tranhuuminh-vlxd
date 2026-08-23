@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Công cụ tính toán diện tích sơn nhà & chống thấm - Trần Hữu Minh VLXD Hải Phòng</title>
+<meta name="description" content="Công cụ tính diện tích sơn nhà và vật liệu chống thấm miễn phí: nhập kích thước là ra ngay số m2 cần sơn, số thùng sơn, số kg chống thấm. CÔNG TY TNHH XD & TM TRẦN HỮU MINH - Hotline 0378.679.633.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="canonical" href="https://tranhuuminhvlxd.id.vn/tinh-toan.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tính diện tích sơn nhà & chống thấm",
+  "url": "https://tranhuuminhvlxd.id.vn/tinh-toan.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "vi",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "VND" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CÔNG TY TNHH XD & TM TRẦN HỮU MINH",
+    "telephone": "+84378679633"
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;max-width:960px;margin:auto;padding:20px;line-height:1.6;color:#333;background:#fafafa}
+h1{color:#1a5276;border-bottom:3px solid #e74c3c;padding-bottom:12px;margin-bottom:8px;font-size:1.6em}
+.sub{color:#666;margin-bottom:24px}
+.back{display:inline-block;margin-bottom:14px;color:#1a5276;text-decoration:none;font-weight:bold}
+.back:hover{text-decoration:underline}
+.tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{padding:10px 18px;border:none;border-radius:8px;background:#e8eef5;color:#1a5276;font-weight:bold;cursor:pointer;font-size:0.95em}
+.tab.active{background:#e94560;color:#fff}
+.panel{display:none}
+.panel.active{display:block}
+.card{background:#fff;border:1px solid #e3e8ee;border-radius:10px;padding:22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.card h2{color:#1a5276;font-size:1.15em;margin-bottom:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-weight:bold;font-size:0.9em;margin-bottom:4px;color:#444}
+.field input,.field select{width:100%;max-width:260px;padding:9px 12px;border:1px solid #ccc;border-radius:6px;font-size:1em}
+.row2{display:flex;gap:14px;flex-wrap:wrap}
+.row2 .field{flex:1;min-width:120px}
+.btn{padding:12px 28px;border:none;border-radius:8px;background:linear-gradient(135deg,#e94560,#c0392b);color:#fff;font-weight:bold;font-size:1em;cursor:pointer}
+.btn:hover{opacity:.92}
+.btn.ghost{background:#e8eef5;color:#1a5276}
+.result{display:none;background:#f0f8f0;border:1px solid #b7dcb7;border-radius:10px;padding:18px;margin-top:16px}
+.result table{width:100%;border-collapse:collapse;margin-top:8px}
+.result td{padding:7px 4px;border-bottom:1px solid #dfeade;font-size:0.95em}
+.result td:last-child{text-align:right;font-weight:bold;color:#1a5276}
+.result .big{font-size:1.15em;color:#1a6b1a}
+.note{background:#fff8e6;border:1px solid #f0dca0;border-radius:8px;padding:12px 16px;margin:16px 0;font-size:0.9em;color:#7a5b00}
+.cta{background:#1a5276;color:#fff;border-radius:10px;padding:22px;text-align:center;margin-top:24px}
+.cta a{color:#ffd166;font-weight:bold;text-decoration:none}
+.cta .phone{font-size:1.4em;font-weight:bold;margin:6px 0}
+footer{margin-top:30px;padding-top:16px;border-top:2px solid #e3e8ee;text-align:center;color:#777;font-size:0.88em}
+footer strong{color:#444}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← Về trang chủ</a>
+<h1>🧮 Công cụ tính toán vật liệu</h1>
+<p class="sub">Nhập kích thước là ra ngay số m² và lượng vật liệu cần mua — miễn phí, không cần đăng ký.</p>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('son')">🖌️ Tính sơn nhà</button>
+  <button class="tab" onclick="showTab('chongtham')">🛡️ Tính chống thấm</button>
+</div>
+
+<!-- ============ TAB SƠN ============ -->
+<div class="panel active" id="panel-son">
+  <div class="card">
+    <h2>🖌️ Diện tích cần sơn</h2>
+    <div class="row2">
+      <div class="field"><label>Chiều dài phòng (m)</label><input type="number" id="s-dai" value="5" min="1" step="0.1"></div>
+      <div class="field"><label>Chiều rộng phòng (m)</label><input type="number" id="s-rong" value="4" min="1" step="0.1"></div>
+      <div class="field"><label>Chiều cao tường (m)</label><input type="number" id="s-cao" value="3" min="1" step="0.1"></div>
+      <div class="field"><label>Diện tích cửa, cửa sổ (m²)</label><input type="number" id="s-cua" value="0" min="0" step="0.1"></div>
+    </div>
+    <div class="row2" style="margin-top:6px">
+      <div class="field"><label>Số lớp sơn phủ</label>
+        <select id="s-lop"><option value="2" selected>2 lớp (tiêu chuẩn)</option><option value="1">1 lớp (sơn lại)</option><option value="3">3 lớp (màu đậm)</option></select>
+      </div>
+      <div class="field"><label>Độ phủ sơn (m²/lít/lớp)</label>
+        <select id="s-phu"><option value="10" selected>10 m²/lít (sơn phủ chuẩn)</option><option value="8">8 m²/lít (tường sần, tiêu thụ nhiều)</option><option value="12">12 m²/lít (bề mặt láng mịn)</option></select>
+      </div>
+    </div>
+    <p class="note">💡 Mẹo: một phòng 5×4×3m (~54 m² tường + 20 m² trần) thường cần khoảng 1 thùng 18L sơn phủ cho 2 lớp. Thùng 18L phủ được ~90-100 m² cho 2 lớp.</p>
+    <button class="btn" onclick="tinhSon()">Tính ngay</button>
+    <button class="btn ghost" onclick="resetSon()">Đặt lại</button>
+  </div>
+
+  <div class="result" id="kq-son">
+    <strong class="big">📐 Kết quả:</strong>
+    <table>
+      <tr><td>Diện tích tường</td><td id="r-tuong"></td></tr>
+      <tr><td>Diện tích trần</td><td id="r-tran"></td></tr>
+      <tr><td>Tổng bề mặt (trừ cửa, + hao phí 5%)</td><td id="r-tong"></td></tr>
+      <tr><td>Sơn lót cần mua (1 lớp)</td><td id="r-lot"></td></tr>
+      <tr><td>Sơn phủ màu cần mua</td><td id="r-phu"></td></tr>
+      <tr><td>Gợi ý: thùng 18L</td><td id="r-t18"></td></tr>
+      <tr><td>Gợi ý: thùng 5L</td><td id="r-t5"></td></tr>
+      <tr><td>Gợi ý: thùng 1L</td><td id="r-t1"></td></tr>
+    </table>
+    <p style="margin-top:10px;font-size:0.9em;color:#555">⚠️ Lượng sơn thực tế có thể chênh ±10% tùy bề mặt tường và tay thợ. Gọi <strong>0378.679.633</strong> để được báo giá và tư vấn chính xác theo ngôi nhà của bạn.</p>
+  </div>
+</div>
+
+<!-- ============ TAB CHỐNG THẤM ============ -->
+<div class="panel" id="panel-chongtham">
+  <div class="card">
+    <h2>🛡️ Khối lượng chống thấm</h2>
+    <div class="field"><label>Hạng mục cần chống thấm</label>
+      <select id="ct-hangmuc">
+        <option value="san-thuong" selected>Sân thượng / sàn mái (tính cả gờ, cổ)</option>
+        <option value="vs">Nhà vệ sinh (sàn + chân tường 30cm)</option>
+        <option value="be-nuoc">Bể nước (đáy + thành trong)</option>
+        <option value="mai">Mái tôn / mái nhẹ</option>
+      </select>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Chiều dài (m)</label><input type="number" id="ct-dai" value="5" min="1" step="0.1"></div>
+      <div class="field"><label>Chiều rộng (m)</label><input type="number" id="ct-rong" value="4" min="1" step="0.1"></div>
+      <div class="field"><label>Chiều cao (m) — bể nước / tường</label><input type="number" id="ct-cao" value="1.5" min="0" step="0.1"></div>
+    </div>
+    <div class="row2" style="margin-top:6px">
+      <div class="field"><label>Định mức (kg/m² cho 2 lớp)</label>
+        <select id="ct-dinhmuc"><option value="2" selected>2 kg/m² (chống thấm gốc xi măng 2 lớp)</option><option value="1.5">1.5 kg/m² (bề mặt đẹp, ít thấm)</option><option value="2.5">2.5 kg/m² (bề mặt xấu, nhiều khe nứt)</option></select>
+      </div>
+      <div class="field"><label>Quy cách đóng gói (kg/bao)</label><input type="number" id="ct-bao" value="4" min="1" step="0.5"></div>
+    </div>
+    <p class="note">💡 Định mức phổ biến của chống thấm gốc xi măng (Munich, Sika, Kova...): 1.5–2 kg/m² cho 2 lớp, thi công cách nhau 4–6 giờ.</p>
+    <button class="btn" onclick="tinhChongTham()">Tính ngay</button>
+    <button class="btn ghost" onclick="resetCT()">Đặt lại</button>
+  </div>
+
+  <div class="result" id="kq-chongtham">
+    <strong class="big">📐 Kết quả:</strong>
+    <table>
+      <tr><td>Diện tích cần chống thấm</td><td id="r-ct-dt"></td></tr>
+      <tr><td>Lượng vật liệu cần mua</td><td id="r-ct-kg"></td></tr>
+      <tr><td>Số bao cần mua (làm tròn lên)</td><td id="r-ct-bao"></td></tr>
+    </table>
+    <p style="margin-top:10px;font-size:0.9em;color:#555">⚠️ Với bể nước sinh hoạt phải dùng đúng dòng chống thấm an toàn nước sạch. Gọi <strong>0378.679.633</strong> để chọn đúng vật liệu và nhận báo giá tốt nhất.</p>
+  </div>
+</div>
+
+<div class="cta">
+  <p>📞 Cần tư vấn trực tiếp cho ngôi nhà của bạn?</p>
+  <div class="phone"><a href="tel:0378679633">0378.679.633</a></div>
+  <p><a href="https://zalo.me/0378679633">Chat Zalo</a> • <a href="lien-he.html">Xem thông tin liên hệ</a></p>
+</div>
+
+<footer>
+  <p><strong>CÔNG TY TNHH XD & TM TRẦN HỮU MINH</strong></p>
+  <p>TDP Quyết Tiến, P. Nam Đồ Sơn, Hải Phòng • Hotline/Zalo: 0378.679.633</p>
+  <p>VLXD, Sơn & Chống thấm chính hãng — <a href="index.html">tranhuuminhvlxd.id.vn</a></p>
+</footer>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  if(name==='son'){ document.querySelectorAll('.tab')[0].classList.add('active'); document.getElementById('panel-son').classList.add('active'); }
+  else { document.querySelectorAll('.tab')[1].classList.add('active'); document.getElementById('panel-chongtham').classList.add('active'); }
+}
+function v(id){ return parseFloat(document.getElementById(id).value)||0; }
+
+function tinhSon(){
+  var dai=v('s-dai'), rong=v('s-rong'), cao=v('s-cao'), cua=v('s-cua');
+  var lop=parseInt(document.getElementById('s-lop').value);
+  var phu=parseFloat(document.getElementById('s-phu').value);
+  if(dai<1||rong<1||cao<1){ alert('Vui lòng nhập đủ kích thước (tối thiểu 1m).'); return; }
+  var tuong=(dai+rong)*2*cao;
+  var tran=dai*rong;
+  var tong=Math.max(0,(tuong+tran-cua))*1.05; // hao phí 5%
+  var lot=tong/phu;                 // 1 lớp lót
+  var phuLit=tong*lop/phu;          // sơn phủ theo số lớp
+  document.getElementById('r-tuong').textContent=tuong.toFixed(1)+' m²';
+  document.getElementById('r-tran').textContent=tran.toFixed(1)+' m²';
+  document.getElementById('r-tong').textContent=tong.toFixed(1)+' m²';
+  document.getElementById('r-lot').textContent=lot.toFixed(1)+' lít (~'+Math.ceil(lot)+' lít)';
+  document.getElementById('r-phu').textContent=phuLit.toFixed(1)+' lít (~'+Math.ceil(phuLit)+' lít)';
+  document.getElementById('r-t18').textContent=combo(phuLit,18);
+  document.getElementById('r-t5').textContent=combo(phuLit,5);
+  document.getElementById('r-t1').textContent=combo(phuLit,1);
+  document.getElementById('kq-son').style.display='block';
+}
+function combo(lit,size){
+  var n=Math.ceil(lit/size);
+  return n+' thùng '+(n>1?'':'')+size+'L (~'+(n*size)+' lít)';
+}
+function resetSon(){
+  ['s-dai','s-rong','s-cao','s-cua'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('s-lop').value='2'; document.getElementById('s-phu').value='10';
+  document.getElementById('kq-son').style.display='none';
+}
+
+function tinhChongTham(){
+  var hm=document.getElementById('ct-hangmuc').value;
+  var dai=v('ct-dai'), rong=v('ct-rong'), cao=v('ct-cao');
+  var dm=parseFloat(document.getElementById('ct-dinhmuc').value);
+  var bao=parseFloat(document.getElementById('ct-bao').value)||4;
+  if(dai<1||rong<1){ alert('Vui lòng nhập đủ kích thước.'); return; }
+  var dt=0;
+  if(hm==='san-thuong') dt=dai*rong*1.15;         // gồm gờ, cổ, khe
+  else if(hm==='vs') dt=dai*rong+(dai+rong)*2*0.3; // sàn + chân tường 30cm
+  else if(hm==='be-nuoc') dt=dai*rong+(dai+rong)*2*cao; // đáy + thành
+  else dt=dai*rong*1.1;                            // mái nhẹ
+  var kg=dt*dm;
+  var soBao=Math.ceil(kg/bao);
+  document.getElementById('r-ct-dt').textContent=dt.toFixed(1)+' m²';
+  document.getElementById('r-ct-kg').textContent=kg.toFixed(1)+' kg';
+  document.getElementById('r-ct-bao').textContent=soBao+' bao x '+bao+'kg';
+  document.getElementById('kq-chongtham').style.display='block';
+}
+function resetCT(){
+  document.getElementById('ct-hangmuc').value='san-thuong';
+  ['ct-dai','ct-rong','ct-cao','ct-bao'].forEach(function(id){document.getElementById(id).value='';});
+  document.getElementById('ct-dinhmuc').value='2';
+  document.getElementById('kq-chongtham').style.display='none';
+}
+</script>
+</body>
+</html>
