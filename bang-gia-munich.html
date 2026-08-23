@@ -19,6 +19,9 @@ td{padding:9px 12px;border-bottom:1px solid #eef1f5;font-size:0.93em}
 tr:hover td{background:#f6f9fc}
 td.spec{color:#888;white-space:nowrap}
 td.price{font-weight:bold;color:#c0392b;white-space:nowrap;text-align:right}
+td.act{width:52px;text-align:center}
+.btn-order{padding:6px 12px;background:#e94560;color:#fff;border:none;border-radius:6px;font-weight:700;cursor:pointer}
+.btn-order:hover{background:#c0392b}
 .note{background:#fff8e6;border:1px solid #f0dca0;border-radius:8px;padding:12px 16px;margin:18px 0;font-size:0.9em;color:#7a5b00}
 .cta{background:#1a5276;color:#fff;border-radius:10px;padding:22px;text-align:center;margin-top:26px}
 .cta a{color:#ffd166;font-weight:bold;text-decoration:none}
@@ -33,111 +36,111 @@ footer strong{color:#444}
 <p class="sub">Bảng giá tham khảo dành cho khách lẻ, thợ thầu và đại lý — <strong>CÔNG TY TNHH XD & TM TRẦN HỮU MINH</strong>, nhà phân phối chính thức Munich tại Hải Phòng.</p>
 
 <h2>🎨 Sơn nước nội thất & ngoại thất</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>Luxury - Siêu bóng NT (5L)</td><td class="spec">5L</td><td class="price">983.333đ</td></tr>
-<tr><td>Luxury - Siêu bóng NT (18L)</td><td class="spec">18L</td><td class="price">2.950.000đ</td></tr>
-<tr><td>Fly - Bóng mờ NT (5L)</td><td class="spec">5L</td><td class="price">780.000đ</td></tr>
-<tr><td>Fly - Bóng mờ NT (18L)</td><td class="spec">18L</td><td class="price">2.000.000đ</td></tr>
-<tr><td>Action Prime NT (5L)</td><td class="spec">5L</td><td class="price">450.000đ</td></tr>
-<tr><td>Action Prime NT (18L)</td><td class="spec">18L</td><td class="price">1.350.000đ</td></tr>
-<tr><td>Action - Siêu mịn NT (5L)</td><td class="spec">5L</td><td class="price">466.667đ</td></tr>
-<tr><td>Action - Siêu mịn NT (18L)</td><td class="spec">18L</td><td class="price">1.400.000đ</td></tr>
-<tr><td>Luxury Prime NT2 (5L)</td><td class="spec">5L</td><td class="price">950.000đ</td></tr>
-<tr><td>Luxury Prime NT2 (18L)</td><td class="spec">18L</td><td class="price">2.850.000đ</td></tr>
-<tr><td>Luxury - Siêu bóng NT2 (5L)</td><td class="spec">5L</td><td class="price">1.266.667đ</td></tr>
-<tr><td>Luxury - Siêu bóng NT2 (18L)</td><td class="spec">18L</td><td class="price">3.800.000đ</td></tr>
-<tr><td>Fly - Bóng mờ NT2 (5L)</td><td class="spec">5L</td><td class="price">870.000đ</td></tr>
-<tr><td>Fly - Bóng mờ NT2 (18L)</td><td class="spec">18L</td><td class="price">2.300.000đ</td></tr>
-<tr><td>Action Prime NT2 (5L)</td><td class="spec">5L</td><td class="price">493.333đ</td></tr>
-<tr><td>Action Prime NT2 (18L)</td><td class="spec">18L</td><td class="price">1.480.000đ</td></tr>
-<tr><td>Action - Siêu mịn NT2 (5L)</td><td class="spec">5L</td><td class="price">633.333đ</td></tr>
-<tr><td>Action - Siêu mịn NT2 (18L)</td><td class="spec">18L</td><td class="price">1.900.000đ</td></tr>
-<tr><td>S909 Ngoai (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">500.000đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>Luxury - Siêu bóng NT (5L)</td><td class="spec">5L</td><td class="price">983.333đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury - Siêu bóng NT (5L)')">🛒</button></td></tr>
+<tr><td>Luxury - Siêu bóng NT (18L)</td><td class="spec">18L</td><td class="price">2.950.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury - Siêu bóng NT (18L)')">🛒</button></td></tr>
+<tr><td>Fly - Bóng mờ NT (5L)</td><td class="spec">5L</td><td class="price">780.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Fly - Bóng mờ NT (5L)')">🛒</button></td></tr>
+<tr><td>Fly - Bóng mờ NT (18L)</td><td class="spec">18L</td><td class="price">2.000.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Fly - Bóng mờ NT (18L)')">🛒</button></td></tr>
+<tr><td>Action Prime NT (5L)</td><td class="spec">5L</td><td class="price">450.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Action Prime NT (5L)')">🛒</button></td></tr>
+<tr><td>Action Prime NT (18L)</td><td class="spec">18L</td><td class="price">1.350.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Action Prime NT (18L)')">🛒</button></td></tr>
+<tr><td>Action - Siêu mịn NT (5L)</td><td class="spec">5L</td><td class="price">466.667đ</td><td class="act"><button class="btn-order" onclick="datMua('Action - Siêu mịn NT (5L)')">🛒</button></td></tr>
+<tr><td>Action - Siêu mịn NT (18L)</td><td class="spec">18L</td><td class="price">1.400.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Action - Siêu mịn NT (18L)')">🛒</button></td></tr>
+<tr><td>Luxury Prime NT2 (5L)</td><td class="spec">5L</td><td class="price">950.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury Prime NT2 (5L)')">🛒</button></td></tr>
+<tr><td>Luxury Prime NT2 (18L)</td><td class="spec">18L</td><td class="price">2.850.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury Prime NT2 (18L)')">🛒</button></td></tr>
+<tr><td>Luxury - Siêu bóng NT2 (5L)</td><td class="spec">5L</td><td class="price">1.266.667đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury - Siêu bóng NT2 (5L)')">🛒</button></td></tr>
+<tr><td>Luxury - Siêu bóng NT2 (18L)</td><td class="spec">18L</td><td class="price">3.800.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Luxury - Siêu bóng NT2 (18L)')">🛒</button></td></tr>
+<tr><td>Fly - Bóng mờ NT2 (5L)</td><td class="spec">5L</td><td class="price">870.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Fly - Bóng mờ NT2 (5L)')">🛒</button></td></tr>
+<tr><td>Fly - Bóng mờ NT2 (18L)</td><td class="spec">18L</td><td class="price">2.300.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Fly - Bóng mờ NT2 (18L)')">🛒</button></td></tr>
+<tr><td>Action Prime NT2 (5L)</td><td class="spec">5L</td><td class="price">493.333đ</td><td class="act"><button class="btn-order" onclick="datMua('Action Prime NT2 (5L)')">🛒</button></td></tr>
+<tr><td>Action Prime NT2 (18L)</td><td class="spec">18L</td><td class="price">1.480.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Action Prime NT2 (18L)')">🛒</button></td></tr>
+<tr><td>Action - Siêu mịn NT2 (5L)</td><td class="spec">5L</td><td class="price">633.333đ</td><td class="act"><button class="btn-order" onclick="datMua('Action - Siêu mịn NT2 (5L)')">🛒</button></td></tr>
+<tr><td>Action - Siêu mịn NT2 (18L)</td><td class="spec">18L</td><td class="price">1.900.000đ</td><td class="act"><button class="btn-order" onclick="datMua('Action - Siêu mịn NT2 (18L)')">🛒</button></td></tr>
+<tr><td>S909 Ngoai (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">500.000đ</td><td class="act"><button class="btn-order" onclick="datMua('S909 Ngoai (Bao 25kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>☀️ Sơn chống nóng</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>UV20 (4L)</td><td class="spec">4L</td><td class="price">1.200.000đ</td></tr>
-<tr><td>UV20 (18L)</td><td class="spec">18L</td><td class="price">6.225.000đ</td></tr>
-<tr><td>UV20 Primer (4L)</td><td class="spec">4L</td><td class="price">1.200.000đ</td></tr>
-<tr><td>UV20 Primer (18L)</td><td class="spec">18L</td><td class="price">3.600.000đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>UV20 (4L)</td><td class="spec">4L</td><td class="price">1.200.000đ</td><td class="act"><button class="btn-order" onclick="datMua('UV20 (4L)')">🛒</button></td></tr>
+<tr><td>UV20 (18L)</td><td class="spec">18L</td><td class="price">6.225.000đ</td><td class="act"><button class="btn-order" onclick="datMua('UV20 (18L)')">🛒</button></td></tr>
+<tr><td>UV20 Primer (4L)</td><td class="spec">4L</td><td class="price">1.200.000đ</td><td class="act"><button class="btn-order" onclick="datMua('UV20 Primer (4L)')">🛒</button></td></tr>
+<tr><td>UV20 Primer (18L)</td><td class="spec">18L</td><td class="price">3.600.000đ</td><td class="act"><button class="btn-order" onclick="datMua('UV20 Primer (18L)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🛡️ Chống thấm gốc xi măng (2 thành phần)</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>G20S (Bộ 25kg)</td><td class="spec">Bộ 25kg</td><td class="price">1.431.000đ</td></tr>
-<tr><td>G20C (Bộ 20kg)</td><td class="spec">Bộ 20kg</td><td class="price">1.143.718đ</td></tr>
-<tr><td>C20 (Thùng 20kg)</td><td class="spec">Thùng 20kg</td><td class="price">1.232.608đ</td></tr>
-<tr><td>G20C-Đen (Bộ 20kg)</td><td class="spec">Bộ 20kg</td><td class="price">1.291.868đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>G20S (Bộ 25kg)</td><td class="spec">Bộ 25kg</td><td class="price">1.431.000đ</td><td class="act"><button class="btn-order" onclick="datMua('G20S (Bộ 25kg)')">🛒</button></td></tr>
+<tr><td>G20C (Bộ 20kg)</td><td class="spec">Bộ 20kg</td><td class="price">1.143.718đ</td><td class="act"><button class="btn-order" onclick="datMua('G20C (Bộ 20kg)')">🛒</button></td></tr>
+<tr><td>C20 (Thùng 20kg)</td><td class="spec">Thùng 20kg</td><td class="price">1.232.608đ</td><td class="act"><button class="btn-order" onclick="datMua('C20 (Thùng 20kg)')">🛒</button></td></tr>
+<tr><td>G20C-Đen (Bộ 20kg)</td><td class="spec">Bộ 20kg</td><td class="price">1.291.868đ</td><td class="act"><button class="btn-order" onclick="datMua('G20C-Đen (Bộ 20kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>💧 Chống thấm gốc PU & thủy tinh lỏng</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>PU S700 (1L)</td><td class="spec">1L</td><td class="price">247.104đ</td></tr>
-<tr><td>PU S700 (4L)</td><td class="spec">4L</td><td class="price">1.035.180đ</td></tr>
-<tr><td>PU S700 (18L)</td><td class="spec">18L</td><td class="price">3.858.624đ</td></tr>
-<tr><td>PU S400 (5L)</td><td class="spec">5L</td><td class="price">1.104.300đ</td></tr>
-<tr><td>PU S400 (18L)</td><td class="spec">18L</td><td class="price">3.274.560đ</td></tr>
-<tr><td>PU S800F (Bộ 3,6kg)</td><td class="spec">Bộ 3,6kg</td><td class="price">1.311.660đ</td></tr>
-<tr><td>PU S800F (18kg)</td><td class="spec">18kg</td><td class="price">4.023.000đ</td></tr>
-<tr><td>Pu Glass (1L)</td><td class="spec">1L</td><td class="price">247.104đ</td></tr>
-<tr><td>Pu Glass (4L)</td><td class="spec">4L</td><td class="price">1.035.180đ</td></tr>
-<tr><td>Pu Glass (18L)</td><td class="spec">18L</td><td class="price">3.858.624đ</td></tr>
-<tr><td>Glass 2K (Bộ 3kg)</td><td class="spec">Bộ 3kg</td><td class="price">1.600.020đ</td></tr>
-<tr><td>Glass 2K (15kg)</td><td class="spec">15kg</td><td class="price">6.666.750đ</td></tr>
-<tr><td>Liquid Glass 2K (Bộ 1)</td><td class="spec">Bộ 1</td><td class="price">533.340đ</td></tr>
-<tr><td>Liquid Glass 2K (3)</td><td class="spec">3</td><td class="price">1.511.130đ</td></tr>
-<tr><td>Liquid Glass 2K (15kg)</td><td class="spec">15kg</td><td class="price">7.333.425đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>PU S700 (1L)</td><td class="spec">1L</td><td class="price">247.104đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S700 (1L)')">🛒</button></td></tr>
+<tr><td>PU S700 (4L)</td><td class="spec">4L</td><td class="price">1.035.180đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S700 (4L)')">🛒</button></td></tr>
+<tr><td>PU S700 (18L)</td><td class="spec">18L</td><td class="price">3.858.624đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S700 (18L)')">🛒</button></td></tr>
+<tr><td>PU S400 (5L)</td><td class="spec">5L</td><td class="price">1.104.300đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S400 (5L)')">🛒</button></td></tr>
+<tr><td>PU S400 (18L)</td><td class="spec">18L</td><td class="price">3.274.560đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S400 (18L)')">🛒</button></td></tr>
+<tr><td>PU S800F (Bộ 3,6kg)</td><td class="spec">Bộ 3,6kg</td><td class="price">1.311.660đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S800F (Bộ 3,6kg)')">🛒</button></td></tr>
+<tr><td>PU S800F (18kg)</td><td class="spec">18kg</td><td class="price">4.023.000đ</td><td class="act"><button class="btn-order" onclick="datMua('PU S800F (18kg)')">🛒</button></td></tr>
+<tr><td>Pu Glass (1L)</td><td class="spec">1L</td><td class="price">247.104đ</td><td class="act"><button class="btn-order" onclick="datMua('Pu Glass (1L)')">🛒</button></td></tr>
+<tr><td>Pu Glass (4L)</td><td class="spec">4L</td><td class="price">1.035.180đ</td><td class="act"><button class="btn-order" onclick="datMua('Pu Glass (4L)')">🛒</button></td></tr>
+<tr><td>Pu Glass (18L)</td><td class="spec">18L</td><td class="price">3.858.624đ</td><td class="act"><button class="btn-order" onclick="datMua('Pu Glass (18L)')">🛒</button></td></tr>
+<tr><td>Glass 2K (Bộ 3kg)</td><td class="spec">Bộ 3kg</td><td class="price">1.600.020đ</td><td class="act"><button class="btn-order" onclick="datMua('Glass 2K (Bộ 3kg)')">🛒</button></td></tr>
+<tr><td>Glass 2K (15kg)</td><td class="spec">15kg</td><td class="price">6.666.750đ</td><td class="act"><button class="btn-order" onclick="datMua('Glass 2K (15kg)')">🛒</button></td></tr>
+<tr><td>Liquid Glass 2K (Bộ 1)</td><td class="spec">Bộ 1</td><td class="price">533.340đ</td><td class="act"><button class="btn-order" onclick="datMua('Liquid Glass 2K (Bộ 1)')">🛒</button></td></tr>
+<tr><td>Liquid Glass 2K (3)</td><td class="spec">3</td><td class="price">1.511.130đ</td><td class="act"><button class="btn-order" onclick="datMua('Liquid Glass 2K (3)')">🛒</button></td></tr>
+<tr><td>Liquid Glass 2K (15kg)</td><td class="spec">15kg</td><td class="price">7.333.425đ</td><td class="act"><button class="btn-order" onclick="datMua('Liquid Glass 2K (15kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🏺 Chống thấm gốc bitum & phụ gia</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>CT0 (5kg)</td><td class="spec">5kg</td><td class="price">829.640đ</td></tr>
-<tr><td>CT0 (18kg)</td><td class="spec">18kg</td><td class="price">3.022.260đ</td></tr>
-<tr><td>CT0-Tuong (5kg)</td><td class="spec">5kg</td><td class="price">829.640đ</td></tr>
-<tr><td>CT0-Tuong (18kg)</td><td class="spec">18kg</td><td class="price">2.459.290đ</td></tr>
-<tr><td>G10 (3,5kg)</td><td class="spec">3,5kg</td><td class="price">400.005đ</td></tr>
-<tr><td>G10 (18kg)</td><td class="spec">18kg</td><td class="price">1.629.650đ</td></tr>
-<tr><td>G68 (Thùng 18kg)</td><td class="spec">Thùng 18kg</td><td class="price">950.000đ</td></tr>
-<tr><td>Kyton K101 (Bao 20kg)</td><td class="spec">Bao 20kg</td><td class="price">1.000.540đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>CT0 (5kg)</td><td class="spec">5kg</td><td class="price">829.640đ</td><td class="act"><button class="btn-order" onclick="datMua('CT0 (5kg)')">🛒</button></td></tr>
+<tr><td>CT0 (18kg)</td><td class="spec">18kg</td><td class="price">3.022.260đ</td><td class="act"><button class="btn-order" onclick="datMua('CT0 (18kg)')">🛒</button></td></tr>
+<tr><td>CT0-Tuong (5kg)</td><td class="spec">5kg</td><td class="price">829.640đ</td><td class="act"><button class="btn-order" onclick="datMua('CT0-Tuong (5kg)')">🛒</button></td></tr>
+<tr><td>CT0-Tuong (18kg)</td><td class="spec">18kg</td><td class="price">2.459.290đ</td><td class="act"><button class="btn-order" onclick="datMua('CT0-Tuong (18kg)')">🛒</button></td></tr>
+<tr><td>G10 (3,5kg)</td><td class="spec">3,5kg</td><td class="price">400.005đ</td><td class="act"><button class="btn-order" onclick="datMua('G10 (3,5kg)')">🛒</button></td></tr>
+<tr><td>G10 (18kg)</td><td class="spec">18kg</td><td class="price">1.629.650đ</td><td class="act"><button class="btn-order" onclick="datMua('G10 (18kg)')">🛒</button></td></tr>
+<tr><td>G68 (Thùng 18kg)</td><td class="spec">Thùng 18kg</td><td class="price">950.000đ</td><td class="act"><button class="btn-order" onclick="datMua('G68 (Thùng 18kg)')">🛒</button></td></tr>
+<tr><td>Kyton K101 (Bao 20kg)</td><td class="spec">Bao 20kg</td><td class="price">1.000.540đ</td><td class="act"><button class="btn-order" onclick="datMua('Kyton K101 (Bao 20kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🏭 Sơn epoxy sàn (EP11/EP12)</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>EP11 Phủ (Bộ 3kg)</td><td class="spec">Bộ 3kg</td><td class="price">1.012.500đ</td></tr>
-<tr><td>EP11 Phủ (15kg)</td><td class="spec">15kg</td><td class="price">4.050.000đ</td></tr>
-<tr><td>EP11 Tự san (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.938.649đ</td></tr>
-<tr><td>EP11 Tự san (25kg)</td><td class="spec">25kg</td><td class="price">6.785.270đ</td></tr>
-<tr><td>EP12 Lót (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.618.539đ</td></tr>
-<tr><td>EP12 Lót (25kg)</td><td class="spec">25kg</td><td class="price">5.896.370đ</td></tr>
-<tr><td>EP12 Phủ (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.773.356đ</td></tr>
-<tr><td>EP12 Phủ (25kg)</td><td class="spec">25kg</td><td class="price">6.637.120đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>EP11 Phủ (Bộ 3kg)</td><td class="spec">Bộ 3kg</td><td class="price">1.012.500đ</td><td class="act"><button class="btn-order" onclick="datMua('EP11 Phủ (Bộ 3kg)')">🛒</button></td></tr>
+<tr><td>EP11 Phủ (15kg)</td><td class="spec">15kg</td><td class="price">4.050.000đ</td><td class="act"><button class="btn-order" onclick="datMua('EP11 Phủ (15kg)')">🛒</button></td></tr>
+<tr><td>EP11 Tự san (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.938.649đ</td><td class="act"><button class="btn-order" onclick="datMua('EP11 Tự san (Bộ 5kg)')">🛒</button></td></tr>
+<tr><td>EP11 Tự san (25kg)</td><td class="spec">25kg</td><td class="price">6.785.270đ</td><td class="act"><button class="btn-order" onclick="datMua('EP11 Tự san (25kg)')">🛒</button></td></tr>
+<tr><td>EP12 Lót (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.618.539đ</td><td class="act"><button class="btn-order" onclick="datMua('EP12 Lót (Bộ 5kg)')">🛒</button></td></tr>
+<tr><td>EP12 Lót (25kg)</td><td class="spec">25kg</td><td class="price">5.896.370đ</td><td class="act"><button class="btn-order" onclick="datMua('EP12 Lót (25kg)')">🛒</button></td></tr>
+<tr><td>EP12 Phủ (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.773.356đ</td><td class="act"><button class="btn-order" onclick="datMua('EP12 Phủ (Bộ 5kg)')">🛒</button></td></tr>
+<tr><td>EP12 Phủ (25kg)</td><td class="spec">25kg</td><td class="price">6.637.120đ</td><td class="act"><button class="btn-order" onclick="datMua('EP12 Phủ (25kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🧱 Chống thấm tinh thể & vữa trám</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>S902 (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.859.220đ</td></tr>
-<tr><td>S902 (25kg)</td><td class="spec">25kg</td><td class="price">7.810.344đ</td></tr>
-<tr><td>S909 Noi (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">445.000đ</td></tr>
-<tr><td>S909 Ngoai (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">500.000đ</td></tr>
-<tr><td>S208 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">234.077đ</td></tr>
-<tr><td>S302 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">174.817đ</td></tr>
-<tr><td>Walling (1L)</td><td class="spec">1L</td><td class="price">237.040đ</td></tr>
-<tr><td>Walling (5L)</td><td class="spec">5L</td><td class="price">918.530đ</td></tr>
-<tr><td>Walling (25L)</td><td class="spec">25L</td><td class="price">4.000.050đ</td></tr>
-<tr><td>Stone SF (1L)</td><td class="spec">1L</td><td class="price">428.520đ</td></tr>
-<tr><td>Stone SF (4L)</td><td class="spec">4L</td><td class="price">1.928.340đ</td></tr>
-<tr><td>Stone SF (18L)</td><td class="spec">18L</td><td class="price">7.713.360đ</td></tr>
-<tr><td>Water Plug (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">162.965đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>S902 (Bộ 5kg)</td><td class="spec">Bộ 5kg</td><td class="price">1.859.220đ</td><td class="act"><button class="btn-order" onclick="datMua('S902 (Bộ 5kg)')">🛒</button></td></tr>
+<tr><td>S902 (25kg)</td><td class="spec">25kg</td><td class="price">7.810.344đ</td><td class="act"><button class="btn-order" onclick="datMua('S902 (25kg)')">🛒</button></td></tr>
+<tr><td>S909 Noi (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">445.000đ</td><td class="act"><button class="btn-order" onclick="datMua('S909 Noi (Bao 25kg)')">🛒</button></td></tr>
+<tr><td>S909 Ngoai (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">500.000đ</td><td class="act"><button class="btn-order" onclick="datMua('S909 Ngoai (Bao 25kg)')">🛒</button></td></tr>
+<tr><td>S208 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">234.077đ</td><td class="act"><button class="btn-order" onclick="datMua('S208 (Túi 1kg)')">🛒</button></td></tr>
+<tr><td>S302 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">174.817đ</td><td class="act"><button class="btn-order" onclick="datMua('S302 (Túi 1kg)')">🛒</button></td></tr>
+<tr><td>Walling (1L)</td><td class="spec">1L</td><td class="price">237.040đ</td><td class="act"><button class="btn-order" onclick="datMua('Walling (1L)')">🛒</button></td></tr>
+<tr><td>Walling (5L)</td><td class="spec">5L</td><td class="price">918.530đ</td><td class="act"><button class="btn-order" onclick="datMua('Walling (5L)')">🛒</button></td></tr>
+<tr><td>Walling (25L)</td><td class="spec">25L</td><td class="price">4.000.050đ</td><td class="act"><button class="btn-order" onclick="datMua('Walling (25L)')">🛒</button></td></tr>
+<tr><td>Stone SF (1L)</td><td class="spec">1L</td><td class="price">428.520đ</td><td class="act"><button class="btn-order" onclick="datMua('Stone SF (1L)')">🛒</button></td></tr>
+<tr><td>Stone SF (4L)</td><td class="spec">4L</td><td class="price">1.928.340đ</td><td class="act"><button class="btn-order" onclick="datMua('Stone SF (4L)')">🛒</button></td></tr>
+<tr><td>Stone SF (18L)</td><td class="spec">18L</td><td class="price">7.713.360đ</td><td class="act"><button class="btn-order" onclick="datMua('Stone SF (18L)')">🛒</button></td></tr>
+<tr><td>Water Plug (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">162.965đ</td><td class="act"><button class="btn-order" onclick="datMua('Water Plug (Túi 1kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🏟️ Sơn sân thể thao</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>C631 (5kg)</td><td class="spec">5kg</td><td class="price">1.328.001đ</td></tr>
-<tr><td>C631 (18kg)</td><td class="spec">18kg</td><td class="price">3.570.000đ</td></tr>
-<tr><td>S632 (5kg)</td><td class="spec">5kg</td><td class="price">2.451.999đ</td></tr>
-<tr><td>S632 (18kg)</td><td class="spec">18kg</td><td class="price">5.670.000đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>C631 (5kg)</td><td class="spec">5kg</td><td class="price">1.328.001đ</td><td class="act"><button class="btn-order" onclick="datMua('C631 (5kg)')">🛒</button></td></tr>
+<tr><td>C631 (18kg)</td><td class="spec">18kg</td><td class="price">3.570.000đ</td><td class="act"><button class="btn-order" onclick="datMua('C631 (18kg)')">🛒</button></td></tr>
+<tr><td>S632 (5kg)</td><td class="spec">5kg</td><td class="price">2.451.999đ</td><td class="act"><button class="btn-order" onclick="datMua('S632 (5kg)')">🛒</button></td></tr>
+<tr><td>S632 (18kg)</td><td class="spec">18kg</td><td class="price">5.670.000đ</td><td class="act"><button class="btn-order" onclick="datMua('S632 (18kg)')">🛒</button></td></tr>
 </tbody></table>
 <h2>🧱 Vữa kỹ thuật & keo xây dựng</h2>
-<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th></tr></thead><tbody>
-<tr><td>Grout G650 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">296.300đ</td></tr>
-<tr><td>Grout G650 (Túi 4kg)</td><td class="spec">Túi 4kg</td><td class="price">103.705đ</td></tr>
-<tr><td>Repair G50 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">503.710đ</td></tr>
-<tr><td>Gel G-01 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">296.300đ</td></tr>
-<tr><td>Tile G07 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">47.408đ</td></tr>
+<table><thead><tr><th>Sản phẩm</th><th>Quy cách</th><th>Giá tham khảo</th><th>Đặt</th></tr></thead><tbody>
+<tr><td>Grout G650 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">296.300đ</td><td class="act"><button class="btn-order" onclick="datMua('Grout G650 (Bao 25kg)')">🛒</button></td></tr>
+<tr><td>Grout G650 (Túi 4kg)</td><td class="spec">Túi 4kg</td><td class="price">103.705đ</td><td class="act"><button class="btn-order" onclick="datMua('Grout G650 (Túi 4kg)')">🛒</button></td></tr>
+<tr><td>Repair G50 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">503.710đ</td><td class="act"><button class="btn-order" onclick="datMua('Repair G50 (Bao 25kg)')">🛒</button></td></tr>
+<tr><td>Gel G-01 (Bao 25kg)</td><td class="spec">Bao 25kg</td><td class="price">296.300đ</td><td class="act"><button class="btn-order" onclick="datMua('Gel G-01 (Bao 25kg)')">🛒</button></td></tr>
+<tr><td>Tile G07 (Túi 1kg)</td><td class="spec">Túi 1kg</td><td class="price">47.408đ</td><td class="act"><button class="btn-order" onclick="datMua('Tile G07 (Túi 1kg)')">🛒</button></td></tr>
 </tbody></table>
 
 
@@ -148,6 +151,59 @@ footer strong{color:#444}
   <div class="phone"><a href="tel:0378679633">0378.679.633</a></div>
   <p><a href="https://zalo.me/0378679633">Chat Zalo</a> • <a href="tinh-toan.html">🧮 Tính lượng vật liệu cần mua</a> • <a href="lien-he.html">Liên hệ</a></p>
 </div>
+
+
+<div id="bmForm" style="display:none;background:#fff5f5;border:2px solid #e94560;border-radius:14px;padding:24px;margin:26px 0;max-width:640px;margin-left:auto;margin-right:auto">
+  <h2 style="color:#c0392b;margin-bottom:4px">🛒 Đặt mua Munich ngay</h2>
+  <p style="font-size:13px;color:#666;margin-bottom:14px">Điền thông tin — <strong>0378.679.633</strong> gọi lại xác nhận & giao hàng nhanh tại Hải Phòng.</p>
+  <form onsubmit="return submitMunich(event)" style="display:flex;flex-direction:column;gap:10px">
+    <input type="text" id="bmProduct" placeholder="Sản phẩm *" readonly style="padding:12px;border:2px solid #e94560;border-radius:8px;font-weight:700;background:#fff">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <input type="text" id="bmName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:8px">
+      <input type="tel" id="bmPhone" placeholder="SĐT 10 số *" required pattern="[0-9]{10}" style="padding:12px;border:1px solid #ccc;border-radius:8px">
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <select id="bmQty" style="padding:12px;border:1px solid #ccc;border-radius:8px">
+        <option value="1">Số lượng: 1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="20">20</option>
+      </select>
+      <input type="text" id="bmAddr" placeholder="Địa chỉ giao *" style="padding:12px;border:1px solid #ccc;border-radius:8px">
+    </div>
+    <input type="text" id="bmNote" placeholder="Ghi chú (quy cách, vị trí thi công...)" style="padding:12px;border:1px solid #ddd;border-radius:8px">
+    <button type="submit" style="background:linear-gradient(135deg,#e94560,#c0392b);color:#fff;padding:15px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer">🔥 GỬI ĐƠN HÀNG — GỌI LẠI XÁC NHẬN</button>
+  </form>
+  <div id="bmResult" style="display:none;padding:14px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;margin-top:10px">✅ Đã nhận đơn! 0378.679.633 sẽ gọi lại xác nhận ngay.</div>
+</div>
+<script src="js/api-config.js"></script>
+<script>
+function datMua(sp){
+  document.getElementById('bmProduct').value = sp;
+  var f = document.getElementById('bmForm');
+  f.style.display = 'block';
+  f.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function submitMunich(e){
+  e.preventDefault();
+  var sp = document.getElementById('bmProduct').value;
+  var name = document.getElementById('bmName').value;
+  var phone = document.getElementById('bmPhone').value;
+  var qty = document.getElementById('bmQty').value;
+  var addr = document.getElementById('bmAddr').value;
+  var note = document.getElementById('bmNote').value;
+  if(!sp || !phone || phone.length < 10){ alert('Chọn sản phẩm và nhập SĐT 10 số!'); return false; }
+  fetch((window.API_URL || '') + '/order', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: name, phone: phone, address: addr,
+      product: 'Munich ' + sp + ' x' + qty,
+      note: note || 'Đặt qua web Munich', total: 0, priority: 'ưu tiên'
+    })
+  }).catch(function(){});
+  document.getElementById('bmForm').querySelector('form').style.display = 'none';
+  document.getElementById('bmResult').style.display = 'block';
+  return false;
+}
+</script>
 
 <footer>
   <p><strong>CÔNG TY TNHH XD & TM TRẦN HỮU MINH</strong></p>
