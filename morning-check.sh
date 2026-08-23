@@ -88,13 +88,30 @@ else
     log "⚠️  Disk: ${DISK_MB}MB (sap day)"
 fi
 
-# 8. Kiem tra ten cong ty trong toan bo blog (khong duoc thieu chu TRAN)
-BAD_CT=$(grep -rEl 'TM (?!TRAN)HUU MINH|TM (?!TRẦN)HỮU MINH' "$BLOG_DIR" --include='*.html' 2>/dev/null | wc -l || true)
-if [ "$BAD_CT" -gt 0 ]; then
-    log "❌ Ten cong ty: $BAD_CT bai thieu chu TRAN (vd 'TM HUU MINH') — can sua ngay"
+# 8. Kiem tra ten cong ty trong TOAN BO website (khong duoc thieu chu TRAN)
+BAD_CT=$(python3 - "$SITES_DIR" <<'PYEOF'
+import re, os, sys
+root = sys.argv[1]
+pat = re.compile(r'TM (?!TRAN|TRẦN)(?:HUU|HỮU|Huu|Hữu) MINH', re.I)
+bad = []
+for r, ds, fs in os.walk(root):
+    if '.git' in r: continue
+    for f in fs:
+        if not f.endswith('.html'): continue
+        p = os.path.join(r, f)
+        try: s = open(p, encoding='utf-8', errors='ignore').read()
+        except: continue
+        if pat.search(s): bad.append(p)
+print(len(bad))
+for b in bad[:5]: print(' -', b)
+PYEOF
+)
+BAD_CT=$(echo "$BAD_CT" | head -1)
+if [ "$BAD_CT" -gt 0 ] 2>/dev/null; then
+    log "❌ Ten cong ty: $BAD_CT file thieu chu TRAN (vd 'TM HUU MINH') — can sua ngay"
     fail=$((fail+1))
 else
-    log "✅ Ten cong ty: toan bo bai dung 'TM TRAN HUU MINH'"
+    log "✅ Ten cong ty: toan bo file dung 'TM TRAN HUU MINH'"
     check=$((check+1))
 fi
 
