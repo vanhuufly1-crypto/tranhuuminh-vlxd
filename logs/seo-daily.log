@@ -5332,3 +5332,85 @@ fatal: could not read Username for 'https://github.com': No such device or addre
 [2026-08-25 09:01:00] ✅ SEO DAILY HOAN TAT — 2026-08-25
 [2026-08-25 09:01:00] ============================================
 [2026-08-25 09:01:00] ============================================
+[2026-08-26 09:00:02] ============================================
+[2026-08-26 09:00:02] ============================================
+[2026-08-26 09:00:02] 🚀 SEO DAILY START — 2026-08-26
+[2026-08-26 09:00:02] 🚀 SEO DAILY START — 2026-08-26
+[2026-08-26 09:00:02] ============================================
+[2026-08-26 09:00:02] ============================================
+[2026-08-26 09:00:02] 🔍 Kiem tra GPU...
+[2026-08-26 09:00:02] 🔍 Kiem tra GPU...
+[2026-08-26 09:00:02] ✅ GPU ranh (util=0% mem=71MB)
+[2026-08-26 09:00:02] ✅ GPU ranh (util=0% mem=71MB)
+[2026-08-26 09:00:02] 
+[2026-08-26 09:00:02] 
+[2026-08-26 09:00:02] 📊 PHAN TICH SEO...
+[2026-08-26 09:00:02] 📊 PHAN TICH SEO...
+[2026-08-26 09:00:02] 📝 So blog posts: 325
+[2026-08-26 09:00:02] 📝 So blog posts: 325
+[2026-08-26 09:00:02] 🗺️  Sitemap: 337 URLs, 77689 bytes, lastmod 2026-08-26
+[2026-08-26 09:00:02] 🗺️  Sitemap: 337 URLs, 77689 bytes, lastmod 2026-08-26
+[2026-08-26 09:00:02] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-08-26 09:00:02] 🏷️  Brand pages: 8 (dulux index jotun kova munich nanohouse nippon sika)
+[2026-08-26 09:00:02] 🧠 Goi R1 phan tich SEO...
+[2026-08-26 09:00:02] 🧠 Goi R1 phan tich SEO...
+[2026-08-26 09:00:49] 📋 Phan tich R1:
+[2026-08-26 09:00:49] 📋 Phan tich R1:
+[2026-08-26 09:00:49]    **Phân tích trang thai SEO hien tai:**
+[2026-08-26 09:00:49]    **Phân tích trang thai SEO hien tai:**
+[2026-08-26 09:00:49]    1. **Danh giá tổng quan:**
+[2026-08-26 09:00:49]    1. **Danh giá tổng quan:**
+[2026-08-26 09:00:49]       - Website hiện tại đã منتدي 325 bài viết, trong đó các hãng được phân phối như sau:
+[2026-08-26 09:00:49]       - Website hiện tại đã منتدي 325 bài viết, trong đó các hãng được phân phối như sau:
+[2026-08-26 09:00:49]         - Munich: 57 bài (17,5%)
+[2026-08-26 09:00:49]         - Munich: 57 bài (17,5%)
+[2026-08-26 09:00:49]         - Nippon: 6 bài (1.84%)
+[2026-08-26 09:00:49]         - Nippon: 6 bài (1.84%)
+[2026-08-26 09:00:49]         - Jotun: 6 bài (1.84%)
+[2026-08-26 09:00:49]         - Jotun: 6 bài (1.84%)
+[2026-08-26 09:00:49]         - Kova, Sika, Dulux: 55, 56, 6 bài tương ứng (16.9%, 17.2%, 1.84%)
+[2026-08-26 09:00:49]         - Kova, Sika, Dulux: 55, 56, 6 bài tương ứng (16.9%, 17.2%, 1.84%)
+[2026-08-26 09:00:49]       - Tỷ lệ between brand là khoảng 15-17.5%, đảm bảo mỗi hãng được pertain equally.
+[2026-08-26 09:00:49]       - Tỷ lệ between brand là khoảng 15-17.5%, đảm bảo mỗi hãng được pertain equally.
+[2026-08-26 09:00:49]       - Tỷ lệ uniqueness của các URL trong sitemap là 28.9%, cho thấy các URL có tính to and unique adequate enough.
+[2026-08-26 09:00:49]       - Tỷ lệ uniqueness của các URL trong sitemap là 28.9%, cho thấy các URL có tính to and unique adequate enough.
+[2026-08-26 09:00:49]    2. **Goi y cai tieu:**
+[2026-08-26 09:00:49]    2. **Goi y cai tieu:**
+[2026-08-26 09:00:49]       - **Munich:** Là hãng chính với số lượng bài viết cao nhất (57/325). Cụ thể:
+[2026-08-26 09:00:49]       - **Munich:** Là hãng chính với số lượng bài viết cao nhất (57/325). Cụ thể:
+[2026-08-26 09:00:49]         - Gone: 10 bài
+[2026-08-26 09:00:49]         - Gone: 10 bài
+[2026-08-26 09:00:49]         - New: 46 bài
+[2026-08-26 09:00:49]         - New: 46 bài
+[2026-08-26 09:00:49]         - overdue: 15 bài
+[2026-08-26 09:00:49]         - overdue: 15 bài
+[2026-08-26 09:00:49]         - overdue 6-12 months: 9 bài
+[2026-08-26 09:00:49]         - overdue 6-12 months: 9 bài
+[2026-08-26 09:00:49]       - **Nippon và Jotun:** Có всего 6 bài viết mỗi hãng, có thể là các chi tiết hoặc lỗi trong database.
+[2026-08-26 09:00:49]       - **Nippon và Jotun:** Có всего 6 bài viết mỗi hãng, có thể là các chi tiết hoặc lỗi trong database.
+[2026-08-26 09:00:49]       - **Kova, Sika, Dulux:** Mỗi hãng có khoảng 55-56 bài viết, tương ứng với tỷ lệ around 17%.
+[2026-08-26 09:00:49]       - **Kova, Sika, Dulux:** Mỗi hãng có khoảng 55-56 bài viết, tương ứng với tỷ lệ around 17%.
+[2026-08-26 09:00:49]    3. **Tính to and unique:**
+[2026-08-26 09:00:49]    3. **Tính to and unique:**
+[2026-08-26 09:00:49]       - **Between brand ratio:** Around 15%, đảm bảo các brand được pertain equally.
+[2026-08-26 09:00:49]       - **Between brand ratio:** Around 15%, đảm bảo các brand được pertain equally.
+[2026-08-26 09:00:49]       - **Uniqueness ratio:** 28.9%, cho thấy các URL có tính to and unique adequate enough.
+[2026-08-26 09:00:49]       - **Uniqueness ratio:** 28.9%, cho thấy các URL có tính to and unique adequate enough.
+[2026-08-26 09:00:49]    **Kết luận:**
+[2026-08-26 09:00:49]    **Kết luận:**
+[2026-08-26 09:00:49]    Website hiện tại đã منتدي activity fairly regular enough, nhưng cần kiểm tra lại các chi tiết về các brand đặc biệt như Munich, Nippon và Jotun để đảm bảo chúng được xử lý đúng cách.
+[2026-08-26 09:00:49]    Website hiện tại đã منتدي activity fairly regular enough, nhưng cần kiểm tra lại các chi tiết về các brand đặc biệt như Munich, Nippon và Jotun để đảm bảo chúng được xử lý đúng cách.
+[2026-08-26 09:00:49] 
+[2026-08-26 09:00:49] 
+[2026-08-26 09:00:49] 🗺️  TAO LAI SITEMAP...
+[2026-08-26 09:00:49] 🗺️  TAO LAI SITEMAP...
+[2026-08-26 09:00:52]    🔧 Đang tạo sitemap.xml...
+[2026-08-26 09:00:52]    🔧 Đang tạo sitemap.xml...
+[2026-08-26 09:00:52]    ✅ Đã tạo sitemap.xml với 337 URL
+[2026-08-26 09:00:52]    ✅ Đã tạo sitemap.xml với 337 URL
+[2026-08-26 09:00:52] ✅ Sitemap da duoc tao lai
+[2026-08-26 09:00:52] ✅ Sitemap da duoc tao lai
+[2026-08-26 09:00:52] 
+[2026-08-26 09:00:52] 
+[2026-08-26 09:00:52] 📤 GIT PUSH...
+[2026-08-26 09:00:52] 📤 GIT PUSH...
