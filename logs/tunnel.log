@@ -410,3 +410,18 @@ Tunnel URL: https://bottles-blond-travels-exempt.trycloudflare.com
 2026-08-28T17:17:15Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.200.113
 2026-08-28T17:17:17Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.113
 2026-08-28T17:17:17Z INF Registered tunnel connection connIndex=0 connection=b237e647-f633-4485-885c-e29426f25c43 event=0 ip=198.41.200.113 location=hkg13 protocol=quic
+2026-08-29T08:43:33Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.8.2
+2026-08-29T09:47:50Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:50Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:50Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:50Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:50Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:52Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T09:47:52Z INF Registered tunnel connection connIndex=0 connection=1e830796-fac7-4de6-8346-2fea4dffa390 event=0 ip=198.41.200.113 location=hkg13 protocol=quic
+2026-08-29T10:10:36Z ERR failed to accept incoming stream requests error="failed to accept QUIC stream: timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:36Z ERR failed to run the datagram handler error="timeout: no recent network activity" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:36Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:36Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:36Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:37Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.113
+2026-08-29T10:10:38Z INF Registered tunnel connection connIndex=0 connection=a113129a-f74f-4bb3-8a8e-de4b91f78999 event=0 ip=198.41.200.113 location=hkg13 protocol=quic
