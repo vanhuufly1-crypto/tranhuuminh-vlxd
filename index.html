@@ -650,9 +650,9 @@ window.addEventListener("DOMContentLoaded", function() {
         '<div style="display:flex;gap:6px;margin-bottom:6px;">' +
         '<input type="number" id="estimate-area" placeholder="Diện tích (m²) *" style="flex:1;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px;">' +
         '<select id="estimate-product" style="padding:10px;border:1px solid #ccc;border-radius:6px;font-size:13px;">' +
-        '<option value="G20">G20 (1.925.950₫)</option>' +
-        '<option value="G20S">G20S (1.431.000₫)</option>' +
-        '<option value="CT0">CT0 (829.640₫)</option>' +
+        '<option value="G20">G20 (Liên hệ báo giá)</option>' +
+        '<option value="G20S">G20S (Liên hệ báo giá)</option>' +
+        '<option value="CT0">CT0 (Liên hệ báo giá)</option>' +
         '</select></div>' +
         '<input type="tel" id="estimate-phone" placeholder="SĐT *" style="width:92%;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;font-weight:700;">' +
         '<div id="estimate-result" style="margin-top:8px;text-align:center;font-size:14px;color:#27ae60;font-weight:600;"></div>' +
@@ -671,11 +671,10 @@ window.addEventListener("DOMContentLoaded", function() {
           if (!area || area < 5) { resultDiv.textContent = ''; return; }
           // Định mức Munich (theo DOCX): G20 ~20m²/lớp (bộ 26kg), 2 lớp ~10m²/bộ
           var dinhMuc = { 'G20': 12, 'G20S': 10, 'CT0': 5, 'C20': 12, 'PU S700': 8 };
-          var gia = { 'G20': 1925950, 'G20S': 1431000, 'CT0': 829640 };
+          var gia = { 'G20': 0, 'G20S': 0, 'CT0': 0 };
           var sp = productSelect.value;
           var soBo = Math.ceil(area / dinhMuc[sp]);
-          var tong = soBo * gia[sp];
-          resultDiv.innerHTML = 'Cần <strong>' + soBo + ' bộ</strong> — Tạm tính: <strong>' + tong.toLocaleString('vi-VN') + '₫</strong><br><span style="font-size:11px;color:#999;">(chưa gồm nhân công)</span>';
+          resultDiv.innerHTML = 'Cần <strong>' + soBo + ' bộ</strong> — <strong>Gọi 0378.679.633 để nhận báo giá chính xác</strong>';
         }
         
         areaInput.addEventListener('input', tinhDuToan);
