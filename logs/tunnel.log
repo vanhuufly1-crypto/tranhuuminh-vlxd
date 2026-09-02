@@ -139,3 +139,4 @@ Tunnel URL: https://leslie-acquire-detroit-wyoming.trycloudflare.com
 2026-09-02T00:56:01Z INF Retrying connection in up to 16s connIndex=0 event=0 ip=198.41.200.193
 2026-09-02T00:56:13Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.107
 2026-09-02T00:56:14Z INF Registered tunnel connection connIndex=0 connection=d89d8db5-9a91-4683-aee9-af7a94316b57 event=0 ip=198.41.192.107 location=hkg09 protocol=quic
+2026-09-02T23:01:56Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.8.3
