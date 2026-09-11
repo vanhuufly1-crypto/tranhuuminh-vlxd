@@ -68,3 +68,4 @@ Tunnel URL: https://messaging-ethical-speaks-studies.trycloudflare.com
 2026-09-10T18:41:03Z INF Retrying connection in up to 16s connIndex=0 event=0 ip=198.41.200.193
 2026-09-10T18:41:13Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.37
 2026-09-10T18:41:17Z INF Registered tunnel connection connIndex=0 connection=823a5acd-02a5-46bb-ade5-f108ebbc0b44 event=0 ip=198.41.192.37 location=hkg09 protocol=quic
+2026-09-10T23:01:58Z WRN Your version 2026.3.0 is outdated. We recommend upgrading it to 2026.9.0
