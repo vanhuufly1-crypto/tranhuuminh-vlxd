@@ -215,27 +215,18 @@ footer strong{color:#444}
 <div id="bmForm" style="display:none;background:#fff5f5;border:2px solid #e94560;border-radius:14px;padding:24px;margin:26px 0;max-width:640px;margin-left:auto;margin-right:auto">
   <h2 style="color:#c0392b;margin-bottom:4px">🛒 Đặt mua Munich ngay</h2>
   <p style="font-size:13px;color:#666;margin-bottom:14px">Điền thông tin — <strong>0378.679.633</strong> gọi lại xác nhận & giao hàng nhanh tại Hải Phòng.</p>
-  <form onsubmit="return submitMunich(event)" style="display:flex;flex-direction:column;gap:10px">
-    <input type="text" id="bmProduct" placeholder="Sản phẩm *" readonly style="padding:12px;border:2px solid #e94560;border-radius:8px;font-weight:700;background:#fff">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <input type="text" id="bmName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:8px">
-      <input type="tel" id="bmPhone" placeholder="SĐT 10 số *" required pattern="[0-9]{10}" style="padding:12px;border:1px solid #ccc;border-radius:8px">
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <select id="bmQty" style="padding:12px;border:1px solid #ccc;border-radius:8px">
-        <option value="1">Số lượng: 1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option><option value="10">10</option><option value="20">20</option>
-      </select>
-      <input type="text" id="bmAddr" placeholder="Địa chỉ giao *" style="padding:12px;border:1px solid #ccc;border-radius:8px">
-    </div>
-    <input type="text" id="bmNote" placeholder="Ghi chú (quy cách, vị trí thi công...)" style="padding:12px;border:1px solid #ddd;border-radius:8px">
-    <button type="submit" style="background:linear-gradient(135deg,#e94560,#c0392b);color:#fff;padding:15px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer">🔥 GỬI ĐƠN HÀNG — GỌI LẠI XÁC NHẬN</button>
-  </form>
+      <div id="bmProductDisplay" style="padding:10px;background:#fff;border-radius:8px;font-weight:700;color:#c0392b;margin-bottom:10px"></div>
+    <input type="hidden" id="bmProduct">
+    <a href="tel:0378679633" style="display:block;text-align:center;background:linear-gradient(135deg,#e94560,#c0392b);color:#fff;padding:15px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none">📞 GỌI ĐẶT HÀNG — 0378.679.633</a>
+    <a href="https://zalo.me/0378679633" style="display:block;text-align:center;background:#0068ff;color:#fff;padding:13px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;margin-top:8px">💬 NHẮN ZALO</a>
   <div id="bmResult" style="display:none;padding:14px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;margin-top:10px">✅ Đã nhận đơn! 0378.679.633 sẽ gọi lại xác nhận ngay.</div>
 </div>
 <script src="js/api-config.js"></script>
 <script>
 function datMua(sp){
   document.getElementById('bmProduct').value = sp;
+  var pd = document.getElementById('bmProductDisplay');
+  if (pd) pd.innerHTML = '🛒 Anh/chị muốn đặt: <strong>' + sp + '</strong>';
   var f = document.getElementById('bmForm');
   f.style.display = 'block';
   f.scrollIntoView({behavior:'smooth', block:'center'});
@@ -249,15 +240,6 @@ function submitMunich(e){
   var addr = document.getElementById('bmAddr').value;
   var note = document.getElementById('bmNote').value;
   if(!sp || !phone || phone.length < 10){ alert('Chọn sản phẩm và nhập SĐT 10 số!'); return false; }
-  fetch((window.API_URL || '') + '/order', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      name: name, phone: phone, address: addr,
-      product: 'Munich ' + sp + ' x' + qty,
-      note: note || 'Đặt qua web Munich', total: 0, priority: 'ưu tiên'
-    })
-  }).catch(function(){});
   document.getElementById('bmForm').querySelector('form').style.display = 'none';
   document.getElementById('bmResult').style.display = 'block';
   return false;

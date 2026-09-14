@@ -344,55 +344,11 @@
 <h2 style="text-align:center;color:#c0392b;margin:5px 0;">🔥 ĐẶT HÀNG MUNICH</h2>
 <p style="text-align:center;font-size:14px;color:#666;margin-bottom:20px;">Chiết khấu lên đến <strong style="color:#e74c3c;">50%</strong> cho đơn hàng lớn</p>
 
-<form id="orderMunichForm" onsubmit="return submitOrderMunich(event)" style="display:flex;flex-direction:column;gap:12px;">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-<select id="orderProduct" style="padding:12px;border:1px solid #e74c3c;border-radius:8px;font-weight:600;">
-<option value="">🔧 Chọn sản phẩm *</option>
-<option value="G20">G20 — Màng chống thấm 2TP đàn hồi 200%</option>
-<option value="G20S">G20S — Màng 2TP siêu bám dính</option>
-<option value="G20C">G20C — Màng 2TP siêu cứng lá sen</option>
-<option value="C20">C20 — Màng 2TP siêu cứng</option>
-<option value="CT0">CT0 — Chống thấm Acrylic sàn mái</option>
-<option value="PU S400">PU S400 — Chống thấm PU</option>
-<option value="Glass 2K">Glass 2K — Chống thấm trong suốt</option>
-<option value="Kyton K101">Kyton K101 — Chống thấm tinh thể</option>
-<option value="PU S700">PU S700 — Chống thấm PU</option>
-</select>
-
-<select id="orderQty" style="padding:12px;border:1px solid #ddd;border-radius:8px;">
-<option value="1">Số lượng: 1</option>
-<option value="2">Số lượng: 2</option>
-<option value="3">Số lượng: 3</option>
-<option value="5">Số lượng: 5</option>
-<option value="10">Số lượng: 10</option>
-<option value="20">Số lượng: 20</option>
-</select>
+<div class="cta-contact" style="text-align:center;padding:18px;background:#e8f4fd;border-radius:12px;margin-top:10px">
+<p style="margin:0 0 10px;font-weight:700;color:#c0392b">☎️ Gọi điện hoặc 💬 nhắn Zalo để được tư vấn &amp; báo giá trực tiếp</p>
+<a href="tel:0378679633" style="display:block;background:#e74c3c;color:#fff;padding:15px;border-radius:10px;font-size:17px;font-weight:700;text-decoration:none">📞 GỌI NGAY: 0378.679.633</a>
+<a href="https://zalo.me/0378679633" style="display:block;background:#0068ff;color:#fff;padding:13px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;margin-top:8px">💬 NHẮN ZALO: 0378.679.633</a>
 </div>
-
-<select id="orderDiscount" onchange="updateOrderPrice()" style="padding:12px;border:1px solid #e74c3c;border-radius:8px;font-weight:700;background:#fff8f8;">
-<option value="5">💰 Chiết khấu: 5%</option>
-<option value="10">💰 Chiết khấu: 10%</option>
-<option value="15">💰 Chiết khấu: 15%</option>
-<option value="20">💰 Chiết khấu: 20%</option>
-<option value="25">💰 Chiết khấu: 25%</option>
-<option value="30">💰 Chiết khấu: 30%</option>
-<option value="35">💰 Chiết khấu: 35%</option>
-<option value="40">💰 Chiết khấu: 40%</option>
-</select>
-
-<div id="orderPriceDisplay" style="background:#fff;border:1px solid #27ae60;border-radius:8px;padding:12px;text-align:center;font-size:18px;font-weight:700;color:#27ae60;">
-💵 Chọn sản phẩm để xem giá
-</div>
-
-<input type="text" id="orderName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:8px;">
-<input type="tel" id="orderPhone" placeholder="Số điện thoại *" required pattern="[0-9]{10}" style="padding:12px;border:2px solid #e74c3c;border-radius:8px;font-weight:700;">
-<input type="text" id="orderAddress" placeholder="Địa chỉ giao hàng *" style="padding:12px;border:1px solid #ccc;border-radius:8px;">
-<input type="text" id="orderNote" placeholder="Ghi chú (vị trí thi công...)" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:13px;">
-
-<button type="submit" style="background:#e74c3c;color:white;padding:16px;border:none;border-radius:10px;font-size:18px;font-weight:700;cursor:pointer;">
-🔥 ĐẶT HÀNG NGAY — GỌI LẠI XÁC NHẬN
-</button>
-</form>
 <div id="orderResult" style="display:none;padding:15px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;margin-top:10px;">
 ✅ Đã nhận đơn hàng! <strong>0378.679.633</strong> sẽ gọi lại xác nhận ngay.
 </div>
@@ -458,21 +414,7 @@ function submitOrderMunich(e) {
   const basePrice = MUNICH_PRICES[product] || 0;
   const total = basePrice * parseInt(qty);
   const final = total * (1 - parseInt(discount) / 100);
-  
-  // Gửi server
-  fetch((window.API_URL || '') + '/order', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      name: name,
-      phone: phone,
-      address: address,
-      product: 'Munich ' + product + ' x' + qty,
-      note: note || 'Chiết khấu: ' + discount + '%',
-      total: Math.round(final),
-      priority: 'ưu tiên'
-    })
-  }).catch(function(){});
+  // (14/09/2026) Không gửi dữ liệu đi nữa — khách gọi điện / Zalo trực tiếp
   
   document.getElementById('orderMunichForm').style.display = 'none';
   document.getElementById('orderResult').style.display = 'block';
@@ -490,14 +432,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- FORM BAO GIA -->
 <section id="quote-fast" style="background:#e8f4fd;border-radius:12px;padding:25px;margin:20px auto;max-width:600px;">
-<h2 style="text-align:center;color:#c0392b;margin-top:0;">📋 NHẬN BÁO GIÁ NHANH - MIỄN PHÍ</h2>
-<p style="text-align:center;color:#c0392b;font-weight:700;">👇 Nhập SĐT để xem bảng giá!</p>
-<form id="priceForm" onsubmit="return getPrice(event)" style="display:flex;flex-direction:column;gap:10px;background:white;padding:20px;border-radius:8px;">
-<input type="text" id="formName" placeholder="Họ tên *" required style="padding:12px;border:1px solid #ccc;border-radius:5px;">
-<input type="tel" id="formPhone" placeholder="Số điện thoại *" required pattern="[0-9]{10}" style="padding:12px;border:2px solid #e74c3c;border-radius:5px;font-weight:700;">
-<select id="formService" style="padding:12px;border:1px solid #ccc;border-radius:5px;"><option value="">Dịch vụ</option><option>Chống thấm</option><option>Sơn Epoxy sàn</option><option>Sân Pickleball</option><option>Sơn sửa nhà</option></select>
-<button type="submit" style="background:#e74c3c;color:white;padding:14px;border:none;border-radius:5px;font-size:16px;font-weight:700;cursor:pointer;">🔥 NHẬN BÁO GIÁ NGAY</button>
-</form>
+<h2 style="text-align:center;color:#c0392b;margin-top:0;">📞 GỌI ĐIỆN / ZALO ĐỂ ĐƯỢC TƯ VẤN</h2>
+<p style="text-align:center;color:#c0392b;font-weight:700;">👇 Gọi trực tiếp để được tư vấn nhanh nhất!</p>
+<div class="cta-contact" style="text-align:center;padding:18px;background:#e8f4fd;border-radius:12px;margin-top:10px">
+<p style="margin:0 0 10px;font-weight:700;color:#c0392b">☎️ Gọi điện hoặc 💬 nhắn Zalo để được tư vấn &amp; báo giá trực tiếp</p>
+<a href="tel:0378679633" style="display:block;background:#e74c3c;color:#fff;padding:15px;border-radius:10px;font-size:17px;font-weight:700;text-decoration:none">📞 GỌI NGAY: 0378.679.633</a>
+<a href="https://zalo.me/0378679633" style="display:block;background:#0068ff;color:#fff;padding:13px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;margin-top:8px">💬 NHẮN ZALO: 0378.679.633</a>
+</div>
 <div id="formResult" style="display:none;padding:15px;background:#d4edda;border-radius:8px;text-align:center;font-weight:700;color:#155724;">✅ Đã nhận! Chúng tôi sẽ gọi lại ngay. Hotline: <a href="tel:0378679633" style="color:#155724;">0378.679.633</a></div>
 <p style="text-align:center;font-size:12px;color:#999;">🔒 Bảo mật thông tin. Cam kết không spam.</p>
 </section>
@@ -505,7 +446,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 function getPrice(e){e.preventDefault();var n=document.getElementById('formName').value,p=document.getElementById('formPhone').value,s=document.getElementById('formService').value||'';if(!p||p.length<10){alert('Nhập SĐT 10 số!');return false}
 // Gửi về server API (không lộ token Telegram)
-fetch(API_URL+"/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:n,phone:p,service:s})}).catch(function(){});
 document.getElementById('priceForm').style.display='none';document.getElementById('formResult').style.display='block';return false}
 </script>
 
@@ -640,84 +580,10 @@ window.addEventListener("DOMContentLoaded", function() {
     popup.id = 'lead-popup';
     popup.style.cssText = 'position:fixed;bottom:100px;right:90px;z-index:9998;background:white;border:2px solid #e74c3c;border-radius:14px;padding:18px;width:340px;box-shadow:0 5px 25px rgba(0,0,0,0.25);animation:slideIn 0.4s ease;';
     
-    if (type === 'estimate') {
-      // === BẢNG DỰ TOÁN CHỐNG THẤM ===
-      popup.innerHTML = '<div style="font-size:18px;text-align:center;margin-bottom:10px;color:#e74c3c;font-weight:700;">📋 BẢNG DỰ TOÁN CHỐNG THẤM</div>' +
-        '<p style="font-size:13px;color:#555;text-align:center;margin:4px 0 10px;">Nhập diện tích + SĐT — nhận dự toán chính xác 90% ngay!</p>' +
-        '<div style="background:#f5f5f5;border-radius:8px;padding:12px;">' +
-        '<div style="display:flex;gap:6px;margin-bottom:6px;">' +
-        '<input type="number" id="estimate-area" placeholder="Diện tích (m²) *" style="flex:1;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px;">' +
-        '<select id="estimate-product" style="padding:10px;border:1px solid #ccc;border-radius:6px;font-size:13px;">' +
-        '<option value="G20">G20 (Liên hệ báo giá)</option>' +
-        '<option value="G20S">G20S (Liên hệ báo giá)</option>' +
-        '<option value="CT0">CT0 (Liên hệ báo giá)</option>' +
-        '</select></div>' +
-        '<input type="tel" id="estimate-phone" placeholder="SĐT *" style="width:92%;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;font-weight:700;">' +
-        '<div id="estimate-result" style="margin-top:8px;text-align:center;font-size:14px;color:#27ae60;font-weight:600;"></div>' +
-        '<button id="estimate-btn" style="width:100%;background:#e74c3c;color:white;border:none;padding:12px;border-radius:6px;font-weight:700;font-size:15px;margin-top:8px;cursor:pointer;">🔥 NHẬN DỰ TOÁN</button>' +
-        '</div>' +
+    popup.innerHTML = '<div style="font-size:17px;text-align:center;margin-bottom:10px;color:#e74c3c;font-weight:700;">☎️ Cần tư vấn? Gọi hoặc Zalo trực tiếp!</div>' +
+        '<a href="tel:0378679633" style="display:block;text-align:center;background:#e74c3c;color:#fff;padding:13px;border-radius:8px;font-weight:700;text-decoration:none">📞 GỌI 0378.679.633</a>' +
+        '<a href="https://zalo.me/0378679633" style="display:block;text-align:center;background:#0068ff;color:#fff;padding:11px;border-radius:8px;font-weight:700;text-decoration:none;margin-top:6px">💬 NHẮN ZALO</a>' +
         '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
-      
-      // Tính dự toán tự động
-      setTimeout(function() {
-        var areaInput = document.getElementById('estimate-area');
-        var productSelect = document.getElementById('estimate-product');
-        var resultDiv = document.getElementById('estimate-result');
-        
-        function tinhDuToan() {
-          var area = parseFloat(areaInput.value);
-          if (!area || area < 5) { resultDiv.textContent = ''; return; }
-          // Định mức Munich (theo DOCX): G20 ~20m²/lớp (bộ 26kg), 2 lớp ~10m²/bộ
-          var dinhMuc = { 'G20': 12, 'G20S': 10, 'CT0': 5, 'C20': 12, 'PU S700': 8 };
-          var gia = { 'G20': 0, 'G20S': 0, 'CT0': 0 };
-          var sp = productSelect.value;
-          var soBo = Math.ceil(area / dinhMuc[sp]);
-          resultDiv.innerHTML = 'Cần <strong>' + soBo + ' bộ</strong> — <strong>Gọi 0378.679.633 để nhận báo giá chính xác</strong>';
-        }
-        
-        areaInput.addEventListener('input', tinhDuToan);
-        productSelect.addEventListener('change', tinhDuToan);
-        
-        document.getElementById('estimate-btn').onclick = function() {
-          var phone = document.getElementById('estimate-phone').value.trim();
-          var area = areaInput.value.trim();
-          var product = productSelect.value;
-          if (!phone || phone.length < 10 || !area) { alert('Nhập SĐT và diện tích!'); return; }
-          fetch((window.API_URL || '') + '/api/quote', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({name: '(Bảng dự toán)', phone: phone, service: 'Dự toán ' + product + ' — ' + area + 'm²'})
-          }).catch(function(){});
-          popup.innerHTML = '<div style="text-align:center;padding:20px;color:#27ae60;font-weight:700;">✅ Đã nhận! Em sẽ gọi báo giá lại ngay.</div><button onclick="this.parentElement.remove()" style="display:block;margin:10px auto;background:none;border:none;color:#999;cursor:pointer;">Đóng</button>';
-          window.open('tel:0378679633');
-        };
-      }, 100);
-    } else {
-      // === VOUCHER CHIẾT KHẤU ===
-      popup.innerHTML = '<div style="font-size:18px;text-align:center;margin-bottom:8px;color:#e74c3c;font-weight:700;">⭐ Munich G20 — Voucher</div>' +
-        '<p style="font-size:14px;color:#333;line-height:1.5;margin:6px 0;">Anh/chị đang quan tâm dòng chống thấm Munich phải không? Em đang có <strong style="color:#e74c3c;">voucher chiết khấu thêm</strong> cho khách Hải Phòng hôm nay. Để lại SĐT em báo giá tốt nhất nhé!</p>' +
-        '<div style="display:flex;gap:6px;margin-top:8px;">' +
-        '<input type="tel" id="lead-phone" placeholder="SĐT của anh/chị *" style="flex:1;padding:10px;border:1px solid #e74c3c;border-radius:6px;font-size:14px;">' +
-        '<button style="background:#e74c3c;color:white;border:none;padding:10px 16px;border-radius:6px;font-weight:700;cursor:pointer;">NHẬN</button></div>' +
-        '<button onclick="document.getElementById(\'lead-popup\').remove();daShowPopLead=true" style="display:block;margin:6px auto 0;background:none;border:none;color:#999;font-size:12px;cursor:pointer;">Để sau ✕</button>';
-      
-      setTimeout(function() {
-        var btn = popup.querySelector('button');
-        var input = popup.querySelector('input');
-        if (!btn || !input) return;
-        btn.onclick = function() {
-          var phone = input.value.trim();
-          if (phone.length >= 10) {
-            fetch((window.API_URL || '') + '/api/quote', {
-              method: 'POST', headers: {'Content-Type': 'application/json'},
-              body: JSON.stringify({name: '(Voucher)', phone: phone, service: 'Voucher Munich'})
-            }).catch(function(){});
-          }
-          popup.remove();
-          window.open('tel:0378679633');
-        };
-      }, 100);
-    }
     
     document.body.appendChild(popup);
     setTimeout(function() {
@@ -808,11 +674,6 @@ window.addEventListener("DOMContentLoaded", function() {
       var savedTime = parseInt(localStorage.getItem('may_abandon_time') || '0');
       // Nếu đã quá 10 phút và SĐT chưa được clear (chưa submit thành công)
       if (savedPhone && (Date.now() - savedTime > 600000)) {
-        fetch((window.API_URL || '') + '/api/abandon', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({phone: savedPhone})
-        }).catch(function(){});
         localStorage.removeItem('may_abandon_phone');
         localStorage.removeItem('may_abandon_time');
       }
@@ -846,11 +707,6 @@ window.addEventListener("DOMContentLoaded", function() {
     var savedPhone = localStorage.getItem('may_abandon_phone');
     var savedTime = parseInt(localStorage.getItem('may_abandon_time') || '0');
     if (savedPhone && savedTime && (Date.now() - savedTime > 600000)) {
-      fetch((window.API_URL || '') + '/api/abandon', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({phone: savedPhone})
-      }).catch(function(){});
       localStorage.removeItem('may_abandon_phone');
       localStorage.removeItem('may_abandon_time');
     }
