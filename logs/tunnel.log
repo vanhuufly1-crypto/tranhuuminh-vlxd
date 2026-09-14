@@ -28,3 +28,12 @@ Tunnel URL: https://namely-acceptance-handhelds-fine.trycloudflare.com
 2026-09-13T23:02:06Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.37
 2026-09-13T23:02:08Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.192.37
 2026-09-13T23:02:08Z INF Registered tunnel connection connIndex=0 connection=1502df84-0480-4d54-99ef-3b708b97c930 event=0 ip=198.41.192.37 location=hkg01 protocol=quic
+2026-09-14T07:28:59Z INF Initiating graceful shutdown due to signal terminated ...
+2026-09-14T07:28:59Z ERR failed to run the datagram handler error="Application error 0x0 (remote)" connIndex=0 event=0 ip=198.41.192.37
+2026-09-14T07:28:59Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-09-14T07:28:59Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.192.37
+2026-09-14T07:28:59Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.192.37
+2026-09-14T07:28:59Z ERR Connection terminated connIndex=0
+2026-09-14T07:28:59Z ERR no more connections active and exiting
+2026-09-14T07:28:59Z INF Tunnel server stopped
+2026-09-14T07:28:59Z INF Metrics server stopped
