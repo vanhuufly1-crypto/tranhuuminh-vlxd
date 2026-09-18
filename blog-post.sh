@@ -45,17 +45,20 @@ title = m.group(1).strip() if m else slug.replace('-', ' ').title()
 brand = slug.split('-')[0].lower()
 icons = {"munich":"🛡️","nanohouse":"🏡","kova":"🏺","sika":"🧪","jotun":"🖌️","dulux":"🎨","nippon":"🇯🇵"}
 icon = icons.get(brand, "📝")
-md = re.search(r'(\d{4}-\d{2}-\d{2})', s)
+md = re.search(r'(\d{4}-\d{2}-\d{2})', slug) or re.search(r'(\d{4}-\d{2}-\d{2})', s)
 today = md.group(1) if md else ''
 entry = f'<a href="/blog/{slug}" class="blog-item"><span class="icon">{icon}</span><span class="info"><span class="title">{title} | Trần Hữu Minh</span><span class="date">📅 {today}</span></span></a>'
 with open('blog/index.html', encoding='utf-8') as fh: idx = fh.read()
-marker = '<div class="blog-list">'
-if marker in idx:
-    idx = idx.replace(marker, marker + '\n' + entry, 1)
+if f'href="/blog/{slug}"' in idx:
+    print("ℹ️ Entry đã có sẵn trong blog/index.html, bỏ qua (tránh trùng lặp)")
 else:
-    idx = entry + '\n' + idx
-with open('blog/index.html', 'w', encoding='utf-8') as fh: fh.write(idx)
-print("✅ Đã thêm link vào blog/index.html")
+    marker = '<div class="blog-list">'
+    if marker in idx:
+        idx = idx.replace(marker, marker + '\n' + entry, 1)
+    else:
+        idx = entry + '\n' + idx
+    with open('blog/index.html', 'w', encoding='utf-8') as fh: fh.write(idx)
+    print("✅ Đã thêm link vào blog/index.html")
 PYEOF
 
 # ===== 3b. Cập nhật mục "Bài viết mới nhất" trên trang chủ =====
