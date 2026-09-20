@@ -1,0 +1,22 @@
+[2026-09-20 23:40:01] Phat hien bai moi: google4e4fed70d82b0277.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-20 23:40:01] Phat hien bai moi: kyton-k101-chong-tham-nguoc-2026-09-20.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-20 23:40:01] Phat hien bai moi: munich-luxury-son-nano-bac-2026-09-20.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-20 23:50:02] Phat hien bai moi: google4e4fed70d82b0277.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-20 23:50:02] Phat hien bai moi: kyton-k101-chong-tham-nguoc-2026-09-20.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-20 23:50:02] Phat hien bai moi: munich-luxury-son-nano-bac-2026-09-20.html
+/home/huu-minh/website-vlxd/publish-queue.sh: line 25: ./blog-post.sh: Permission denied
+[2026-09-21 00:00:01] Phat hien bai moi: google4e4fed70d82b0277.html
+Kiểm tra: FAIL | quá ngắn (53 ký tự) | thiếu hotline | thiếu tên công ty
+❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng
+[2026-09-21 00:00:01] Phat hien bai moi: kyton-k101-chong-tham-nguoc-2026-09-20.html
+Kiểm tra: PASS
+✅ File: blog/kyton-k101-chong-tham-nguoc-2026-09-20.html
+✅ Đã thêm link vào blog/index.html
+✅ Đã cập nhật 6 bài mới nhất lên trang chủ
+🔧 Đang tạo sitemap.xml...
+✅ Đã tạo sitemap.xml với 87 URL
