@@ -241,3 +241,15 @@ Kiểm tra: PASS
 ✅ Đã cập nhật 6 bài mới nhất lên trang chủ
 🔧 Đang tạo sitemap.xml...
 ✅ Đã tạo sitemap.xml với 92 URL
+✅ ĐÃ ĐĂNG LÊN WEBSITE: blog/chong-tham-cua-so-mua-hat-2026-09-27.html
+✅ IndexNow: đã báo bài mới (HTTP 200)
+[2026-09-27 06:00:36] Phat hien bai moi: google4e4fed70d82b0277.html
+Kiểm tra: FAIL | quá ngắn (53 ký tự) | thiếu hotline | thiếu tên công ty
+❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng
+[2026-09-27 06:00:36] Phat hien bai moi: vat-tu-sua-nha-sau-bao-2026-09-27.html
+Kiểm tra: PASS
+✅ File: blog/vat-tu-sua-nha-sau-bao-2026-09-27.html
+✅ Đã thêm link vào blog/index.html
+✅ Đã cập nhật 6 bài mới nhất lên trang chủ
+🔧 Đang tạo sitemap.xml...
+✅ Đã tạo sitemap.xml với 93 URL
