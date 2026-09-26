@@ -59,3 +59,15 @@ Kiểm tra: PASS
 ✅ Đã cập nhật 6 bài mới nhất lên trang chủ
 🔧 Đang tạo sitemap.xml...
 ✅ Đã tạo sitemap.xml với 89 URL
+✅ ĐÃ ĐĂNG LÊN WEBSITE: blog/chong-tham-mai-be-tong-mua-bao-2026-09-26.html
+✅ IndexNow: đã báo bài mới (HTTP 200)
+[2026-09-26 17:50:37] Phat hien bai moi: google4e4fed70d82b0277.html
+Kiểm tra: FAIL | quá ngắn (53 ký tự) | thiếu hotline | thiếu tên công ty
+❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng
+[2026-09-26 17:50:37] Phat hien bai moi: tinh-luong-chong-tham-san-mai-2026-09-26.html
+Kiểm tra: PASS
+✅ File: blog/tinh-luong-chong-tham-san-mai-2026-09-26.html
+✅ Đã thêm link vào blog/index.html
+✅ Đã cập nhật 6 bài mới nhất lên trang chủ
+🔧 Đang tạo sitemap.xml...
+✅ Đã tạo sitemap.xml với 90 URL
