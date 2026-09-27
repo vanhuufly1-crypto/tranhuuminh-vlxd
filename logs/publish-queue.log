@@ -691,3 +691,15 @@ Kiểm tra: PASS
 ✅ Đã cập nhật 6 bài mới nhất lên trang chủ
 🔧 Đang tạo sitemap.xml...
 ✅ Đã tạo sitemap.xml với 94 URL
+✅ ĐÃ ĐĂNG LÊN WEBSITE: blog/chong-tham-tang-ham-mong-nha-2026-09-28.html
+✅ IndexNow: đã báo bài mới (HTTP 200)
+[2026-09-28 06:00:37] Phat hien bai moi: google4e4fed70d82b0277.html
+Kiểm tra: FAIL | quá ngắn (53 ký tự) | thiếu hotline | thiếu tên công ty
+❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng
+[2026-09-28 06:00:37] Phat hien bai moi: son-epoxy-nen-nha-xuong-2026-09-28.html
+Kiểm tra: PASS
+✅ File: blog/son-epoxy-nen-nha-xuong-2026-09-28.html
+✅ Đã thêm link vào blog/index.html
+✅ Đã cập nhật 6 bài mới nhất lên trang chủ
+🔧 Đang tạo sitemap.xml...
+✅ Đã tạo sitemap.xml với 95 URL
