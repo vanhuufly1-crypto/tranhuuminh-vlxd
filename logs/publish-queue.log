@@ -2491,3 +2491,15 @@ Kiểm tra: PASS
 ✅ Đã cập nhật 6 bài mới nhất lên trang chủ
 🔧 Đang tạo sitemap.xml...
 ✅ Đã tạo sitemap.xml với 102 URL
+✅ ĐÃ ĐĂNG LÊN WEBSITE: blog/dau-hieu-tuong-tham-nguoc-am-moc-2026-10-02.html
+✅ IndexNow: đã báo bài mới (HTTP 200)
+[2026-10-02 06:00:38] Phat hien bai moi: google4e4fed70d82b0277.html
+Kiểm tra: FAIL | quá ngắn (53 ký tự) | thiếu hotline | thiếu tên công ty
+❌ KHÔNG ĐĂNG — bài chưa đạt chất lượng
+[2026-10-02 06:00:38] Phat hien bai moi: son-ngoai-that-chong-reu-moc-mua-mua-2026-10-02.html
+Kiểm tra: PASS
+✅ File: blog/son-ngoai-that-chong-reu-moc-mua-mua-2026-10-02.html
+✅ Đã thêm link vào blog/index.html
+✅ Đã cập nhật 6 bài mới nhất lên trang chủ
+🔧 Đang tạo sitemap.xml...
+✅ Đã tạo sitemap.xml với 103 URL
