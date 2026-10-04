@@ -155,7 +155,9 @@ def main():
             paras = [l for l in lines if l and not l.upper().startswith("TIÊU ĐỀ:")]
             html = build_html(title, paras)
             fname = f"{slug}.html"
-            fpath = os.path.join(WS, fname)
+            inbox = os.path.join(WS, "_blog-inbox")
+            os.makedirs(inbox, exist_ok=True)
+            fpath = os.path.join(inbox, fname)
             open(fpath, "w", encoding="utf-8").write(html)
             print(f"--- Bài {done+1}: {title}")
             rc = subprocess.run(["bash", os.path.join(WS, "blog-post.sh"), fpath]).returncode
