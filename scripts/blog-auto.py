@@ -98,50 +98,76 @@ def build_html(title, paras):
 </html>
 """
 
+def today_count(date):
+    n = 0
+    try:
+        for fn in os.listdir(BLOG):
+            if fn.endswith(".html") and date in fn:
+                n += 1
+    except Exception:
+        pass
+    return n
+
 def main():
-    n = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+    target = int(sys.argv[1]) if len(sys.argv) > 1 else 2
     date = datetime.now().strftime("%Y-%m-%d")
-    have = existing_slugs()
-    corp = corpus()
-    done = 0
-    used = []
-    for topic in TOPICS:
-        if done >= n: break
-        tslug = slugify(topic)
-        codes = re.findall(r'[A-Z]{1,5}\s?\d{1,4}[A-Z]?', topic)
-        key = (codes[-1].replace(" ", "").lower() if codes else tslug.split("-")[0])
-        if key and key in corp:
-            continue
-        if any(tslug in s or key in s.lower() for s in have):
-            continue
-        if key in used:
-            continue
-        used.append(key)
-        slug = tslug + f"-{date}"
-        try:
-            out = ask31(topic)
-        except Exception as e:
-            print("LOI goi 3.1:", e); continue
-        lines = [l.strip() for l in out.splitlines()]
-        title = ""
-        for l in lines:
-            if l.upper().startswith("TIÊU ĐỀ:"):
-                title = l.split(":", 1)[1].strip(); break
-        if not title:
-            title = topic
-        paras = [l for l in lines if l and not l.upper().startswith("TIÊU ĐỀ:")]
-        html = build_html(title, paras)
-        fname = f"{slug}.html"
-        fpath = os.path.join(WS, fname)
-        open(fpath, "w", encoding="utf-8").write(html)
-        print(f"--- Bài {done+1}: {title} ({len(re.sub('<[^>]+>',' ',html))} ký tự)")
-        rc = subprocess.run(["bash", os.path.join(WS, "blog-post.sh"), fpath]).returncode
-        if rc == 0:
-            done += 1
-            corp += html.lower()
-        else:
-            print("   ❌ blog-post.sh FAIL cho bài này")
-    print(f"==> Đã đăng {done}/{n} bài")
+    # lock chong chay trung
+    lock = "/tmp/blog-auto.lock"
+    if os.path.exists(lock):
+        print("Đang chạy rồi, bỏ qua."); return
+    open(lock, "w").write(str(os.getpid()))
+    try:
+        need = target - today_count(date)
+        print(f"Hôm nay đã có {today_count(date)}/{target} bài → cần thêm {max(0,need)}.")
+        if need <= 0:
+            print("Đã đủ bài hôm nay, không cần thêm."); return
+        have = existing_slugs()
+        corp = corpus()
+        done = 0
+        used = []
+        for topic in TOPICS:
+            if done >= need:
+                break
+            tslug = slugify(topic)
+            codes = re.findall(r'[A-Z]{1,5}\s?\d{1,4}[A-Z]?', topic)
+            key = (codes[-1].replace(" ", "").lower() if codes else tslug.split("-")[0])
+            if key and key in corp:
+                continue
+            if any(tslug in s or key in s.lower() for s in have):
+                continue
+            if key in used:
+                continue
+            used.append(key)
+            slug = tslug + f"-{date}"
+            try:
+                out = ask31(topic)
+            except Exception as e:
+                print("LOI goi 3.1:", e)
+                continue
+            lines = [l.strip() for l in out.splitlines()]
+            title = ""
+            for l in lines:
+                if l.upper().startswith("TIÊU ĐỀ:"):
+                    title = l.split(":", 1)[1].strip()
+                    break
+            if not title:
+                title = topic
+            paras = [l for l in lines if l and not l.upper().startswith("TIÊU ĐỀ:")]
+            html = build_html(title, paras)
+            fname = f"{slug}.html"
+            fpath = os.path.join(WS, fname)
+            open(fpath, "w", encoding="utf-8").write(html)
+            print(f"--- Bài {done+1}: {title}")
+            rc = subprocess.run(["bash", os.path.join(WS, "blog-post.sh"), fpath]).returncode
+            if rc == 0:
+                done += 1
+                corp += html.lower()
+            else:
+                print("   ❌ blog-post.sh FAIL cho bài này")
+        print(f"==> Đã đăng {done}/{need} bài")
+    finally:
+        try: os.remove(lock)
+        except Exception: pass
 
 if __name__ == "__main__":
     main()
