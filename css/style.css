@@ -425,6 +425,7 @@ main { padding:40px 0; }
   .header .container { flex-direction:column; gap:10px; }
   .logo { justify-content:center; }
   .brand-grid { grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; }
+}
 
 @media(max-width:480px) {
   .hero-content h2 { font-size:22px; }
@@ -436,6 +437,7 @@ main { padding:40px 0; }
   .logo-img { height:36px; }
   .logo-icon { font-size:32px; }
   .header-search input { font-size:13px; padding:8px 14px; }
+}
 
 /* Print styles */
 @media print {
@@ -718,8 +720,6 @@ main { padding:40px 0; }
 .topbar-social a:hover {
   background: rgba(255,255,255,0.2);
   color: white !important;
-}
-}
 }
 
 /* ===== PROJECT GALLERY ===== */
