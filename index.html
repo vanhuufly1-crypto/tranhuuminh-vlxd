@@ -37,7 +37,7 @@
   "@type": "Organization",
   "name": "CÔNG TY TNHH XD & TM TRẦN HỮU MINH",
   "alternateName": "VLXD Trần Hữu Minh",
-  "description": "Nhà phân phối chính thức sơn & chống thấm MUNICH tại Hải Phòng. Thi công chống thấm trọn gói, thiết bị điện MPE.",
+  "description": "Nhà phân phối chính thức sơn & chống thấm MUNICH tại Hải Phòng. Thi công chống thấm trọn gói.",
   "url": "https://tranhuuminhvlxd.id.vn",
   "telephone": "+84378679633",
   "foundingDate": "2019-04-26",
@@ -68,8 +68,7 @@
     {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Sơn nước Munich"}},
     {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Sơn chống thấm Munich"}},
     {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Sơn công nghiệp Epoxy Munich"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Phụ gia & vữa chống thấm Munich"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Thiết bị điện MPE"}}
+    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Phụ gia & vữa chống thấm Munich"}}
   ],
   "sameAs": [
     "https://zalo.me/0378679633",
@@ -164,7 +163,6 @@
           <a href="san-pham-munich.html">🛒 Sản phẩm Munich chi tiết</a>
           <a href="bang-gia-munich.html">💰 Bảng giá Munich</a>
           <a href="tro-thanh-dai-ly.html">🤝 Trở thành đại lý</a>
-          <a href="#" data-brand="mpe" onclick="showBrand('mpe');toggleNav();return false">💡 Thiết bị điện MPE</a>
           <a href="https://zalo.me/s/1537055318513872836/" target="_blank" rel="noopener">📱 Mini App đặt hàng</a>
         </div>
       </li>
@@ -193,7 +191,6 @@
     </div>
     <div class="brand-strip">
       <span class="brand-tag bt-munich">⭐ NPP CHÍNH THỨC MUNICH</span>
-      <span class="brand-tag bt-mpe">💡 MPE</span>
     </div>
     <div class="stats-row">
       <div class="stat-circle"><span class="num">2019</span><span class="lbl">Năm thành lập</span></div>
@@ -225,10 +222,7 @@
     <div class="brand-content"></div>
   </section>
 
-  <section id="mpe-section" class="section">
-    <div class="brand-head bh-mpe"><h2>💡 MPE (Rạng Đông)</h2><p>Thiết bị điện & đèn LED Việt Nam - Đại lý chính thức. BH 3 năm.</p></div>
-    <div class="brand-content"></div>
-  </section>
+  <section id="mpe-section" class="section" style="display:none"></section>
 
   <!-- PROJECTS -->
   <section id="projects" class="section">
@@ -503,8 +497,8 @@ function setupPagination(categoryId, totalProducts) {
   container.appendChild(nav);
 }
 window.addEventListener("DOMContentLoaded", function() {
-  var cats = ["munich","mpe"];
-  var counts = {"munich":43,"mpe":16};
+  var cats = ["munich"];
+  var counts = {"munich":43};
   cats.forEach(function(c) { if (counts[c]) setupPagination(c, counts[c]); });
 });
 </script>

@@ -77,32 +77,6 @@ const PRODUCTS = {
       ],
     },
   },
-  mpe: {
-    "💡 Đèn LED Bulb": [
-      { code:'LBD3-5', name:'LED Bulb Chống Ẩm 5W', spec:'5W', desc:'Chip SMD 2835, 500Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
-      { code:'LBD3-9', name:'LED Bulb Chống Ẩm 9W', spec:'9W', desc:'Chip SMD 2835, 900Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
-      { code:'LBD3-12', name:'LED Bulb Chống Ẩm 12W', spec:'12W', desc:'Chip SMD 2835, 1200Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
-      { code:'LBD3-15', name:'LED Bulb Chống Ẩm 15W', spec:'15W', desc:'Chip SMD 2835, 1500Lm, 6000K/3000K, đui E27, chống ẩm.', dm:'1 cái/hộp' },
-    ],
-    "🔌 Công tắc & Ổ cắm A6": [
-      { code:'A6M1', name:'Công tắc 1 chiều 16A-250V', spec:'1 module', desc:'Công tắc 1 chiều seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
-      { code:'A6M2', name:'Công tắc 2 chiều 16A-250V', spec:'1 module', desc:'Công tắc 2 chiều seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
-      { code:'A6US', name:'Ổ cắm 2 chấu 16A-250V', spec:'1 module', desc:'Ổ cắm 2 chấu seri A6, màu trắng, 16A-250V.', dm:'1 cái' },
-      { code:'A6UES2', name:'Ổ cắm 3 chấu 16A-250V', spec:'1 module', desc:'Ổ cắm 3 chấu seri A6, có tiếp địa, 16A-250V.', dm:'1 cái' },
-    ],
-    "🔌 Công tắc & Ổ cắm A70 Plus": [
-      { code:'A70M1', name:'Công tắc 1 chiều 16A (A70)', spec:'1 module', desc:'Công tắc 1 chiều seri A70 Plus, thiết kế sang trọng.', dm:'1 cái' },
-      { code:'A70M2', name:'Công tắc 2 chiều 16A (A70)', spec:'1 module', desc:'Công tắc 2 chiều seri A70 Plus, thiết kế sang trọng.', dm:'1 cái' },
-      { code:'A70US', name:'Ổ cắm 2 chấu (A70)', spec:'1 module', desc:'Ổ cắm 2 chấu seri A70 Plus, màu trắng sang trọng.', dm:'1 cái' },
-      { code:'A70UES2', name:'Ổ cắm 3 chấu (A70)', spec:'1 module', desc:'Ổ cắm 3 chấu có tiếp địa seri A70 Plus.', dm:'1 cái' },
-      { code:'A70USB', name:'Ổ cắm sạc USB (A70)', spec:'2 module', desc:'Ổ cắm sạc USB type A, DC 5V-2.1A, seri A70 Plus.', dm:'1 cái' },
-    ],
-    "⚡ Thiết bị đóng cắt": [
-      { code:'MCB-MPE', name:'MCB Tép 6-63A', spec:'1P', desc:'Aptomat tép MPE, 6-63A, 6kA, 230/400VAC.', dm:'1 cái' },
-      { code:'RCBO-MPE', name:'RCBO Chống giật 6-40A', spec:'1P+N', desc:'Aptomat chống giật MPE, 6-40A, 30mA, 230VAC.', dm:'1 cái' },
-      { code:'RCCB-MPE', name:'RCCB Chống giật 25-100A', spec:'2P/4P', desc:'Aptomat chống giật tổng MPE, 25-100A, 100mA.', dm:'1 cái' },
-    ],
-  },
 };
 
 /* GIÁ SẢN PHẨM: Xem prices.js (file chuẩn) */
