@@ -29,6 +29,21 @@ TOPICS = [
 def existing_slugs():
     return set(os.listdir(BLOG)) if os.path.isdir(BLOG) else set()
 
+def corpus():
+    txt = ""
+    try:
+        names = os.listdir(BLOG)
+    except Exception:
+        names = []
+    for fn in names:
+        if not fn.endswith(".html"):
+            continue
+        try:
+            txt += open(os.path.join(BLOG, fn), encoding="utf-8", errors="ignore").read().lower()
+        except Exception:
+            pass
+    return txt
+
 def ask31(topic):
     sysmsg = ("Bạn là Mây, nhân viên viết nội dung cho CÔNG TY TNHH XD & TM TRẦN HỮU MINH "
               "(Nhà phân phối Munich, phục vụ Hải Phòng - Quảng Ninh - Hưng Yên). "
@@ -87,12 +102,22 @@ def main():
     n = int(sys.argv[1]) if len(sys.argv) > 1 else 2
     date = datetime.now().strftime("%Y-%m-%d")
     have = existing_slugs()
+    corp = corpus()
     done = 0
+    used = []
     for topic in TOPICS:
         if done >= n: break
-        slug = slugify(topic) + f"-{date}"
-        if any(slug in s for s in have):
+        tslug = slugify(topic)
+        codes = re.findall(r'[A-Z]{1,5}\s?\d{1,4}[A-Z]?', topic)
+        key = (codes[-1].replace(" ", "").lower() if codes else tslug.split("-")[0])
+        if key and key in corp:
             continue
+        if any(tslug in s or key in s.lower() for s in have):
+            continue
+        if key in used:
+            continue
+        used.append(key)
+        slug = tslug + f"-{date}"
         try:
             out = ask31(topic)
         except Exception as e:
@@ -106,13 +131,14 @@ def main():
             title = topic
         paras = [l for l in lines if l and not l.upper().startswith("TIÊU ĐỀ:")]
         html = build_html(title, paras)
-        fname = f"blog-input-{date}-{done+1}.html"
+        fname = f"{slug}.html"
         fpath = os.path.join(WS, fname)
         open(fpath, "w", encoding="utf-8").write(html)
         print(f"--- Bài {done+1}: {title} ({len(re.sub('<[^>]+>',' ',html))} ký tự)")
         rc = subprocess.run(["bash", os.path.join(WS, "blog-post.sh"), fpath]).returncode
         if rc == 0:
             done += 1
+            corp += html.lower()
         else:
             print("   ❌ blog-post.sh FAIL cho bài này")
     print(f"==> Đã đăng {done}/{n} bài")
