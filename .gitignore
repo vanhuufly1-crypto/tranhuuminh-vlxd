@@ -17,3 +17,4 @@ anh-goc/
 docs/mau/
 video-hoathinh/
 .env
+__pycache__/
